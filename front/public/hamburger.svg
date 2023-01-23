@@ -1,0 +1,21 @@
+<svg width="18px" height="12px" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M3,18 L21,18 L21,16 L3,16 L3,18 L3,18 Z M3,13 L21,13 L21,11 L3,11 L3,13 L3,13 Z M3,6 L3,8 L21,8 L21,6 L3,6 L3,6 Z" id="path-2"></path>
+    </defs>
+    <g id="Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Component/Header/Small" transform="translate(-315.000000, -24.000000)">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="360" height="60"></rect>
+            <g id="Group" transform="translate(312.000000, 18.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask" fill="#000000" xlink:href="#path-2"></use>
+                <g mask="url(#mask-3)" fill="#000000" id="icon-color">
+                    <g id="color">
+                        <rect id="Swatch" x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

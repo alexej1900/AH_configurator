@@ -1,0 +1,19 @@
+.tabs {
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 0.2rem solid;
+
+  span {
+    cursor: pointer;
+    flex: 1 1 0px;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+  .active {
+    background: $color__primary--dark;
+    color: $color__bright;
+    font-weight: 600;
+  }
+}

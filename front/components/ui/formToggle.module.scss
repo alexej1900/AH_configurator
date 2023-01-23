@@ -1,0 +1,45 @@
+@import "../../assets/scss/abstracts/variables";
+
+.toggle {
+    display: flex;
+    margin: 3.2rem 0;
+
+    .option {
+        width: 50%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 1.3rem 0;
+
+        &.active { 
+          background: var(--color__cta);
+          color: $color__bright;
+          position: relative;
+
+          .toggle__title {
+            color: #FFFFFF;
+          }
+
+          &:after {
+            content: '';
+            background: url('/check.svg');
+            background-size: cover;
+            width: 2.4rem;
+            height: 2.4rem;
+            position: absolute;
+            top: .4rem;
+            right: .4rem;
+          }
+        }
+      }
+    &__title {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      text-align: center;
+
+      color: #2E3B4E;
+    }  
+}

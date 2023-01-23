@@ -1,0 +1,102 @@
+@import "../abstracts/variables.scss";
+
+.radio {
+    background: $color__grey_3;
+    margin-bottom: .8rem;
+
+    input[type="radio"] {
+        width: 2rem;
+        height: 2rem;
+        filter: hue-rotate(108deg) grayscale(0.4);
+        cursor: pointer;
+        top: 50%;
+        position: relative;
+        transform: translateY(-50%);
+    }
+    label {
+        cursor: pointer;
+    }
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 64px;
+        height: 32px;
+        background: rgba($color__dark, 0.1);
+        display: block;
+        border-radius: 100px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            background: rgba($color__dark, 0.38);
+            border-radius: 90px;
+            transition: 0.3s;
+        }
+        &:before {
+            opacity: 0;
+        }
+    }
+}
+
+input:checked + label {
+	&:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(32);
+        height: rem(32);
+        display: inline-block;
+        background: var(--color__secondary);
+        background-image: url('/individ-icon.svg');
+        background-repeat: no-repeat;
+        background-size: 2.4rem;
+        background-position: center;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    &:before {
+        content: '';
+        background-image: url('/check.svg');
+        display: inline-block;
+        position: absolute;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-repeat: no-repeat;
+        fill: white;
+        margin-right: 1rem;
+        top: 3px;
+        right: -6px;
+        z-index: 123;
+        opacity: 1;
+        transition: 0.15s opacity ease-in;
+    }
+}
+
+input:checked + label:after {
+	left: 100%;
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 130px;
+}
+

@@ -1,0 +1,3 @@
+@function rem($font-size, $rem-base: 10) {
+  @return ($font-size/$rem-base) *1rem;
+}

@@ -1,0 +1,165 @@
+@import '../../assets//scss/abstracts/variables';
+
+.card__wrapper {
+  position: relative;
+  margin-bottom: .5rem;
+  padding: .5rem 1rem;
+  padding-bottom: 1rem;
+  // border-bottom: 1px solid grey;
+  background: var(--color__primary_10);
+
+  @media (max-width: 1000px) {
+    max-width: 31rem;
+    margin: 0 auto;
+  }
+
+  .mod__title, .mod__subTitle {
+    margin-bottom: 0 !important;
+    margin-right: 2rem;
+    line-height: 100%;
+  }
+
+  .mod__title_unvisible {
+    font-weight: normal;
+    font-size: 1.6rem;
+  }
+
+  .mod__description {
+    margin-bottom: 1.6rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 135%;
+  }
+
+  .card_group__number span{
+    display: none;
+  }
+
+  &.collapsed {
+    background: transparent;
+
+    .card__list {
+      overflow: hidden;
+      max-height: 30rem;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .card_group__number span {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      background: rgba($color__dark, 0.06);
+      border-radius: 50%;
+      color: $color__grey--transparent;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .mod__description {
+      display: none;
+    }
+  }
+
+  &.inLine {
+
+    .card__list {
+      width: 100%;
+      overflow: hidden;
+      max-height: 0px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .card_group__number span {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      background: rgba($color__dark, 0.06);
+      border-radius: 50%;
+      color: $color__grey--transparent;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+  .card__header {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    cursor: pointer;
+
+    .checkIcon {
+      position: absolute;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--color__secondary);
+      right: 1rem;
+      fill: $color__bright;
+    }
+
+    .checkIconColor {
+      fill: $color__bright;
+    }
+  }
+
+  .card__list {
+    overflow: hidden;
+    max-height: 200rem;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .card__groupTitle{
+    // text-align: center;
+    margin-left: 2rem;
+  }
+
+
+  .card__block {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .arrow {
+    cursor: pointer;
+
+    &:before {
+      border-style: solid;
+      border-width: 2px 2px 0 0;
+      content: '';
+      display: inline-block;
+      height: 6px;
+      position: relative;
+      vertical-align: middle;
+      width: 6px;
+      margin-right: 1.6rem;
+      transform: rotate(-45deg);
+    }
+
+    &.rotate {
+      &:before {
+        transform: rotate(-225deg);
+      }
+    }
+  }
+}
+
+.individual {
+  height: 5rem;
+
+  &.individual__inLine {
+    height: 0px;
+    overflow: hidden;
+  }
+
+  input:checked + label:before {
+    background: none;
+  }
+}
+
+.card__blockWrapper {
+  position: relative;
+}

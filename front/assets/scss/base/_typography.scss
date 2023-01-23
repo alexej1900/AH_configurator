@@ -1,0 +1,99 @@
+@import '../abstracts/variables';
+
+
+// typography
+
+@font-face {font-family: "Abel"; 
+  src: url("/fonts/Abel-Regular.ttf") format("opentype"); 
+}
+
+@font-face {font-family: "Karla"; 
+  src: url("/fonts/Karla-Regular.ttf") format("opentype"); 
+}
+
+@font-face {font-family: "NNNouvelleGroteskSTD"; 
+  src: url("/fonts/NNNouvelleGroteskSTD-Normal.otf") format("opentype"); 
+}
+
+@font-face {font-family: "Nationale"; 
+  src: url("/fonts/Nationale-Regular.otf") format("opentype"); 
+}
+
+body {
+  font-family: 'Nationale', 'Abel', 'Karla', 'Arial', 'Administer AT Light', Helvetica, neue-haas-unica,  sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--title__typo);
+  font-weight: 600;
+  font-style: normal;
+  text-rendering: auto;
+  // text-transform: uppercase;
+  line-height: 1.2;
+}
+
+div {
+  font-family: var(--description__typo);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: rem(32);
+  margin-bottom: rem(32);
+  text-transform: none;
+}
+
+h3 {
+  font-size: rem(22);
+  margin-bottom: rem(24);
+}
+
+h4 {
+  font-size: rem(18);
+}
+
+h5 {
+  font-size: rem(16);
+  font-weight: 500;
+  // text-transform: uppercase;
+  margin: rem(16) 0 rem(12) 0;
+}
+
+h6 {
+  font-size: rem(14);
+}
+
+p {
+  font-size: rem(18);
+  font-weight: 200;
+  line-height: rem(24);
+  font-weight: 400;
+  font-family: var(--description__typo);
+}
+
+strong {
+  font-weight: 600;
+}

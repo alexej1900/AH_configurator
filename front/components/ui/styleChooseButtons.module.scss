@@ -1,0 +1,84 @@
+@import '../../assets/scss/abstracts/variables';
+
+.style__button {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc((100% - 36rem)/2);
+    width: 100%;
+    max-width: 36rem;
+    height: 5.2rem;
+    background: #000;
+  }
+
+  .btn__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 5.2rem;
+    width: 100%;
+
+    a {
+      color: $color__bright;
+      text-decoration: none;
+    }
+  }
+
+  .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 40%;
+      margin: 0;
+      padding: 1.4rem;
+      font-family: 'Abel';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      cursor: pointer;
+
+      &__primary {
+        background: var(--color__primary);
+        color: $color__bright;
+        font-weight: 600;
+    
+        &.disabled {
+          background: var(--color__primary_30);
+        }
+      }
+
+      &__back {
+        background: var(--color__secondary);
+
+        &:after {
+          border-style: solid;
+          border-width: 0 0 3px 3px;
+          content: '';
+          display: inline-block;
+          height: 10px;
+          position: relative;
+          margin-left: 1rem;
+          vertical-align: top;
+          width: 10px;
+          margin-right: 1.6rem;
+          transform: rotate(-135deg);
+        }
+      }
+  }
+
+  .nextRoom {
+    &:before {
+        content: '';
+        background-image: url('/nextRoom-icon.svg');
+        display: inline-block;
+        position: relative;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-repeat: no-repeat;
+        fill: white;
+        margin-right: 1rem;
+    }
+  }
+}

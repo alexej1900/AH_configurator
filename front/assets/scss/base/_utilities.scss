@@ -1,0 +1,60 @@
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.ofi {
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+
+.scroll__icon {
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  &--animation {
+    animation: anim 3s infinite;
+    position: relative;
+    bottom: 6rem;
+    left: 6.2rem;
+  }
+
+
+  @keyframes anim {
+    0% {
+      transform: translateX(-40px);
+      transform-origin: bottom center;
+    }
+    50% {
+      transform: translateX(40px);
+      transform-origin: bottom center;
+    }
+    100% {
+      transform: translateX(-40px);
+      transform-origin: bottom center;
+    }
+  }
+}

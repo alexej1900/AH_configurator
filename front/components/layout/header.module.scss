@@ -1,0 +1,324 @@
+@import "../../assets/scss/abstracts/variables";
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 8.1rem;
+  z-index: 1;
+  box-sizing: border-box;
+  transition: 0.3s width ease-in;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  &:hover {
+    background: var(--header__bg_color) !important;
+  }
+
+  &.compressed {
+    width: calc(100% - 420px);
+    transition: 0.3s all ease-in;
+    padding-right: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      z-index: 10;
+      background: #fff !important;
+    }
+
+    .header__wrapper {
+      padding-right: 0;
+    }
+
+    .header__menu {
+      width: calc(100% - 32rem);
+
+      @media (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+    max-width: 1440px;
+    padding: 0 2rem;
+    padding-right: 7rem;
+    margin: 0 auto;
+    margin-bottom: -50px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 0;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 40rem);
+    background: transparent;
+    margin: 0 auto;
+    margin-left: 10rem;
+    overflow: hidden;
+
+    @media (max-width: 1000px) {
+      position: absolute;
+      justify-content: center;
+      top: 8rem;
+      width: 100%;
+      height: calc(100vh - 8rem);
+      background: $color__bright;
+      z-index: 1000;
+      margin: 0 auto;
+    }
+
+    &_block {
+      position: relative;
+      margin: 0 auto;
+      max-width: 1440px;
+    }
+
+    &__list {
+      display: flex;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      min-width: 60rem;
+      overflow: hidden;
+
+      @media (max-width: 1000px) {
+        flex-direction: column;
+        margin-left: 0;
+        min-width: 0;
+        overflow: visible;
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 .5rem 0;
+        margin: 0 2rem;
+
+        font-family: 'NNNouvelleGroteskSTD', sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $color__dark;
+
+        @media (max-width: 1000px) {
+          margin: 2rem auto 2rem 0;
+          font-weight: 400;
+        }
+      }
+
+      a.active {
+        color: #3C95DF;
+        border-bottom: 1px solid #3C95DF;
+      }
+
+      .welcomeItem::before,
+      .typeItem::before,
+      .roomItem::before {
+          content: '';
+          position: absolute;
+          left: -4rem;
+          width: 2.4rem;
+          height: 2.4rem;
+          display: none;
+      }
+
+      .welcomeItem::before,
+      .typeItem::before,
+      .roomItem::before {
+        @media (max-width: 1000px) {
+          display: block;
+        }
+      }
+
+      .welcomeItem::before {
+        background-image: url('/room-copy.svg');
+      }
+
+      .typeItem::before {
+        background-image: url('/type.svg');
+      }
+
+      .roomItem::before {
+        background-image: url('/roomItem.svg');
+      }
+    }
+
+    &__internalList {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+
+      @media (max-width: 1000px) {
+        overflow: visible;
+      }
+
+      &_wrapper {
+        display: flex;
+        
+        @media (max-width: 1000px) {
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
+        }
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+
+      @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 2rem;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    transition: 0.3s all ease-in;
+    z-index: 10;
+
+    .active {
+      position: relative; 
+      display: block;
+      &:after {
+        content: "";
+        width: 100%;
+        height: .2rem;
+        background: $color__pink;
+        display: block;
+        position: absolute;
+        bottom: .5rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: .8rem;
+    }
+
+    &__open {
+      cursor: pointer;
+    }
+  }
+
+  &.relative {
+    position: relative;
+  }
+}
+
+.finish {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.4rem;
+  border-left: 1px solid #000;
+  margin-right: .8rem;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+
+  &__btn_descr {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: .8rem;
+    margin-right: .8rem;
+  }
+}
+
+.virtual {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.4rem;
+  border-left: 1px solid #000;
+  margin-right: 0;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    margin-left: .8rem;
+    margin-right:.8rem;
+  }
+}
+
+.summary {
+  cursor: pointer;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color__secondary);
+  
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.moveRightButton,
+.moveLeftButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 2rem;
+  cursor: pointer;
+  background: var(--header__bg_color);
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.moveRightButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, var(--header__bg_color) 35%, var(--header__bg_color) 100%);
+}
+
+.moveLeftButton {
+  transform: rotate(180deg);
+}

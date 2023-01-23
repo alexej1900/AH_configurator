@@ -1,0 +1,156 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  right:0;
+  background-color: $color__bright;
+  width: 5.6rem;
+  max-height: 100vh;
+  overflow: scroll;
+  height: 100vh;
+  display: flex;
+  z-index: 2;
+  transition: all 0.3s ease-in;
+
+  &.open {
+    width: 42rem;
+
+    .sidebar__toggle .toggle {
+      img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__header {
+      position: relative;
+      margin-bottom: 1.2rem;
+
+ 
+
+      .col-6 {
+          margin: 0;
+      }
+
+      .options {
+          background: rgba($color__primary, 0.1);
+          padding: 1.5rem;
+
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            &:first-child {
+              strong {
+                font-size: 1.4rem;
+              }
+            }
+
+            &:last-child {
+              strong {
+                font-size: 2rem;
+              }
+            }
+          }
+
+          span {
+            font-size: 1.2rem;
+            margin-right: 0.8rem;
+          }
+      }
+  }
+
+  &__toggle {
+      position: relative;
+      width: 5.6rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: $color__bright;
+      background: rgba($color__primary, .8);
+      cursor: pointer;
+      flex-shrink: 0;
+
+      .toggle {
+          font-size: 2.1rem;
+          font-weight: 600;
+          width: 100%;
+          text-align: center;
+          transform: rotate(-90deg);
+          display: flex;
+          align-items: center;
+
+          img {
+            transform: rotate(-90deg);
+            left: 10px;
+            position: relative;
+          }
+      }
+  }
+
+  &__content {
+      padding: 0 2rem 5.6rem 2rem;
+      overflow: scroll;
+      width: 100%;
+  }
+
+  &__button {
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - 11.2rem);
+      left: 5.6rem;
+
+      &.group {
+        width: calc(100% - 6rem);
+
+        .btn {
+          flex: 1 0 43%;
+          cursor: pointer;
+          border: none;
+        }
+
+        .back {
+          flex: 1 0 50% !important;
+        }
+      }
+
+      .btn__wrapper {
+        padding: 0.4rem;
+        display: flex;
+      }
+
+      .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex: 1 0 60%;
+          margin: 0;
+      }
+
+      .nextIcon {
+          &:after {
+              content: '';
+              background: url('/navigation-right.svg');
+              display: inline-block;
+              position: relative;
+              width: 2.6rem;
+              height: 2rem;
+              background-repeat: no-repeat;
+              margin-left: 1rem;
+          }
+      }
+      .checkIcon {
+          &:before {
+              content: '';
+              background-image: url('/check.svg');
+              display: inline-block;
+              position: relative;
+              width: 2.4rem;
+              height: 2.4rem;
+              background-repeat: no-repeat;
+              fill: white;
+              margin-right: 1rem;
+          }
+      }
+  }
+}

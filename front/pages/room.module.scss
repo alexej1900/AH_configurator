@@ -1,0 +1,249 @@
+@import '../assets/scss/abstracts/variables';
+
+.type__wrapper {
+
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+// .loader__wrapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 1000;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+
+//   @media (max-width: 768px) {
+//     width: calc(100vw + 42rem);
+//   }
+// }
+
+.image {
+
+  &__main {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: calc(100vw - 5.6rem);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__wrapperActive {
+    overflow: scroll;
+    width: calc(100% - 420px);
+    position: relative;
+    display: block;
+    cursor: grab;
+    transition: all 0.3s ease-in-out;
+    flex: 0 0 100%;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &--centered {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 12rem);
+    transform: translateX(-50%);
+  }
+}
+
+// img {
+//   &.full {
+//     display: block;
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     position: relative;
+//     object-position: center;
+
+//     &.animate {
+//       animation-name: moving;
+//       animation-duration: 3s;
+//       animation-timing-function: ease-in-out;
+//     }
+
+//     @media (max-width: 1500px) { // 1500 = width of big image in px
+//       width: auto;
+//     }
+//   }
+// }
+
+.full {
+  object-position: left;
+  
+  @media (max-width: 1500px) { // 1500 = width of big image in px
+    min-width: 1500px !important;
+    object-position: center;
+  }
+
+  img {
+    width: auto !important;
+    height: 100vh !important;
+    object-fit: cover;
+    // object-position: left;
+    &.animate {
+      animation-name: moving;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+    }
+
+    @media (max-width: 1500px) { // 1500 = width of big image in px
+      min-width: 1500px !important;
+    }
+  }
+
+  &.blur {
+    img {
+      filter: blur(.3rem);
+    }
+  }
+}
+
+.image__container {
+  position: relative;
+}
+
+.image__wrapper.animate {
+  animation-name: sliding;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: .5s;
+}
+
+.btn__getContacts {
+  position: absolute;
+  bottom: 4rem;
+  right: 12rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+
+  width: 12rem;
+  height: 4rem;
+  border-radius: 2rem;
+  margin: 0;
+  background: var(--color__cta);
+  color: $color__bright;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &_shift {
+    right: 50rem;
+
+    @media (max-width: 768px) {
+      right: 2rem;
+      bottom: 8rem;
+    }
+  }
+
+  & > * {
+    margin-left: 4rem;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+
+  &.disabled {
+    background: var(--color__cta_30);
+  }
+
+  &::before {
+    content: '';
+    background: url('/Person.svg');
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: calc(50% - 1.3rem);
+    width: 2.6rem;
+    height: 2.6rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.btn__pinsHide {
+  position: absolute;
+  bottom: 4rem;
+  right: 26rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 0;
+  background: var(--color__cta);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &_shift {
+    right: 64rem;
+
+    @media (max-width: 768px) {
+      right: 16rem;
+      bottom: 8rem;
+    }
+  }
+}
+
+@keyframes sliding {
+  from {
+      left: 100%;
+  }
+
+  to {
+      left: 0;
+  }
+}
+
+@keyframes moving {
+  from {
+    left: 0;
+  }
+
+  // 25% {
+  //     left: -60rem;
+  // }
+
+  50% {
+      left: -50rem;
+  }
+
+  // 75% {
+  //   left: -21rem;
+  // }
+
+  to {
+      left: -25rem;
+  }
+}

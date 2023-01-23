@@ -1,0 +1,169 @@
+@import '../assets/scss/abstracts/variables';
+
+.summary {
+    position: relative;
+    top: 7.5rem;
+    margin-bottom: 10.5rem;
+    
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .mainImage {
+
+        position: relative;
+
+        span {
+            position: relative !important;
+        }
+
+        img {
+            top: 0 !important;
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+    }
+
+    &__overview {
+        padding: 6.5rem 0 0 ;
+        width: 100%;
+
+        &::after {
+            display: none;
+        }
+
+        &_content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            width: 100%;
+        }
+
+        &_image {
+            flex: 1 1 50%;
+            max-width: 40rem;
+            margin: 2rem;
+        }
+
+        .stats {
+            padding: 14px;
+            flex: 1 1 50%;
+            max-width: 40rem;
+            margin: 2rem;
+            // .summary__overview_line {
+            //     padding: 13px;
+            //     border-bottom: 1px solid #ccc;
+            // }
+        }
+
+        &_line {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color__secondary);  
+
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+
+            &_heighlite {
+                text-transform: uppercase;
+                font-weight: 600;
+                background-color: var(--color__secondary_20);
+            }
+        }
+
+        & div {
+            &::after {
+                display: none;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    &__room {
+        width: 100%;
+
+        &_title {
+            margin: 3.2rem auto;
+
+            h2 {
+                font-size: 3.2rem;
+            }
+            
+        }
+
+        &_image {
+            position: relative;
+            // width: 100% !important;
+            // height: auto !important;
+
+            span {
+                position: relative !important;
+            }
+
+            img {
+                top: 0 !important;
+                position: relative !important;
+                height: auto !important;
+                // width: 100% !important;
+            // height: auto !important;
+            }
+        }
+
+        &_data {
+
+            &_title {
+                font-size: 1.6rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin: 1.6rem 0 1.2rem;
+            }
+        }
+
+        &_card_wrapper {
+            position: relative;
+
+            & div::after {
+                display: none;
+            }
+        }
+
+        &_edit_icon {
+            position: absolute;
+            right: 11%;
+            top: 5%;
+            width: 2.4rem;
+            height: 2.4rem;
+            z-index: 10;
+        }
+            
+    }
+
+    .title {
+        margin-bottom: 32px;
+        font-size: 4.8rem;
+        line-height: 5.76rem;
+        font-weight: 700;
+    }
+
+    .notice {
+        width: 100%;
+        margin: 0 auto;
+        // padding: 0 2rem;
+        text-align: center;
+
+        p {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    
+}

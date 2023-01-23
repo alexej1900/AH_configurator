@@ -1,0 +1,63 @@
+.text_block {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-80%);
+  bottom: 2.4rem;
+  max-width: 66rem;
+  background: rgba($color__bright, 0.8);
+  padding: 2.4rem;
+  height: 9rem;
+  overflow: hidden;
+  transition: .25s height ease-in;
+  width: 100%;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .close {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .expand {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0px;
+    height: rem(40);
+    background: linear-gradient(0deg, rgba($color__bright, 1), rgba($color__bright, 0) 100%);
+
+    &:after {
+      content: '';
+      background: url('/chevron-up.svg');
+      background-size: cover;
+      width: rem(24);
+      height: rem(24);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .text_block__text {
+    margin-top: 1.6rem;
+  }
+
+  &.open {
+    height: auto;
+  }
+
+  &.closed {
+    height: auto;
+
+    .text_block__text {
+      display: none;
+    }
+  }
+}

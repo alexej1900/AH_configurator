@@ -1,0 +1,73 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: calc(50vh - 225px) auto;
+
+
+}
+
+.linear_1 {
+  animation-name: gradient-1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.linear_2 {
+  animation-name: gradient-2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.linear_3 {
+  animation-name: gradient-1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient-1 {
+  from {
+    stop-color: #B8FFBB;
+  }
+
+  25% {
+    stop-color: #368943;
+  }
+
+  50% {
+    stop-color: #276A2A;
+  }
+
+  75% {
+    stop-color: #87BC1A;
+  }
+
+  100% {
+    stop-color: #B8FFBB;
+  }
+}
+
+@keyframes gradient-2 {
+  from {
+    stop-color: #276A2A;
+  }
+
+  25% {
+    stop-color: #368943;
+  }
+
+  50% {
+    stop-color: #B8FFBB;
+  }
+
+  75% {
+    stop-color: #87BC1A;
+  }
+
+  100% {
+    stop-color: #276A2A;
+  }
+}

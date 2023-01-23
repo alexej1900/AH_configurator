@@ -1,0 +1,324 @@
+@import '../../assets//scss/abstracts/variables';
+
+.card {
+  position: relative;
+  cursor: pointer;
+  // min-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  &.styleCard {
+
+    @media (max-width: 768px) {
+      position: relative;
+      height: calc((100vh - 8rem - 5rem)/2);  //Last number depends on amount of style lines
+    }
+
+    .card__title {
+
+      @media (max-width: 768px) {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 4rem;
+        margin: 0;
+        background: rgba($color__bright, 0.8);
+        z-index: 1;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        margin-left: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+          line-height: 4rem;
+          margin: 0 2.4rem;
+        }
+      }
+    }
+
+    &.active {
+
+      &:after,
+      &:before {
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    background: var(--color__option--bg);
+    position: relative;
+  }
+
+  span {
+    display: block !important;
+    color: var(--color__brand--primary);
+    font-weight: 600;
+  }
+
+  .img__wrapper {
+    outline: 4px solid transparent;
+
+    @media (max-width: 768px) {
+      height: calc((100vh - 8rem - 5rem)/2);//Last number depends on amount of style lines
+    }
+
+    & span,
+    & img {
+      @media (max-width: 768px) {
+        height: calc((100vh - 8rem - 5rem)/2) !important;//Last number depends on amount of style lines
+      }
+    }
+  }
+
+  .rec {
+    position: absolute;
+    bottom: 0;
+    background: #2e3b4f;
+    color: white;
+    width: -webkit-fill-available;
+    padding: 4px;
+  }
+
+  &__edit {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    max-width: 2rem;
+    z-index: 1;
+  }
+
+  &__image {
+    max-width: 12.5rem;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    box-sizing: border-box;
+    outline: .4rem solid transparent;
+    // width: 100%;
+    object-fit: cover;
+  }
+
+  &.active {
+    cursor: default;
+    pointer-events: none;
+
+    &.collapsed {
+      pointer-events: all;
+    }
+    
+    &:after {
+      content: '';
+      background: url('/check.svg');
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 4.4rem;
+      right: 8px;
+      z-index: 1;
+    }
+
+    &::before {
+      position: absolute;
+      top: 4rem;
+      right: 0;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      background-color: var(--color__secondary);
+      z-index: 1;
+    }
+
+    .img__wrapper {
+      border: 4px solid var(--color__secondary);
+
+      @media (max-width: 768px) {
+        border: none;
+      }
+    }  
+  }
+
+  .row [class^="col"] {
+    margin: 0;
+    position: relative;
+    max-width: 20rem;
+  }
+
+  &__title {
+    display: block;
+    margin: .6rem 0 .6rem;
+    max-width: 90%;
+
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    color: var(--color__brand--primary);
+    margin-top: 4px;
+
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  &.small {
+    // margin: 0.4rem;
+    display: flex;
+    margin-bottom: 0.8rem;
+    background: rgba($color__bright, 0.8);
+    min-height: 8rem;
+    max-height: 10rem;
+
+    &:hover {
+      // outline: 2px solid $color__secondary;
+      background: var(--color__secondary_20);
+    }
+
+    .image__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.4rem;
+      width: 30%;
+      // display: block;
+      // height: 100px;
+
+      img {
+        width: 125px !important;
+        height: 90px !important;
+      }
+    }
+    
+    .text__wrapper {
+      margin: 0.4rem;
+      width: 66%;
+
+      &::after {
+        content: "";
+        background: url('/check.svg');
+        width: 2.4rem;
+        height: 2.4rem;
+        position: absolute;
+        top: 0;
+        right: .5rem;
+      }
+    }
+
+    &.active {
+      background-color: var(--color__secondary);
+      cursor: default;
+
+      &::before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.disable {
+      display: none;
+      // cursor: not-allowed;
+      // background-color: rgba($color__dark, 0.2);
+      // position: relative;
+
+      // &::before {
+      //   content: 'Disabled';
+      //   display: block;
+      //   position: absolute;
+      //   top: 30%;
+      //   left: 20%;
+      //   transform: rotate(-20deg);
+      //   background: transparent;
+      //   z-index: 10;
+      //   font-size: 3rem;
+      //   font-weight: 900;
+      //   color: rgba($color__bright, 0.8);
+      // }
+
+      // &:hover {
+      //   background-color: rgba($color__dark, 0.2);
+      // }
+
+      // .text__wrapper::after {
+      //   display: none;
+      // }
+    }
+
+    &.collapsed {
+      background-color: var(--color__primary_10);
+
+      min-height: 1rem;
+      cursor: pointer;
+
+      .text__wrapper {
+
+        &::after {
+          content: "";
+          background: url('/edit-simple.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 2.4rem;
+          height: 2.4rem;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+
+    .image__wrapper {
+
+      span {
+        height: 7rem !important;
+        width: 7rem !important;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+      
+    }
+
+    &.final {
+
+      background-color: var(--color__primary_10); 
+      margin: 0;
+      height: 11rem;
+      max-height: none;
+
+      .image__wrapper {
+        height: 11rem;
+        width: 11rem;
+        margin: 0;
+
+        span {
+          height: 10rem !important;
+          width: 10rem !important;
+        }
+  
+        img {
+          height: 10rem !important;
+        }
+      }
+    }
+  }
+}

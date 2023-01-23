@@ -1,0 +1,16 @@
+// This is the the base for the em/rem mixins and the grid calculation.
+$rem-base: 10px;
+
+// GRID
+// - settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
+$susy: (
+  debug: (
+    image: hide,  // show
+    output: background, // or overlay
+    toggle: bottom right
+  ),
+  global-box-sizing: border-box,
+  columns: 12,
+  container: rem(1440),
+  gutters: 0.25
+);

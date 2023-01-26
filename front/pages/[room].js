@@ -4,9 +4,11 @@ import Image from 'next/image';
 
 import Sidebar from '../components/ui/Sidebar/Sidebar';
 import PinsList from '../components/ui/pinsList';
-import ScrollIcon from '../components/ui/scrollIcon';
+import ScrollIcon from '../components/ui/Components/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 import ContactForm from '../components/ui/contactForm';
+import ContactBtn from '../components/ui/Components/contactBtn';
+import LoadingSpinner from '../components/ui/Components/loadingSpinner';
 
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -16,7 +18,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeRoomType, changeSidebarState, changeActivePin, changeActiveMod , changeRoomVisibility, changeLoadingState} from '../redux/actions/index';
 
 import styles from './room.module.scss';
-import LoadingSpinner from '../components/ui/loadingSpinner';
 
 let ROOM_TYPE;
 
@@ -147,11 +148,10 @@ console.log('apartSize', apartSize)
 
             {(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
-            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift} center`} 
+            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} 
                 onClick={() => setIsPopup(true)}
             >
-                <h4>Kontakt</h4> 
-                <h5>aufnehmen</h5>
+                <ContactBtn/>
             </div>
             <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
                 onClick={() => setIsPinsVisible(!isPinsVisible)}

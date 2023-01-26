@@ -1,5 +1,5 @@
-import {formatNumber} from '../../utils/utilities';
-import styles from './optionsList.module.scss';
+import {formatNumber} from '../../../utils/utilities';
+import styles from './../optionsList.module.scss';
 
 export default function OptionItem ({
     data, 

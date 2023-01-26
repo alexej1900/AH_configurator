@@ -1,6 +1,5 @@
 // colors
 
-
 $dark-grey: #333447;
 
 $color__dark:               #000;
@@ -21,17 +20,12 @@ $color__selected:             rgba(42, 152, 220, 0.12);
 $color__cta:                $color__primary;
 $color__cta-hover:          rgba($color__cta, 0.7);
 
-// $color__accent:             #acacac;
-// $color__accent--light:      #e0e1dd;
-// $color__accent--dark:       #6e6e6e;
-
 //Should be edited
 // colors
 $color__primary: #8d705d;
 $color__primary--tertiary: rgba(45,60, 77, 0.06);
 $color__pink: #D60070;
 $color__brand--primary: #2d3c4d;
-
 
 $color__accent: #2e3b4e;
 
@@ -42,11 +36,32 @@ $color__grey_6: rgba(0,0,0,.06);
 $color__grey_15: rgba(0,0,0,.15);
 $dark-grey: #333447;
 
-
 $color__option--bg: rgba(46, 59, 78, 0.06);
 
+// Appenzeller Huus COLORS
 
+$color__cta-primary--default: #3C6589;
+$color__cta-primary--hover: rgba(60, 101, 137, 0.72);
+$color__cta-primary--active: #4D4D4D;
+$color__cta-primary--shade: rgba(77, 77, 77, 0.06);
 
+$color__cta-secondary--default: #1D4451;
+$color__cta-secondary--hover: rgba(29, 68, 81, 0.72);
+$color__cta-secondary--active: #4D4D4D;
+$color__cta-secondary--shade: rgba(77, 77, 77, 0.06);
+
+$color__forms-icons: rgba(0, 0, 0, 0.16);
+$color__forms-border: $color__dark;
+$color__forms-selected: #1757BD;
+
+$color__icons: #FF0230;
+
+$color__seperator: rgba(0, 0, 0, 0.08);
+
+$color__state-info: #1757BD;
+$color__state-success: #9BC524;
+$color__state-warning: #DEA71A;
+$color__state-error: #D94D4D;
 
 $title__typo: 'NNNouvelleGroteskSTD', sans-serif;
 $description__typo: 'NNNouvelleGroteskSTD', sans-serif;

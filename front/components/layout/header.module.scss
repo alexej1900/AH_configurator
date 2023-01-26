@@ -12,8 +12,12 @@
     width: 100%;
   }
 
+  &.background {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
   &:hover {
-    background: var(--header__bg_color) !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   }
 
   &.compressed {

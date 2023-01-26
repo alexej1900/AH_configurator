@@ -6,18 +6,22 @@ import { useRouter } from 'next/router';
 
 import getSettings from './api/getSettings';
 
-import Button from '../components/ui/button';
-import FormToggle from '../components/ui/formToggle';
+import Button from '../components/ui/Components/button';
+import FormToggle from '../components/ui/components/formToggle';
+import ContactBtn from '../components/ui/Components/contactBtn';
+import ContactForm from '../components/ui/contactForm';
+import LoadingSpinner from '../components/ui/Components/loadingSpinner';
+
 import { apartmentItem } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
 import { changeApartSize, setBrandSettings, setRooms, changeApartData } from "../redux/actions/index";
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
-import LoadingSpinner from '../components/ui/loadingSpinner';
 
 export default function Home() {
   const [isBaseVersion, setIsBaseVersion] = useState(true);
+  const [isPopup, setIsPopup] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -54,6 +58,10 @@ export default function Home() {
   const aparmentData = data.entry.dataList[0];
   
   let apartmentImage = apartSize.image === '' ? aparmentData?.apartmentImage[0] : apartSize.image;
+
+  const onCancel = () => {
+    setIsPopup(false);
+}
 
   // console.log('apartmentData', apartmentData);
   // console.log('queryId', queryId);
@@ -98,6 +106,10 @@ export default function Home() {
             />
           </div>
         </div>
+        <div className={`${styles.btn__getContacts}`} onClick={() => setIsPopup(true)}>
+            <ContactBtn/>
+        </div>
+        {isPopup && <ContactForm onCancel={onCancel}/>}
       </div>
     </>
   )

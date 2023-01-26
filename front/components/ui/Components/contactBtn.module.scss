@@ -1,0 +1,49 @@
+@import "../../../assets/scss/abstracts/variables";
+
+.btn__getContacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+
+  width: 12rem;
+  height: 4rem;
+  border-radius: 2rem;
+  margin: 0;
+  background: $color__cta-primary--default;
+  color: $color__bright;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  & > * {
+    margin-left: 4rem;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+
+  &::before {
+    content: '';
+    background: url('/Person.svg');
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: calc(50% - 1.3rem);
+    width: 2.6rem;
+    height: 2.6rem;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background: $color__cta-primary--hover;
+  }
+}

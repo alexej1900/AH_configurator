@@ -4,7 +4,7 @@ import serialize from '../../utils/serialize';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
 
-import LoadingSpinner from './loadingSpinner';
+import LoadingSpinner from './Components/loadingSpinner';
 
 import styles from './contactForm.module.scss';
 

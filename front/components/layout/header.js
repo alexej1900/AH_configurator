@@ -33,7 +33,7 @@ export default function Header () {
 
   const generalStates = useSelector((state) => state.generalStates);
 
-  const { menu, open, logo, headerImage, headerBg, rooms }  = generalStates;
+  const { menu, open, logo, rooms }  = generalStates;
 
   useEffect(() => {
     checkStylePage.then((isExist) => {
@@ -68,8 +68,6 @@ export default function Header () {
 
   const closeMenuHandler = () => dispatch(changeMenuState(!menu));
 
-  const background = headerImage ? `no-repeat url("${headerImage}")` : `${headerBg}`;
-
   const moveRightClickHandler = () => {
     (shift < 10 && shift < rooms.length) && setShift(++shift);
     setShiftSize((50 / rooms.length) * shift); //shifting should be not more than 50%
@@ -80,16 +78,8 @@ export default function Header () {
     setShiftSize((50 / rooms.length) * shift); 
   }
 
-  const openStyle = menu ? {background: background, backgroundSize: "100%"} : {background: 'transparent'};
-
   return (
-    
-
-
-    <header 
-      className={[style.header, open & pathname !== '/' && style.compressed].join(' ')} 
-      style={openStyle}
-    >
+    <header className={[style.header, open & pathname !== '/' && style.compressed, menu && style.background].join(' ')}>
       {logo &&
         <>
           <div className={style.header__wrapper}>

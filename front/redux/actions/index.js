@@ -223,9 +223,8 @@ export const changeRoomImage = (room, image) => {
   }
 }
 
-
 export const setInitialState = (state) => dispatch => {
-console.log('setInitialState', state)
+
   const generalStates = state.generalStates;
   const apartPrice = state.apartPrice;
   const apartSize  = state.apartSize;

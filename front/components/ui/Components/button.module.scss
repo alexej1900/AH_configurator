@@ -1,4 +1,4 @@
-@import "../../assets/scss/abstracts/variables";
+@import "../../../assets/scss/abstracts/variables";
 
 .btn {
     text-decoration: none;
@@ -11,7 +11,7 @@
     }
   
     &--primary {
-      background: var(--color__primary);
+      background: $color__cta-primary--default;
       color: $color__bright;
       font-weight: 600;
   
@@ -86,3 +86,4 @@
       pointer-events: none;
     }
   }
+  

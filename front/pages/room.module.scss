@@ -133,22 +133,6 @@
   bottom: 4rem;
   right: 12rem;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:flex-start;
-
-  width: 12rem;
-  height: 4rem;
-  border-radius: 2rem;
-  margin: 0;
-  background: var(--color__cta);
-  color: $color__bright;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-
   &_shift {
     right: 50rem;
 
@@ -160,31 +144,6 @@
 
   & > * {
     margin-left: 4rem;
-  }
-
-  h4 {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  h3 {
-    font-size: 12px;
-  }
-
-  &.disabled {
-    background: var(--color__cta_30);
-  }
-
-  &::before {
-    content: '';
-    background: url('/Person.svg');
-    display: block;
-    position: absolute;
-    left: 1rem;
-    top: calc(50% - 1.3rem);
-    width: 2.6rem;
-    height: 2.6rem;
-    background-repeat: no-repeat;
   }
 }
 

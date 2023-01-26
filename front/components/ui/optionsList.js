@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux'
 
 import { changeRoomTypeOption } from '../../redux/actions/index';
-import OptionItem from './optionItem';
+import OptionItem from './Components/optionItem';
 
 import styles from './optionsList.module.scss';
 

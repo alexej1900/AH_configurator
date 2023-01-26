@@ -3,6 +3,7 @@
 .welcome {
   position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0 auto;
@@ -60,8 +61,12 @@
       .submitBtn {
         @media (max-width: 1000px) {
           position: absolute;
-          bottom: 3rem;
+          bottom: 10rem;
           left: calc(50% - 190px/2);
+        }
+
+        &:hover a {
+          background: $color__cta-primary--hover;
         }
       }
     }
@@ -127,6 +132,15 @@
             right: .4rem;
           }
         }
+      }
+    }
+
+    .btn__getContacts {
+      margin-top: 4rem;
+      
+      @media (max-width: 1000px) {
+        margin-top: 0;
+        margin-bottom: 2rem;
       }
     }
   }

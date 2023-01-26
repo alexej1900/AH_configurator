@@ -9,16 +9,16 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 	const dispatch = useDispatch();
 
 	const { rooms } = useSelector((state) => state.generalStates);
+  const apartStyle = useSelector((state) => state.apartStyle);
 
-
-	// console.log('currentRoom', currentRoom)
+	console.log('apartStyle', apartStyle)
 	let nextLink, prevLink;
 
 	if (currentRoom === 'type') {
 		nextLink = {link: `/${rooms[0].toLowerCase()}`, title: rooms[0], icon: 'nextRoom'};
 		prevLink = `/?id=${roomId}`;
 	} else if (currentRoom === 'kitchen-type') {
-		nextLink = {link: `/küche1`, title: 'Küche 1', icon: 'nextRoom'}
+		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Design ${apartStyle.kitchenStyle + 1}`, icon: 'nextRoom'}
 		prevLink = '/raumtrenner';
 	} else {
 		for (let i = 0; i < rooms.length; i++) {   

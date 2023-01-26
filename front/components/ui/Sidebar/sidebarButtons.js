@@ -11,7 +11,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 	const { rooms } = useSelector((state) => state.generalStates);
   const apartStyle = useSelector((state) => state.apartStyle);
 
-	console.log('apartStyle', apartStyle)
+	// console.log('apartStyle', apartStyle)
 	let nextLink, prevLink;
 
 	if (currentRoom === 'type') {

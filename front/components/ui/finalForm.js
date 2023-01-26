@@ -15,8 +15,8 @@ import html2canvas from 'html2canvas';
 
 import { saveData } from '../../gql/index';
 
-import Popup from './popup';
-import LoadingSpinner from './loadingSpinner';
+import Popup from './Components/popup';
+import LoadingSpinner from './Components/loadingSpinner';
 
 import styles from './finalForm.module.scss';
 

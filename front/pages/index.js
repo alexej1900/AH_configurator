@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import getSettings from './api/getSettings';
 
 import Button from '../components/ui/Components/button';
-import FormToggle from '../components/ui/components/formToggle';
+import FormToggle from '../components/ui/Components/formToggle';
 import ContactBtn from '../components/ui/Components/contactBtn';
 import ContactForm from '../components/ui/contactForm';
 import LoadingSpinner from '../components/ui/Components/loadingSpinner';

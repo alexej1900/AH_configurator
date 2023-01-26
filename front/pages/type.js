@@ -39,7 +39,7 @@ export default function Type() {
     const {data, error, loading} = useQuery(typePage);
     if (loading) return <LoadingSpinner full={true}/>;
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
-    // console.log('data', data);
+
     let currentStyle = data.entry.styles[styleId];
     const styleImage = currentStyle.image[0];
 
@@ -64,13 +64,9 @@ export default function Type() {
     return (
         <div className={`${styles.type__wrapper}`} >   
             <ScrollContainer 
-                className={`
-                    ${sidebarState && styles.image__wrapperActive} 
-                    ${styles.image__wrapper}
-                `} 
+                className={`${sidebarState && styles.image__wrapperActive} ${styles.image__wrapper}`} 
                 onStartScroll={() => setIsScroll(true)}
                 onEndScroll={() => setIsScroll(false)}
-                
             >
                 <div  className={styles.full} style={{position:"relative", width: "100vw", height: "100vh"}}>
                     <Image 

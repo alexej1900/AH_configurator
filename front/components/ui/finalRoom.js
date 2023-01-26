@@ -19,10 +19,10 @@ import getModifications from '../../pages/api/getModifications';
 
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import Card from './card';
-import OptionItem from './optionItem';
+import OptionItem from './Components/optionItem';
+import LoadingSpinner from './Components/loadingSpinner';
 
 import styles from './finalRoom.module.scss';
-import LoadingSpinner from './loadingSpinner';
 
 export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();

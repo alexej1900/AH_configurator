@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: 'https://staging.immokonfigurator.ch/api',
+    uri: 'https://ah.immokonfigurator.ch/api',
     cache: new InMemoryCache({resultCaching: true}),
 });
 

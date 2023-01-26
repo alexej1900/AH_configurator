@@ -5,16 +5,21 @@ import { changeRoomVisibility, changeStyleVisibility } from '../../../redux/acti
 
 import styles from './sidebar.module.scss';
 
-export default function SidebarButtons({ currentRoom, styleTypeSet }) {
+export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 	const dispatch = useDispatch();
 
-	const { isStylePageExist, rooms } = useSelector((state) => state.generalStates);
-	
+	const { rooms } = useSelector((state) => state.generalStates);
+
+
+	// console.log('currentRoom', currentRoom)
 	let nextLink, prevLink;
 
 	if (currentRoom === 'type') {
 		nextLink = {link: `/${rooms[0].toLowerCase()}`, title: rooms[0], icon: 'nextRoom'};
-		prevLink = '/';
+		prevLink = `/?id=${roomId}`;
+	} else if (currentRoom === 'kitchen-type') {
+		nextLink = {link: `/küche1`, title: 'Küche 1', icon: 'nextRoom'}
+		prevLink = '/raumtrenner';
 	} else {
 		for (let i = 0; i < rooms.length; i++) {   
 			if (rooms[i].toLowerCase() === currentRoom) {
@@ -22,7 +27,12 @@ export default function SidebarButtons({ currentRoom, styleTypeSet }) {
 					?  {link: `/${rooms[i+1].toLowerCase()}`, title: rooms[i+1], icon: 'nextRoom'}
 					:  {link: '/summary', title: 'Abschliessen', icon: 'checkIcon'};
 
-				prevLink = rooms[i-1] ? rooms[i-1].toLowerCase() : isStylePageExist ? '/type' : '/';
+				prevLink = rooms[i-1] ? rooms[i-1].toLowerCase() : '/type';
+
+				if (currentRoom.toLowerCase() === 'raumtrenner') {
+					nextLink = {link: `/kitchen-type`, title: 'Küchendesign', icon: 'nextRoom'}
+					prevLink = '/type';
+				}
 			}
 		}
 	}

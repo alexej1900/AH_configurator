@@ -37,8 +37,11 @@ export default function Sidebar({
     const sidebarOpen = useSelector(state => state.generalStates.open);
     const { showStyle, showRoom } = useSelector(state => state.generalStates);
     const mainStyle = useSelector(state => state.apartStyle).title;
+    const roomId = useSelector(state => state.apartSize.apartmentId);
 
     const { OptionsPrice, IndividualPrice } = getPrices();
+
+    console.log('OptionsPrice', OptionsPrice)
 
     const modifications = getModifications(currentRoom);
 
@@ -67,7 +70,7 @@ export default function Sidebar({
 
             if (
                 item.modificationVisibility && 
-                (item.modificationMainStyle.toLowerCase() === mainStyle.toLowerCase() ||
+                (item.modificationMainStyle.toLowerCase().replaceAll(' ', '') === mainStyle.toLowerCase().replaceAll(' ', '') ||
                 item.modificationMainStyle.toLowerCase() === "false")
                 ) {
                 const modName = item.modificationName;
@@ -103,12 +106,15 @@ export default function Sidebar({
         const roomActiveMode = activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
-        if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
-            const styleImage = roomImages?.filter((image) => image.title.toLowerCase() +` küchenabdeckung 0` === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
-            console.log('styleImage', 'Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1))
-            dispatch(setStyleImage(styleImage));
-        }
-        
+        // if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
+        //     const styleImage = roomImages?.filter((image) => image.title.toLowerCase() +` küchenabdeckung 0` === ('Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase())[0];
+        //     console.log('styleImage', 'Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1))
+        //     dispatch(setStyleImage(styleImage));
+        // }
+        // console.log('roomActiveMode', roomActiveMode.slice(0, 43))
+        // console.log('roomImages0', roomImages)
+        // console.log('roomImages0', roomImages[0].title.slice(0, 43))
+        // console.log('roomImages', roomImages[0].title.toLowerCase().slice(0, 43) === roomActiveMode.slice(0, 43))
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(currentRoom, newActiveImage));
         // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
@@ -158,7 +164,7 @@ export default function Sidebar({
                 </div>
             }
             
-            <SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet}/>
+            <SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet} roomId={roomId}/>
         </div>
     )
 }

@@ -11,9 +11,9 @@ import Sidebar from '../components/ui/Sidebar/Sidebar';
 import ScrollIcon from '../components/ui/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 
-import { typePage } from '../gql/index';
+import { kitchenTypePage } from '../gql/index';
 
-import { changeApartStyle, resetRoomTypeState, changeApartPrice } from '../redux/actions/index';
+import { changeApartStyle, resetRoomTypeState } from '../redux/actions/index';
 
 import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
@@ -25,7 +25,7 @@ export default function Type() {
 
     const dispatch = useDispatch();
 
-    const { apartStyle, apartSize, generalStates, apartPrice } = useSelector((state) => state);
+    const { apartStyle, apartSize, generalStates } = useSelector((state) => state);
     const sidebarState = generalStates.open;
 
     useEffect(() => {
@@ -33,31 +33,26 @@ export default function Type() {
         setStyleId(apartStyle.style);
     }, [])
 
-    // console.log('apartSize', apartSize)
-    console.log('apartPrice', apartPrice)
+    // console.log('apartStyle', apartStyle)
+    // console.log('styleId', styleId)
 
-    const {data, error, loading} = useQuery(typePage);
+    const {data, error, loading} = useQuery(kitchenTypePage);
     if (loading) return <LoadingSpinner full={true}/>;
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
-    // console.log('data', data);
+    console.log('data', data);
     let currentStyle = data.entry.styles[styleId];
     const styleImage = currentStyle.image[0];
 
     const changeStyle = (id) => {
-        const price = {
-            0: 0,
-            1: apartSize.livingRoomOpt2Price,
-            2: apartSize.livingRoomOpt3Price,
-        }
 
         setStyleId(id);
         currentStyle = data.entry.styles[id];
-        dispatch(changeApartStyle(id, currentStyle.image[0], currentStyle.styleTitle));
-        dispatch(changeApartPrice('Wohnzimmer', price[id]));
-        dispatch(resetRoomTypeState());
+        // dispatch(changeApartStyle(id, currentStyle.image[0], currentStyle.styleTitle));
+        // dispatch(resetRoomTypeState());
+        console.log('kitchenStyle')
     }
 
-    const setStyleTypeHandle = () => {
+    const setStyleTypeHandle = () => {  // Add changing of kitchen type, price, link to next kitchen
         dispatch(changeApartStyle(styleId, currentStyle.image[0], currentStyle.styleTitle));
     }
 
@@ -91,16 +86,16 @@ export default function Type() {
                 styleId={styleId} 
                 activeStyle={(id) => changeStyle(id)} 
                 apartmentPrice = {apartSize.price} 
-                title="Wohnzimmer" 
+                title="Küchendesign" 
                 styleCards={data.entry.styles} 
                 styleTypeSet={setStyleTypeHandle} 
-                currentRoom={'type'}
+                currentRoom={'kitchen-type'}
             />
 
-            {/* <InfoBox  styleTitle={currentStyle.styleTitle} description={currentStyle.description}/> */}
+            <InfoBox  styleTitle={currentStyle.styleTitle} description={currentStyle.description}/>
 
             <StyleChooseButtons 
-                room={'type'} 
+                room={'kitchen-type'} 
                 styleTypeSet={setStyleTypeHandle} 
                 activeStyle={(id) => changeStyle(id)} 
                 styleId={styleId} 

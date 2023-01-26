@@ -1,9 +1,11 @@
-const initState = {size: "large", price: 1200000, image: ''};
+const initState = {image: ''};
 
 const apartSizeReducer = (state = initState, action) => {
     switch(action.type) {
         case 'CHANGE_SIZE': 
-            return state = {size: action.payload, price: action.dataPrice, image: action.image}
+            return state = {price: action.price, image: action.image}
+        case 'CHANGE_APARTDATA': 
+            return state = {price: action.price, image: action.image, ...action.payload}
         case 'SET_INIT_STATE': 
             return state = {...action.apartSize} 
         case 'RESET_STATE': 

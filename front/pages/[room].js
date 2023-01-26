@@ -33,13 +33,13 @@ export default function Room() {
 
     const dispatch = useDispatch();
 
-    const { apartSize, apartStyle, generalStates, roomType } = useSelector((state) => state);
+    const { apartSize, apartStyle, generalStates, roomType} = useSelector((state) => state);
     const sidebarState = generalStates.open;
     const isImageload = generalStates.loading;
     const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
-// console.log('roomState', roomType)
-// console.log('ROOM_TYPE', ROOM_TYPE)
+console.log('roomState', roomType)
+console.log('apartSize', apartSize)
 
     useEffect(() => {
         setStyleId(apartStyle.style);
@@ -81,11 +81,11 @@ export default function Room() {
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <LoadingSpinner full={true}/>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
-
+    
     const activeImage = roomState?.image ? roomState.image : data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0];
 
     const modifyData = data.entry.mods[0].modificationsTypes;
-
+    
     const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle) => {
         // console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle})
         dispatch(changeRoomType(ROOM_TYPE, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle));

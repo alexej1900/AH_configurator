@@ -42,6 +42,7 @@ export default function ModifyBlock({
   const individualPrices = useSelector(state => state.apartPrice.individual);
   const roomState = useSelector(state => state.roomType)[roomType];
   const style = useSelector(state => state.apartStyle);
+  const apartSize = useSelector(state => state.apartSize);
 
   const dispatch = useDispatch();
 
@@ -181,15 +182,28 @@ export default function ModifyBlock({
     setDisabledCards(disabledCards);
   }
 
-  const selectCardHandler = (index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice) => {
-    activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice);
+  const selectCardHandler = (
+    index, 
+    modificationName, 
+    modificationImage, 
+    modificationTitle, 
+    modificationStyle, 
+    modificationDescr, 
+    // modsAdditionalPrice
+    ) => {
+      const modsAdditionalPrice = modificationName === 'Schiebetür' 
+        ? {0: 0, 1: apartSize.livingRoomDoorPrice}
+        : {}
+    console.log('[index]', index)
+    console.log('modsAdditionalPrice[index]', modsAdditionalPrice[index])
+    activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index]);
     setChecked(true);
-    setModsPrice(modsAdditionalPrice ? modsAdditionalPrice : 0);
+    setModsPrice(modsAdditionalPrice[index] ? modsAdditionalPrice[index] : 0);
     cardItem.modificationVisibility && dispatch(changeLoadingState(true)); // if modification non visible, don't loads new big image
   }
 
   activeIndex = activeModification.modificationNumber;
-
+  // console.log('cardItem', cardItem)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine | individual && styles.inLine}`}>
@@ -238,7 +252,7 @@ export default function ModifyBlock({
               modificationTitle = item.modificationTitle;
               modificationStyle = item.modificationStyle;
 
-              if (!item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase() === style.title.toLowerCase()) {
+              if (!item.mainStyle || item.mainStyle === 'false' || item.mainStyle.toLowerCase().replaceAll(' ', '') === style.title.toLowerCase().replaceAll(' ', '')) {
                 
                 return (
                   <div key={index} className={`${styles.card__block}`}>
@@ -251,7 +265,7 @@ export default function ModifyBlock({
                         item.modificationTitle, 
                         item.modificationStyle,
                         item.modificationDescr,
-                        item.modsAdditionalPrice,
+                        // item.modsAdditionalPrice,
                       )
                     }
                       type='small'

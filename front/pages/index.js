@@ -5,35 +5,31 @@ import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 
 import getSettings from './api/getSettings';
-import getLinkWithoutTypeRoom from './api/getLinkWithoutTypeRoom';
-import checkIsStylePageExist from './api/checkIsStylePageExist';
 
 import Button from '../components/ui/button';
 import FormToggle from '../components/ui/formToggle';
-import { introScreen, apartmentItem } from '../gql/index';
+import { apartmentItem } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeApartSize, changeIsStyleRoomState, setBrandSettings, setRooms } from "../redux/actions/index";
+import { changeApartSize, setBrandSettings, setRooms, changeApartData } from "../redux/actions/index";
 
 import styles from '../assets/scss/layout/_welcome.module.scss';
 import LoadingSpinner from '../components/ui/loadingSpinner';
-import Spinner from '../components/ui/spinner';
 
 export default function Home() {
-  const [link, setLink] = useState(false);
-// console.log('index');
+  const [isBaseVersion, setIsBaseVersion] = useState(true);
+
   const dispatch = useDispatch();
 
   const router = useRouter();
-    // ROOM_TYPE = router.query.room;
-    const queryId = router.query.id;
-
+  const queryId = router.query.id;
+    
   const apartSize = useSelector((state) => state.apartSize);
 
   const settings = getSettings();
-
-  const linkWithoutTypeRoom = getLinkWithoutTypeRoom();
-  const checkStylePage = checkIsStylePageExist();
+ 
+  // const linkWithoutTypeRoom = getLinkWithoutTypeRoom();
+  // const checkStylePage = checkIsStylePageExist();
 
   let pageBg;
 
@@ -49,32 +45,16 @@ export default function Home() {
     })
   }, [settings]);
 
-  useEffect(() => {
-    checkStylePage.then((isExist) => {
-      dispatch(changeIsStyleRoomState(isExist ? true : false));
-
-      linkWithoutTypeRoom.then((data) => {
-        !isExist ? setLink(data) : setLink('/type');
-      })
-    }) 
-  }, [checkStylePage]);
-
-
-  const { data, error, loading } = useQuery(introScreen);
-  // const { data, error, loading } = useQuery(apartmentItem, {
-  //   variables: { id: queryId ? queryId : 27891 },
-  // });
+  const { data, error, loading } = useQuery(apartmentItem, {
+    variables: { id: queryId ? queryId : 'K-01.01', var: queryId ? queryId + 'var2' : 'K-01.01var2' },
+  });
   if (loading) return <LoadingSpinner full={true}/>;
   if(error) return <p> Error</p>;
 
-  // console.log('data', data);
+  const aparmentData = data.entry.dataList[0];
+  
+  let apartmentImage = apartSize.image === '' ? aparmentData?.apartmentImage[0] : apartSize.image;
 
-  const welcomeScreen = data.globalSets[0].welcomeScreen[0];
-  const apartmentImage = apartSize.size ==='large' ? welcomeScreen.bigRoomImage[0] : welcomeScreen.smallRoomImage[0];
-
-
-  // const apartmentData = data.globalSets[0].apartmentList[0]
-  // const apartmentImage = apartmentData.apartmentImage[0];
   // console.log('apartmentData', apartmentData);
   // console.log('queryId', queryId);
   return (
@@ -86,21 +66,23 @@ export default function Home() {
             <div className={styles.description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten. In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, aus einem Schlafzimmer ein Wohnzimmer zu konfigurieren. Das Wohnzimmer verfügt im Gegensatz zum Schlafzimmer über eine heruntergesetzte Decke für eine gemütliche Atmosphäre.</div>
 
             <FormToggle 
-              tab1={welcomeScreen.bigRoomTitle} 
-              tab1Action={() => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage))}
-              tab2={welcomeScreen.smallRoomTitle}
-              tab2Action={() => dispatch(changeApartSize('small', welcomeScreen.smallApartmentPrice, apartmentImage))}
+              tab1={'Default'} 
+              tab1Action={() => {dispatch(changeApartSize(aparmentData.basePrice, aparmentData.apartmentImage[0]));
+                                setIsBaseVersion(true)}}
+              tab2={'Version'}
+              tab2Action={() => {dispatch(changeApartSize(aparmentData.basePrice + aparmentData.additionalLivingRoomPrice, data.asset));
+                                setIsBaseVersion(false)}}
             />
 
             <div 
               className={`${styles.submitBtn} center`} 
 
               // If user didn't choosed size of apartment will be setted initial large size
-              onClick={apartSize.image === '' 
-                ? () => dispatch(changeApartSize('large', welcomeScreen.bigApartmentPrice, apartmentImage)) 
-                : null}
+              onClick={() => isBaseVersion 
+                ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
+                : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
             >              
-              <Button title="Wahl bestätigen"  href={!link ? "/type" : `${link}`} classes="btn btn--primary btn--check"/>
+              <Button title="Wahl bestätigen"  href={"/type"} classes="btn btn--primary btn--check"/>
             </div>
 
           </div>

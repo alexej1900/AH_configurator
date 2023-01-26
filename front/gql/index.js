@@ -68,115 +68,195 @@ query MyQuery {
 // }
 // `;
 
-export const introScreen = gql`
-query MyQuery {
-  globalSets(handle: "welcomeScreen") {
-    ... on welcomeScreen_GlobalSet {
-      handle
-      welcomeScreen {
-        ... on welcomeScreen_BlockType {
-          bigApartmentPrice
-          bigRoomTitle
-          paragraph
-          bigRoomImage {
-            width
-            url
-            height
-          }
-          introText
-          smallApartmentPrice
-          smallRoomTitle
-          smallRoomImage {
-            height
-            width
-            url
-          }
-          apartmentType {
-            ... on apartmentType_apartmentType_BlockType {
-              apartmentPrice
-              apartmentTitle
-              apartmentImage {
-                url
-                width
-                height
-              }
-              apartmentRooms {
-                ... on apartmentRooms_BlockType {
-                  roomType
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`;
+// export const introScreen = gql`
+// query MyQuery {
+//   globalSets(handle: "welcomeScreen") {
+//     ... on welcomeScreen_GlobalSet {
+//       handle
+//       welcomeScreen {
+//         ... on welcomeScreen_BlockType {
+//           bigApartmentPrice
+//           bigRoomTitle
+//           paragraph
+//           bigRoomImage {
+//             width
+//             url
+//             height
+//           }
+//           introText
+//           smallApartmentPrice
+//           smallRoomTitle
+//           smallRoomImage {
+//             height
+//             width
+//             url
+//           }
+//           apartmentType {
+//             ... on apartmentType_apartmentType_BlockType {
+//               apartmentPrice
+//               apartmentTitle
+//               apartmentImage {
+//                 url
+//                 width
+//                 height
+//               }
+//               apartmentRooms {
+//                 ... on apartmentRooms_BlockType {
+//                   roomType
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
 
 
-export const apartmentList = gql`
-query MyQuery {
-  globalSets(handle: "apartmentList") {
-    ... on apartmentList_GlobalSet {
-      id
-      name
-      apartmentList {
-        ... on apartmentList_BlockType {
-          id
+// export const apartmentList = gql`
+// query MyQuery {
+//   globalSets(handle: "apartmentList") {
+//     ... on apartmentList_GlobalSet {
+//       id
+//       name
+//       apartmentList {
+//         ... on apartmentList_BlockType {
+//           id
+//           apartmentId
+//           areaBath
+//           areaBath2
+//           areaCorridor
+//           areaGeneral
+//           areaKitchen
+//           areaKitchenFurniture
+//           basePrice
+//           apartmentImage {
+//             url
+//             width
+//             height
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
+
+
+export const apartmentItem = gql`
+query MyQuery($id: [String], $var: [String]) {
+  entry(title: $id) {
+    ... on dataList_dataList_Entry {
+      dataList {
+        ... on dataList_BlockType {
           apartmentId
-          areaBath
-          areaBath2
-          areaCorridor
-          areaGeneral
-          areaKitchen
-          areaKitchenFurniture
           basePrice
+          generalArea
           apartmentImage {
             url
             width
             height
           }
+          additionalLivingRoomPrice
+          additionalClosetPrice
+          bath1FurniturePrice
+          bath1Lavabo2Price
+          bath1MirrorClosetPrice
+          bath1PlatePrice
+          bath1ShiftDoorPrice
+          bedroomClosetPrice
+          buildingsName
+          dusheFurniture2Price
+          dusheFurniture3Price
+          dusheFurniture4Price
+          dusheMirrorClosetPrice
+          dushePlatePrice
+          kitchen1Opt2Price
+          kitchen1Opt3Price
+          kitchen2Back2Price
+          kitchen2Front2Price
+          kitchen2Front3Price
+          kitchen2Price
+          livingRoomDoorPrice
+          livingRoomOpt2Price
+          livingRoomOpt3Price
         }
       }
+    }
+  }
+  asset(title: $var) {
+    ... on uploads_Asset {
+      height
+      width
+      url
+    }
+  }
+}
+`;
+
+export const apartmentVariatImage = gql`
+query MyQuery($var: [String]) {
+  asset(title: $var) {
+    ... on uploads_Asset {
+      height
+      width
+      url
     }
   }
 }
 `;
 
 
-
-
-
-export const apartmentItem = gql`
-query MyQuery($id: [QueryArgument]) {
-  globalSets(handle: "apartmentList") {
-    ... on apartmentList_GlobalSet {
-      apartmentList(orderBy: "apartmentId", id: $id) {
-        id
-        apartmentId
-        areaBath
-        areaBath2
-        areaCorridor
-        areaGeneral
-        areaKitchen
-        areaKitchenFurniture
-        basePrice
-        apartmentImage {
-          height
-          width
-          url
-        }
-      }
-    }
-  }
-}
-`;
+// export const apartmentItem = gql`
+// query MyQuery($id: [QueryArgument]) {
+//   globalSets(handle: "apartmentList") {
+//     ... on apartmentList_GlobalSet {
+//       apartmentList(orderBy: "apartmentId", id: $id) {
+//         id
+//         apartmentId
+//         areaBath
+//         areaBath2
+//         areaCorridor
+//         areaGeneral
+//         areaKitchen
+//         areaKitchenFurniture
+//         basePrice
+//         apartmentImage {
+//           height
+//           width
+//           url
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
 
 
 export const typePage = gql `
 query TypePage {
   entry(slug: "type") {
+    ... on pages_default_Entry {
+      styles {
+        ... on styles_BlockType {
+          styleTitle
+          description
+          image {
+            url
+            height
+            width
+          }
+        }
+      }
+    }
+  }
+}`;
+
+export const kitchenTypePage = gql `
+query TypePage {
+  entry(slug: "kitchen-type") {
     ... on pages_default_Entry {
       styles {
         ... on styles_BlockType {

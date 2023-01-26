@@ -102,12 +102,22 @@ export const addApartmentType = (apartmenType, rooms) => {
 
 // APARTSIZE ---------------------------------------------
 
-export const changeApartSize = (size, price, image) => dispatch => {
+export const changeApartSize = (price, image) => dispatch => {
   dispatch({
     type: 'CHANGE_SIZE',
-    payload: size,
-    dataPrice: price,
-    image: image
+    price,
+    image
+  });
+};
+
+export const changeApartData = (data, image, price) => dispatch => {
+
+  console.log('dispatch', data)
+  dispatch({
+    type: 'CHANGE_APARTDATA',
+    price,
+    image,
+    payload: data,
   });
 };
 
@@ -119,6 +129,15 @@ export const changeApartStyle = (apartStyleIndex, styleImage, styleTitle) => dis
     payload: apartStyleIndex,
     image: styleImage,
     title: styleTitle,
+  });
+};
+
+export const changeKitchenStyle = (kitchenStyleIndex, styleImage, styleTitle) => dispatch => {
+  dispatch({
+    type: 'CHANGE_KITCHEN_STYLE',
+    payload: kitchenStyleIndex,
+    kitchenImage: styleImage,
+    kitchenTitle: styleTitle,
   });
 };
 

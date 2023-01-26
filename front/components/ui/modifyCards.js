@@ -19,7 +19,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   const style = useSelector(state => state.apartStyle).title;
 
   const dataByStyle = cardData?.filter((data) => {
-    return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
+    return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase().replaceAll(' ', '')
   });
 
   const visibleData = dataByStyle?.filter((data) => data.modificationVisibility);
@@ -38,6 +38,9 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
     setIsInfoVisible(!isInfoVisible);
   }
 
+  // console.log('visibleData', visibleData)
+// console.log('style', style.toLowerCase().replaceAll(' ', ''))
+// console.log('data.modificationMainStyle.toLowerCase()', data.modificationMainStyle.toLowerCase())
   return (
     <>
       <div className={styles.list__visible}>

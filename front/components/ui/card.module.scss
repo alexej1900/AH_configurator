@@ -13,13 +13,14 @@
 
   &.styleCard {
 
+    margin-top: 3rem;
+
     @media (max-width: 768px) {
       position: relative;
       height: calc((100vh - 8rem - 5rem)/2);  //Last number depends on amount of style lines
     }
 
     .card__title {
-
       @media (max-width: 768px) {
         position: absolute;
         bottom: 0;
@@ -33,6 +34,7 @@
       h3 {
         text-transform: uppercase;
         margin-left: 1rem;
+        margin-bottom: 0;
 
         @media (max-width: 768px) {
           font-size: 1.8rem;
@@ -124,14 +126,14 @@
       width: 24px;
       height: 24px;
       position: absolute;
-      top: 4.4rem;
+      top: 3.8rem;
       right: 8px;
       z-index: 1;
     }
 
     &::before {
       position: absolute;
-      top: 4rem;
+      top: 3rem;
       right: 0;
       content: '';
       width: 4rem;

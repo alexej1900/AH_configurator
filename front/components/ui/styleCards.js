@@ -1,9 +1,12 @@
 import Card from './card';
 
 export default function StyleCards({activeStyle, cardData, styleId}) {
+  const styleCardsStyle = {
+    padding: '0 24px',
+  }
 
   return (
-    <>
+    <div style={styleCardsStyle}>
       {cardData.map((data, index)=>{
         return (
           <Card
@@ -17,6 +20,6 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
           />
         )})
       }
-    </>
+    </div>
   )
 }

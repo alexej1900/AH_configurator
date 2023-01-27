@@ -76,6 +76,26 @@ export default function ModifyBlock({
   let modificationStyle;
   let activeIndex = 0;
 
+  const modsAdditionalPrice = roomType === 'raumtrenner' && modificationName === 'Schiebetür' 
+        ? {0: 0, 1: apartSize.livingRoomDoorPrice}
+        :  roomType === 'badewanne' && modificationName === 'Platten' 
+        ? {0: 0, 1: apartSize.bath1PlatePrice}
+        :  roomType === 'badewanne' && modificationName === 'Spiegel' 
+        ? {0: 0, 1: apartSize.bath1MirrorClosetPrice}
+        :  roomType === 'badewanne' && modificationName === 'Waschbecken' 
+        ? {0: 0, 1: apartSize.bath1Lavabo2Price}
+        :  roomType === 'badewanne' && modificationName === 'Möbel' 
+        ? {0: 0, 1: apartSize.bath1FurniturePrice}
+        :  roomType === 'badewanne' && modificationName === 'Schiebetür' 
+        ? {0: 0, 1: apartSize.bath1ShiftDoorPrice}
+        :  roomType === 'dusche' && modificationName === 'Platten' 
+        ? {0: 0, 1: apartSize.dushePlatePrice}
+        :  roomType === 'dusche' && modificationName === 'Spiegel' 
+        ? {0: 0, 1: apartSize.dusheMirrorClosetPrice}
+        :  roomType === 'dusche' && modificationName === 'Möbel' 
+        ? {0: 0, 1: apartSize.dusheFurniture2Price, 2: apartSize.dusheFurniture3Price, 3: apartSize.dusheFurniture4Price}
+        : {}
+
   const modifications = getModifications(roomType);
 
   useEffect(() => {
@@ -191,9 +211,7 @@ export default function ModifyBlock({
     modificationDescr, 
     // modsAdditionalPrice
     ) => {
-      const modsAdditionalPrice = modificationName === 'Schiebetür' 
-        ? {0: 0, 1: apartSize.livingRoomDoorPrice}
-        : {}
+      
     console.log('[index]', index)
     console.log('modsAdditionalPrice[index]', modsAdditionalPrice[index])
     activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index]);
@@ -225,9 +243,12 @@ export default function ModifyBlock({
           }
 
         </div> 
-        <div className={`${styles.mod__description}`}>
-          {modificationDescription}
-        </div>       
+        {modificationDescription
+          ? <div className={`${styles.mod__description}`}>
+              {modificationDescription}
+            </div>
+          : null
+        }       
         <div className={`${styles.card__list}`}>
 
           {collapsed | onlyIndividual
@@ -245,6 +266,7 @@ export default function ModifyBlock({
                 active = 'true'
                 collapsed={collapsed}
                 disable = {disabledCards[activeModification.index]}
+                
               />
             : cardItem.modificationItemExample.map((item, index)=>{
 
@@ -275,6 +297,7 @@ export default function ModifyBlock({
                       description={item.modificationDescr}
                       active = {activeIndex === index}
                       disable = {disabledCards[index]}
+                      optionPrice = {modsAdditionalPrice[index]}
                     /> 
                   </div>
                 )

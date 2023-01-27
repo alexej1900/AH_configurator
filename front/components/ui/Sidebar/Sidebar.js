@@ -41,7 +41,7 @@ export default function Sidebar({
 
     const { OptionsPrice, IndividualPrice } = getPrices();
 
-    console.log('OptionsPrice', OptionsPrice)
+    // console.log('OptionsPrice', OptionsPrice)
 
     const modifications = getModifications(currentRoom);
 
@@ -103,7 +103,9 @@ export default function Sidebar({
         // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
         // console.log('roomImages', roomImages)
 
-        const roomActiveMode = activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase();
+        const roomActiveMode = currentRoom !== 'badewanne' & currentRoom !== 'dusche'
+            ? activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase()
+            : activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
         // if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
@@ -111,10 +113,11 @@ export default function Sidebar({
         //     console.log('styleImage', 'Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1))
         //     dispatch(setStyleImage(styleImage));
         // }
-        // console.log('roomActiveMode', roomActiveMode.slice(0, 43))
+        // console.log('roomActiveMode', roomActiveMode)
         // console.log('roomImages0', roomImages)
-        // console.log('roomImages0', roomImages[0].title.slice(0, 43))
-        // console.log('roomImages', roomImages[0].title.toLowerCase().slice(0, 43) === roomActiveMode.slice(0, 43))
+        // console.log('roomImages0', roomImages[5].title.slice(0, 30))
+        // console.log('roomImages', roomImages[5].title.toLowerCase().slice(0, 30) === roomActiveMode.slice(0, 30))
+        // console.log('newActiveImage', newActiveImage)
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(currentRoom, newActiveImage));
         // console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
@@ -130,11 +133,9 @@ export default function Sidebar({
             </div>
             {sidebarOpen &&
                 <div className={styles.sidebar__content}>
-                    <div className={`${[`row ${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'type' && showStyle && styles.hideHeader}`}>
-                        <div className={[styles["col-6"], "col-6"].join(' ')}>
-                            <h3 className={`${styles.optionsTitle}`}>{sidebarTitle}</h3>
-                        </div>
-                        <div className={`${styles["col-6"]} ${styles.options}`}>
+                    <div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'type' && showStyle && styles.hideHeader}`}>
+                        <h3 className={`${styles.optionsTitle}`}>{sidebarTitle}</h3>
+                        <div className={`${styles.options}`}>
                             <div><span>Optionen</span> {OptionsPrice > 0 ? '+' : ''}<strong>{formatNumber(OptionsPrice)}</strong></div>
                             {IndividualPrice !== 0 && <div><span>Individuelle</span>{IndividualPrice > 0 ? '-' : ''}<strong>{formatNumber(IndividualPrice)}</strong></div>}
                             <div><span>CHF</span> <strong>{formatNumber(parseInt(apartmentPrice) + OptionsPrice - IndividualPrice)}</strong></div> 

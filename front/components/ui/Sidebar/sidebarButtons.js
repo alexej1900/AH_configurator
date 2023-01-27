@@ -18,7 +18,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 		nextLink = {link: `/${rooms[0].toLowerCase()}`, title: rooms[0], icon: 'nextRoom'};
 		prevLink = `/?id=${roomId}`;
 	} else if (currentRoom === 'kitchen-type') {
-		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Design ${apartStyle.kitchenStyle + 1}`, icon: 'nextRoom'}
+		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`, icon: 'nextRoom'}
 		prevLink = '/raumtrenner';
 	} else {
 		for (let i = 0; i < rooms.length; i++) {   
@@ -50,17 +50,17 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 				{nextLink && 
 					<>
 						<Link href={`${prevLink}`} >
-							<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__back} center`}>
+							<a className={`${styles.btn} ${styles.btn__back} center`}>
 								Zurück
 							</a>
 						</Link> 
 
-						<div className={`${styles.btn} ${styles.btn__primary} ${styles.btn__showRoom} center`} onClick={showRoomClick}>
+						<div className={`${styles.btn} ${styles.btn__showRoom} center`} onClick={showRoomClick}>
 							Raum anzeigen
 						</div>
 
 						<Link href={`${nextLink.link}`}>
-							<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} ${styles[nextLinkIcon]} center`} onClick={styleTypeSet}>
+							<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} center`} onClick={styleTypeSet}>
 								{nextLink.title}
 							</a>
 						</Link>    

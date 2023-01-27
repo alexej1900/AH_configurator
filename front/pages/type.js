@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import InfoBox from '../components/ui/Components/infoBox';
 import Sidebar from '../components/ui/Sidebar/Sidebar';
 import ScrollIcon from '../components/ui/Components/scrollIcon';
+import ContactBtn from '../components/ui/Components/contactBtn';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 
 import { typePage } from '../gql/index';
@@ -22,6 +23,7 @@ export default function Type() {
 
     const [styleId, setStyleId] = useState(0);
     const [isScroll, setIsScroll] = useState(false);
+    const [isPopup, setIsPopup] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -61,6 +63,8 @@ export default function Type() {
         dispatch(changeApartStyle(styleId, currentStyle.image[0], currentStyle.styleTitle));
     }
 
+    const onCancel = () => setIsPopup(false);
+
     return (
         <div className={`${styles.type__wrapper}`} >   
             <ScrollContainer 
@@ -82,6 +86,10 @@ export default function Type() {
             </ScrollContainer>
 
             {(sidebarState & !isScroll) ?  <ScrollIcon/> : null}
+
+            <div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} onClick={() => setIsPopup(true)}>
+                <ContactBtn/>
+            </div>
 
             <Sidebar 
                 styleId={styleId} 

@@ -47,7 +47,9 @@ export default function Type() {
     const changeStyle = (id) => {
       const price = {
         0: 0,
-        1: apartSize.kitchen2Price,
+        1: apartSize.kitchen1Opt2Price,
+        2: apartSize.kitchen1Opt3Price,
+        3: apartSize.kitchen2Price,
       }
 
       setStyleId(id);

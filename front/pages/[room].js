@@ -39,7 +39,7 @@ export default function Room() {
     const isImageload = generalStates.loading;
     const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
-console.log('roomState', roomType)
+// console.log('largeImage', largeImage)
 console.log('apartSize', apartSize)
 
     useEffect(() => {
@@ -106,9 +106,7 @@ console.log('apartSize', apartSize)
 
     //popup function
     
-    const onCancel = () => {
-        setIsPopup(false);
-    }
+    const onCancel = () => setIsPopup(false);
 
     // console.log('largeImage', largeImage)
     // console.log('activeImage', activeImage)

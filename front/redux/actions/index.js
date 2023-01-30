@@ -80,11 +80,12 @@ export const changeIsStyleRoomState = (isStylePageExist) => {
   };
 };
 
-export const setRooms = (rooms) => dispatch => {
+export const setRooms = (roomsTitle, roomsSlug) => dispatch => {
 
   dispatch({
     type: 'SET_ROOMS',
-    rooms,
+    roomsTitle,
+    roomsSlug
   });
 };
 
@@ -112,7 +113,7 @@ export const changeApartSize = (price, image) => dispatch => {
 
 export const changeApartData = (data, image, price) => dispatch => {
 
-  console.log('dispatch', data)
+  // console.log('dispatch', data)
   dispatch({
     type: 'CHANGE_APARTDATA',
     price,
@@ -156,7 +157,7 @@ export const setModification = (action) => dispatch => {
 };
 
 export const changeApartPrice = (key, price) => {
-
+console.log({key, price})
   return {
     type: 'CHANGE_PRICE',
     payload: {key, price},

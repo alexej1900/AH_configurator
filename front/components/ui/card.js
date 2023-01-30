@@ -20,7 +20,8 @@ export default function Card({
     collapsed, 
     final, 
     disable,
-    optionPrice
+    optionPrice,
+    onlyOne
 }) {
 
     const dispatch = useDispatch();
@@ -47,6 +48,7 @@ export default function Card({
                         ${styles.small} 
                         ${active && styles.active} 
                         ${collapsed && styles.collapsed} 
+                        ${onlyOne && styles.onlyOne} 
                         ${recommended ? styles.recommended : ''} 
                         ${final && styles.final}
                         ${disable && styles.disable}

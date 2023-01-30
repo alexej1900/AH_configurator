@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { 
-  changeRoomFormatIndividual, 
-  changeApartPrice, 
-  changeApartIndividualPrice, 
   changeActiveMod, 
   changeActivePin, 
   changeLoadingState
@@ -12,7 +9,6 @@ import {
 
 import Card from './card';
 import CheckIcon from './Components/checkIcon';
-import OptionsList from './optionsList';
 
 import getModifications from '../../pages/api/getModifications';
 
@@ -26,20 +22,16 @@ export default function ModifyBlock({
   activeMod, 
   setActiveMod, 
   activePin, 
-  setGroupCheck, 
-  groupIndex,
 }) {
 
   const [collapsed, setCollapsed] = useState(!activeMod);
   const [checked, setChecked] = useState(false);
   const [isInLine, setIsInLine] = useState(!activeMod);
-  const [onlyIndividual, setOnlyIndividual] = useState(false);
   const [disabledCards, setDisabledCards] = useState([]);
   const [activeModification, setActiveModification] = useState(
     {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0}
     );
 
-  const individualPrices = useSelector(state => state.apartPrice.individual);
   const roomState = useSelector(state => state.roomType)[roomType];
   const style = useSelector(state => state.apartStyle);
   const apartSize = useSelector(state => state.apartSize);
@@ -61,15 +53,8 @@ export default function ModifyBlock({
     setCollapsed(!activeMod);
   }, [activeMod]);
 
-  useEffect(() => {
-    setOnlyIndividual(isIndividualSetted);
-  }, [individualPrices]);
-
   const modificationName = cardItem.modificationName;
   const modificationDescription = cardItem.modificationDescription;
-  const individual = cardItem.individualSolution ? cardItem.individualSolution[0] : null;
-  const isIndividualSetted = individualPrices[modificationName] && individualPrices[modificationName] > 0;
-  const optionsList = cardItem.optionsList ? cardItem.optionsList : null;
 
   let modificationImage;
   let modificationTitle;
@@ -78,6 +63,8 @@ export default function ModifyBlock({
 
   const modsAdditionalPrice = roomType === 'raumtrenner' && modificationName === 'Schiebetür' 
         ? {0: 0, 1: apartSize.livingRoomDoorPrice}
+        :  modificationName === 'Böden' 
+        ? {0: 0, 1: apartSize.livingRoomOpt2Price, 2: apartSize.livingRoomOpt3Price}
         :  roomType === 'badewanne' && modificationName === 'Platten' 
         ? {0: 0, 1: apartSize.bath1PlatePrice}
         :  roomType === 'badewanne' && modificationName === 'Spiegel' 
@@ -94,6 +81,10 @@ export default function ModifyBlock({
         ? {0: 0, 1: apartSize.dusheMirrorClosetPrice}
         :  roomType === 'dusche' && modificationName === 'Möbel' 
         ? {0: 0, 1: apartSize.dusheFurniture2Price, 2: apartSize.dusheFurniture3Price, 3: apartSize.dusheFurniture4Price}
+        :  roomType === 'schlafzimmer' && modificationName === 'Einbauschrank' 
+        ? {0: 0, 1: apartSize.bedroomClosetPrice}
+        :  roomType === 'gang' && modificationName === 'Einbauschrank' 
+        ? {0: 0, 1: apartSize.additionalClosetPrice}
         : {}
 
   const modifications = getModifications(roomType);
@@ -119,41 +110,9 @@ export default function ModifyBlock({
     dispatch(changeActivePin(modificationName));
   }
 
-  const optionsClickHandler = (price) => {  // TO DO: check work of function
-    activeStyle(
-      activeIndex, 
-      cardItem.modificationName,
-      activeModification.modificationImage[0] && activeModification.modificationImage[0].url, 
-      activeModification.modificationTitle, 
-      activeModification.modificationStyle,
-    ); 
-    setChecked(true);
-    setGroupCheck(groupIndex);
-    dispatch(changeApartPrice(cardItem.modificationName, +price));
-  }
- 
-  const individualFormat = () => {
-    const individualPrice = cardItem.individualSolution[0].individualSolutionPrice;
-    setChecked(true);
-    setCollapsed(!activeMod);
-    setOnlyIndividual(!isIndividualSetted);
-
-    activeStyle(
-      activeIndex, 
-      cardItem.modificationName,
-      activeModification.modificationImage[0] && activeModification.modificationImage[0].url, 
-      activeModification.modificationTitle, 
-      activeModification.modificationStyle,
-    ); 
-
-    dispatch(changeRoomFormatIndividual(roomType, modificationName, !isIndividualSetted));
-    dispatch(changeApartIndividualPrice(cardItem.modificationName, !onlyIndividual ? individualPrice : 0) );
-    dispatch(changeApartPrice(cardItem.modificationName, 0));
-  }
-
-  const setModsPrice = (price) => {
-    dispatch(changeApartPrice(cardItem.modificationName, price));
-  }
+  // const setModsPrice = (price) => {
+  //   dispatch(changeApartPrice(cardItem.modificationName, price));
+  // }
 
   const changeActiveModification = () => {
     const activeMod = (modifications && modifications[`${modificationName}`]) 
@@ -164,7 +123,7 @@ export default function ModifyBlock({
       modificationNumber: modifications[`${modificationName}`].index,
       activeOption: modifications[`${modificationName}`].option ? modifications[`${modificationName}`].option.index : undefined,
     } 
-    : roomType !== "schlafzimmer" ? {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: styleId,} // if style lines are not separated, replace to commented code below (3 lines)
+    // : roomType !== "schlafzimmer" ? {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: styleId,} // if style lines are not separated, replace to commented code below (3 lines)
     
                                   : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
                                     ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
@@ -208,29 +167,27 @@ export default function ModifyBlock({
     modificationImage, 
     modificationTitle, 
     modificationStyle, 
-    modificationDescr, 
-    // modsAdditionalPrice
+    modificationDescr
     ) => {
       
-    console.log('[index]', index)
-    console.log('modsAdditionalPrice[index]', modsAdditionalPrice[index])
-    activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index]);
+    // console.log('[index]', index)
+    // console.log('modsAdditionalPrice[index]', modsAdditionalPrice[index])
+    activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index] ? modsAdditionalPrice[index] : 0);
     setChecked(true);
-    setModsPrice(modsAdditionalPrice[index] ? modsAdditionalPrice[index] : 0);
     cardItem.modificationVisibility && dispatch(changeLoadingState(true)); // if modification non visible, don't loads new big image
   }
 
   activeIndex = activeModification.modificationNumber;
-  // console.log('cardItem', cardItem)
+  // console.log('apartSixe', apartSize)
   return (
     <>
-      <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine | individual && styles.inLine}`}>
+      <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine && styles.inLine}`}>
         <div className={styles.card__header} onClick={() => listSwitchHandler()}>
           <div className={`${styles.arrow} ${collapsed && styles.rotate}`}></div>
 
           <h3 className={styles.mod__title}>{modificationName}</h3>
 
-          {cardItem.modificationItemExample.length > 0 &&
+          {cardItem.modificationItemExample.length > 1 &&
             <div className={styles.card_group__number}>
                 <span>{cardItem.modificationItemExample.length}</span>
             </div>
@@ -251,22 +208,19 @@ export default function ModifyBlock({
         }       
         <div className={`${styles.card__list}`}>
 
-          {collapsed | onlyIndividual
+          {collapsed
             ? <Card
                 checked={() => setChecked(true)}
                 selectCard= {() => listSwitchHandler()}
                 type='small'
-                image={!onlyIndividual 
-                  ? {url: activeModification.modificationImage[0].url, width: '80px', height: '50px', layout: "fixed"} 
-                  : {url: '/individ-icon.svg', width: '30px', height: '30px', layout: "fixed", background: '#00d2d3'}
-                }
-                subtitle={!onlyIndividual ? activeModification.modificationStyle : 'Individual'}
-                title={!onlyIndividual ? activeModification.modificationTitle : ''}
-                description={!onlyIndividual ? activeModification.modificationDescr : ''}
+                image={{url: activeModification.modificationImage[0].url, width: '80px', height: '50px', layout: "fixed"}}
+                subtitle={!activeModification.modificationStyle}
+                title={activeModification.modificationTitle}
+                description={activeModification.modificationDescr}
                 active = 'true'
                 collapsed={collapsed}
                 disable = {disabledCards[activeModification.index]}
-                
+                onlyOne={cardItem.modificationItemExample.length === 1}
               />
             : cardItem.modificationItemExample.map((item, index)=>{
 
@@ -304,31 +258,7 @@ export default function ModifyBlock({
               }
             })
           }
-        </div>
-        {optionsList &&
-          <OptionsList 
-            selectCard= {optionsClickHandler}
-            data={optionsList}
-            modificationName={modificationName}
-            inLine={isInLine}
-            onlyIndividual={collapsed | onlyIndividual}
-            activeFormat={activeModification.activeOption}
-          />
-        }
-        {individual?.enableIndividualSolution && 
-          <div className={`${styles.individual} ${collapsed  && styles.individual__inLine}`}>
-            <span>Ich wünsche eine</span>
-              <p className="toggle">Individuelle Lösung 
-                <input 
-                  type="checkbox" 
-                  id={modificationName} 
-                  onChange={() => individualFormat()}
-                  checked={isIndividualSetted}
-                />
-                <label htmlFor={modificationName}>Toggle</label>
-              </p>
-          </div>
-        }   
+        </div>  
       </div>
     </>
   )

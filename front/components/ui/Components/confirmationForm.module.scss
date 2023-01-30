@@ -1,0 +1,159 @@
+@import "../../../assets/scss/abstracts/variables";
+
+.contactForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(143, 143, 143, .7);
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    overflow-y: auto;
+    align-items: start;
+  }
+
+  div,
+  button {
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    line-height: 135%;
+  }
+
+  &__block {
+    width: 36rem;
+    margin: 2.4rem 0;
+
+    @media (max-width: 768px) {
+      width: 36rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.6rem;
+    background-color: $color__brand--primary;
+    padding-left: 2.4rem;
+
+    font-weight: 300;
+    font-size: 2.1rem;
+    color: rgb(255, 255, 255);
+  }
+
+  &__closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.6rem;
+    width: 5.6rem;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: 2.4rem;
+      background-color: #ebebeb;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    &_title {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 120%;
+
+      @media (max-width: 768px) {
+        font-size: 2.4rem;
+      }
+    }
+
+    &_text {
+      font-size: 2rem;
+      font-weight: 300;
+      margin: 2.4rem 0;
+
+      ul {
+        margin-top: 2.4rem;
+        margin-left: 4rem;
+
+         li {
+          list-style: disc;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  // .success__message {
+  //   position: absolute;
+  //   display: none;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 36rem;
+  //   height: calc(100% + 2.4rem);
+
+  //   padding: .5rem;
+  //   left: calc((100% - 36rem)/2);
+  //   top: 0;
+    
+  //   font-size: 2rem;
+  //   font-weight: 700;
+  //   text-align: center;
+
+  //   background: #ebebeb;
+  //   transform: translateY(-100%);
+  //   opacity: 0;
+  //   transition: all .5s;
+
+  //   &.active {
+  //     display: flex;
+  //     transform: translateY(0);
+  //     opacity: 1;
+  //     z-index: 1;
+  //   }
+  // }
+
+  .form_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form_button {
+    width: 15rem;
+    padding: 1.4rem;
+    background: $color__cta-primary--default;
+    border: 1px solid $color__cta-primary--default;
+    color: $color__bright;
+    font-weight: 500; 
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+
+    &.button__cancel {
+      background: transparent;
+      color: $color__cta-primary--default;
+    }
+  }
+}

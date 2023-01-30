@@ -280,6 +280,15 @@
         }
       }
 
+      &.onlyOne {
+        .text__wrapper {
+  
+          &::after {
+            display: none;
+          }
+        }
+      }
+
     .image__wrapper {
 
       span {

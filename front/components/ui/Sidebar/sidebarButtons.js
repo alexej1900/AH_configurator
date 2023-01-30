@@ -8,30 +8,43 @@ import styles from './sidebar.module.scss';
 export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 	const dispatch = useDispatch();
 
-	const { rooms } = useSelector((state) => state.generalStates);
+	const { roomsTitle, roomsSlug } = useSelector((state) => state.generalStates);
   const apartStyle = useSelector((state) => state.apartStyle);
 
-	// console.log('apartStyle', apartStyle)
+	
 	let nextLink, prevLink;
-
-	if (currentRoom === 'type') {
-		nextLink = {link: `/${rooms[0].toLowerCase()}`, title: rooms[0], icon: 'nextRoom'};
-		prevLink = `/?id=${roomId}`;
-	} else if (currentRoom === 'kitchen-type') {
+	// let kitchenLink = currentRoom.slice(0, -1) === 'küche' ? currentRoom : `/kitchen-type`;
+	// console.log('kitchenLink', kitchenLink)
+	// if (currentRoom === 'type') {
+	// 	nextLink = {link: `/${roomsSlug[0].toLowerCase()}`, title: roomsTitle[0], icon: 'nextRoom'};
+	// 	prevLink = `/?id=${roomId}`;
+	// } else 
+	if (currentRoom === 'kitchen-type') {
 		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`, icon: 'nextRoom'}
 		prevLink = '/raumtrenner';
+	} else if (currentRoom.slice(0, -1) === 'küche') {
+		nextLink = {link: `/badewanne`, title: `Badewanne`, icon: 'nextRoom'}
+		prevLink = '/kitchen-type';
 	} else {
-		for (let i = 0; i < rooms.length; i++) {   
-			if (rooms[i].toLowerCase() === currentRoom) {
-				nextLink = rooms[i+1] 
-					?  {link: `/${rooms[i+1].toLowerCase()}`, title: rooms[i+1], icon: 'nextRoom'}
+		for (let i = 0; i < roomsTitle.length; i++) {   
+			if (roomsSlug[i].toLowerCase() === currentRoom) {
+				nextLink = roomsTitle[i+1] 
+					?  {link: `/${roomsSlug[i+1].toLowerCase()}`, title: roomsTitle[i+1], icon: 'nextRoom'}
 					:  {link: '/summary', title: 'Abschliessen', icon: 'checkIcon'};
 
-				prevLink = rooms[i-1] ? rooms[i-1].toLowerCase() : '/type';
+				prevLink = roomsSlug[i-1] ? roomsSlug[i-1].toLowerCase() : '/type';
 
 				if (currentRoom.toLowerCase() === 'raumtrenner') {
 					nextLink = {link: `/kitchen-type`, title: 'Küchendesign', icon: 'nextRoom'}
-					prevLink = '/type';
+					prevLink = '/wohnzimmer';
+				}
+
+				if (currentRoom.toLowerCase() === 'badewanne') {
+					prevLink = `/kitchen-type`;
+				}
+				
+				if (currentRoom.toLowerCase() === 'wohnzimmer') {
+					prevLink = `/?id=${roomId}`;
 				}
 			}
 		}

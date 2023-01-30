@@ -18,7 +18,7 @@ import { resetRoomTypeState, changeKitchenStyle, changeApartPrice } from '../red
 import styles from './room.module.scss';
 import LoadingSpinner from '../components/ui/Components/loadingSpinner';
 
-export default function Type() {
+export default function KitchenType() {
 
     const [styleId, setStyleId] = useState(0);
     const [isScroll, setIsScroll] = useState(false);
@@ -33,18 +33,20 @@ export default function Type() {
         setStyleId(apartStyle.kitchenStyle);
     }, [])
 
-    console.log('apartSize', apartSize)
+    console.log('apartStyle', apartStyle)
     // console.log('styleId', styleId)
 
     const {data, error, loading} = useQuery(kitchenTypePage);
     if (loading) return <LoadingSpinner full={true}/>;
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
-    console.log('data', data);
+    // console.log('data', data);
 
     let currentStyle = data.entry.styles[styleId];
     const styleImage = currentStyle.image[0];
 
     const changeStyle = (id) => {
+        
+
       const price = {
         0: 0,
         1: apartSize.kitchen1Opt2Price,

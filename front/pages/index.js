@@ -44,7 +44,7 @@ export default function Home() {
       const headerBg = data.settings?.headerBackgroundColor;
       pageBg = data?.welcomePageBg ? settings.welcomePageBg : '';
 
-      dispatch(setRooms(data.rooms));
+      dispatch(setRooms(data.roomsTitle, data.roomsSlug));
       dispatch(setBrandSettings(logo, headerBgPicture, headerBg));
     })
   }, [settings]);
@@ -90,7 +90,7 @@ export default function Home() {
                 ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
                 : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
             >              
-              <Button title="Wahl bestätigen"  href={"/type"} classes="btn btn--primary btn--check"/>
+              <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary btn--check"/>
             </div>
 
           </div>

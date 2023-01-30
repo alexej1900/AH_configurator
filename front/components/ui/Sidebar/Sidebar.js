@@ -41,7 +41,7 @@ export default function Sidebar({
 
     const { OptionsPrice, IndividualPrice } = getPrices();
 
-    // console.log('OptionsPrice', OptionsPrice)
+    // console.log('modifyData', modifyData)
 
     const modifications = getModifications(currentRoom);
 
@@ -103,9 +103,11 @@ export default function Sidebar({
         // console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
         // console.log('roomImages', roomImages)
 
-        const roomActiveMode = currentRoom !== 'badewanne' & currentRoom !== 'dusche'
-            ? activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase()
-            : activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
+        const roomActiveMode = 
+        // currentRoom !== 'badewanne' & currentRoom !== 'dusche'
+        //     ? activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase()
+        //     : 
+            activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
         const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 
         // if (currentRoom.toLowerCase() === 'küche') { // set final style image for Wohnzimmer depends on kueche style
@@ -113,10 +115,10 @@ export default function Sidebar({
         //     console.log('styleImage', 'Wohnzimmer' + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1))
         //     dispatch(setStyleImage(styleImage));
         // }
-        // console.log('roomActiveMode', roomActiveMode)
+        console.log('roomActiveMode', roomActiveMode)
         // console.log('roomImages0', roomImages)
-        // console.log('roomImages0', roomImages[5].title.slice(0, 30))
-        // console.log('roomImages', roomImages[5].title.toLowerCase().slice(0, 30) === roomActiveMode.slice(0, 30))
+        // console.log('roomImages0', roomImages[1].title.slice(0, 13))
+        // console.log('roomImages', roomImages[1].title.toLowerCase().slice(0, 15) === roomActiveMode.slice(0, 15))
         // console.log('newActiveImage', newActiveImage)
         setLargeImage(newActiveImage); 
         dispatch(changeRoomImage(currentRoom, newActiveImage));

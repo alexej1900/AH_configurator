@@ -12,7 +12,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 
 	const [currentStyleId, setCurrentStyleId] = useState(styleId);
 
-	const { rooms } = useSelector((state) => state.generalStates);
+	const { roomsTitle, roomsSlug } = useSelector((state) => state.generalStates);
 
 	useEffect(() => {
 		setCurrentStyleId(styleId)
@@ -21,16 +21,16 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 	let nextLink, prevLink;
 
 	if (room === 'type') {
-		nextLink = {link: '/'+rooms[0].toLowerCase(), title: rooms[0], icon: 'nextRoom'};
+		nextLink = {link: '/'+roomsTitle[0].toLowerCase(), title: roomsTitle[0], icon: 'nextRoom'};
 		prevLink = '/';
 	} else {
-		for (let i = 0; i < rooms.length; i++) {   
-			if (rooms[i].toLowerCase() === room) {
-				nextLink = rooms[i+1] 
-					?  {link: '/'+rooms[i+1].toLowerCase(), title: rooms[i+1], icon: 'nextRoom'}
+		for (let i = 0; i < roomsTitle.length; i++) {   
+			if (roomsSlug[i].toLowerCase() === room) {
+				nextLink = roomsTitle[i+1] 
+					?  {link: '/'+roomsSlug[i+1].toLowerCase(), title: roomsTitle[i+1], icon: 'nextRoom'}
 					:  {link: '/summary', title: 'Abschliessen', icon: 'checkIcon'};
 
-				prevLink = rooms[i-1] ? rooms[i-1].toLowerCase() : '/type';
+				prevLink = roomsSlug[i-1] ? roomsSlug[i-1].toLowerCase() : '/type';
 			}
 		}
 	}

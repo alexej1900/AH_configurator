@@ -5,6 +5,7 @@ query MyQuery {
   entries {
     ... on rooms_default_Entry {
       title
+      slug
     }
   }
   globalSets(handle: "settings") {

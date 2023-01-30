@@ -204,7 +204,7 @@ export default function ContactForm({ onCancel }) {
                   name="callback" 
                   onChange={() => changeFormData({callBack: !formValue.callBack})}
                 />
-                <label for="callback">Ich wünsche einen telefonischen Rückruf</label>
+                <label htmlFor="callback">Ich wünsche einen telefonischen Rückruf</label>
               </div>
 
               <textarea 

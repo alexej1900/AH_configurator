@@ -36,6 +36,7 @@ export default function Room() {
     const path = router.asPath.slice(1);
 
     const [styleId, setStyleId] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
     const [largeImage, setLargeImage] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
     const [isPopup, setIsPopup] = useState(false);
@@ -51,32 +52,33 @@ export default function Room() {
     const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
 
 // console.log('largeImage', largeImage)
-console.log('roomType', roomType)
+// console.log('roomState', roomState.image)
 
     useEffect(() => {
         setStyleId(apartStyle.style);
     }, []);
 
-    const moveImageFunction = async() => {
-        for (let x = 0; x <= 600; x += 25) {
-            const scrollableImage = document.querySelector('.indiana-scroll-container--hide-scrollbars');
+    // const moveImageFunction = async() => {
+    //     for (let x = 0; x <= 600; x += 25) {
+    //         const scrollableImage = document.querySelector('.indiana-scroll-container--hide-scrollbars');
 
-            if (x < 400) {
-                scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
-            } 
-            else {
-                scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
-            }
-        }
-    }
+    //         if (x < 400) {
+    //             scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
+    //         } 
+    //         else {
+    //             scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
+    //         }
+    //     }
+    // }
 
     useEffect(async() => {
-        document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
+        dispatch(changeLoadingState(true))
+        // document.querySelector('.indiana-scroll-container--hide-scrollbars')?.scrollTo({left: sidebarState ? 0 : 0});
         document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
         setTimeout(() => {
             document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
-            moveImageFunction();
+            // moveImageFunction();
         }, 1000);
 
         //if we have in state image of current room, we set this image
@@ -89,28 +91,33 @@ console.log('roomType', roomType)
     useEffect(async() => {
         setTimeout(() => {
             
-        if (data && ROOM_TYPE === 'küche1' || ROOM_TYPE === 'küche2' || ROOM_TYPE === 'küche3') {
-            const modifications = 
-                data?.entry.mods[0].modificationsTypes
-                    .filter((item) => item.modificationMainStyle.toLowerCase().replaceAll(' ', '') === apartStyle.title.toLowerCase().replaceAll(' ', ''))
-    
-            modifications.forEach(item => {
-                changeType(
-                    0, 
-                    item.modificationName, 
-                    item.modificationItemExample[0].modificationImage[0].url, 
-                    item.modificationItemExample[0].modificationTitle,
-                    item.modificationItemExample[0].modificationStyle,
-                    item.modificationItemExample[0].modificationDescr,
-                    item.modificationItemExample[0].modsAdditionalPrice,
-                    )
-            });
-        }
+            if (data && ROOM_TYPE === 'küche1' || ROOM_TYPE === 'küche2' || ROOM_TYPE === 'küche3') {
+                
+                const modifications = 
+                    data?.entry.mods[0].modificationsTypes
+                        .filter((item) => item.modificationName !== 'Böden')
+                console.log('data?.entry.mods[0].modificationsTypes', data?.entry.mods[0].modificationsTypes);
+
+                modifications.forEach(item => {
+                    changeType(
+                        0, 
+                        item.modificationName, 
+                        item.modificationItemExample[0].modificationImage[0].url, 
+                        item.modificationItemExample[0].modificationTitle,
+                        item.modificationItemExample[0].modificationStyle,
+                        item.modificationItemExample[0].modificationDescr,
+                        item.modificationItemExample[0].modsAdditionalPrice,
+                        )
+                });
+            }
+
+            setStyleId(0);
         }, 1000);
     }, [ROOM_TYPE])
 
     const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
     if (loading) return <LoadingSpinner full={true}/>
+    // if (isImageload) return <LoadingSpinner full={true}/>
     if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
     // console.log('data.entry', data.entry)
@@ -181,7 +188,9 @@ console.log('roomType', roomType)
     
     return (
         <>
-        <div className={`${styles.type__wrapper}`} >   
+        <div className={`${styles.type__wrapper}`} >  
+
+            {/* {isImageload && <LoadingSpinner full={true}/>} */}
             <ScrollContainer 
                 className={`${sidebarState && styles.image__wrapperActive} ${styles.image__wrapper}`} 
                 onStartScroll={() => setIsScroll(true)}

@@ -31,9 +31,6 @@ export default function Home() {
   const apartSize = useSelector((state) => state.apartSize);
 
   const settings = getSettings();
- 
-  // const linkWithoutTypeRoom = getLinkWithoutTypeRoom();
-  // const checkStylePage = checkIsStylePageExist();
 
   let pageBg;
 
@@ -54,56 +51,66 @@ export default function Home() {
   });
   if (loading) return <LoadingSpinner full={true}/>;
   if(error) return <p> Error</p>;
-
-  const aparmentData = data.entry.dataList[0];
   
+  const aparmentData = data.entry.dataList[0];
+
   let apartmentImage = apartSize.image === '' ? aparmentData?.apartmentImage[0] : apartSize.image;
 
   const onCancel = () => {
     setIsPopup(false);
 }
 
-  // console.log('apartmentData', apartmentData);
+  // console.log('data.entry.dataList[0]', data.entry.dataList[0]);
+  // console.log('apartmentImage.height', apartmentImage.height);
   // console.log('queryId', queryId);
   return (
     <>
       <div className={styles.welcome} style={{background: pageBg}}>
+        
         <div className={styles.welcome__inner}>
-          <div className={`${styles.halfLine} ${styles.content}`}>
-            <h2 className={`${styles.title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h2>
-            <div className={styles.description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten. In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, aus einem Schlafzimmer ein Wohnzimmer zu konfigurieren. Das Wohnzimmer verfügt im Gegensatz zum Schlafzimmer über eine heruntergesetzte Decke für eine gemütliche Atmosphäre.</div>
-
-            <FormToggle 
-              tab1={'Default'} 
-              tab1Action={() => {dispatch(changeApartSize(aparmentData.basePrice, aparmentData.apartmentImage[0]));
-                                setIsBaseVersion(true)}}
-              tab2={'Version'}
-              tab2Action={() => {dispatch(changeApartSize(aparmentData.basePrice + aparmentData.additionalLivingRoomPrice, data.asset));
-                                setIsBaseVersion(false)}}
-            />
-
-            <div 
-              className={`${styles.submitBtn} center`} 
-
-              // If user didn't choosed size of apartment will be setted initial large size
-              onClick={() => isBaseVersion 
-                ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
-                : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
-            >              
-              <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary btn--check"/>
-            </div>
-
+          <div className={styles.welcome__inner_header}>
+            <h2 className={`${styles.welcome__inner_header_title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h2>
+            <div className={styles.welcome__inner_header_description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten.</div>
           </div>
-          <div className={`${styles.halfLine} ${styles.planImage}`}>
-            <Image 
-              src={apartmentImage.url} 
-              width={apartmentImage.width} 
-              height={apartmentImage.height} 
-              priority 
-              placeholder="blur"
-              blurDataURL={'/component.png'}
-              alt="Apartment Image"
-            />
+
+          <div className={styles.welcome__inner_content}>
+
+            <div className={`${styles.halfLine} ${styles.content}`}>
+              <div className={styles.description}>In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, eines der Schlafzimmer als  zusätzliches Wohnzimmer umzusetzen. Dieses verfügt über eine herabgesetzte Decke für eine gemütliche Atmosphäre.</div>
+              <FormToggle 
+                tab1={'Schlafzimmer'} 
+                tab1Action={() => {dispatch(changeApartSize(aparmentData.basePrice, aparmentData.apartmentImage[0]));
+                                  setIsBaseVersion(true)}}
+                tab2={'2. Wohnzimmer'}
+                tab2Action={() => {dispatch(changeApartSize(aparmentData.basePrice + aparmentData.additionalLivingRoomPrice, data.asset));
+                                  setIsBaseVersion(false)}}
+              />
+
+              <div 
+                className={`${styles.submitBtn} center`} 
+
+                // If user didn't choosed size of apartment will be setted initial large size
+                onClick={() => isBaseVersion 
+                  ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
+                  : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
+              >              
+                <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary btn--check"/>
+              </div>
+
+            </div>
+            <div className={`${styles.halfLine} ${styles.planImage}`}>
+              <Image 
+                src={apartmentImage.url} 
+                // width={apartmentImage.width} 
+                // height={apartmentImage.height} 
+                layout='fill'
+                object-fit='contain'
+                priority 
+                placeholder="blur"
+                blurDataURL={'/AHlogo.svg'}
+                alt="Apartment Image"
+              />
+            </div>
           </div>
         </div>
         <div className={`${styles.btn__getContacts}`} onClick={() => setIsPopup(true)}>

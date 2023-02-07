@@ -183,6 +183,7 @@ query MyQuery($id: [String], $var: [String]) {
           livingRoomDoorPrice
           livingRoomOpt2Price
           livingRoomOpt3Price
+          roomsCount
         }
       }
     }

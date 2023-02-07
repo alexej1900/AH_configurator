@@ -178,7 +178,7 @@ export default function ModifyBlock({
   }
 
   activeIndex = activeModification.modificationNumber;
-  // console.log('apartSixe', apartSize)
+  // console.log('cardItem', cardItem)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine && styles.inLine}`}>

@@ -2,98 +2,114 @@
 
 .welcome {
   position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    height: 100%;
+  }
+
+  &__inner {
+    // display: flex;
+    padding: 9rem 9.6rem 0;
+    max-width: 86rem;
     margin: 0 auto;
-    justify-content: center;
 
     @media (max-width: 1000px) {
-      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 10rem 2.4rem 2.4rem;
     }
 
-    &__inner {
+    &_header {
+
+      &_title {
+        font-size: 3.2rem;
+        font-weight: 700;
+    
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 120%;
+    
+        @media (max-width: 1000px) {
+          font-size: 2.6rem;
+          text-align: left;
+        }
+      }
+
+      &_description {
+        margin-top: 2.4rem;
+        margin-bottom: 3.2rem;
+
+        font-family: 'Open Sans';
+        font-size: 2.4rem;
+        line-height: 135%;
+        font-weight: 400;
+
+        @media (max-width: 1000px) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    &_content {
       display: flex;
-      padding: 0 9.6rem;
-      max-width: 888px;
-      margin: 0 auto;
 
-      @media (max-width: 1000px) {
+      @media (max-width: 700px) {
         flex-direction: column;
-        align-items: center;
-        padding: 10rem 2.4rem 5rem;
-      }
-
-      .halfLine {
-        width: 50%;
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        margin-right: 2rem;
-
-        @media (max-width: 1000px) {
-          width: 100%;
-          max-width: 60rem;
-          margin: 0 2.4rem;
-        }
-
-      }
-
-      .planImage {
-        
-        @media (max-width: 1000px) {
-          width: 60%;
-          margin: 0 2.4rem;
-          margin-bottom: 6rem;
-        }
-        @media (max-width: 700px) {
-          width: 70%;
-        }
-        @media (max-width: 500px) {
-          width: 80%;
-        }
-      }
-
-      .submitBtn {
-        @media (max-width: 1000px) {
-          position: absolute;
-          bottom: 10rem;
-          left: calc(50% - 190px/2);
-        }
-
-        &:hover a {
-          background: $color__cta-primary--hover;
-        }
       }
     }
 
-    h1 {
-      margin-bottom: 2.4rem;
+    .halfLine {
+      width: 50%;
     }
 
-    h2 {
-      font-size: 3.2rem;
-      font-weight: 700;
-
-      font-family: 'Karla';
-      font-weight: 700;
-      font-size: 3.2rem;
-      line-height: 3.8rem;
-      text-align: center;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin-right: 2rem;
 
       @media (max-width: 1000px) {
-        font-size: 2.6rem;
-        text-align: left;
+        width: 100%;
+        max-width: 60rem;
+        margin: 0 2.4rem;
+      }
+
+      @media (max-width: 700px) {
+        order: 2;
+      }
+    }
+
+    .planImage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      min-height: 42rem;
+
+      img {
+        max-height: 60rem !important;
+        min-width: 0 !important;
+        width: auto !important;
+      }
+      
+      @media (max-width: 1000px) {
+        width: 60%;
+        margin: 0 2.4rem;
+        margin-bottom: 3.2rem;
+      }
+      @media (max-width: 700px) {
+        width: 100%;
+        order: 1;
+        margin: 0 auto 3.2rem;
+
       }
     }
 
     .description {
-      margin-top: 2.4rem;
-      margin-bottom: 2.4rem;
 
       p {
         font-size: 1.8rem;
@@ -104,43 +120,45 @@
         }
       }
     }
+  }
 
-    &__options {
+  &__options {
+    display: flex;
+    margin: 3.2rem 0;
+
+    .option {
+      width: 50%;
       display: flex;
-      margin: 3.2rem 0;
+      align-self: center;
+      justify-content: center;
 
-      .option {
-        width: 50%;
-        display: flex;
-        align-self: center;
-        justify-content: center;
+      &.active {
+        background: $color__accent;
+        color: $dark-grey;
+        padding: 1.3rem 0;
+        position: relative;
 
-        &.active {
-          background: $color__accent;
-          color: $dark-grey;
-          padding: 1.3rem 0;
-          position: relative;
-
-          &:after {
-            content: '';
-            background: url('/check.svg');
-            background-size: cover;
-            width: 1.6rem;
-            height: 1.6rem;
-            position: absolute;
-            top: .4rem;
-            right: .4rem;
-          }
+        &:after {
+          content: '';
+          background: url('/check.svg');
+          background-size: cover;
+          width: 1.6rem;
+          height: 1.6rem;
+          position: absolute;
+          top: .4rem;
+          right: .4rem;
         }
       }
     }
+  }
 
-    .btn__getContacts {
-      margin-top: 4rem;
-      
-      @media (max-width: 1000px) {
-        margin-top: 0;
-        margin-bottom: 2rem;
-      }
+  .btn__getContacts {
+    position: fixed;
+    right: 3.2rem;
+    bottom: 3.2rem;
+    
+    @media (max-width: 700px) {
+      display: none;
     }
   }
+}

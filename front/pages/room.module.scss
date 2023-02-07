@@ -1,7 +1,6 @@
 @import '../assets/scss/abstracts/variables';
 
 .type__wrapper {
-
   position: relative;
   overflow: hidden;
 
@@ -30,6 +29,7 @@
 // }
 
 .image {
+  transition: all 0.3s ease-in-out;
 
   &__main {
     height: 100vh;
@@ -40,12 +40,19 @@
   &__wrapper {
     position: relative;
     width: calc(100vw - 5.6rem);
-    transition: all 0.3s ease-in-out;
+    width: 100vw;
+    opacity: 1;
+    // transition: all 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }    
   }
 
   &__wrapperActive {
     overflow: scroll;
     width: calc(100% - 420px);
+
     position: relative;
     display: block;
     cursor: grab;
@@ -62,12 +69,14 @@
     bottom: 0;
     left: calc(50% - 12rem);
     transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
   }
 }
 
 .full {
   object-position: left;
-  
+  transition: all 0.3s ease-in-out;
+
   @media (max-width: 1500px) { // 1500 = width of big image in px
     min-width: 1500px !important;
     object-position: center;
@@ -77,12 +86,13 @@
     width: auto !important;
     height: 100vh !important;
     object-fit: cover;
+    transition: all 0.3s ease-in-out;
     // object-position: left;
-    &.animate {
-      animation-name: moving;
-      animation-duration: 3s;
-      animation-timing-function: ease-in-out;
-    }
+    // &.animate {
+    //   animation-name: showing;
+    //   animation-duration: 3s;
+    //   animation-timing-function: ease-in-out;
+    // }
 
     @media (max-width: 1500px) { // 1500 = width of big image in px
       min-width: 1500px !important;
@@ -101,16 +111,17 @@
 }
 
 .image__wrapper.animate {
-  animation-name: sliding;
-  animation-duration: 1s;
+  animation-name: showing;
+  animation-duration: .5s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: .5s;
+  animation-iteration-count: 1;
 }
 
 .btn__getContacts {
   position: absolute;
   bottom: 4rem;
   right: 12rem;
+  transition: all 0.3s ease-in;
 
   &_shift {
     right: 50rem;
@@ -163,6 +174,16 @@
 
   to {
       left: 0;
+  }
+}
+
+@keyframes showing {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

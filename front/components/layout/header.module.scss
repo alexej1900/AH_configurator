@@ -36,6 +36,14 @@
     }
   }
 
+  &.shifted {
+    width: 100%;
+
+    .logo {
+      background: $color__bright;
+    }
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -89,6 +97,10 @@
     background: $color__bright;
     overflow: hidden;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
  
     &__list {
       padding: 2.4rem;

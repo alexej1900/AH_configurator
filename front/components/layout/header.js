@@ -50,7 +50,7 @@ export default function Header () {
   const onCancel = () => setIsPopup(false);
 
   return (
-    <header className={[style.header, open & pathname !== '/' && style.compressed, menu && style.background].join(' ')}>
+    <header className={[style.header, open & pathname !== '/' && style.compressed, pathname === '/' && style.shifted, menu && style.background].join(' ')}>
       <div className={style.header__wrapper}>
         <Link href='/'>
           <img className={style.logo} src={'./AH_Header_Logo.svg'} alt="Logo"/>
@@ -107,7 +107,7 @@ export default function Header () {
                 title="To get contact" 
                 onClick={() => setIsPopup(true)}
               >
-                <img src='./person.svg' alt="summary" />
+                <img src='./Person.svg' alt="summary" />
                 <span className={`${style.header__menu_button_descr}`}>Kontakt aufnehmen</span>
               </a>
 

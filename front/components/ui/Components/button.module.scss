@@ -18,6 +18,10 @@
       &.disabled {
         background: rgba(var(--color__primary), 0.3);
       }
+
+      &:hover {
+        background: $color__cta-primary--hover;
+      }
     }
   
     &.summaryIcon {

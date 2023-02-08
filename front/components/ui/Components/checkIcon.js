@@ -1,10 +1,8 @@
 export default function CheckIcon({color}) {
 
   return (
-    <svg className={color} id="icon" width="24" height="24" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(-183 -1)" fillRule="evenodd">
-        <path d="M194.707 22.763a.997.997 0 0 1-.707-.293l-5-5 1.414-1.414 4.293 4.293L206 9.056l1.414 1.414-12 12a.997.997 0 0 1-.707.293"/>
-      </g>
+    <svg width="19" height="14" viewBox="0 0 19 14" fill={color} xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.707 13.707C5.451 13.707 5.195 13.609 5 13.414L0 8.414L1.414 7L5.707 11.293L17 0L18.414 1.414L6.414 13.414C6.219 13.609 5.963 13.707 5.707 13.707Z" fill={color}/>
     </svg>
   )
 }

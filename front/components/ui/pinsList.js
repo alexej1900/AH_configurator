@@ -12,8 +12,6 @@ export default function PinsList ({ data, roomState, pinClickHandler }) {
       {data.map((item, index) => {
 
         const checked = (roomState?.modifications && roomState?.modifications[item.modificationName]) ? true : false;
-        const individual = (roomState?.modifications && roomState?.modifications[item.modificationName]?.individualFormat === true) ? true : false;
-        const style = item.modificationVisibility ? 'style' : '';
 
         if (item.modificationPin.length > 0) {
           return (
@@ -21,11 +19,9 @@ export default function PinsList ({ data, roomState, pinClickHandler }) {
               key={index} 
               top= {item.modificationPin[0]?.positionY} 
               left = {String(item.modificationPin[0]?.positionX)} 
-              type={style}
               classes={generalStates.pin === item.modificationName ? 'active' : ''}
               clickHandle={() => pinClickHandler(item.modificationName)}  
               checked={checked}
-              individual={individual}
             />
           )
         }}     

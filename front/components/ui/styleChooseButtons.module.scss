@@ -3,7 +3,7 @@
 .style__button {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-lg) {
     display: block;
     position: absolute;
     bottom: 0;

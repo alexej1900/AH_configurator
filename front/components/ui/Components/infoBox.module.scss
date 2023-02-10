@@ -26,7 +26,7 @@
       left: 5%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       bottom: 5.2rem;
       left: calc((100% - 36rem)/2);
       transform: translateX(0);
@@ -43,7 +43,7 @@
       line-height: 3.4rem;
       text-transform: uppercase;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screen-lg) {
         font-size: 1.8rem;
         line-height: 2.4rem;
       }
@@ -89,7 +89,7 @@
       font-size: 1.8rem;
       line-height: 2.7rem;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screen-lg) {
         font-size: 1.6rem;
         line-height: 2.4rem;
       }

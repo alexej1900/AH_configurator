@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-lg) {
     display: flex;
     overflow-y: auto;
     overflow-x: hidden;
@@ -23,7 +23,7 @@
 //   align-items: center;
 
 
-//   @media (max-width: 768px) {
+//   @media (max-width: $screen-lg) {
 //     width: calc(100vw + 42rem);
 //   }
 // }
@@ -44,7 +44,7 @@
     opacity: 1;
     // transition: all 0.3s ease-in-out;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       width: 100%;
     }    
   }
@@ -59,7 +59,7 @@
     transition: all 0.3s ease-in-out;
     flex: 0 0 100%;
     
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       width: 100%;
     }
   }
@@ -126,7 +126,7 @@
   &_shift {
     right: 50rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       right: 2rem;
       bottom: 8rem;
     }
@@ -156,7 +156,7 @@
   &_shift {
     right: 64rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       right: 16rem;
       bottom: 8rem;
     }

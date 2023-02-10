@@ -65,13 +65,13 @@ console.log('apartStyle', apartStyle)
 		<>
 			<div className={styles.summary} id="summary">
 
-				{apartStyle.image && 
+				{/* {apartStyle.image && 
 					<div className={`${styles.container} ${styles.mainImage}`} id="mainImage">
 						<Image src={apartStyle.image.url} layout='fill' priority="true" alt="Image of choosed style"/>				
 					</div>
-				} 
+				}  */}
 
-				<div className={`${styles.container}`}>
+				{/* <div className={`${styles.container}`}>
 					<section className={`${styles.summary__overview}`} id="overview">
 						<h1 className={`${styles.title} center`}> Ihre Wohnung</h1>
 
@@ -115,20 +115,18 @@ console.log('apartStyle', apartStyle)
 							</div>
 						</div>
 					</section>
-				</div>
+				</div> */}
 
-				<div className={`${styles.container} ${styles.notice}`}>
-					{/* <div className={`${styles.notice}`}> */}
+				{/* <div className={`${styles.container} ${styles.notice}`}>
 						<p> Ihr individuelles Eigenheim wird mit folgenden Materialen für Sie erstellt. </p>
 						<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
-					{/* </div> */}
 				</div>
 
 				<div className={`${styles.container}`} id="finalRooms">
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
-				</div> 
+				</div>  */}
 
-				<FinalForm rooms={roomType}/> 
+				{/* <FinalForm rooms={roomType}/>  */}
 			</div>
 			<Footer/>
 		</>

@@ -1,144 +1,122 @@
 @import '/assets/scss/abstracts/variables';
 
 .footer {
+  margin-top: 6rem;
   position: relative;
-  background: $color__brand--primary;
-  padding: 6.4rem;
+  background: #F0F0F0;
   color: $color__bright;
-
-  @media (max-width: 1000px) {
-    padding: 1.6rem;
-  }
 
   &__container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @media (max-width: 1000px) {
-      flex-direction: column;
-    }
-  }
-
-  &__block {
-    width: 30%;
-
-    @media (max-width: 1000px) {
-      width: 100%;
-    }
-
-  }
-
-  .contacts {
-    @media (max-width: 1000px) {
-      order: 0;
-
-
-    }
-
-    .member {
-      text-align: right;
-      margin-top: 9.5rem;
-    
-      @media (max-width: 1000px) {
-        
-        text-align: center;
-        margin-top: 2rem;
-      }
-    
-      strong {
-        font-weight: bold;
-        color: var(--color__secondary);
-        font-size: 1.8rem;
-      }
-    }
-
-    .social {
-      display: flex;
-      max-width: 75%;
-      margin-left: auto;
-    
-      @media (max-width: 1000px) {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-        // margin-bottom: 4.8rem;
-      }
-    
-      img {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-left: 1.6rem;
-      }
-    }
-  }
-
-  .info {
-      align-self: center;
-
-      @media (max-width: 1000px) {
-        order: 2;
-        text-align: center;
-        margin-bottom: 6rem;
-      }
-
-      @media (max-width: 420px) {
-        margin-bottom: 8rem;
-      }
-  }
-
-  .biglogo {
-      height: 26rem;
-  }
-  
-  .mail {
-      color: var(--color__secondary);
-  }
-
-  .menu {
-      margin-top: 3.2rem;
-      a {
-          font-size: 1.6rem;
-          color: var(--color__secondary);
-          text-decoration: none;
-          margin-left: 1.5rem;
-          margin-top: .7rem;
-          display: inline-block;
-      }
-
-      @media (max-width: 1000px) {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin-bottom: 2rem;
-        width: 100%;
-      }
-  }
-
-  .logo__container {
-    display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .back__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 2.6rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      transition: all 3s linear;
+      cursor: pointer;
+
+      svg {
+        position: relative;
+        right: 0px;
+        transition: all .5s linear;
+      }
+
+      &:hover {
+
+        svg {
+          right: 2rem;
+        }
+      }
+
+      &_title {
+        margin-left: 1.2rem;
+        font-family: $description__typo;
+        font-size: 1.44rem;
+        line-height: 135%;
+        color: $color__cta-primary--default;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 3.2rem 0;
 
-    @media (max-width: 1000px) {
-      order: 1;
-
-      margin: 4.8rem auto;
+    @media (max-width: $screen-lg) {
+      flex-direction: column;
     }
 
-    p {
-      margin-bottom: 2rem;
+    &_links {
+      width: 30rem;
+
+      @media (max-width: $screen-lg) {
+        text-align: center;
+        margin-bottom: 3.2rem;
+      }
+
+      &_logo {
+        margin-bottom: 3.2rem;
+      }
+
+      &_social{
+        display: flex;
+        justify-content: center;
+        width: 24rem;
+
+        @media (max-width: $screen-lg) {
+          width: 100%;
+        }
+
+        a {
+          margin: 0 .8rem;
+
+          svg {
+            height: 3.2rem;
+            width: 3.2rem;
+          }
+        }
+      }
     }
-    img {
-      max-width: 100%;
+
+    &_contacts {
+      width: 30rem;
+      font-family: $description__typo;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 135%;
+      color: $color__dark;
+
+      &_title {
+        font-weight: 700;
+        margin-bottom: .8rem;
+      }
+
+      &_address:last-of-type {
+        margin-bottom: 1.6rem;
+      }
+
+      &_data {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        color: #000;
+
+        p {
+          margin-left: 1.6rem;
+        }
+      }
     }
   }
 }
-
-
-

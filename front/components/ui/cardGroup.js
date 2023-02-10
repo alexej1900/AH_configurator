@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod } from '../../redux/actions/index';
 
 import Card from './card';
-import CheckIcon from './Components/checkIcon';
+import IconComponent from './Components/iconComponent';
 import OptionsList from './optionsList';
 
 import getModifications from '../../pages/api/getModifications';
@@ -136,7 +136,7 @@ export default function CardGroup({ data, activeMod, activeStyle, styleId, room,
 
                 {checked &&
                     <div className={styles.checkIcon}>
-                        <CheckIcon color={styles.checkIconColor}/>
+                        <IconComponent name="check" color={styles.checkIconColor}/>
                     </div>
                 }
             </div>

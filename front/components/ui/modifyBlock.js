@@ -8,7 +8,7 @@ import {
 } from '../../redux/actions/index';
 
 import Card from './card';
-import CheckIcon from './Components/checkIcon';
+import IconComponent from './Components/iconComponent';
 
 import getModifications from '../../pages/api/getModifications';
 
@@ -195,7 +195,7 @@ export default function ModifyBlock({
 
           {checked &&
             <div className={styles.checkIcon}>
-              <CheckIcon color={styles.checkIconColor}/>
+              <IconComponent name="check" color={styles.checkIconColor}/>
             </div>
           }
 

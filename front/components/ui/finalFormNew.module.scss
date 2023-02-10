@@ -131,7 +131,7 @@
           font-size: 2rem;
           color: #000;
 
-          @media (max-width: 768px) {
+          @media (max-width: $screen-lg) {
             margin-top: 1.2rem;
           }
 
@@ -256,7 +256,7 @@
     border: none;
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       width: 100%;
       margin-top: 1rem;
       margin-bottom: 0;

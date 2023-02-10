@@ -63,5 +63,18 @@ $color__state-success: #9BC524;
 $color__state-warning: #DEA71A;
 $color__state-error: #D94D4D;
 
+// typography
+
 $title__typo: 'NNNouvelleGroteskSTD', sans-serif;
 $description__typo: 'NNNouvelleGroteskSTD', sans-serif;
+
+// sizes
+
+// mobile (425px)
+$screen-md: 425px;
+// Tablets (768px)
+$screen-lg: 768px;
+// desktop-small (1024)
+$screen-xl: 1024px;
+// desktop-normal (1440)
+$screen-xxl: 1440px;

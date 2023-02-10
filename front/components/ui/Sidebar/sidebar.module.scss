@@ -13,7 +13,7 @@
   transition: all 0.3s ease-in;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-lg) {
     height: calc(100vh - 8rem);
     width: 0;
   }
@@ -25,7 +25,7 @@
     z-index: 10;
     width: calc(100% - 6rem);
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       left: calc((100% - 36.4rem)/2);
       width: 36rem;
     }
@@ -76,7 +76,7 @@
         background: rgba($color__cta-primary--hover, 0.72);
         flex: 1 0 35%;
 
-        @media (max-width: 768px) {
+        @media (max-width: $screen-lg) {
           display: none;
         }
 
@@ -93,7 +93,7 @@
       &__next {
         // min-width: 18rem;
 
-        @media (max-width: 768px) {
+        @media (max-width: $screen-lg) {
           min-width: 0;
         }
       }
@@ -101,7 +101,7 @@
       &__showRoom {
         display: none;
 
-        @media (max-width: 768px) {
+        @media (max-width: $screen-lg) {
           display: block;
           display: flex;
           justify-content: center;
@@ -168,7 +168,7 @@
     width: 42rem;
     transition: all 0.3s ease-in;
     
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       position: relative;
       top: 8rem;
       transform: translateX(100%);
@@ -179,7 +179,7 @@
 
     &.moveLeft {
 
-      @media (max-width: 768px) {
+      @media (max-width: $screen-lg) {
         transform: translateX(-100%);
         flex: 0 0 100%;
       }
@@ -209,7 +209,7 @@
 
   .hideHeader {
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       display: none;
     }
   }
@@ -292,7 +292,7 @@
     cursor: pointer;
     flex-shrink: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       display: none;
     }
 
@@ -324,7 +324,7 @@
     margin-bottom: 64px;
     // width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       margin: 0;
     }
 

@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
-import EditIcon from './Components/editIcon';
-import CheckIcon from './Components/checkIcon';
+import IconComponent from "./Components/iconComponent";
 
 import styles from './pin.module.scss';
 
@@ -19,8 +18,8 @@ export default function Pin ({ top, left, clickHandle, classes, checked }) {
         
   const disabledImage = () => {
     return checked 
-      ? <CheckIcon color='#fff'/>
-      : <EditIcon color='#fff'/>
+      ? <IconComponent name="check" color='#fff'/>
+      : <IconComponent name="edit" color='#fff'/>
   };
     
   return (

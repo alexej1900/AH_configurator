@@ -15,7 +15,7 @@
   background: rgba(143, 143, 143, .7);
   z-index: 100;
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-lg) {
     overflow-y: auto;
     align-items: start;
   }
@@ -31,7 +31,7 @@
     width: 36rem;
     margin: 2.4rem 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       width: 36rem;
     }
   }
@@ -61,7 +61,7 @@
   &__content {
     display: flex;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screen-lg) {
       flex-direction: column;
     }
 
@@ -73,7 +73,7 @@
       padding: 2.4rem;
       background-color: #ebebeb;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screen-lg) {
         width: 100%;
       }
     }
@@ -83,7 +83,7 @@
       font-size: 2rem;
       line-height: 120%;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screen-lg) {
         font-size: 2.4rem;
       }
     }

@@ -57,19 +57,6 @@
       &__primary {
         background: $color__cta-primary--default;
         flex: 1 0 65%;
-        
-        &:after {
-          content: '';
-          background-image: url("/arrow.svg");
-          display: inline-block;
-          height: 1.6rem;
-          width: 1.6rem;
-          margin-left: .8rem;
-          transform: rotate(180deg);
-        }
-        // &.disabled {
-        //   background: var(--color__cta_30);
-        // }
       }
 
       &__back {
@@ -80,18 +67,17 @@
           display: none;
         }
 
-        &:before {
-          content: '';
-          background-image: url("/arrow.svg");
-          display: inline-block;
-          height: 1.6rem;
-          width: 1.6rem;
+        svg {
           margin-right: .8rem;
         }
       }
 
       &__next {
-        // min-width: 18rem;
+
+        svg {
+          transform: rotate(180deg);
+          margin-left: .8rem;
+        }
 
         @media (max-width: $screen-lg) {
           min-width: 0;

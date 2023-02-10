@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { changeStyleVisibility } from '/redux/actions/index';
 
+import IconComponent from './Components/iconComponent';
+
 import styles from './card.module.scss';
 
 export default function Card({
@@ -48,7 +50,6 @@ export default function Card({
                         ${styles.small} 
                         ${active && styles.active} 
                         ${collapsed && styles.collapsed} 
-                        ${onlyOne && styles.onlyOne} 
                         ${recommended ? styles.recommended : ''} 
                         ${final && styles.final}
                         ${disable && styles.disable}
@@ -74,6 +75,7 @@ export default function Card({
                             {/* <p className={styles.card__description}>{description}</p> */}
                             {optionPrice > 0 && !collapsed ? <p className={styles.card__description}><span className={styles.card__index}>+ CHF</span> {optionPrice}</p> : null}
                             {final ? <p className={styles.card__description}>{additionalPrice ? `+ ${additionalPrice} CHF zum Grundpreis` : ''}</p> : null}
+                            <IconComponent name={onlyOne ? "lock" : "check"} color={collapsed ? "rgba(0, 0, 0, 0.32)" :"#fff"}/>
                         </div>
                     </div>
                 </div>

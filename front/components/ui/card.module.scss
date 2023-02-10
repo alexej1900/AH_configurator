@@ -181,7 +181,6 @@
   }
 
   &.small {
-    // margin: 0.4rem;
     display: flex;
     margin-bottom: 0.8rem;
     background: rgba($color__bright, 0.8);
@@ -189,7 +188,6 @@
     height: 10rem;
 
     &:hover {
-      // outline: 2px solid $color__secondary;
       background: var(--color__secondary_20);
     }
 
@@ -199,8 +197,6 @@
       align-items: center;
       margin: 0.4rem;
       width: 12.5rem;
-      // display: block;
-      // height: 100px;
 
       img {
         width: 125px !important;
@@ -212,11 +208,9 @@
       margin: 0.4rem;
       width: 66%;
 
-      &::after {
-        content: "";
-        background: url('/check.svg');
-        width: 2.4rem;
-        height: 2.4rem;
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
         position: absolute;
         top: 0.4rem;
         right: .5rem;
@@ -266,27 +260,6 @@
 
       .text__wrapper {
         color: $color__dark;
-
-        &::after {
-          content: "";
-          background: url('/edit-simple.svg');
-          background-repeat: no-repeat;
-          background-position: center;
-          width: 2.4rem;
-          height: 2.4rem;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-      }
-
-      &.onlyOne {
-        .text__wrapper {
-  
-          &::after {
-            display: none;
-          }
-        }
       }
 
     .image__wrapper {

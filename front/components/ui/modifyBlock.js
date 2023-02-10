@@ -89,6 +89,8 @@ export default function ModifyBlock({
 
   const modifications = getModifications(roomType);
 
+  // console.log('cardItem', cardItem)
+
   useEffect(() => {
     if (modifications && modifications[`${modificationName}`]) {
       setChecked(true);
@@ -193,11 +195,11 @@ export default function ModifyBlock({
             </div>
           }
 
-          {checked &&
+          {/* {checked &&
             <div className={styles.checkIcon}>
-              <IconComponent name="check" color={styles.checkIconColor}/>
+              <IconComponent name="check" color="#fff"/>
             </div>
-          }
+          } */}
 
         </div> 
         {modificationDescription
@@ -252,6 +254,7 @@ export default function ModifyBlock({
                       active = {activeIndex === index}
                       disable = {disabledCards[index]}
                       optionPrice = {modsAdditionalPrice[index]}
+                      onlyOne={cardItem.modificationItemExample.length === 1}
                     /> 
                   </div>
                 )

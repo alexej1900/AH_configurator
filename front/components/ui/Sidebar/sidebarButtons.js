@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeRoomVisibility, changeStyleVisibility } from '../../../redux/actions/index';
 
+import IconComponent from '../Components/iconComponent';
+
 import styles from './sidebar.module.scss';
 
 export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
@@ -64,7 +66,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 					<>
 						<Link href={`${prevLink}`} >
 							<a className={`${styles.btn} ${styles.btn__back} center`}>
-								Zurück
+								<IconComponent name="arrow" color="#fff"/> Zurück
 							</a>
 						</Link> 
 
@@ -74,7 +76,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 
 						<Link href={`${nextLink.link}`}>
 							<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} center`} onClick={styleTypeSet}>
-								{nextLink.title}
+								{nextLink.title} <IconComponent name="arrow" color="#fff"/>
 							</a>
 						</Link>    
 					</>

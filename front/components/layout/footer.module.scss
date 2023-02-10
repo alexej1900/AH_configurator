@@ -119,4 +119,22 @@
       }
     }
   }
+
+  &__legals {
+    width: 100%;
+    background: #1D4451;
+    text-align: center;
+    padding: 1.6rem 0;
+    
+    &_link {
+      font-family: $description__typo;
+      font-weight: 400;
+      font-size: 1.44rem;
+      line-height: 135%;
+      text-decoration: none;
+      color: $color__bright;
+
+      margin: 1.6rem;
+    }
+  }
 }

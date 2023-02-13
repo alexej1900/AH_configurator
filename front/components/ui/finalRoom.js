@@ -21,6 +21,7 @@ import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import Card from './card';
 import OptionItem from './Components/optionItem';
 import LoadingSpinner from './Components/loadingSpinner';
+import IconComponent from './Components/iconComponent';
 
 import styles from './finalRoom.module.scss';
 
@@ -29,7 +30,7 @@ export default function FinalRoom({ roomName, style }) {
   
   const { roomType } = useSelector(state => state);
 
-  // console.log('roomType', roomType)
+  console.log('roomName', roomName)
   
   const { data, loading, error } = useQuery(RoomData(roomName));
   if (loading) return <LoadingSpinner/>
@@ -97,13 +98,12 @@ export default function FinalRoom({ roomName, style }) {
               <div className={`${data[1].option ? styles.halfLine : ''}`}>
                 <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
                 <div className={`${styles.summary__room_card_wrapper}`}>
-                  <div className={`${styles.summary__room_edit_icon}`} >
-                    <Link href={`/${roomName.toLowerCase()}`} >
-                      <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
-                        <img src={'/edit-simple.svg'}  alt="Edit"/>
-                      </a>		
-                    </Link>
-                  </div>
+                  <Link href={`/${roomName.toLowerCase()}`} >
+                    <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
+                      <IconComponent name="edit" color="#000"/>
+                    </a>		
+                  </Link>
+                  
                   <Card 
                     title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
                     subtitle={data[1].individualFormat ? "" : subtitle} 

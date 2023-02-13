@@ -41,7 +41,16 @@ export default function Summary () {
 	}
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
-	const rooms = generalStates.rooms
+	// const rooms = generalStates.rooms
+
+	const rooms = [
+    'Wohnzimmer', 
+    'Raumtrenner', 
+    `${apartSize.roomsCount > 2.5 ? 'Badewanne' : ''}`, 
+    'Dusche', 
+    'Schlafzimmer', 
+    'Gang'
+  ];
 
   const price = apartSize.price;
   const size = apartSize.size;
@@ -60,33 +69,35 @@ export default function Summary () {
     dispatch(changeSidebarState(false));
     return () => dispatch(changeSidebarState(true));
   }, []);
-console.log('apartStyle', apartStyle)
+
+
+console.log('apartSize', apartSize)
   return (
 		<>
 			<div className={styles.summary} id="summary">
 
-				{/* {apartStyle.image && 
+				{apartStyle.image && 
 					<div className={`${styles.container} ${styles.mainImage}`} id="mainImage">
 						<Image src={apartStyle.image.url} layout='fill' priority="true" alt="Image of choosed style"/>				
 					</div>
-				}  */}
+				} 
 
-				{/* <div className={`${styles.container}`}>
+				<div className={`${styles.container}`}>
 					<section className={`${styles.summary__overview}`} id="overview">
 						<h1 className={`${styles.title} center`}> Ihre Wohnung</h1>
 
 						<div  className={`${styles.summary__overview_content}`}>
 							<div className={`${styles.summary__overview_image}`} id="apartmentImage">
-								<Image src={apartSize.image.url} width={apartSize.image.width} height={apartSize.image.height} alt="Isometry"/>
+								<Image src={apartSize.image.url} width={`${apartSize.image.width}`} height={`${apartSize.image.height}`} alt="Isometry"/>
 							</div>
 							<div className={`${styles.stats}`} id="stats">
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Wohnung</div>
-									<div className="col-4">Nr. 1.11.3</div>
+									<div className="col-4">{apartSize.apartmentId}</div>
 								</div>
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Grundriss</div>
-									<div className="col-4">{size === 'small' ? '3.5' : '4.5'} Zi.</div>
+									<div className="col-4">{apartSize.roomsCount} Zi.</div>
 								</div>
 
 								{apartStyle.title && 
@@ -98,7 +109,7 @@ console.log('apartStyle', apartStyle)
 								
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Grundfläche</div>
-									<div className="col-4">151m2</div>
+									<div className="col-4">{apartSize.generalArea} m2</div>
 								</div>
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Individuelle Lösungen</div>
@@ -115,16 +126,16 @@ console.log('apartStyle', apartStyle)
 							</div>
 						</div>
 					</section>
-				</div> */}
+				</div>
 
-				{/* <div className={`${styles.container} ${styles.notice}`}>
+				<div className={`${styles.container} ${styles.notice}`}>
 						<p> Ihr individuelles Eigenheim wird mit folgenden Materialen für Sie erstellt. </p>
 						<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
 				</div>
 
 				<div className={`${styles.container}`} id="finalRooms">
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
-				</div>  */}
+				</div> 
 
 				{/* <FinalForm rooms={roomType}/>  */}
 			</div>

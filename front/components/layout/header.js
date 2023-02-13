@@ -5,8 +5,6 @@ import { useState, useEffect } from 'react';
 import { changeMenuState } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 
-import Fade from 'react-reveal/Fade';
-
 import ContactForm from '../ui/contactForm';
 
 import style from './header.module.scss';
@@ -17,7 +15,7 @@ export default function Header () {
   const [isPopup, setIsPopup] = useState(false);
 
   const dispatch = useDispatch();
-  const { pathname, asPath, query } = useRouter();
+  const { pathname, query } = useRouter();
 
   const generalStates = useSelector((state) => state.generalStates);
   const apartSize = useSelector((state) => state.apartSize);
@@ -50,7 +48,7 @@ export default function Header () {
   const onCancel = () => setIsPopup(false);
 
   return (
-    <header className={[style.header, open & pathname !== '/' && style.compressed, pathname === '/' && style.shifted, menu && style.background].join(' ')}>
+    <header className={[style.header, open & pathname !== '/' && style.compressed, (pathname === '/'|| pathname === '/summary') && style.shifted, menu && style.background].join(' ')}>
       <div className={style.header__wrapper}>
         <Link href='/'>
           <img className={style.logo} src={'./AH_Header_Logo.svg'} alt="Logo"/>
@@ -72,66 +70,60 @@ export default function Header () {
           />
         </div>
       </div>
+        <div className={`${style.header__menu} ${menu && style.header__menu_open}`} id='menuBlock' onScroll={checkSize}>
+          <ul className={style.header__menu__list} id='menuList' >
+            <Link activeClassName='active' exact={true} href={`/?id=${apartSize.apartmentId}`}>
+              <a className={`${pathname === `/` ? style.active : ''} ${style.roomItem} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
+            </Link>
 
-      {menu &&
-        <Fade duration={150} right className={style.header__menu_block}>
-          <div className={style.header__menu} id='menuBlock' onScroll={checkSize}>
-            <ul className={style.header__menu__list} id='menuList' >
-              <Link activeClassName='active' exact={true} href={`/?id=${apartSize.apartmentId}`}>
-                <a className={`${pathname === `/` ? style.active : ''} ${style.roomItem} ${style.welcomeItem}`} onClick={() => closeMenuHandler()}>Grundrisse</a>
-              </Link>
+            {rooms?.map((room) => {
+          
+              if (room) {
+                const currentRoom = `/${room.toLowerCase()}`;
+                return (
+                  <Link href={currentRoom} key={room}>
+                    <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
+                  </Link>
+                )}
+            })}
+          </ul>
 
-              {rooms?.map((room) => {
-            
-                if (room) {
-                  const currentRoom = `/${room.toLowerCase()}`;
-                  return (
-                    <Link href={currentRoom} key={room}>
-                      <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>
-                    </Link>
-                  )}
-              })}
-            </ul>
-
-            <div className={`${style.header__menu_button_block}`}>
-              {pathname !== '/' && pathname !== '/summary' &&
-                <Link href='/summary'>
-                  <a className={`${style.header__menu_button} ${style.header__menu_button_summary}`} title="To the summary page">
-                    <img src='./summary-colored.svg' alt="summary" />
-                    <span className={`${style.header__menu_button_descr}`}>Konfiguration fertigstellen</span>
-                  </a>
-                </Link> 
-              } 
-
-              <a className={`${style.header__menu_button} ${style.header__menu_button_contact}`} 
-                title="To get contact" 
-                onClick={() => setIsPopup(true)}
-              >
-                <img src='./Person.svg' alt="summary" />
-                <span className={`${style.header__menu_button_descr}`}>Kontakt aufnehmen</span>
-              </a>
-
-              <div className={`${style.header__menu_button_devider}`}></div>
-
-              <a className={`${style.header__menu_button} ${style.header__menu_button_back}`} 
-                title="Back to Appenzeller Huus Website" 
-                href='https://appenzellerhuus-wohnen.ch/'
-              >
-                <img src='./globe.svg' alt="summary" />
-                <span className={`${style.header__menu_button_descr}`}>Zurück zur Appenzeller Huus Website</span>
-              </a>
-
-              <div className={`${style.header__menu_button_devider}`}></div>
-
-            </div>
-            {shift 
-              ? <div className={`${style.header__menu_button_down}`}></div>
-              : null 
+          <div className={`${style.header__menu_button_block}`}>
+            {pathname !== '/' && pathname !== '/summary' &&
+              <Link href='/summary'>
+                <a className={`${style.header__menu_button} ${style.header__menu_button_summary}`} onClick={() => closeMenuHandler()} title="To the summary page">
+                  <img src='./summary-colored.svg' alt="summary" />
+                  <span className={`${style.header__menu_button_descr}`}>Konfiguration fertigstellen</span>
+                </a>
+              </Link> 
             } 
-          </div>
-        </Fade>
-      }
 
+            <a className={`${style.header__menu_button} ${style.header__menu_button_contact}`} 
+              title="To get contact" 
+              onClick={() => setIsPopup(true)}
+            >
+              <img src='./Person.svg' alt="summary" />
+              <span className={`${style.header__menu_button_descr}`}>Kontakt aufnehmen</span>
+            </a>
+
+            <div className={`${style.header__menu_button_devider}`}></div>
+
+            <a className={`${style.header__menu_button} ${style.header__menu_button_back}`} 
+              title="Back to Appenzeller Huus Website" 
+              href='https://appenzellerhuus-wohnen.ch/'
+            >
+              <img src='./globe.svg' alt="summary" />
+              <span className={`${style.header__menu_button_descr}`}>Zurück zur Appenzeller Huus Website</span>
+            </a>
+
+            <div className={`${style.header__menu_button_devider}`}></div>
+
+          </div>
+          {shift 
+            ? <div className={`${style.header__menu_button_down}`}></div>
+            : null 
+          } 
+        </div>
       {isPopup && <ContactForm onCancel={onCancel}/>}
     </header>
   )

@@ -37,48 +37,64 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
+      
       cursor: pointer;
 
+      svg {
+        margin: 0 .8rem;
+      }
+
       &__primary {
-        background: var(--color__primary);
+        background: $color__cta-primary--default;
         color: $color__bright;
-        font-weight: 600;
+        font-weight: 500;
+
+        
+        // svg {
+        //   transform: rotate(180deg);
+        // }
+        
     
-        &.disabled {
-          background: var(--color__primary_30);
-        }
+        // &.disabled {
+        //   background: var(--color__primary_30);
+        // }
       }
 
-      &__back {
-        background: var(--color__secondary);
+      &__next {
+        background: $color__bright;
+        font-weight: 500;
+        color: $color__cta-primary--default;
+        border: 1px solid $color__cta-primary--default;
 
-        &:after {
-          border-style: solid;
-          border-width: 0 0 3px 3px;
-          content: '';
-          display: inline-block;
-          height: 10px;
-          position: relative;
-          margin-left: 1rem;
-          vertical-align: top;
-          width: 10px;
-          margin-right: 1.6rem;
-          transform: rotate(-135deg);
+        &_style {
+          
+          svg {
+            transform: rotate(180deg);
+          }
         }
+
+        
+      }
+
+      &__options {
+        background: $color__cta-primary--hover;
+        font-weight: 500;
+        color: $color__bright;
+        // border: 1px solid $color__cta-primary--default;=
       }
   }
 
-  .nextRoom {
-    &:before {
-        content: '';
-        background-image: url('/nextRoom-icon.svg');
-        display: inline-block;
-        position: relative;
-        width: 2.4rem;
-        height: 2.4rem;
-        background-repeat: no-repeat;
-        fill: white;
-        margin-right: 1rem;
-    }
-  }
+  // .nextRoom {
+  //   &:before {
+  //       content: '';
+  //       background-image: url('/nextRoom-icon.svg');
+  //       display: inline-block;
+  //       position: relative;
+  //       width: 2.4rem;
+  //       height: 2.4rem;
+  //       background-repeat: no-repeat;
+  //       fill: white;
+  //       margin-right: 1rem;
+  //   }
+  // }
 }

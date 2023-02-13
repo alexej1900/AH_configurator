@@ -75,21 +75,19 @@ export default function Card({
                             {/* <p className={styles.card__description}>{description}</p> */}
                             {optionPrice > 0 && !collapsed ? <p className={styles.card__description}><span className={styles.card__index}>+ CHF</span> {optionPrice}</p> : null}
                             {final ? <p className={styles.card__description}>{additionalPrice ? `+ ${additionalPrice} CHF zum Grundpreis` : ''}</p> : null}
-                            <IconComponent name={onlyOne ? "lock" : "check"} color={collapsed ? "rgba(0, 0, 0, 0.32)" :"#fff"}/>
+                            {!final ? <IconComponent name={onlyOne ? "lock" : "check"} color={collapsed ? "rgba(0, 0, 0, 0.32)" :"#fff"}/> : null}
                         </div>
                     </div>
                 </div>
             )
         } else {
             return (
-                <div className={`${styles.card} ${styles.styleCard} ${active && styles.active}`}  onClick={styleCardClickHandler}>
-
-                    <div className={styles.card__title}>
-                        <h3 >{title}</h3>
-                    </div>
+                <div className={`${styles.styleCard} ${active && styles.styleCard__active}`}  onClick={styleCardClickHandler}>
+                    <h3 className={styles.card__title} >{title}</h3>
                     
-                    <div className={styles.img__wrapper}>
-                        <Image src={url[0].url} width="312" height="180" alt="Style Image"/>
+                    <div className={styles.img__wrapper1}>
+                        <Image src={url[0].url} width={url[0].width} height={url[0].height} alt="Style Image"/>
+                        {active ? <IconComponent name={"check"} color={"#fff"}/> : null}
                     </div>
                 </div>
             )

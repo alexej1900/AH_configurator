@@ -90,13 +90,24 @@
   &__menu {
     box-sizing: border-box;
     position: absolute;
-    width: 36rem;
+    width: 0rem;
     height: 100vh;
-    right: 0;
+    right: 0rem;
     padding-top: 6.4rem;
     background: $color__bright;
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: auto;
+    opacity: 0;
+
+    transition: all .5s ease-in-out;
+
+
+    &_open {
+      right: 0rem;
+      width: 36rem;
+      opacity: 1;
+      transition: all .5s ease-in-out;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -125,37 +136,6 @@
         color: $color__cta-primary--default;
         border-bottom: 1px solid $color__cta-primary--default;
       }
-
-      // .welcomeItem::before,
-      // .typeItem::before,
-      // .roomItem::before {
-      //     content: '';
-      //     position: absolute;
-      //     left: 1rem;
-      //     width: 2.4rem;
-      //     height: 2.4rem;
-      //     display: none;
-      // }
-
-      // .welcomeItem::before,
-      // .typeItem::before,
-      // .roomItem::before {
-      //   @media (max-width: 1000px) {
-      //     display: block;
-      //   }
-      // }
-
-      // .typeItem::before {
-      //   background-image: url('/type.svg');
-      // }
-
-      // .roomItem::before {
-      //   background-image: url('/roomItem.svg');
-      // }
-
-      // .welcomeItem::before {
-      //   background-image: url('/room-copy.svg');
-      // }
     }
 
     &_button_block {
@@ -171,6 +151,7 @@
       height: 4.8rem;
       width: 100%;
       margin: .4rem 0;
+      overflow: hidden;
 
       border: 1px solid $color__cta-primary--default;
       cursor: pointer;

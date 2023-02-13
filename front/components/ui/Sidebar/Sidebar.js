@@ -41,7 +41,7 @@ export default function Sidebar({
 
     const { OptionsPrice, IndividualPrice } = getPrices();
 
-    // console.log('modifyData', modifyData)
+    console.log('showStyle', showStyle)
 
     const modifications = getModifications(currentRoom);
 
@@ -126,7 +126,7 @@ export default function Sidebar({
     }
 
     return (
-        <div className={`${styles.sidebar} ${sidebarOpen && styles.open} ${currentRoom === 'type' && showStyle && styles.moveLeft} ${currentRoom !== 'type' && !showRoom && styles.moveLeft}` }>
+        <div className={`${styles.sidebar} ${sidebarOpen && styles.open} ${!showStyle && styles.moveLeft} ` }>
             <div className={styles.sidebar__toggle} onClick={() => dispatch(changeSidebarState(!sidebarOpen))} >
                 <span className={styles.toggle}>
                     Ausstattung                 
@@ -135,7 +135,7 @@ export default function Sidebar({
             </div>
             {sidebarOpen &&
                 <div className={styles.sidebar__content}>
-                    <div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'type' && showStyle && styles.hideHeader}`}>
+                    <div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'kitchen-type' && showStyle && styles.hideHeader}`}>
                         <h3 className={`${styles.optionsTitle}`}>{sidebarTitle}</h3>
                         <div className={`${styles.options}`}>
                             <div><span>Optionen</span> {OptionsPrice > 0 ? '+' : ''}<strong>{formatNumber(OptionsPrice)}</strong></div>

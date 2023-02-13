@@ -15,29 +15,24 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 
 	
 	let nextLink, prevLink;
-	// let kitchenLink = currentRoom.slice(0, -1) === 'küche' ? currentRoom : `/kitchen-type`;
-	// console.log('kitchenLink', kitchenLink)
-	// if (currentRoom === 'type') {
-	// 	nextLink = {link: `/${roomsSlug[0].toLowerCase()}`, title: roomsTitle[0], icon: 'nextRoom'};
-	// 	prevLink = `/?id=${roomId}`;
-	// } else 
+
 	if (currentRoom === 'kitchen-type') {
-		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`, icon: 'nextRoom'}
+		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`}
 		prevLink = '/raumtrenner';
 	} else if (currentRoom.slice(0, -1) === 'küche') {
-		nextLink = {link: `/badewanne`, title: `Badewanne`, icon: 'nextRoom'}
+		nextLink = {link: `/badewanne`, title: `Badewanne`}
 		prevLink = '/kitchen-type';
 	} else {
 		for (let i = 0; i < roomsTitle.length; i++) {   
 			if (roomsSlug[i].toLowerCase() === currentRoom) {
 				nextLink = roomsTitle[i+1] 
-					?  {link: `/${roomsSlug[i+1].toLowerCase()}`, title: roomsTitle[i+1], icon: 'nextRoom'}
-					:  {link: '/summary', title: 'Abschliessen', icon: 'checkIcon'};
+					?  {link: `/${roomsSlug[i+1].toLowerCase()}`, title: roomsTitle[i+1]}
+					:  {link: '/summary', title: 'Abschliessen'};
 
 				prevLink = roomsSlug[i-1] ? roomsSlug[i-1].toLowerCase() : '/type';
 
 				if (currentRoom.toLowerCase() === 'raumtrenner') {
-					nextLink = {link: `/kitchen-type`, title: 'Küchendesign', icon: 'nextRoom'}
+					nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
 					prevLink = '/wohnzimmer';
 				}
 
@@ -56,30 +51,36 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 		dispatch(changeRoomVisibility(true))
 		dispatch(changeStyleVisibility(true));
 	}
-
-	const nextLinkIcon = nextLink?.icon;
 			
 	return (
-		<div className={`${styles.sidebar__button} ${currentRoom === 'type' && styles.sidebar__typeRoomButtons}`}>
+		<div className={`${styles.sidebar__button} ${currentRoom === 'kitchen-type' && styles.sidebar__typeRoomButtons}`}>
 			<div className={styles.btn__wrapper}>
-				{nextLink && 
-					<>
-						<Link href={`${prevLink}`} >
-							<a className={`${styles.btn} ${styles.btn__back} center`}>
-								<IconComponent name="arrow" color="#fff"/> Zurück
-							</a>
-						</Link> 
+				{nextLink 
+					? <>
+							<Link href={`${prevLink}`} >
+								<a className={`${styles.btn} ${styles.btn__back} center`}>
+									<IconComponent name="arrow" color="#fff"/> Zurück
+								</a>
+							</Link> 
 
-						<div className={`${styles.btn} ${styles.btn__showRoom} center`} onClick={showRoomClick}>
-							Raum anzeigen
-						</div>
+							<div className={`${styles.btn} ${styles.btn__showRoom} center`} onClick={showRoomClick}>
+								<IconComponent name="showRoom" color="#fff"/> Raum anzeigen
+							</div>
 
-						<Link href={`${nextLink.link}`}>
-							<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} center`} onClick={styleTypeSet}>
-								{nextLink.title} <IconComponent name="arrow" color="#fff"/>
-							</a>
-						</Link>    
-					</>
+							{ currentRoom === 'kitchen-type' 
+								? <Link href={`${nextLink.link}`}>
+										<a className={`${styles.btn} ${styles.btn__primary}`} onClick={styleTypeSet}>
+											Wahl bestätigen <IconComponent name="confirm" color="#fff"/> 
+										</a>
+									</Link>
+								: <Link href={`${nextLink.link}`}>
+										<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} center`} onClick={styleTypeSet}>
+											{nextLink.title} <IconComponent name="arrow" color="#fff"/>
+										</a>
+									</Link>  
+							}
+						</>  
+					: null
 				}
 			</div>
 	</div>

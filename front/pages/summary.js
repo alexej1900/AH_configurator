@@ -46,6 +46,7 @@ export default function Summary () {
 	const rooms = [
     'Wohnzimmer', 
     'Raumtrenner', 
+		'Küche',
     `${apartSize.roomsCount > 2.5 ? 'Badewanne' : ''}`, 
     'Dusche', 
     'Schlafzimmer', 

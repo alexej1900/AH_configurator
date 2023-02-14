@@ -25,7 +25,7 @@ export default function KitchenType() {
 
     const dispatch = useDispatch();
 
-    const { apartStyle, apartSize, generalStates } = useSelector((state) => state);
+    const { apartStyle, apartSize, generalStates, roomType } = useSelector((state) => state);
     const sidebarState = generalStates.open;
 
     useEffect(() => {
@@ -33,8 +33,8 @@ export default function KitchenType() {
         setStyleId(apartStyle.kitchenStyle);
     }, [])
 
-    console.log('apartStyle', apartStyle)
-    // console.log('styleId', styleId)
+    // console.log('apartStyle', apartStyle)
+    // console.log('roomType', roomType)
 
     const {data, error, loading} = useQuery(kitchenTypePage);
     if (loading) return <LoadingSpinner full={true}/>;

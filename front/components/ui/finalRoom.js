@@ -28,25 +28,32 @@ import styles from './finalRoom.module.scss';
 export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   
-  const { roomType } = useSelector(state => state);
+  const { roomType, apartStyle } = useSelector(state => state);
 
-  console.log('roomName', roomName)
-  
-  const { data, loading, error } = useQuery(RoomData(roomName));
+  // console.log('roomName', roomName)
+  // console.log('roomType', roomType)
+  const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
+  const { data, loading, error } = useQuery(RoomData(currentRoom));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
-  const modifyData = data.entry.mods[0].modificationsTypes;
+  const modifyData = data.entry?.mods[0].modificationsTypes;
 
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
+  // console.log('data.entry.roomStyles[0]', data.entry?.roomStyles[0].roomStyleExamples)
+  // const room = roomType[`${roomName.toLowerCase()}`] 
 
   const room = roomType[`${roomName.toLowerCase()}`] 
     ? roomType[`${roomName.toLowerCase()}`] 
-    : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
-      return item.styleName.toLowerCase() === style.toLowerCase()
-  })[0].styleDefaultImage[0]};
+    : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
+
+    // if we have main styles decomment 3 lines below and delete 3 lines abowe ==============
+    // : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
+    //   return item.styleName.toLowerCase() === style.toLowerCase()
+    // })[0].styleDefaultImage[0]};
+
 
   const roomMods = room?.modifications && Object.entries(room.modifications);
 
@@ -75,7 +82,7 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 // console.log('room', room)
-// console.log('roomType', roomType)
+console.log('roomType', roomType)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>
@@ -98,16 +105,16 @@ export default function FinalRoom({ roomName, style }) {
               <div className={`${data[1].option ? styles.halfLine : ''}`}>
                 <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
                 <div className={`${styles.summary__room_card_wrapper}`}>
-                  <Link href={`/${roomName.toLowerCase()}`} >
+                  <Link href={`/${currentRoom.toLowerCase()}`} >
                     <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
                       <IconComponent name="edit" color="#000"/>
                     </a>		
                   </Link>
                   
                   <Card 
-                    title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
-                    subtitle={data[1].individualFormat ? "" : subtitle} 
-                    description={data[1].individualFormat ? "" :description}
+                    title={data[1].individualFormat ? "Individuelle Lösung" : subtitle} 
+                    subtitle={data[1].individualFormat ? "" : styleTitle } 
+                    description={data[1].individualFormat ? "" : description}
                     additionalPrice={data[1].individualFormat ? "" : additionalPrice}
                     image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
                     type="small" 

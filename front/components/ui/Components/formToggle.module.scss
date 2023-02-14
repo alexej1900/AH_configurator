@@ -23,18 +23,12 @@
           color: #FFFFFF;
           background: rgba(255, 255, 255, 0.16);
         }
-
-        .option_icon {
-          fill: $color__bright;
-        }
       }
 
-      &_icon {
-        display: block;
+      svg {
         width: 9.6rem;
         height: 9.6rem;
         margin-bottom: 1.6rem;
-        fill: $color__cta-primary--default;
       }
     }
 

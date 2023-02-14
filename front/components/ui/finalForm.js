@@ -17,6 +17,7 @@ import { saveData } from '../../gql/index';
 
 import Popup from './Components/popup';
 import LoadingSpinner from './Components/loadingSpinner';
+import IconComponent from './Components/iconComponent';
 
 import styles from './finalForm.module.scss';
 
@@ -193,7 +194,6 @@ export default function ContactForm() {
       <section className={`${styles.contactForm}`}>
         <div className={styles.text__inner}>
           <div className={styles.contactForm_header}>
-            {/* <img src='./summary.svg' alt="summary" className={styles.contactForm_icon}/>  */}
             <h3>Herzlichen Glückwunsch! Sie sind Ihrer Traumwohnung einen Schritt näher.</h3>
           </div>
           <div className={styles.formular}>
@@ -240,11 +240,6 @@ export default function ContactForm() {
                 />
                 {errors.phone ? <div className={styles.errors}>{errors.phone}</div> : null}
 
-                {/* <div className={`${styles.toggle} toggle`}>
-                  <span>Bitte um Kontaktaufnahme </span>
-                  <input type="checkbox" id="test" className={styles.checkbox} onClick={checkHandler}/>
-                  <label htmlFor="test"> Ja / Nein</label>
-                </div> */}
               </form>
             }
               <button 
@@ -254,7 +249,7 @@ export default function ContactForm() {
                 title='Kontakte werden gesendet. Warten Sie auf einen Anruf'
                 
               >
-                {loading ? 'Senden...' : 'Kontakte per Email zusenden '}
+                {loading ? 'Senden...' : 'Kontakte per Email zusenden '} <IconComponent name="mail" color="#fff"/>
               </button>
               <button 
                 className={`${styles.pdfBtn} ${styles.btn}`} 
@@ -264,7 +259,7 @@ export default function ContactForm() {
                 }} 
                 title='Sie können alle Einstellungen in einer PDF-Datei speichern'
               >
-                Konfiguration als PDF speichern
+                Konfiguration als PDF speichern <IconComponent name="pdf" color="#fff"/>
               </button>
               <button 
                 className={`${styles.shareBtn} ${styles.btn}`} 
@@ -274,7 +269,7 @@ export default function ContactForm() {
                 }}
                 title='Sie können alle Einstellungen als Link speichern'
               >
-                Link weiterleiten
+                Link weiterleiten <IconComponent name="share" color="#fff"/>
               </button>
           </div>
 
@@ -285,7 +280,7 @@ export default function ContactForm() {
               onClick={() => setIsPopup(true)}
               title='RESET YOUR DATA'
             >
-              RESET
+              RESET <IconComponent name="reset" color="#fff"/>
             </button>
         </div>
         

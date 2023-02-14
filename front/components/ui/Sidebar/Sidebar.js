@@ -8,6 +8,7 @@ import { changeSidebarState, changeApartIndividualPrice, changeRoomImage, setSty
 import StyleCards from '../styleCards';
 import ModifyCards from '../modifyCards';
 import SidebarButtons from './sidebarButtons';
+import IconComponent from '../Components/iconComponent';
 
 import { formatNumber } from '../../../utils/utilities';
 import getImages from '../../../pages/api/getImages';
@@ -128,10 +129,7 @@ export default function Sidebar({
     return (
         <div className={`${styles.sidebar} ${sidebarOpen && styles.open} ${!showStyle && styles.moveLeft} ` }>
             <div className={styles.sidebar__toggle} onClick={() => dispatch(changeSidebarState(!sidebarOpen))} >
-                <span className={styles.toggle}>
-                    Ausstattung                 
-                    <Image src="/sidebar-navigation.svg" width="24" height="24" alt="Open sidebar icon"/> 
-                </span>
+                <div className={styles.toggle}> Ausstattung <IconComponent name="sidebar-nav" color="#fff"/></div>
             </div>
             {sidebarOpen &&
                 <div className={styles.sidebar__content}>

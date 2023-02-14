@@ -8,7 +8,6 @@ import '../assets/scss/layout/_grid.scss';
 import '../assets/scss/base/_utilities.scss';
 import '../assets/scss/base/_typography.scss';
 import '../assets/scss/abstracts/_variables.scss';
-import '../assets/scss/components/_radio.scss';
 
 export default function MyApp({ Component, pageProps }) {
   return  (

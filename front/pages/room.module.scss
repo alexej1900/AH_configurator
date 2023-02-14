@@ -12,22 +12,6 @@
   }
 }
 
-// .loader__wrapper {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   z-index: 1000;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-
-//   @media (max-width: $screen-lg) {
-//     width: calc(100vw + 42rem);
-//   }
-// }
-
 .image {
   transition: all 0.3s ease-in-out;
 
@@ -42,7 +26,6 @@
     width: calc(100vw - 5.6rem);
     width: 100vw;
     opacity: 1;
-    // transition: all 0.3s ease-in-out;
 
     @media (max-width: $screen-lg) {
       width: 100%;
@@ -152,6 +135,11 @@
 
   cursor: pointer;
   transition: all 0.3s ease-in;
+
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
 
   &_shift {
     right: 64rem;

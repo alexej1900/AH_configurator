@@ -287,16 +287,6 @@
     border: none;
     cursor: pointer;
 
-    &:after {
-      content: '';
-      background: url('/reset_icon.svg');
-      display: inline-block;
-      width: 2.6rem;
-      height: 2.6rem;
-      background-repeat: no-repeat;
-      margin-left: 1rem;
-    }
-
     &:disabled {
       cursor: wait;
     }

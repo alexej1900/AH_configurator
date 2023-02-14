@@ -57,28 +57,6 @@
       margin-left: auto;
       cursor: pointer;
     }
-  
-    .expand {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      left: 0px;
-      height: 5rem;
-      background: linear-gradient(0deg, rgba($color__bright, 1), rgba($color__bright, 0) 150%);
-      cursor: pointer;
-  
-      &:after {
-        content: '';
-        background: url('/chevron-up.svg');
-        background-size: cover;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
 
     .text_block {
       display: flex;

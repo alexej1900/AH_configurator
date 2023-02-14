@@ -137,7 +137,7 @@ console.log('apartSize', apartSize)
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				{/* <FinalForm rooms={roomType}/>  */}
+				<FinalForm rooms={roomType}/> 
 			</div>
 			<Footer/>
 		</>

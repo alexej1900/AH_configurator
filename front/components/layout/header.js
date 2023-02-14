@@ -6,6 +6,7 @@ import { changeMenuState } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 
 import ContactForm from '../ui/contactForm';
+import IconComponent from '../ui/Components/iconComponent';
 
 import style from './header.module.scss';
 
@@ -58,16 +59,14 @@ export default function Header () {
           {pathname !== '/' &&
             <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
               <a className={`${style.header__buttons_virtual}`} title="To the virtual tour" target="_blank">
-                <img src='./virtual.svg' alt="virtual" />
+                <IconComponent name="virtual" color="#3C6589"/>
               </a>
             </Link> 
-          }   
-          <img 
-            src={menu ? "/close-black.svg" : "/hamburger.svg"} 
-            className={style.header__buttons_open} 
-            onClick={() => closeMenuHandler()}
-            alt="Menu"
-          />
+          } 
+
+          <div className={style.header__buttons_open} onClick={() => closeMenuHandler()}>
+            <IconComponent name={menu ? "close" : "hamburger"} color="#3C6589"/>
+          </div>
         </div>
       </div>
         <div className={`${style.header__menu} ${menu && style.header__menu_open}`} id='menuBlock' onScroll={checkSize}>
@@ -92,7 +91,7 @@ export default function Header () {
             {pathname !== '/' && pathname !== '/summary' &&
               <Link href='/summary'>
                 <a className={`${style.header__menu_button} ${style.header__menu_button_summary}`} onClick={() => closeMenuHandler()} title="To the summary page">
-                  <img src='./summary-colored.svg' alt="summary" />
+                  <IconComponent name="summary" color="#3C6589"/>
                   <span className={`${style.header__menu_button_descr}`}>Konfiguration fertigstellen</span>
                 </a>
               </Link> 
@@ -102,7 +101,7 @@ export default function Header () {
               title="To get contact" 
               onClick={() => setIsPopup(true)}
             >
-              <img src='./Person.svg' alt="summary" />
+              <IconComponent name="person" color="#fff"/>
               <span className={`${style.header__menu_button_descr}`}>Kontakt aufnehmen</span>
             </a>
 
@@ -112,7 +111,7 @@ export default function Header () {
               title="Back to Appenzeller Huus Website" 
               href='https://appenzellerhuus-wohnen.ch/'
             >
-              <img src='./globe.svg' alt="summary" />
+              <IconComponent name="globe" color="#3C6589"/>
               <span className={`${style.header__menu_button_descr}`}>Zurück zur Appenzeller Huus Website</span>
             </a>
 

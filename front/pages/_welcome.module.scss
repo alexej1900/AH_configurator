@@ -1,10 +1,7 @@
-@import "../abstracts/variables";
+@import '../assets/scss/abstracts/variables';
 
 .welcome {
   position: relative;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   height: 100vh;
   margin: 0 auto;
 
@@ -13,7 +10,6 @@
   }
 
   &__inner {
-    // display: flex;
     padding: 9rem 9.6rem 0;
     max-width: 86rem;
     margin: 0 auto;
@@ -122,33 +118,12 @@
     }
   }
 
-  &__options {
-    display: flex;
-    margin: 3.2rem 0;
+  .submitBtn {
+    width: 20rem;
+    align-self: center;
 
-    .option {
-      width: 50%;
-      display: flex;
-      align-self: center;
-      justify-content: center;
-
-      &.active {
-        background: $color__accent;
-        color: $dark-grey;
-        padding: 1.3rem 0;
-        position: relative;
-
-        &:after {
-          content: '';
-          background: url('/check.svg');
-          background-size: cover;
-          width: 1.6rem;
-          height: 1.6rem;
-          position: absolute;
-          top: .4rem;
-          right: .4rem;
-        }
-      }
+    @media (max-width: $screen-lg) {
+      width: 100%;
     }
   }
 

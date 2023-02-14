@@ -17,7 +17,7 @@ import { apartmentItem } from '../gql/index';
 import { useDispatch, useSelector } from "react-redux";
 import { changeApartSize, setBrandSettings, setRooms, changeApartData } from "../redux/actions/index";
 
-import styles from '../assets/scss/layout/_welcome.module.scss';
+import styles from './_welcome.module.scss';
 
 export default function Home() {
   const [isBaseVersion, setIsBaseVersion] = useState(true);
@@ -86,15 +86,14 @@ export default function Home() {
                                   setIsBaseVersion(false)}}
               />
 
-              <div 
-                className={`${styles.submitBtn} center`} 
+              <div className={`${styles.submitBtn}`} 
 
                 // If user didn't choosed size of apartment will be setted initial large size
                 onClick={() => isBaseVersion 
                   ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
                   : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
               >              
-                <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary btn--check"/>
+                <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary" iconName="content-check" iconColor="#fff"/>
               </div>
 
             </div>
@@ -107,7 +106,7 @@ export default function Home() {
                 object-fit='contain'
                 priority 
                 placeholder="blur"
-                blurDataURL={'/AHlogo.svg'}
+                blurDataURL={'/placeholder.png'}
                 alt="Apartment Image"
               />
             </div>

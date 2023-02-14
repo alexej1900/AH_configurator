@@ -48,16 +48,6 @@
         background: $color__cta-primary--default;
         color: $color__bright;
         font-weight: 500;
-
-        
-        // svg {
-        //   transform: rotate(180deg);
-        // }
-        
-    
-        // &.disabled {
-        //   background: var(--color__primary_30);
-        // }
       }
 
       &__next {
@@ -72,29 +62,12 @@
             transform: rotate(180deg);
           }
         }
-
-        
       }
 
       &__options {
         background: $color__cta-primary--hover;
         font-weight: 500;
         color: $color__bright;
-        // border: 1px solid $color__cta-primary--default;=
       }
   }
-
-  // .nextRoom {
-  //   &:before {
-  //       content: '';
-  //       background-image: url('/nextRoom-icon.svg');
-  //       display: inline-block;
-  //       position: relative;
-  //       width: 2.4rem;
-  //       height: 2.4rem;
-  //       background-repeat: no-repeat;
-  //       fill: white;
-  //       margin-right: 1rem;
-  //   }
-  // }
 }

@@ -1,3 +1,5 @@
+import IconComponent from './iconComponent';
+
 import styles from './confirmationForm.module.scss';
 
 export default function ConfirmationForm({ room, onCancel, onConfirm}) {
@@ -10,7 +12,7 @@ export default function ConfirmationForm({ room, onCancel, onConfirm}) {
         <div className={styles.contactForm__header}>
           <div>Zimmerübergreifende Option</div>
           <div className={styles.contactForm__closeBtn} onClick={onCancel}>
-            <img src={'/close.svg'} width="16px" height="16px" alt="Close icon"/>
+            <IconComponent name="close" color="#fff"/>
           </div>
         </div> 
 

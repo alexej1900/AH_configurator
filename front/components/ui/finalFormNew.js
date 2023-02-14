@@ -18,6 +18,7 @@ import { saveData } from '../../gql/index';
 
 import Popup from './popup';
 import LoadingSpinner from './loadingSpinner';
+import IconComponent from './Components/iconComponent';
 
 import styles from './finalForm.module.scss';
 
@@ -255,7 +256,7 @@ console.log('pdf', pdfData)
           <div className={styles.formular__left}>
             <div className={styles.formular__left_pdf_btn} onClick={() =>  showPdfFile()} >
               <div className={styles.formular__left_pdf_icon}>
-                <img src={'/pdf_file.svg'} width="36px" height="36px" alt="PDF file icon"/>
+                <IconComponent name="pdf" color="#fff"/>
               </div>
               <div className={styles.formular__left_pdf_title}>PDF anzeigen</div>
             </div>
@@ -270,7 +271,7 @@ console.log('pdf', pdfData)
                 {link}
               </div>
               <div className={styles.formular__left_share_icon}>
-                <img src={'/share.svg'} width="24px" height="24px" alt="Share link icon"/>
+                <IconComponent name="share" color="#fff"/>
               </div>
             </div>
           </div>
@@ -362,7 +363,7 @@ console.log('pdf', pdfData)
             className={`${styles.resetBtn} ${styles.form_button}`} 
             onClick={() => setIsPopup(true)}
             title='RESET YOUR DATA'
-          >RESET</button>
+          >RESET <IconComponent name="reset" color="#fff"/></button>
       </section>
 
       {isPopup && <Popup 

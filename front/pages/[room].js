@@ -10,6 +10,7 @@ import ContactForm from '../components/ui/contactForm';
 import ConfirmationForm from '../components/ui/Components/confirmationForm';
 import ContactBtn from '../components/ui/Components/contactBtn';
 import LoadingSpinner from '../components/ui/Components/loadingSpinner';
+import IconComponent from '../components/ui/Components/iconComponent';
 
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -190,7 +191,6 @@ export default function Room() {
         <>
         <div className={`${styles.type__wrapper}`} >  
 
-            {/* {isImageload && <LoadingSpinner full={true}/>} */}
             <ScrollContainer 
                 className={`${sidebarState && styles.image__wrapperActive} ${styles.image__wrapper}`} 
                 onStartScroll={() => setIsScroll(true)}
@@ -230,7 +230,7 @@ export default function Room() {
             <div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
                 onClick={() => setIsPinsVisible(!isPinsVisible)}
             >
-                <img src={isPinsVisible ? '/pin_is_open.svg' : '/pin_is_close.svg'} width="26px" height="26px" alt="Hide pins icon"/>
+                <IconComponent name={isPinsVisible ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
             </div>
             <Sidebar 
                 styleId={styleId} 

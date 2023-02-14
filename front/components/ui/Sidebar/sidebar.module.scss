@@ -101,47 +101,6 @@
         }
       }
     }
-
-    // .nextIcon {
-    //   &:after {
-    //     content: '';
-    //     background: url('/navigation-right.svg');
-    //     display: inline-block;
-    //     position: relative;
-    //     width: 2.6rem;
-    //     height: 2rem;
-    //     background-repeat: no-repeat;
-    //     margin-left: 1rem;
-    //   }
-    // }
-    
-    // .checkIcon {
-    //   &:before {
-    //     content: '';
-    //     background-image: url('/content-check.svg');
-    //     display: inline-block;
-    //     position: relative;
-    //     width: 2.4rem;
-    //     height: 2.4rem;
-    //     background-repeat: no-repeat;
-    //     fill: white;
-    //     margin-right: 1rem;
-    //   }
-    // }
-
-    // .nextRoom {
-    //   &:before {
-    //     content: '';
-    //     background-image: url('/nextRoom-icon.svg');
-    //     display: inline-block;
-    //     position: relative;
-    //     width: 2.4rem;
-    //     height: 2.4rem;
-    //     background-repeat: no-repeat;
-    //     fill: white;
-    //     margin-right: 1rem;
-    //   }
-    // }
   }
 
   &.open {
@@ -165,8 +124,8 @@
       }
     }
 
-    .sidebar__toggle .toggle {
-      img {
+    .sidebar__toggle .toggle{
+      svg {
         transform: rotate(90deg);
         transition: all 0.3s ease-in-out;
       }
@@ -262,40 +221,35 @@
   // }
 
   &__toggle {
-    position: relative;
     width: 5.6rem;
     height: 100%;
     display: flex;
-    align-items: center;
-    color: $color__bright;
+    justify-content: center;
     background: $color__cta-secondary--default;
     cursor: pointer;
-    flex-shrink: 0;
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: $color__bright;
+      text-align: center;
+      transform: rotate(-90deg);
+
+      svg {
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 1rem;
+        transform: rotate(-90deg);
+        transition: all 0.3s ease-in-out;
+      }
+
+    }
 
     @media (max-width: $screen-lg) {
       display: none;
-    }
-
-    .toggle {
-      font-size: 2.1rem;
-      font-weight: 600;
-      width: 100%;
-      text-align: center;
-      transform: rotate(-90deg);
-      display: flex;
-      align-items: center;
-
-      span {
-        overflow: visible !important;
-        position: initial !important;
-      }
-
-      img {
-        transform: rotate(-90deg);
-        transition: all 0.3s ease-in-out;
-        inset: initial !important;
-        top: 2px !important;
-      }
     }
   }
 

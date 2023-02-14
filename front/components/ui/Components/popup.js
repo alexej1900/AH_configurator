@@ -1,3 +1,6 @@
+
+import IconComponent from './iconComponent';
+
 import styles from './popup.module.scss';
 
 export default function Popup ({ children, onConfirm, onCancel, buttonIsVisible}) {
@@ -6,7 +9,7 @@ export default function Popup ({ children, onConfirm, onCancel, buttonIsVisible}
 
       <div className={styles.popup__form}>
         <div className={styles.popup__form_closeBtn} onClick={onCancel}>
-          <img src={'/close.svg'} width="26px" height="26px" alt="Close icon"/>
+          <IconComponent name="close" color="#fff"/>
         </div>
         <div className={styles.popup__form_description}>
           {children}

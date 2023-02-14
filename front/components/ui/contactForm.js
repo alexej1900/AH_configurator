@@ -5,6 +5,7 @@ import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
 
 import LoadingSpinner from './Components/loadingSpinner';
+import IconComponent from './Components/iconComponent';
 
 import styles from './contactForm.module.scss';
 
@@ -103,7 +104,7 @@ export default function ContactForm({ onCancel }) {
         <div className={styles.contactForm__header}>
           <div>Kontakt Aufnehmen</div>
           <div className={styles.contactForm__closeBtn} onClick={onCancel}>
-            <img src={'/close.svg'} width="16px" height="16px" alt="Close icon"/>
+            <IconComponent name="close" color="#fff"/>
           </div>
         </div> 
 
@@ -112,7 +113,7 @@ export default function ContactForm({ onCancel }) {
             <div className={styles.contactForm__content_title}>Wir sind für Sie da.</div>
             <div className={styles.contactForm__content_text}>Sie können uns gerne telefonisch kontaktieren oder Sie senden und über das Formular eine Mitteilung.</div>
             <div className={styles.contactForm__content_phone}>
-              <img src={'/call.svg'} width="36px" height="36px" alt="Phone icon" className={styles.contactForm__content_phone_icon}/>
+              <IconComponent name="phone" color="#000"/>
               <div>
                 <div className={styles.contactForm__content_phone_value}>+41 41 748 64 00</div>
                 <div className={styles.contactForm__content_phone_time}>Business hours  9:00 till 17:00.</div>

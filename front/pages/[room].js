@@ -141,7 +141,6 @@ export default function Room() {
         } else { // for other options
             dispatch(changeRoomType(room, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle));
             dispatch(changeApartPrice(modName, additionalPrice));
-            
         }
 
         dispatch(changeActivePin(modName));

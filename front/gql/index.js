@@ -37,84 +37,6 @@ query MyQuery {
   }
 }`;
 
-// export const mainSettings = gql`
-// query MyQuery {
-//   globalSets(handle: "settings") {
-//     ... on settings_GlobalSet {
-//       name
-//       settings {
-//         ... on settings_BlockType {
-//           brandLogo {
-//             url
-//             height
-//             width
-//           }
-//           headerBackgroundColor
-//           headerBackgroundPicture {
-//             url
-//             height
-//             width
-//           }
-//           welcomePageBg
-//           additionalBrandColor
-//           mainBrandColor
-//           colorSelected
-//           ctaSecondary
-//           fontForTitles
-//           fontForDescriptions
-//         }
-//       }
-//     }
-//   }
-// }
-// `;
-
-// export const introScreen = gql`
-// query MyQuery {
-//   globalSets(handle: "welcomeScreen") {
-//     ... on welcomeScreen_GlobalSet {
-//       handle
-//       welcomeScreen {
-//         ... on welcomeScreen_BlockType {
-//           bigApartmentPrice
-//           bigRoomTitle
-//           paragraph
-//           bigRoomImage {
-//             width
-//             url
-//             height
-//           }
-//           introText
-//           smallApartmentPrice
-//           smallRoomTitle
-//           smallRoomImage {
-//             height
-//             width
-//             url
-//           }
-//           apartmentType {
-//             ... on apartmentType_apartmentType_BlockType {
-//               apartmentPrice
-//               apartmentTitle
-//               apartmentImage {
-//                 url
-//                 width
-//                 height
-//               }
-//               apartmentRooms {
-//                 ... on apartmentRooms_BlockType {
-//                   roomType
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `;
-
 
 // export const apartmentList = gql`
 // query MyQuery {
@@ -209,32 +131,6 @@ query MyQuery($var: [String]) {
   }
 }
 `;
-
-
-// export const apartmentItem = gql`
-// query MyQuery($id: [QueryArgument]) {
-//   globalSets(handle: "apartmentList") {
-//     ... on apartmentList_GlobalSet {
-//       apartmentList(orderBy: "apartmentId", id: $id) {
-//         id
-//         apartmentId
-//         areaBath
-//         areaBath2
-//         areaCorridor
-//         areaGeneral
-//         areaKitchen
-//         areaKitchenFurniture
-//         basePrice
-//         apartmentImage {
-//           height
-//           width
-//           url
-//         }
-//       }
-//     }
-//   }
-// }
-// `;
 
 
 export const typePage = gql `

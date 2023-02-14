@@ -32,7 +32,7 @@ export default function ModifyBlock({
     {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0}
     );
 
-  const roomState = useSelector(state => state.roomType)[roomType];
+  const roomState = useSelector(state => state.roomType)[roomType.slice(0, 5) === 'küche' ? 'küche' : roomType];
   const style = useSelector(state => state.apartStyle);
   const apartSize = useSelector(state => state.apartSize);
 
@@ -85,11 +85,13 @@ export default function ModifyBlock({
         ? {0: 0, 1: apartSize.bedroomClosetPrice}
         :  roomType === 'gang' && modificationName === 'Einbauschrank' 
         ? {0: 0, 1: apartSize.additionalClosetPrice}
+        :  roomType === 'küche4' && modificationName === 'Front' 
+        ? {0: 0, 1: apartSize.kitchen2Front2Price, 2: apartSize.kitchen2Front3Price}
+        :  roomType === 'küche4' && modificationName === 'Rückwand' 
+        ? {0: 0, 1: apartSize.kitchen2Back2Price}
         : {}
 
-  const modifications = getModifications(roomType);
-
-  // console.log('cardItem', cardItem)
+  const modifications = getModifications(roomType.slice(0, 5) === 'küche' ? 'küche' : roomType);
 
   useEffect(() => {
     if (modifications && modifications[`${modificationName}`]) {
@@ -172,15 +174,16 @@ export default function ModifyBlock({
     modificationDescr
     ) => {
       
-    // console.log('[index]', index)
-    // console.log('modsAdditionalPrice[index]', modsAdditionalPrice[index])
     activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index] ? modsAdditionalPrice[index] : 0);
     setChecked(true);
     cardItem.modificationVisibility && dispatch(changeLoadingState(true)); // if modification non visible, don't loads new big image
   }
 
   activeIndex = activeModification.modificationNumber;
-  // console.log('cardItem', cardItem)
+
+  // console.log('modifications', modifications)
+  // console.log('modificationName', modificationName)
+  // console.log('apartSize', apartSize)
   return (
     <>
       <div className={`${styles.card__wrapper} ${collapsed && styles.collapsed} ${isInLine && styles.inLine}`}>

@@ -6,13 +6,14 @@ import madeShortUrl from '../../utils/madeShortUrl';
 
 import LoadingSpinner from './Components/loadingSpinner';
 import IconComponent from './Components/iconComponent';
+import FormHeader from './Components/formHeader';
+import SuccessMessage from './Components/successMessage';
 
 import styles from './contactForm.module.scss';
 
 export default function ContactForm({ onCancel }) {
   const [formValue, setFormValue] = useState(
     { name: '',
-      // surname: '',
       email: '',
       phone: '',
       text: '',
@@ -41,10 +42,6 @@ export default function ContactForm({ onCancel }) {
     if (!/^[A-Za-z ]{1,32}$/i.test(formValue.name)) {
       errors.name = 'Please use only letters';
     }
-
-    // if (!/^[A-Za-z]{1,32}$/i.test(formValue.surname)) {
-    //   errors.surname = 'Please use only letters';
-    // }
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formValue.email)) {
       errors.email = 'Invalid email address';
@@ -101,12 +98,7 @@ export default function ContactForm({ onCancel }) {
   return (
     <section className={`${styles.contactForm}`}>
       <div className={styles.contactForm__block}>
-        <div className={styles.contactForm__header}>
-          <div>Kontakt Aufnehmen</div>
-          <div className={styles.contactForm__closeBtn} onClick={onCancel}>
-            <IconComponent name="close" color="#fff"/>
-          </div>
-        </div> 
+        <FormHeader title="Kontakt Aufnehmen" clickFn={onCancel}/>
 
         <div className={styles.contactForm__content}>
           <div className={styles.contactForm__content_left}>
@@ -121,12 +113,14 @@ export default function ContactForm({ onCancel }) {
             </div>
           </div>
           <div className={styles.contactForm__content_right}>
-          {loading ? <LoadingSpinner/> :
-            <form method="post" className={styles.form} id="contactForm" onSubmit={(e) => submitContactForm(e)}> 
 
-              <div className={`${styles.success__message}  ${showSuccess && styles.active}`}  >
-                <span>Vielen Dank für Ihr Interesse an einem Eigenheim im Appenzeller Huus. Unser Vermarkter wird mit Ihnen Kontakt aufnehmen.</span>
-              </div>    
+          <SuccessMessage 
+            text="Vielen Dank für Ihr Interesse an einem Eigenheim im Appenzeller Huus. Unser Vermarkter wird mit Ihnen Kontakt aufnehmen."
+            showMessage={showSuccess}
+          /> 
+            
+          {loading ? <LoadingSpinner/> :
+            <form method="post" className={styles.form} id="contactForm" onSubmit={(e) => submitContactForm(e)}>   
 
               <input type="hidden" name="user_link" value={link}/>  
               <input type="hidden" name="fromEmail" value={'info@immokonfigurator.com'}/>    
@@ -180,7 +174,7 @@ export default function ContactForm({ onCancel }) {
 
               <input 
                 type="email" 
-                placeholder="Emailadresse" 
+                placeholder="Email *" 
                 name="message[Mail]"
                 value={formValue.email} 
                 onChange={(e) => changeFormData({email: e.target.value})} 

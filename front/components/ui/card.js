@@ -34,7 +34,7 @@ export default function Card({
     }
 
     const styleCardClickHandler = () => {
-        dispatch(changeStyleVisibility(false));
+        dispatch(changeStyleVisibility(true));
         selectCard();
         checked && checked();
     }

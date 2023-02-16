@@ -1,0 +1,25 @@
+@import '../../../assets/scss/abstracts/variables';
+
+.success__message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: .5rem;
+  
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+
+  background: #ebebeb;
+  transform: translateY(-100%);
+  transition: all .5s;
+
+  &.active {
+    transform: translateY(0);
+    z-index: 1000;
+    transition: all .5s;
+  }
+}

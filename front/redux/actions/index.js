@@ -157,7 +157,7 @@ export const setModification = (action) => dispatch => {
 };
 
 export const changeApartPrice = (key, price) => {
-console.log({key, price})
+// console.log({key, price})
   return {
     type: 'CHANGE_PRICE',
     payload: {key, price},

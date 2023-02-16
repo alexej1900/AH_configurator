@@ -14,7 +14,7 @@ import getSettings from './api/getSettings';
 import getPrices from './api/getPrices';
 
 import FinalRoom from '../components/ui/finalRoom';
-import FinalForm from '../components/ui/finalForm';
+import FinalFormNew from '../components/ui/finalFormNew';
 import Footer from '../components/layout/footer';
  
 import styles from './summary.module.scss';
@@ -54,7 +54,6 @@ export default function Summary () {
   ];
 
   const price = apartSize.price;
-  const size = apartSize.size;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
@@ -138,7 +137,7 @@ console.log('apartSize', apartSize)
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				<FinalForm rooms={roomType}/> 
+				<FinalFormNew rooms={roomType}/> 
 			</div>
 			<Footer/>
 		</>

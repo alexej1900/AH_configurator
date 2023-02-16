@@ -36,6 +36,8 @@
     }
   }
 
+  
+
   &__content {
     display: flex;
 
@@ -44,11 +46,12 @@
     }
 
     &_left {
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       width: 50%;
-      padding: 2.4rem;
       background-color: #ebebeb;
 
       @media (max-width: $screen-lg) {
@@ -56,10 +59,35 @@
       }
     }
 
+    &_social {
+      box-sizing: content-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 2.4rem;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);;
+      border-image-slice: 30 30% 45;
+
+      &_link:hover {
+        svg {
+          transform: scale(1.05);
+          fill: $color__cta-primary--hover;
+        }
+      }
+
+      svg {
+        margin: 0 1.2rem;
+        cursor: pointer;
+      }
+    }
+
     &_title {
       font-weight: 700;
-      font-size: 3.6rem;
+      font-size: 2rem;
       line-height: 120%;
+      margin: 2.4rem auto 0;
 
       @media (max-width: $screen-lg) {
         font-size: 2.4rem;
@@ -67,32 +95,35 @@
     }
 
     &_text {
-      font-size: 2rem;
-      margin: 2.4rem 0;
+      font-size: 1.8rem;
+      margin: 2.4rem;
 
       @media (max-width: $screen-lg) {
-        font-size: 1.8rem;
         margin: 2rem 0;
       }
     }
 
-    &_phone {
+    &_link {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding-left: 1.6rem;
+      margin: 0 2.4rem 0;
+      background: $color__bright;
 
-      svg {
-        width: 3.6rem;
-        height: 3.6rem;
-        margin-right: 1.6rem;
-      }
+      font-size: 1.6rem;
+      line-height: 135%;
+      color: $color__cta-primary--default;
 
-      &_value {
-        font-size: 2.8rem;
-        margin-bottom: 0.4rem;
-      }
+      &_btn {
+        padding: 1.2rem 1.6rem;
+        background: $color__cta-primary--default;
+        cursor: pointer;
 
-      &_time {
-        font-size: 1.44rem;
+        &:hover {
+          transform: scale(1.05);
+          background: $color__cta-primary--hover;
+        }
       }
     }
 
@@ -238,9 +269,12 @@
 
     &.button__confirm {
       background: $color__primary--dark;
+      text-decoration: none;
 
-      &:disabled {
-        cursor: wait;
+      &.button__disabled {
+        display: inline-block;
+        pointer-events: none;
+        cursor: not-allowed;
         background: var(--color__cta_50);
       }
     }

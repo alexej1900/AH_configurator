@@ -24,7 +24,8 @@ import {
 	changeActiveMod, 
 	changeRoomVisibility, 
 	changeLoadingState,
-	changeApartPrice
+	changeApartPrice,
+	changeStyleVisibility
 } from '../redux/actions/index';
 
 import styles from './room.module.scss';

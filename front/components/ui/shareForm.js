@@ -134,7 +134,7 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
 
             <div className={`${styles.form_buttons}`}>
               <a 
-                className={`${styles.form_button} ${styles.button__confirm} ${!checkObjIsEmpty(errors) && styles.button__disabled}`} 
+                className={`${styles.form_button} ${styles.button__confirm} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`} 
                 href={`mailto:${formValue.email}?subject=Meine Appenzeller Huus Konfiguration&body=Hallo, ${formValue.name}! %0A%0a${formValue.text}`}
               >
                 Senden

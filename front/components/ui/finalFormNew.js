@@ -5,19 +5,7 @@ import { resetState } from '../../redux/actions';
 
 import { useRouter } from 'next/router';
 
-import { useMutation } from '@apollo/client';
-
-import madeShortUrl from '../../utils/madeShortUrl';
-import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
-
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-import serialize from '../../utils/serialize';
-
-import { saveData } from '../../gql/index';
-
-import Popup from './Components/popup';
-import LoadingSpinner from './Components/loadingSpinner';
+import ConfirmationForm from './Components/confirmationForm';
 import IconComponent from './Components/iconComponent';
 import FinalFormButton from './Components/finalFormButton';
 import ContactForm from './contactForm';
@@ -29,20 +17,7 @@ export default function FinalFormNew() {
 
   const [isPopup, setIsPopup] = useState(false);
   const [isContactFormVisible, setIsContactFormVisible] = useState(false);
-  const [isShareFormVisible, setIsShareFormVisible] = useState(true);
-  const [formFilled, setFormFilled] = useState(false);
-
-  const [formValue, setFormValue] = useState(
-    { name: '',
-      email: '',
-      text: ''
-    });
-  const [errors, setErrors] = useState({});
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [link, setLink] = useState('');
-  const [pdfData, setPdfData] = useState('');
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [dataIsLoading, setDataIsLoading] = useState(false);
+  const [isShareFormVisible, setIsShareFormVisible] = useState(false);
 
   const router = useRouter();
   const dispatch = useDispatch();
@@ -56,6 +31,15 @@ export default function FinalFormNew() {
     setIsPopup(false);
     setIsContactFormVisible(false);
     setIsShareFormVisible(false);
+  }
+
+  const onResetConfirm = () => {
+    setIsPopup(false);
+    router.push('/');
+
+    setTimeout(() => { 
+      dispatch(resetState());
+     }, 0);
   }
 
   return (
@@ -74,21 +58,24 @@ export default function FinalFormNew() {
           <FinalFormButton title="Konfiguration teilen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
         </div>
 
-        <p>Sie möchten die Wohnung nochmal komplett neu zusammenstellen? </p>
-        <p>Kein Problem. Nutzen Sie einfach den Reset Button und Sie gelangen zurück auf die Startseite. </p>
-          <button 
-            className={`${styles.resetBtn} ${styles.form_button}`} 
-            onClick={() => setIsPopup(true)}
-            title='RESET YOUR DATA'
-          >RESET <IconComponent name="reset" color="#fff"/></button>
+        <div className={`${styles.finalForm__reset}`}>
+          <div className={`${styles.finalForm__reset_text}`}>
+            <p>Sie möchten die Wohnung nochmal komplett neu zusammenstellen? </p>
+            <p>Kein Problem. Nutzen Sie einfach den Reset Button und Sie gelangen zurück auf die Startseite. </p>
+          </div>
+          <div className={`${styles.resetBtn}`} onClick={() => setIsPopup(true)} title='RESET YOUR DATA'>
+            RESET <IconComponent name="reset" color="#fff"/>
+          </div>
+        </div>
+
+        
       </section>
 
-      {/* {isPopup && <Popup 
-        children='Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt' 
-        // onConfirm={onResetConfirm}
-        onCancel={onCancel}
-        buttonIsVisible={true}
-        />} */}
+      {isPopup && <ConfirmationForm
+                      onCancel={onCancel} 
+                      onConfirm={onResetConfirm}
+                      child={<div>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</div>}
+                    />}
 
       {isContactFormVisible && <ContactForm onCancel={onCancel}/>}
       {isShareFormVisible && <ShareForm onCancel={onCancel}/>}

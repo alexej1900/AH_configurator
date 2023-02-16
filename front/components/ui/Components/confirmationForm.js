@@ -2,9 +2,7 @@ import IconComponent from './iconComponent';
 
 import styles from './confirmationForm.module.scss';
 
-export default function ConfirmationForm({ room, onCancel, onConfirm}) {
-
-  const roomsList = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
+export default function ConfirmationForm({ onCancel, onConfirm, child}) {
 
   return (
     <section className={`${styles.contactForm}`}>
@@ -20,12 +18,7 @@ export default function ConfirmationForm({ room, onCancel, onConfirm}) {
           <div className={styles.contactForm__content_left}>
             <div className={styles.contactForm__content_title}>Hinweis:</div>
             <div className={styles.contactForm__content_text}>
-              <div>Eine Anpassung der Option “Boden” wird auch in weiteren Räumen übernommen:</div>
-              <ul>
-                {roomsList.map((roomItem) => {
-                  if (roomItem !== room) return <li>{roomItem}</li>
-                })}
-              </ul>
+              {child}
             </div>
             <div className={`${styles.form_buttons}`}>
               <button className={`${styles.form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechen</button>

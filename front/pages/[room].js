@@ -141,7 +141,7 @@ export default function Room() {
 		}
     dispatch(changeActivePin(modName));
   }
-
+	const roomsList = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
 	const changeFloorType = () => { // change floor type for all rooms, change price
 		['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang']
 			.forEach((room) => dispatch(changeRoomType(
@@ -236,7 +236,21 @@ export default function Room() {
 			</div>
 
 			{isPopup && <ContactForm onCancel={onCancel}/>}
-			{isConfirmation && <ConfirmationForm room={ROOM_TYPE ? ROOM_TYPE : path} onCancel={onCancel} onConfirm={changeFloorType}/>}
+			{isConfirmation 
+				&& <ConfirmationForm 
+						onCancel={onCancel} 
+						onConfirm={changeFloorType}
+						child={<>
+										<div>Eine Anpassung der Option “Boden” wird auch in weiteren Räumen übernommen:</div>
+											<ul>
+												{roomsList.map((roomItem) => {
+													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li>{roomItem}</li>
+												})}
+											</ul>
+										</>
+									}
+						/>
+				}
 		</>
 	);
 }

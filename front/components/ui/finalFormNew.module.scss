@@ -8,9 +8,14 @@
 
 .finalForm {
   box-sizing: border-box;
-  width: 86rem;
+  width: 100%;
+  max-width: 86rem;
   margin: 5rem auto;
   padding: 0 .8rem;
+
+  div {
+    box-sizing: border-box;
+  }
 
   @media (max-width: $screen-lg) {
     width: 100%;
@@ -42,35 +47,53 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.6rem;
+    padding-bottom: 2.4rem;
+    margin-bottom: 2.4rem;
+    border-bottom: 1px solid #ccc;
 
     @media (max-width: $screen-lg) {
       flex-direction: column;
     }
   }
 
+  &__reset {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 135%;
+
+    @media (max-width: $screen-lg) {
+      flex-direction: column;
+    }
+
+    &_text {
+      margin-right: 2.4rem;
+      width: 70%;
+
+      p {
+        margin-bottom: .8rem;
+      }
+    }
+  }
 
   .resetBtn {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 32rem;
-    margin: 2rem 0;
+    width: 20.8rem;
+    height: 5rem;
     padding: 1.4rem;
-    background: var(--color__primary);
+    background: $color__cta-primary--default;
     color: $color__bright;
     font-weight: 600; 
     font-size: 1.6rem;
     line-height: 2rem;
-    border: none;
     cursor: pointer;
 
-    &:disabled {
-      cursor: wait;
-    }
-
-    &.disabled {
-      background: var(--color__primary_30);
+    @media (max-width: $screen-lg) {
+      width: 100%;
     }
   }
 }

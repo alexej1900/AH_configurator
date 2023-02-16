@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 21rem;
+  width: 20.8rem;
   margin: 0 .8rem;
 
   cursor: pointer;
@@ -21,8 +21,7 @@
     transform: perspective(500px) scale(1.05) rotateX(0) rotateY(0);
 
     .button__text {
-      font-size: 1.9rem;
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .button__icon_hoverbg {

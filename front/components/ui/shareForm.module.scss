@@ -87,20 +87,12 @@
       font-weight: 700;
       font-size: 2rem;
       line-height: 120%;
-      margin: 2.4rem auto 0;
-
-      @media (max-width: $screen-lg) {
-        font-size: 2.4rem;
-      }
+      margin: 2.4rem 2.4rem 0;
     }
 
     &_text {
       font-size: 1.8rem;
       margin: 2.4rem;
-
-      @media (max-width: $screen-lg) {
-        margin: 2rem 0;
-      }
     }
 
     &_link {
@@ -114,6 +106,10 @@
       font-size: 1.6rem;
       line-height: 135%;
       color: $color__cta-primary--default;
+
+      @media (max-width: $screen-lg) {
+        margin-bottom: 2.4rem;
+      }
 
       &_btn {
         padding: 1.2rem 1.6rem;
@@ -253,7 +249,7 @@
     width: 26rem;
     margin: 1.6rem auto 0;
     padding: 1.4rem;
-    background: var(--color__primary);
+    background: $color__cta-primary--default;
     color: $color__bright;
     font-weight: 600; 
     font-size: 1.6rem;

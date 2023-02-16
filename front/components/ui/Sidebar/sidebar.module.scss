@@ -21,7 +21,7 @@
   &__button {
     position: absolute;
     bottom: 0;
-    left: 5.6rem;
+    left: 5.8rem;
     z-index: 10;
     width: calc(100% - 6rem);
 
@@ -39,6 +39,7 @@
       width: 36rem;
       background: $color__bright;
       padding: 4px;
+      box-shadow: 0px -5px 3px -1px rgba(0,0,0,0.5);
 
       a {
         color: $color__bright;
@@ -54,7 +55,7 @@
       color: $color__bright;
       font-weight: 600;
       line-height: 120%;
-      height: 5rem;
+      height: 4.8rem;
 
       cursor: pointer;
 

@@ -240,6 +240,7 @@ export default function Room() {
 				&& <ConfirmationForm 
 						onCancel={onCancel} 
 						onConfirm={changeFloorType}
+						title={'Zimmerübergreifende Option'}
 						child={<>
 										<div>Eine Anpassung der Option “Boden” wird auch in weiteren Räumen übernommen:</div>
 											<ul>

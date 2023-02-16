@@ -1,19 +1,14 @@
 import IconComponent from './iconComponent';
+import FormHeader from './formHeader';
 
 import styles from './confirmationForm.module.scss';
 
-export default function ConfirmationForm({ onCancel, onConfirm, child}) {
+export default function ConfirmationForm({ onCancel, onConfirm, title, child}) {
 
   return (
     <section className={`${styles.contactForm}`}>
       <div className={styles.contactForm__block}>
-        <div className={styles.contactForm__header}>
-          <div>Zimmerübergreifende Option</div>
-          <div className={styles.contactForm__closeBtn} onClick={onCancel}>
-            <IconComponent name="close" color="#fff"/>
-          </div>
-        </div> 
-
+        <FormHeader title={title} clickFn={onCancel}/>
         <div className={styles.contactForm__content}>
           <div className={styles.contactForm__content_left}>
             <div className={styles.contactForm__content_title}>Hinweis:</div>

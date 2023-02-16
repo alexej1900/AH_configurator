@@ -74,6 +74,7 @@ export default function FinalFormNew() {
       {isPopup && <ConfirmationForm
                       onCancel={onCancel} 
                       onConfirm={onResetConfirm}
+                      title={''}
                       child={<div>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</div>}
                     />}
 

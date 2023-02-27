@@ -25,7 +25,6 @@ import {
 	changeRoomVisibility, 
 	changeLoadingState,
 	changeApartPrice,
-	changeStyleVisibility
 } from '../redux/actions/index';
 
 import styles from './room.module.scss';
@@ -50,8 +49,9 @@ export default function Room() {
 	const { apartSize, apartStyle, generalStates, roomType} = useSelector((state) => state);
 	const sidebarState = generalStates.open;
 	const isImageload = generalStates.loading;
-	const roomState = roomType[ROOM_TYPE]; ///// ToDo CHANGE to getModification
+	const roomState = roomType[ROOM_TYPE];
 
+	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
 	// console.log('largeImage', largeImage)
 	console.log('roomType', roomType)
 
@@ -129,7 +129,7 @@ export default function Room() {
 		const room = ROOM_TYPE.slice(0, -1) === 'küche' ? ROOM_TYPE.slice(0, -1) : ROOM_TYPE;
 		
 		if (ROOM_TYPE === 'wohnzimmer') {  // set floor type for all types of rooms
-			['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang']
+			roomsWithChangeableFloor
 				.forEach((room) => dispatch(changeRoomType(room, 'Böden', index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle)))
 			dispatch(changeApartPrice('Böden', additionalPrice));
 		} else if (modName === 'Böden') {  // else show popup with confirmation
@@ -141,9 +141,9 @@ export default function Room() {
 		}
     dispatch(changeActivePin(modName));
   }
-	const roomsList = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
+	
 	const changeFloorType = () => { // change floor type for all rooms, change price
-		['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang']
+		roomsWithChangeableFloor
 			.forEach((room) => dispatch(changeRoomType(
 				room, 
 				'Böden', 
@@ -194,12 +194,8 @@ export default function Room() {
 							layout='fill' 
 							object-fit="cover" 
 							style={{width: "100vw", height: "100vh"}}
-							// width={activeImage.width}
-							// height={activeImage.height}
 							onLoadingComplete={() => dispatch(changeLoadingState(false))}
 							priority 
-							// loading='eager'
-							// quality={100}
 							alt="Main image"
 						/>
 					</div>
@@ -209,12 +205,14 @@ export default function Room() {
 
 				{(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
-				<div className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} onClick={() => setIsPopup(true)}>
+				<div 	className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} 
+							onClick={() => setIsPopup(true)}
+				>
 					<ContactBtn small={false}/>
 				</div>
 
-				<div className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
-					onClick={() => setIsPinsVisible(!isPinsVisible)}
+				<div 	className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
+							onClick={() => setIsPinsVisible(!isPinsVisible)}
 				>
 					<IconComponent name={isPinsVisible ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
 				</div>
@@ -244,7 +242,7 @@ export default function Room() {
 						child={<>
 										<div>Eine Anpassung der Option “Boden” wird auch in weiteren Räumen übernommen:</div>
 											<ul>
-												{roomsList.map((roomItem) => {
+												{roomsWithChangeableFloor.map((roomItem) => {
 													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li>{roomItem}</li>
 												})}
 											</ul>

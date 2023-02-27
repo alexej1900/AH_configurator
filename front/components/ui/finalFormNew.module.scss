@@ -95,5 +95,14 @@
     @media (max-width: $screen-lg) {
       width: 100%;
     }
+
+    &:hover {
+      background: $color__cta-primary--hover;
+
+      svg {
+        transform: rotate(-360deg);
+        transition: all .5s ease-in-out;
+      }
+    }
   }
 }

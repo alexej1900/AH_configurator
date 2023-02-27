@@ -30,7 +30,6 @@ export default function FinalRoom({ roomName, style }) {
   
   const { roomType, apartStyle } = useSelector(state => state);
 
-  // console.log('roomName', roomName)
   // console.log('roomType', roomType)
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const { data, loading, error } = useQuery(RoomData(currentRoom));
@@ -42,6 +41,7 @@ export default function FinalRoom({ roomName, style }) {
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
+  // console.log('roomName',roomName)
   // console.log('data.entry.roomStyles[0]', data.entry?.roomStyles[0].roomStyleExamples)
   // const room = roomType[`${roomName.toLowerCase()}`] 
 
@@ -82,7 +82,7 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 // console.log('room', room)
-console.log('roomType', roomType)
+// console.log('roomType', roomType)
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title}`}>

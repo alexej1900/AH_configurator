@@ -21,6 +21,7 @@
     transform: perspective(500px) scale(1.05) rotateX(0) rotateY(0);
 
     .button__text {
+      background: $color__cta-primary--hover;
       font-weight: 900;
     }
 
@@ -30,7 +31,7 @@
     }
 
     svg {
-      fill: #284f72;
+      fill: $color__cta-primary--hover;
     }
 
     @media (max-width: $screen-lg) {

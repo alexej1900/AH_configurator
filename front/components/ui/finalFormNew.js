@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { resetState } from '../../redux/actions';
 
 import { useRouter } from 'next/router';
@@ -53,9 +53,9 @@ export default function FinalFormNew() {
         </div>
 
         <div className={`${styles.finalForm__buttons}`}>
-          <FinalFormButton title="Konfiguration teilen" iconName="download" iconColor="#3C6589" clickFn={showPopup}/>
+          <FinalFormButton title="PDF herunterladen" iconName="download" iconColor="#3C6589" clickFn={showPopup}/>
           <FinalFormButton title="Konfiguration teilen" iconName="share" iconColor="#3C6589" clickFn={showShareForm}/>
-          <FinalFormButton title="Konfiguration teilen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
+          <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
         </div>
 
         <div className={`${styles.finalForm__reset}`}>
@@ -68,7 +68,6 @@ export default function FinalFormNew() {
           </div>
         </div>
 
-        
       </section>
 
       {isPopup && <ConfirmationForm

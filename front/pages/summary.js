@@ -47,12 +47,15 @@ export default function Summary () {
     'Wohnzimmer', 
     'Raumtrenner', 
 		'Küche',
-    `${apartSize.roomsCount > 2.5 ? 'Badewanne' : ''}`, 
+		'Badewanne', 
     'Dusche', 
     'Schlafzimmer', 
     'Gang'
   ];
 
+	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
+
+	// console.log('rooms', rooms)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();

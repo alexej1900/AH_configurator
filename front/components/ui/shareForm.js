@@ -94,7 +94,9 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
             <div className={styles.contactForm__content_title}>Link zu dieser Konfiguration</div>
             <div className={styles.contactForm__content_text}>Mit diesem Link erreichen Sie immer den derzeitigen Stand Ihrer Konfiguration. So können Sie diese ganz einfach mit Familie und Freunden teilen und besprechen</div>
             <div className={styles.contactForm__content_link}>
-              {link}
+              <div >
+                {link}
+              </div>
               <div className={styles.contactForm__content_link_btn} onClick={copyLink}>
                 <IconComponent name="copy" color="#fff"/>
               </div>

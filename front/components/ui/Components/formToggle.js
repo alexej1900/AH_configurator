@@ -10,18 +10,34 @@ export default function FormToggle({tab1, tab1Action, tab2, tab2Action}) {
     <div className={styles.toggle}>
       <div 
         className={[styles.option, isActive && styles.active].join(' ')} 
-        onClick = {() => {tab1Action(); setIsActive(!isActive)}}
+        onClick = {() => {
+          if (!isActive) {
+            tab1Action(); 
+            setIsActive(!isActive);
+          }
+        }}
       >
-        <IconComponent name="baseroom" color={isActive ? '#FFFFFF' : '#3C6589'}/>
-        <p className={styles.toggle__title}>{tab1}</p>
+        <IconComponent name="baseroom" />
+        <div className={styles.toggle__title}>{tab1}</div>
+        <div className={`${styles.toggle__sign}  ${isActive && styles.toggle__sign_active}`}>
+          <div className={styles.toggle__point}></div>
+        </div>
       </div>
       
       <div 
         className={[styles.option, !isActive && styles.active].join(' ')} 
-        onClick = {() => {tab2Action(); setIsActive(!isActive)}}
+        onClick = {() => {
+          if (isActive) {
+            tab2Action(); 
+            setIsActive(!isActive);
+          }
+        }}
       >
-        <IconComponent name="chair" color={!isActive ? '#FFFFFF' : '#3C6589'}/>
-        <p className={styles.toggle__title}>{tab2}</p>
+        <IconComponent name="chair" />
+        <div className={styles.toggle__title}>{tab2}</div>
+        <div className={`${styles.toggle__sign}  ${!isActive && styles.toggle__sign_active}`}>
+          <div className={styles.toggle__point}></div>
+        </div>
       </div>
     </div>
   )

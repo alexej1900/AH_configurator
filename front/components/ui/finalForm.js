@@ -10,8 +10,8 @@ import { useMutation } from '@apollo/client';
 import madeShortUrl from '../../utils/madeShortUrl';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
 
 import { saveData } from '../../gql/index';
 
@@ -143,51 +143,51 @@ export default function ContactForm() {
     setIsPopup(false);
   }
 
-  const saveAsPdfHandler = async(isSave) => {
-    const apartmentImage = document.getElementById('apartmentImage');
-    const stats = document.getElementById('stats');
-    const finalRooms = document.getElementsByClassName('finalRoom');
+  // const saveAsPdfHandler = async(isSave) => {
+  //   const apartmentImage = document.getElementById('apartmentImage');
+  //   const stats = document.getElementById('stats');
+  //   const finalRooms = document.getElementsByClassName('finalRoom');
 
-    const pdfDOC = new jsPDF("p", "mm", "a4"); 
+  //   const pdfDOC = new jsPDF("p", "mm", "a4"); 
 
-    pdfDOC.text(`Name: ${formValue.name}`, 20, 10);
-    pdfDOC.text(`Vorame: ${formValue.surname}`, 20, 20);
-    pdfDOC.text(`Email: ${formValue.email}`, 20, 30);
-    pdfDOC.text(`Telefonnummer: ${formValue.phone}`, 20, 40);
-    isContactReady && pdfDOC.text(`Rückruf: Ya`, 140, 40);
+  //   pdfDOC.text(`Name: ${formValue.name}`, 20, 10);
+  //   pdfDOC.text(`Vorame: ${formValue.surname}`, 20, 20);
+  //   pdfDOC.text(`Email: ${formValue.email}`, 20, 30);
+  //   pdfDOC.text(`Telefonnummer: ${formValue.phone}`, 20, 40);
+  //   isContactReady && pdfDOC.text(`Rückruf: Ya`, 140, 40);
 
-    pdfDOC.text(`Link to settings: ${link}`, 20, 50);
+  //   pdfDOC.text(`Link to settings: ${link}`, 20, 50);
 
-    // await getPdfPage(apartmentImage, pdfDOC, false, 20, 60, 1);
-    await getPdfPage(stats, pdfDOC, false, 20, 70, 1);
+  //   // await getPdfPage(apartmentImage, pdfDOC, false, 20, 60, 1);
+  //   await getPdfPage(stats, pdfDOC, false, 20, 70, 1);
 
 
-    for (let i = 0; i < finalRooms.length; i++) {
-      await getPdfPage(finalRooms[i], pdfDOC, true, 10, 20, 1);
-    }
+  //   for (let i = 0; i < finalRooms.length; i++) {
+  //     await getPdfPage(finalRooms[i], pdfDOC, true, 10, 20, 1);
+  //   }
 
-    isSave && pdfDOC.save('summary.pdf');   //Download the rendered PDF.
-  }
+  //   isSave && pdfDOC.save('summary.pdf');   //Download the rendered PDF.
+  // }
 
-  const getPdfPage = async(div, pdfDOC, addPage, x, y, scale) => {
-    addPage && pdfDOC.addPage();
-    const divHeight = div.clientHeight
-    const divWidth = 1440;
-    const ratio = divHeight / divWidth;
+  // const getPdfPage = async(div, pdfDOC, addPage, x, y, scale) => {
+  //   addPage && pdfDOC.addPage();
+  //   const divHeight = div.clientHeight
+  //   const divWidth = 1440;
+  //   const ratio = divHeight / divWidth;
 
-    await html2canvas(div, { scale: '2' }).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
+  //   await html2canvas(div, { scale: '2' }).then((canvas) => {
+  //     const imgData = canvas.toDataURL('image/png');
       
-      const width = pdfDOC.internal.pageSize.getWidth();
-      let height = pdfDOC.internal.pageSize.getHeight();
-      height = ratio * width;
+  //     const width = pdfDOC.internal.pageSize.getWidth();
+  //     let height = pdfDOC.internal.pageSize.getHeight();
+  //     height = ratio * width;
 
-      pdfDOC.addImage(imgData, 'JPEG', x ? x : 0, y ? y : 0, (width - 20)/scale, (height - 10)/scale);
+  //     pdfDOC.addImage(imgData, 'JPEG', x ? x : 0, y ? y : 0, (width - 20)/scale, (height - 10)/scale);
 
-    })  
+  //   })  
 
-    return pdfDOC
-  }
+  //   return pdfDOC
+  // }
 
   return (
     <>

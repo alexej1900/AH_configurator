@@ -2,7 +2,7 @@
 
 .toggle {
     display: flex;
-    margin: 3.2rem 0;
+    margin: 0 0 3.2rem;
 
     .option {
       width: 50%;
@@ -26,8 +26,8 @@
       }
 
       svg {
-        width: 9.6rem;
-        height: 9.6rem;
+        width: 6.4rem;
+        height: 6.4rem;
         margin-bottom: 1.6rem;
       }
     }

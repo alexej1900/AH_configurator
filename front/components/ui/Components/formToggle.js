@@ -12,7 +12,7 @@ export default function FormToggle({tab1, tab1Action, tab2, tab2Action}) {
         className={[styles.option, isActive && styles.active].join(' ')} 
         onClick = {() => {tab1Action(); setIsActive(!isActive)}}
       >
-        <IconComponent name="bed" color={isActive ? '#FFFFFF' : '#3C6589'}/>
+        <IconComponent name="baseroom" color={isActive ? '#FFFFFF' : '#3C6589'}/>
         <p className={styles.toggle__title}>{tab1}</p>
       </div>
       

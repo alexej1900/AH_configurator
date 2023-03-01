@@ -42,7 +42,7 @@ export default function Summary () {
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
 	// const rooms = generalStates.rooms
-
+console.log('roomType', roomType)
 	const rooms = [
     'Wohnzimmer', 
     'Raumtrenner', 
@@ -73,8 +73,7 @@ export default function Summary () {
     return () => dispatch(changeSidebarState(true));
   }, []);
 
-
-console.log('apartSize', apartSize)
+// console.log('apartSize', apartSize)
   return (
 		<>
 			<div className={styles.summary} id="summary">
@@ -140,7 +139,7 @@ console.log('apartSize', apartSize)
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				<FinalFormNew rooms={roomType}/> 
+				<FinalFormNew rooms={roomType} isometry={apartSize.image.url}/> 
 			</div>
 			<Footer/>
 		</>

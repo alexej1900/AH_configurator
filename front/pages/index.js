@@ -77,8 +77,10 @@ export default function Home() {
 
             <div className={`${styles.halfLine} ${styles.content}`}>
               <div className={styles.description}>In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, eines der Schlafzimmer als  zusätzliches Wohnzimmer umzusetzen. Dieses verfügt über eine herabgesetzte Decke für eine gemütliche Atmosphäre.</div>
+              
+              <div className={styles.toggle__title}>Bitte wählen Sie Ihren Ausbautypen</div>
               <FormToggle 
-                tab1={'Schlafzimmer'} 
+                tab1={'Basisausbau'} 
                 tab1Action={() => {dispatch(changeApartSize(aparmentData.basePrice, aparmentData.apartmentImage[0]));
                                   setIsBaseVersion(true)}}
                 tab2={'2. Wohnzimmer'}

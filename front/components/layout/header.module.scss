@@ -6,23 +6,24 @@
   height: 6.4rem;
   z-index: 1;
   box-sizing: border-box;
-  transition: 0.3s width ease-in;
+  transition: 0.3s all ease-in-out;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 
   @media (max-width: $screen-lg) {
     width: 100%;
   }
 
-  &.background {
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-  }
+  // &.background {
+  //   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  // }
 
   &:hover {
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF;
   }
 
   &.compressed {
     width: calc(100% - 420px);
-    transition: 0.3s all ease-in;
+    transition: 0.3s all ease-in-out;
     padding-right: 0;
 
     @media (max-width: $screen-lg) {
@@ -64,7 +65,7 @@
   &__buttons {
     display: flex;
     align-items: center;
-    transition: 0.3s all ease-in;
+    transition: 0.3s all ease-in-out;
     z-index: 10;
 
     &_virtual {
@@ -104,7 +105,7 @@
     overflow-y: auto;
     opacity: 0;
 
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out-out;
 
 
     &_open {

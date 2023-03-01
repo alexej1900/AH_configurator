@@ -39,7 +39,7 @@
     position: relative;
     display: block;
     cursor: grab;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in;
     flex: 0 0 100%;
     
     @media (max-width: $screen-lg) {
@@ -104,7 +104,7 @@
   position: absolute;
   bottom: 4rem;
   right: 12rem;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
 
   &_shift {
     right: 50rem;
@@ -134,7 +134,7 @@
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
 
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
 
   svg {
     width: 2.6rem;

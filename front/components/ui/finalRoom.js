@@ -29,7 +29,7 @@ export default function FinalRoom({ roomName, style }) {
   const { roomType, apartStyle } = useSelector(state => state);
 
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
-
+// console.log('roomName', roomName)
   const { data, loading, error } = useQuery(RoomData(currentRoom));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
@@ -43,7 +43,7 @@ export default function FinalRoom({ roomName, style }) {
   const room = roomType[`${roomName.toLowerCase()}`] 
     ? roomType[`${roomName.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
-
+    // console.log('room', room)
     // if we have main styles decomment 3 lines below and delete 3 lines abowe ==============
     // : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
     //   return item.styleName.toLowerCase() === style.toLowerCase()

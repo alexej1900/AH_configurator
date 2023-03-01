@@ -45,7 +45,6 @@ export default function KitchenType() {
     const styleImage = currentStyle.image[0];
 
     const changeStyle = (id) => {
-        
 
       const price = {
         0: 0,

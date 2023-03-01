@@ -41,6 +41,10 @@
         transform: perspective(500px) scale(1.1) rotateX(0) rotateY(0);
       }
 
+      .button__text {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
       svg {
         fill: #fff;
       }

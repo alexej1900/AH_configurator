@@ -13,6 +13,10 @@
   margin: 5rem auto;
   padding: 0 .8rem;
 
+  iframe {
+    width: 100%;
+  }
+
   div {
     box-sizing: border-box;
   }
@@ -51,6 +55,10 @@
     margin-bottom: 2.4rem;
     border-bottom: 1px solid #ccc;
 
+    a {
+      text-decoration: none;
+    }
+    
     @media (max-width: $screen-lg) {
       flex-direction: column;
     }
@@ -63,7 +71,7 @@
     font-size: 1.8rem;
     line-height: 135%;
 
-    @media (max-width: $screen-lg) {
+    @media (max-width: $screen-md) {
       flex-direction: column;
     }
 
@@ -92,7 +100,7 @@
     line-height: 2rem;
     cursor: pointer;
 
-    @media (max-width: $screen-lg) {
+    @media (max-width: $screen-md) {
       width: 100%;
     }
 

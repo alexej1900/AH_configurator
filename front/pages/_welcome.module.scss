@@ -84,7 +84,7 @@
       position: relative;
       display: flex;
       justify-content: center;
-      min-height: 42rem;
+      min-height: 70vh;
 
       img {
         max-height: 60rem !important;
@@ -116,6 +116,15 @@
         }
       }
     }
+  }
+
+  .toggle__title {
+    margin: 3.4rem 0 .8rem;
+    font-family: $description__typo;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 135%;
+    text-align: center; 
   }
 
   .submitBtn {

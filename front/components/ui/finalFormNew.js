@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { resetState } from '../../redux/actions';
+
+import ReactPDF, { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 
 import { useRouter } from 'next/router';
 
@@ -12,12 +14,17 @@ import ContactForm from './contactForm';
 import ShareForm from './shareForm';
 
 import styles from './finalFormNew.module.scss';
+import PdfPage from './pdfPage';
 
-export default function FinalFormNew() {
+export default function FinalFormNew({isometry}) {
 
   const [isPopup, setIsPopup] = useState(false);
   const [isContactFormVisible, setIsContactFormVisible] = useState(false);
   const [isShareFormVisible, setIsShareFormVisible] = useState(false);
+
+  const { apartSize } = useSelector(state => state);
+
+  // console.log('apartStyle.image.url', apartSize.image.url)
 
   const router = useRouter();
   const dispatch = useDispatch();
@@ -42,6 +49,10 @@ export default function FinalFormNew() {
      }, 0);
   }
 
+  const savePdf = () => {
+    ReactPDF.render(<PdfPage />, `example.pdf`)
+  }
+
   return (
     <>
       <section className={`${styles.finalForm}`}>
@@ -53,10 +64,19 @@ export default function FinalFormNew() {
         </div>
 
         <div className={`${styles.finalForm__buttons}`}>
-          <FinalFormButton title="PDF herunterladen" iconName="download" iconColor="#3C6589" clickFn={showPopup}/>
+
+          <PDFDownloadLink document={<PdfPage image={isometry}/>} fileName="somename.pdf">
+            {({ blob, url, loading, error }) =>
+              <FinalFormButton title={ loading ? "Loading document..." : "PDF herunterladen"} iconName="download" iconColor="#3C6589"/>
+            }
+          </PDFDownloadLink>
+          {/* <FinalFormButton title={"PDF herunterladen"} iconName="download" iconColor="#3C6589"/> */}
           <FinalFormButton title="Konfiguration teilen" iconName="share" iconColor="#3C6589" clickFn={showShareForm}/>
           <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
         </div>
+        {/* <PDFViewer>
+          <PdfPage image={isometry}/>
+        </PDFViewer> */}
 
         <div className={`${styles.finalForm__reset}`}>
           <div className={`${styles.finalForm__reset_text}`}>

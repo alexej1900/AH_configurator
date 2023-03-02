@@ -35,7 +35,6 @@ export default function Summary () {
 		);
 
 		dispatch(setInitialState(initState));
-
 		// console.log('initState', initState)
 		window.location.href = location.pathname
 	}

@@ -42,11 +42,11 @@ export default function FinalFormNew({isometry}) {
 
   const onResetConfirm = () => {
     setIsPopup(false);
-    router.push('/');
+    dispatch(resetState());
 
     setTimeout(() => { 
-      dispatch(resetState());
-     }, 0);
+      router.push('/');
+     }, 500);
   }
 
   const savePdf = () => {

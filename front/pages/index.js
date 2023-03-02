@@ -11,17 +11,19 @@ import FormToggle from '../components/ui/atoms/formToggle';
 import ContactBtn from '../components/ui/atoms/contactBtn';
 import ContactForm from '../components/ui/contactForm';
 import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
+import ConfirmationForm from '../components/ui/atoms/confirmationForm';
 
 import { apartmentItem } from '../gql/index';
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeApartSize, setBrandSettings, setRooms, changeApartData } from "../redux/actions/index";
+import { changeApartSize, setBrandSettings, setRooms, changeApartData, resetState } from "../redux/actions/index";
 
 import styles from './_welcome.module.scss';
 
 export default function Home() {
   const [isBaseVersion, setIsBaseVersion] = useState(true);
   const [isPopup, setIsPopup] = useState(false);
+  const [isModal, setIsModal] = useState(localStorage.getItem('persist:root') && JSON.parse(localStorage.getItem('persist:root')).roomType.length > 5);
 
   const dispatch = useDispatch();
 
@@ -58,7 +60,13 @@ export default function Home() {
 
   const onCancel = () => {
     setIsPopup(false);
-}
+    setIsModal(false);
+  }
+
+  const onResetConfirm = () => {
+    setIsModal(false);
+    dispatch(resetState());
+  }
 
   // console.log('data.entry.dataList[0]', data.entry.dataList[0]);
   // console.log('apartmentImage.height', apartmentImage.height);
@@ -118,6 +126,18 @@ export default function Home() {
             <ContactBtn/>
         </div>
         {isPopup && <ContactForm onCancel={onCancel}/>}
+        {isModal && <ConfirmationForm
+                      onCancel={onCancel} 
+                      onConfirm={onResetConfirm}
+                      title={'Konfiguration gefunden'}
+                      child={
+                        <div>
+                          <p>Wir haben im Speicher ihres Webbrowsers eine bestehende Konfiguration gefunden.</p>
+                          <br/>
+                          <p>Möchten Sie mit der bestehenden weiterarbeiten oder eine neue Konfiguration beginnen?</p>
+                        </div>
+                      }
+                    />}
       </div>
     </>
   )

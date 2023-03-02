@@ -81,6 +81,13 @@ export default function IconComponent({name, color}) {
         </svg>
       break;
 
+    case 'entry':
+      ICON = 
+        <svg width="25" height="25" viewBox="0 0 25 25" fill={color} xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 0.0859375H22.5C23.052 0.0859375 23.5 0.532938 23.5 1.08594V23.0859C23.5 23.6389 23.052 24.0859 22.5 24.0859H8.5C7.948 24.0859 7.5 23.6389 7.5 23.0859V19.7929H9.5V22.0859H21.5V2.08594H9.5V4.79294H7.5V1.08594C7.5 0.532938 7.948 0.0859375 8.5 0.0859375ZM12.207 18.7929L10.793 17.3789L15.086 13.0859H1.5V11.0859H15.086L10.793 6.79294L12.207 5.37894L18.207 11.3789C18.598 11.7699 18.598 12.4019 18.207 12.7929L12.207 18.7929Z"/>
+        </svg>
+      break;
+
     case 'hamburger':
       ICON = 
         <svg width="18" height="12" viewBox="0 0 18 12" fill={color} xmlns="http://www.w3.org/2000/svg">

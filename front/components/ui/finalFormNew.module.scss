@@ -1,16 +1,10 @@
 @import '../../assets//scss/abstracts/variables';
 
-.title {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 120%;
-}
-
 .finalForm {
   box-sizing: border-box;
   width: 100%;
   max-width: 86rem;
-  margin: 5rem auto;
+  margin: 4.8rem auto;
   padding: 0 .8rem;
 
   iframe {
@@ -30,6 +24,7 @@
     margin-bottom: 1rem;
 
     &_title {
+      font-family: 'Open Sans';
       font-weight: 700;
       font-size: 2.8rem;
       margin-bottom: 1.6rem;
@@ -53,7 +48,7 @@
     justify-content: space-between;
     padding-bottom: 2.4rem;
     margin-bottom: 2.4rem;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
 
     a {
       text-decoration: none;
@@ -63,53 +58,60 @@
       flex-direction: column;
     }
   }
+}
 
-  &__reset {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2.4rem;
-    font-size: 1.8rem;
-    line-height: 135%;
+.finalForm__reset {
+  // display: flex;
+  // flex-direction: column;
+  box-sizing: border-box;
+  max-width: calc(86rem - 1.6rem);
+  margin: 0 auto;
+  padding: 2.4rem;
+  background: #1F4D5B;
+  font-family: $title__typo;
+  line-height: 135%;
+  color: #fff;
 
-    @media (max-width: $screen-md) {
-      flex-direction: column;
-    }
+  // @media (max-width: $screen-lg) {
+  //   flex-direction: column;
+  // }
 
-    &_text {
-      margin-right: 2.4rem;
-      width: 70%;
+  &_subtitle {
+    font-size: 2.1rem;
+  }
 
-      p {
-        margin-bottom: .8rem;
-      }
-    }
+  &_description {
+    font-size: 1.6rem;
+    margin: 3.2rem 0;
   }
 
   .resetBtn {
+    @include flex-center-center;
+    @include sectionTitle;
+
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 20.8rem;
     height: 5rem;
-    padding: 1.4rem;
-    background: $color__cta-primary--default;
-    color: $color__bright;
-    font-weight: 600; 
-    font-size: 1.6rem;
-    line-height: 2rem;
+    padding: 0 0.8rem;
+    background: $color__bright;
+    color: $color__cta-primary--default;
+    
     cursor: pointer;
 
     @media (max-width: $screen-md) {
       width: 100%;
     }
 
+    svg {
+      fill: $color__cta-primary--default;
+      margin-right: .8rem;
+    }
+
     &:hover {
-      background: $color__cta-primary--hover;
+      color: $color__cta-primary--hover;
 
       svg {
-        transform: rotate(-360deg);
-        transition: all .5s ease-in-out;
+        fill: $color__cta-primary--hover;
       }
     }
   }

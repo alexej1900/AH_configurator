@@ -77,18 +77,16 @@ export default function FinalFormNew({isometry}) {
         {/* <PDFViewer>
           <PdfPage image={isometry}/>
         </PDFViewer> */}
+      </section>
 
-        <div className={`${styles.finalForm__reset}`}>
-          <div className={`${styles.finalForm__reset_text}`}>
-            <p>Sie möchten die Wohnung nochmal komplett neu zusammenstellen? </p>
-            <p>Kein Problem. Nutzen Sie einfach den Reset Button und Sie gelangen zurück auf die Startseite. </p>
-          </div>
+      <div className={`${styles.finalForm__reset}`}>
+          <h3 className={styles.finalForm_header_title}>Spiels noch einmal Sam.</h3>
+          <div className={styles.finalForm__reset_subtitle}>Probieren Sie gerne auch weitere Variationen ihrer Traumwohnung aus.</div>
+          <div className={styles.finalForm__reset_description}>Ihre aktuelle Konfiguration im PDF und dem zur Verfügung gestellten “Share”-Link bleibt dabei erhalten.</div>
           <div className={`${styles.resetBtn}`} onClick={() => setIsPopup(true)} title='RESET YOUR DATA'>
-            RESET <IconComponent name="reset" color="#fff"/>
+            <IconComponent name="entry"/>Neue Konfiguration
           </div>
         </div>
-
-      </section>
 
       {isPopup && <ConfirmationForm
                       onCancel={onCancel} 

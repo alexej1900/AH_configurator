@@ -1,10 +1,9 @@
 @import "../../../assets/scss/abstracts/variables";
 
 .button {
-  display: flex;
+  @include flex-center-center;
+
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 20.8rem;
   margin: 0 .8rem;
 
@@ -58,11 +57,11 @@
   }
 
   &__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-center;
+
     box-sizing: border-box;
     position: relative;
+    width: 100%;
     padding: 2.4rem 5.6rem;
     overflow: hidden;
     background-color:rgba(0, 0, 0, 0.04);
@@ -74,8 +73,8 @@
     }
 
     svg {
-      width: 9.6rem;
-      height: 9.6rem;
+      width: 6.4rem;
+      height: 6.4rem;
 
       @media (max-width: $screen-lg) {
         width: 4.5rem;
@@ -110,10 +109,7 @@
     background: $color__cta-primary--default;
     
     font-family: $description__typo;
-    font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 120%;
-    color: $color__bright;
+    @include font(1.8rem, 500, 120%, $color__bright);
 
     transition: all .3s ease-in-out;
 

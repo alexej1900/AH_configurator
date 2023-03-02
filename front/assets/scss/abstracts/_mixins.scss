@@ -4,18 +4,21 @@
 
 // typo
 
+@mixin font($size, $weight, $line-height, $color: $color__dark) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
 @mixin sectionTitle {
   font-family: $title__typo;
-  font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 120%;
+  @include font(1.8rem, 700, 120%);
 }
 
 @mixin optionTitle {
   font-family: $title__typo;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 120%;
+  @include font(1.5rem, 700, 120%);
 }
 
 // position

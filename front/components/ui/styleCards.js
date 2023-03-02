@@ -9,7 +9,7 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
   const [isInfoVisible, setIsInfoVisible] = useState(false);
 
   const changeInfoVisibility = (number) => {
-    setIsInfoVisible(isInfoVisible === number ? false : number === 0);
+    setIsInfoVisible(isInfoVisible === number ? false : number);
   };
 
   return (

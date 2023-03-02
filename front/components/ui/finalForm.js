@@ -15,9 +15,9 @@ import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 
 import { saveData } from '../../gql/index';
 
-import Popup from './Components/popup';
-import LoadingSpinner from './Components/loadingSpinner';
-import IconComponent from './Components/iconComponent';
+import Popup from './atoms/popup';
+import LoadingSpinner from './atoms/loadingSpinner';
+import IconComponent from './atoms/iconComponent';
 
 import styles from './finalForm.module.scss';
 

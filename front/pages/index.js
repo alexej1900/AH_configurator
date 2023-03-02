@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 
 import getSettings from './api/getSettings';
 
-import Button from '../components/ui/Components/button';
-import FormToggle from '../components/ui/Components/formToggle';
-import ContactBtn from '../components/ui/Components/contactBtn';
+import Button from '../components/ui/atoms/button';
+import FormToggle from '../components/ui/atoms/formToggle';
+import ContactBtn from '../components/ui/atoms/contactBtn';
 import ContactForm from '../components/ui/contactForm';
-import LoadingSpinner from '../components/ui/Components/loadingSpinner';
+import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
 
 import { apartmentItem } from '../gql/index';
 

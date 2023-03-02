@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
 
-import LoadingSpinner from './Components/loadingSpinner';
-import IconComponent from './Components/iconComponent';
-import FormHeader from './Components/formHeader';
+import LoadingSpinner from './atoms/loadingSpinner';
+import IconComponent from './atoms/iconComponent';
+import FormHeader from './atoms/formHeader';
+import SuccessMessage from './atoms/successMessage';
 
 import styles from './loginForm.module.scss';
-import SuccessMessage from './Components/successMessage';
 
 export default function LoginForm({ onCancel }) {
   const [formValue, setFormValue] = useState(

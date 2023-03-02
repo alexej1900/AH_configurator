@@ -4,13 +4,13 @@ import Image from 'next/image';
 
 import Sidebar from '../components/ui/Sidebar/Sidebar';
 import PinsList from '../components/ui/pinsList';
-import ScrollIcon from '../components/ui/Components/scrollIcon';
+import ScrollIcon from '../components/ui/atoms/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 import ContactForm from '../components/ui/contactForm';
-import ConfirmationForm from '../components/ui/Components/confirmationForm';
-import ContactBtn from '../components/ui/Components/contactBtn';
-import LoadingSpinner from '../components/ui/Components/loadingSpinner';
-import IconComponent from '../components/ui/Components/iconComponent';
+import ConfirmationForm from '../components/ui/atoms/confirmationForm';
+import ContactBtn from '../components/ui/atoms/contactBtn';
+import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
+import IconComponent from '../components/ui/atoms/iconComponent';
 
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -53,7 +53,7 @@ export default function Room() {
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
 	// console.log('largeImage', largeImage)
-	console.log('roomType', roomType)
+	// console.log('roomType', roomType)
 
 	useEffect(() => {
 		setStyleId(apartStyle.style);

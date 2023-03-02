@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import IconComponent from '../ui/Components/iconComponent';
+import IconComponent from '../ui/atoms/iconComponent';
 
 import styles from './footer.module.scss';
 

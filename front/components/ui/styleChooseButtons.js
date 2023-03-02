@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { changeStyleVisibility} from '/redux/actions/index';
 
-import IconComponent from './Components/iconComponent';
+import IconComponent from './atoms/iconComponent';
 
 import styles from './styleChooseButtons.module.scss';
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeRoomFormatIndividual, changeApartPrice, changeApartIndividualPrice, changeActiveMod } from '../../redux/actions/index';
 
 import Card from './card';
-import IconComponent from './Components/iconComponent';
+import IconComponent from './atoms/iconComponent';
 import OptionsList from './optionsList';
 
 import getModifications from '../../pages/api/getModifications';

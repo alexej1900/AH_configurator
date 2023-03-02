@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
 
-import LoadingSpinner from './Components/loadingSpinner';
-import IconComponent from './Components/iconComponent';
-import FormHeader from './Components/formHeader';
+import LoadingSpinner from './atoms/loadingSpinner';
+import IconComponent from './atoms/iconComponent';
+import FormHeader from './atoms/formHeader';
 
 import styles from './shareForm.module.scss';
-import SuccessMessage from './Components/successMessage';
+import SuccessMessage from './atoms/successMessage';
 
 export default function ShareForm({ onCancel }) {
   const [formValue, setFormValue] = useState(

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import IconComponent from './Components/iconComponent';
+import IconComponent from './atoms/iconComponent';
 import Card from './card';
 
 import styles from './styleCards.module.scss';
@@ -9,8 +9,7 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
   const [isInfoVisible, setIsInfoVisible] = useState(false);
 
   const changeInfoVisibility = (number) => {
-    isInfoVisible === number && setIsInfoVisible(false);
-    isInfoVisible !== number && setIsInfoVisible(number);
+    setIsInfoVisible(isInfoVisible === number ? false : number === 0);
   };
 
   return (

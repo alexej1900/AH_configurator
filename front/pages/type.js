@@ -6,10 +6,11 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import InfoBox from '../components/ui/Components/infoBox';
+import InfoBox from '../components/ui/atoms/infoBox';
 import Sidebar from '../components/ui/Sidebar/Sidebar';
-import ScrollIcon from '../components/ui/Components/scrollIcon';
-import ContactBtn from '../components/ui/Components/contactBtn';
+import ScrollIcon from '../components/ui/atoms/scrollIcon';
+import ContactBtn from '../components/ui/atoms/contactBtn';
+import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 
 import { typePage } from '../gql/index';
@@ -17,7 +18,6 @@ import { typePage } from '../gql/index';
 import { changeApartStyle, resetRoomTypeState, changeApartPrice } from '../redux/actions/index';
 
 import styles from './room.module.scss';
-import LoadingSpinner from '../components/ui/Components/loadingSpinner';
 
 export default function Type() {
 

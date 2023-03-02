@@ -6,7 +6,7 @@ import { changeSidebarState, changeApartIndividualPrice, changeRoomImage } from 
 import StyleCards from '../styleCards';
 import ModifyCards from '../modifyCards';
 import SidebarButtons from './sidebarButtons';
-import IconComponent from '../Components/iconComponent';
+import IconComponent from '../atoms/iconComponent';
 
 import { formatNumber } from '../../../utils/utilities';
 import getImages from '../../../pages/api/getImages';

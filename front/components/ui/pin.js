@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import IconComponent from "./Components/iconComponent";
+import IconComponent from "./atoms/iconComponent";
 
 import styles from './pin.module.scss';
 

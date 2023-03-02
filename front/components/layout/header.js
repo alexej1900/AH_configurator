@@ -6,7 +6,7 @@ import { changeMenuState } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 
 import ContactForm from '../ui/contactForm';
-import IconComponent from '../ui/Components/iconComponent';
+import IconComponent from '../ui/atoms/iconComponent';
 
 import style from './header.module.scss';
 

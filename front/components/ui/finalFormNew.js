@@ -7,14 +7,14 @@ import ReactPDF, { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 
 import { useRouter } from 'next/router';
 
-import ConfirmationForm from './Components/confirmationForm';
-import IconComponent from './Components/iconComponent';
-import FinalFormButton from './Components/finalFormButton';
+import ConfirmationForm from './atoms/confirmationForm';
+import IconComponent from './atoms/iconComponent';
+import FinalFormButton from './atoms/finalFormButton';
 import ContactForm from './contactForm';
 import ShareForm from './shareForm';
+import PdfPage from './pdfPage';
 
 import styles from './finalFormNew.module.scss';
-import PdfPage from './pdfPage';
 
 export default function FinalFormNew({isometry}) {
 

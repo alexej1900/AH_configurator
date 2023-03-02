@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeRoomVisibility, changeStyleVisibility } from '../../../redux/actions/index';
 
-import IconComponent from '../Components/iconComponent';
+import IconComponent from '../atoms/iconComponent';
 
 import styles from './sidebar.module.scss';
 

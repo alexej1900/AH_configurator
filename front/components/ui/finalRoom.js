@@ -17,9 +17,9 @@ import { RoomData } from '../../gql/index';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 
 import Card from './card';
-import OptionItem from './Components/optionItem';
-import LoadingSpinner from './Components/loadingSpinner';
-import IconComponent from './Components/iconComponent';
+import OptionItem from './atoms/optionItem';
+import LoadingSpinner from './atoms/loadingSpinner';
+import IconComponent from './atoms/iconComponent';
 
 import styles from './finalRoom.module.scss';
 

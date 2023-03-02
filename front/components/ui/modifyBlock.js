@@ -8,7 +8,7 @@ import {
 } from '../../redux/actions/index';
 
 import Card from './card';
-import IconComponent from './Components/iconComponent';
+import IconComponent from './atoms/iconComponent';
 
 import getModifications from '../../pages/api/getModifications';
 

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { changeStyleVisibility } from '/redux/actions/index';
 
-import IconComponent from './Components/iconComponent';
+import IconComponent from './atoms/iconComponent';
 
 import styles from './card.module.scss';
 

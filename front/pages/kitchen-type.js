@@ -6,9 +6,10 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import InfoBox from '../components/ui/Components/infoBox';
+import InfoBox from '../components/ui/atoms/infoBox';
+import ScrollIcon from '../components/ui/atoms/scrollIcon';
+import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
 import Sidebar from '../components/ui/Sidebar/Sidebar';
-import ScrollIcon from '../components/ui/Components/scrollIcon';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
 
 import { kitchenTypePage } from '../gql/index';
@@ -16,7 +17,6 @@ import { kitchenTypePage } from '../gql/index';
 import { resetRoomTypeState, changeKitchenStyle, changeApartPrice } from '../redux/actions/index';
 
 import styles from './room.module.scss';
-import LoadingSpinner from '../components/ui/Components/loadingSpinner';
 
 export default function KitchenType() {
 

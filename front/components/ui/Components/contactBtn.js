@@ -7,8 +7,8 @@ export default function ContactBtn({small}) {
     <div className={`${styles.btn__getContacts} ${small && styles.btn__small}`}>
       <IconComponent name="person" color="#fff"/>
       <div className={`${styles.btn__getContacts_text}`}>
-        {!small && <h4>Kontakt</h4> }
-        {!small && <h5>aufnehmen</h5> }
+        {!small && <h6>Kontakt</h6> }
+        {!small && <h6>aufnehmen</h6> }
       </div>
     </div>
   )

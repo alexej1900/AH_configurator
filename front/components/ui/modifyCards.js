@@ -5,13 +5,13 @@ import { changeActiveMod, changeActivePin } from '../../redux/actions/index';
 
 import ModifyBlock from './modifyBlock';
 import CardGroup from './cardGroup';
+import InfoTitle from './atoms/infoTitle';
 
 import styles from './modifyCards.module.scss';
 
 export default function ModifyCards({ activeStyle, cardData, styleId, roomType, setIndividualPrice }) {
   const [activeMod, setActiveMod] = useState(0);
   const [isActiveModVisible, setIsActiveModVisible] = useState(true);
-  const [isInfoVisible, setIsInfoVisible] = useState(false);
   const dispatch = useDispatch();
 
   const pinState = useSelector((state) => state.generalStates).pin;
@@ -33,10 +33,6 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
     (visibleData.length - 1) < activeMod && setActiveMod(0);
     dispatch(changeActivePin(visibleData[0]?.modificationName));
   }, [roomType]);
-
-  const changeInfoVisibility = () => {
-    setIsInfoVisible(!isInfoVisible);
-  }
 
   // console.log('visibleData', visibleData)
 // console.log('style', style.toLowerCase().replaceAll(' ', ''))
@@ -86,18 +82,10 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
       {nonVisibleData.length !== 0 && 
       
         <div className={styles.list__nonvisible}>
-          <div className={styles.list__nonvisible_description}>
-            <div className={styles.list__nonvisible_description_text}>Nicht visualisierte Optionen</div>
-            <div 
-              className={styles.list__nonvisible_description_button}
-              onClick={changeInfoVisibility}
-            >
-              <img src={'/info.svg'} width='24' height='24' alt="Info"/>
-            </div>
-          </div>
-          <div className={`${styles.list__nonvisible_info} ${isInfoVisible && styles.show}`}>
-            Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt
-          </div>
+          <InfoTitle 
+            title={'Einbauschränke in anderen Zimmern'}
+            infoText={'Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt'}
+          />
 
           {nonVisibleData?.map((cardItem, index) => {
 

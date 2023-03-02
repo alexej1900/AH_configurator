@@ -84,6 +84,8 @@ query MyQuery($id: [String], $var: [String]) {
           }
           additionalLivingRoomPrice
           additionalClosetPrice
+          additionRoomCloset
+          additionCorridorCloset
           bath1FurniturePrice
           bath1Lavabo2Price
           bath1MirrorClosetPrice

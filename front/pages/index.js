@@ -31,6 +31,7 @@ export default function Home() {
   const queryId = router.query.id;
     
   const apartSize = useSelector((state) => state.apartSize);
+  console.log('apartsize', apartSize);
 
   const settings = getSettings();
 

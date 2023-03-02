@@ -60,6 +60,8 @@ export default function ModifyBlock({
   let modificationTitle;
   let modificationStyle;
   let activeIndex = 0;
+  console.log('modificationName', modificationName)
+  console.log('apartSize.additionCorridorCloset', apartSize.additionCorridorCloset)
 
   const modsAdditionalPrice = roomType === 'raumtrenner' && modificationName === 'Schiebetür' 
         ? {0: 0, 1: apartSize.livingRoomDoorPrice}
@@ -85,6 +87,10 @@ export default function ModifyBlock({
         ? {0: 0, 1: apartSize.bedroomClosetPrice}
         :  roomType === 'gang' && modificationName === 'Einbauschrank' 
         ? {0: 0, 1: apartSize.additionalClosetPrice}
+        :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank Flur' 
+        ? {0: 0, 1: apartSize.additionCorridorCloset}
+        :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank weiteres Zimmer' 
+        ? {0: 0, 1: apartSize.additionRoomCloset}
         :  roomType === 'küche4' && modificationName === 'Front' 
         ? {0: 0, 1: apartSize.kitchen2Front2Price, 2: apartSize.kitchen2Front3Price}
         :  roomType === 'küche4' && modificationName === 'Rückwand' 

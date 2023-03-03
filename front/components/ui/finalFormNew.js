@@ -66,11 +66,11 @@ export default function FinalFormNew({isometry}) {
         <div className={`${styles.finalForm__buttons}`}>
 
           {/* <PDFDownloadLink document={<PdfPage image={isometry}/>} fileName="somename.pdf">
-            {({ blob, url, loading, error }) => */}
+            {({ blob, url, loading, error }) =>
               <FinalFormButton title={ loading ? "Loading document..." : "PDF herunterladen"} iconName="download" iconColor="#3C6589"/>
-            {/* }
+            }
           </PDFDownloadLink> */}
-          {/* <FinalFormButton title={"PDF herunterladen"} iconName="download" iconColor="#3C6589"/> */}
+          <FinalFormButton title={"PDF herunterladen"} iconName="download" iconColor="#3C6589"/>
           <FinalFormButton title="Konfiguration teilen" iconName="share" iconColor="#3C6589" clickFn={showShareForm}/>
           <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
         </div>

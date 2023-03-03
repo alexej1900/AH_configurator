@@ -28,7 +28,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`}
 		prevLink = '/raumtrenner';
 	} else if (room.slice(0, -1) === 'küche') {
-		nextLink = {link: `/badewanne`, title: `Badewanne`}
+		nextLink = {link: `/badezimmer`, title: `Badezimmer`}
 		prevLink = '/kitchen-type';
 	} else {
 		for (let i = 0; i < roomsTitle.length; i++) {   
@@ -44,7 +44,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 					prevLink = '/wohnzimmer';
 				}
 
-				if (room.toLowerCase() === 'badewanne') {
+				if (room.toLowerCase() === 'badezimmer') {
 					prevLink = `/kitchen-type`;
 				}
 				

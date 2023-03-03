@@ -19,20 +19,16 @@
   }
 
   .mod__title {
-    // text-transform: uppercase;
-    font-size: 1.6rem;
+    @include font(1.6rem, 500, 120%);
   }
 
   .mod__title_unvisible {
-    font-weight: normal;
-    font-size: 1.6rem;
+    @include font(1.6rem, 400, 120%);
   }
 
   .mod__description {
     margin-bottom: 1.6rem;
-    font-weight: 300;
-    font-size: 1.6rem;
-    line-height: 135%;
+    @include font(1.6rem, 300, 135%);
   }
 
   .card_group__number span{

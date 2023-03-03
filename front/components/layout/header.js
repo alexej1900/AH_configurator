@@ -26,7 +26,7 @@ export default function Header () {
     'Wohnzimmer', 
     'Raumtrenner', 
     'Küchenlinien', 
-    `${apartSize.roomsCount > 2.5 ? 'Badewanne' : ''}`, 
+    `${apartSize.roomsCount > 2.5 ? 'Badezimmer' : ''}`, 
     'Dusche', 
     'Schlafzimmer', 
     'Gang'

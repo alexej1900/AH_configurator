@@ -60,22 +60,20 @@ export default function ModifyBlock({
   let modificationTitle;
   let modificationStyle;
   let activeIndex = 0;
-  console.log('modificationName', modificationName)
-  console.log('apartSize.additionCorridorCloset', apartSize.additionCorridorCloset)
 
   const modsAdditionalPrice = roomType === 'raumtrenner' && modificationName === 'Schiebetür' 
         ? {0: 0, 1: apartSize.livingRoomDoorPrice}
         :  modificationName === 'Böden' 
         ? {0: 0, 1: apartSize.livingRoomOpt2Price, 2: apartSize.livingRoomOpt3Price}
-        :  roomType === 'badewanne' && modificationName === 'Platten' 
+        :  roomType === 'badezimmer' && modificationName === 'Platten' 
         ? {0: 0, 1: apartSize.bath1PlatePrice}
-        :  roomType === 'badewanne' && modificationName === 'Spiegel' 
+        :  roomType === 'badezimmer' && modificationName === 'Spiegel' 
         ? {0: 0, 1: apartSize.bath1MirrorClosetPrice}
-        :  roomType === 'badewanne' && modificationName === 'Waschbecken' 
+        :  roomType === 'badezimmer' && modificationName === 'Waschbecken' 
         ? {0: 0, 1: apartSize.bath1Lavabo2Price}
-        :  roomType === 'badewanne' && modificationName === 'Möbel' 
+        :  roomType === 'badezimmer' && modificationName === 'Möbel' 
         ? {0: 0, 1: apartSize.bath1FurniturePrice}
-        :  roomType === 'badewanne' && modificationName === 'Schiebetür' 
+        :  roomType === 'badezimmer' && modificationName === 'Schiebetür' 
         ? {0: 0, 1: apartSize.bath1ShiftDoorPrice}
         :  roomType === 'dusche' && modificationName === 'Platten' 
         ? {0: 0, 1: apartSize.dushePlatePrice}
@@ -196,7 +194,7 @@ export default function ModifyBlock({
         <div className={styles.card__header} onClick={() => listSwitchHandler()}>
           <div className={`${styles.arrow} ${collapsed && styles.rotate}`}></div>
 
-          <h3 className={styles.mod__title}>{modificationName}</h3>
+          <p className={styles.mod__title}>{modificationName}</p>
 
           {cardItem.modificationItemExample.length > 1 &&
             <div className={styles.card_group__number}>

@@ -32,9 +32,8 @@
 
     .btn__wrapper {
       box-sizing: border-box;
+      @include flex-center-center;
       display: none;
-      justify-content: center;
-      align-items: center;
       height: 5rem;
       width: 36rem;
       background: $color__bright;
@@ -48,13 +47,9 @@
     }
 
     .btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center-center;
+      @include font(1.8rem, 600, 120%, $color__bright);
       margin: 0;
-      color: $color__bright;
-      font-weight: 600;
-      line-height: 120%;
       height: 4.8rem;
 
       cursor: pointer;
@@ -98,9 +93,7 @@
 
         @media (max-width: $screen-lg) {
           display: block;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flex-center-center;
           flex: 1 0 50%;
           background: rgba($color__cta-primary--hover, 0.72);
         }
@@ -175,9 +168,7 @@
   &__header {
     position: sticky;
     top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between-center;
     box-sizing: border-box;
     margin-bottom: 1.2rem;
     padding: 0 2.4rem;
@@ -185,8 +176,7 @@
     z-index: 100;
 
     .optionsTitle {
-      font-size: 2.1rem;
-      line-height: 2.5rem;
+      @include font(2.1rem, 500, 120%)
       // text-transform: uppercase;
     }
 
@@ -195,9 +185,7 @@
       padding: 1.5rem;
 
       div {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        @include flex-end-center;
 
         &:first-child {
           strong {

@@ -35,3 +35,16 @@
   align-items: center;
 }
 
+@mixin flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// size
+
+@mixin squareSize($size) {
+  width: $size;;
+  height: $size;
+}
+

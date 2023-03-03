@@ -4,9 +4,7 @@
     text-decoration: none;
     padding: 1.4rem;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-center;
   
     &__wrapper {
       position: relative;

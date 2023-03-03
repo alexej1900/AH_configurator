@@ -73,12 +73,10 @@
     }
 
     svg {
-      width: 6.4rem;
-      height: 6.4rem;
+      @include squareSize(6.4rem);
 
       @media (max-width: $screen-lg) {
-        width: 4.5rem;
-        height: 4.5rem;
+        @include squareSize(4.5rem);
         fill: $color__bright;
       }
     }

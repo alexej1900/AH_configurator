@@ -2,16 +2,13 @@
 
 .btn__getContacts {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-center;
 
   width: 12rem;
   height: 4rem;
   background: $color__cta-primary--default;
 
-  color: $color__bright;
-  font-weight: 600;
+  @include font(1.4rem, 600, 120%, $color__bright);
 
   border-radius: 2rem;
   border: 2px solid white;
@@ -21,21 +18,11 @@
   transition: all 0.3s ease-in;
 
   svg {
-    width: 2.6rem;
-    height: 2.6rem;
+    @include squareSize(2.6rem);
   }
 
   &_text {
     margin-left: .8rem;
-
-    h4 {
-      font-size: 1.6rem;
-      font-weight: 400;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
   }
 
   &:hover {

@@ -107,7 +107,7 @@ export default function Sidebar({
 		const roomActiveMode = 
 		// =============== if we have main style lines & rooms without styles:  set to line below titles of 
 		// rooms without styles & decomment 3 line below ===============
-		// currentRoom !== 'badewanne' & currentRoom !== 'dusche'
+		// currentRoom !== 'badezimmer' & currentRoom !== 'dusche'
 		//     ? activeMod.length === 0 ? currentRoom : (currentRoom + ' ' + `${mainStyle} ` +  activeMod.slice(0, -1)).toLowerCase()
 		//     : 
 			activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
@@ -129,7 +129,7 @@ export default function Sidebar({
 			{sidebarOpen &&
 				<div className={styles.sidebar__content}>
 					<div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'kitchen-type' && showStyle && styles.hideHeader}`}>
-						<h3 className={`${styles.optionsTitle}`}>{sidebarTitle}</h3>
+						<div className={`${styles.optionsTitle}`}>{sidebarTitle}</div>
 						<div className={`${styles.options}`}>
 							<div><span>Optionen</span> {OptionsPrice > 0 ? '+' : ''}<strong>{formatNumber(OptionsPrice)}</strong></div>
 							{IndividualPrice !== 0 && <div><span>Individuelle</span>{IndividualPrice > 0 ? '-' : ''}<strong>{formatNumber(IndividualPrice)}</strong></div>}

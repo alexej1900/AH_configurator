@@ -5,11 +5,9 @@
     margin: 0 0 3.2rem;
 
     .option {
-      width: 50%;
-      display: flex;
+      @include flex-between-center;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      width: 50%;
       cursor: pointer;
       margin: 2px;
       padding: 1.6rem 0;
@@ -29,8 +27,7 @@
       }
 
       svg {
-        width: 6.4rem;
-        height: 6.4rem;
+        @include squareSize(6.4rem);
         fill: rgba(0, 0, 0, 0.56);
       }
     }
@@ -38,25 +35,19 @@
     &__title {
       display: block;
       width: 100%;
-      font-weight: 400;
-      font-size: 1.8rem;
+      @include font(1.8rem, 400, 120%, #6b6b6b);
       text-align: center;
       margin: 1.2rem 0;
-      color: #6b6b6b;
     }  
 
     &__sign {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 2rem;
-      height: 2rem;
+      @include flex-center-center;
+      @include squareSize(2rem);
       border-radius: 50%;
       border: 2px solid #6b6b6b;
 
       .toggle__point {
-        width: 1.4rem;
-        height: 1.4rem;
+        @include squareSize(1.4rem);
         border-radius: 50%;
         background: $color__cta-primary--default;
         display: none;

@@ -46,7 +46,7 @@ console.log('roomType', roomType)
     'Wohnzimmer', 
     'Raumtrenner', 
 		'Küche',
-		'Badewanne', 
+		'Badezimmer', 
     'Dusche', 
     'Schlafzimmer', 
     'Gang'

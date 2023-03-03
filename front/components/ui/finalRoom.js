@@ -39,8 +39,8 @@ console.log('currentRoom', currentRoom)
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
-
-  const room = roomType[`${currentRoom.toLowerCase()}`] 
+  console.log('apartStyle.kitchenStyle', apartStyle.kitchenStyle)
+  const room = apartStyle.kitchenStyle > 3 && roomType[`${currentRoom.toLowerCase()}`] 
     ? roomType[`${currentRoom.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
     // console.log('room', room)

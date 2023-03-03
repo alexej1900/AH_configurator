@@ -13,6 +13,7 @@ import IconComponent from './atoms/iconComponent';
 import getModifications from '../../pages/api/getModifications';
 
 import styles from './modifyBlock.module.scss';
+import generalStates from '../../redux/reducers/general';
 
 export default function ModifyBlock({
   activeStyle, 
@@ -39,6 +40,7 @@ export default function ModifyBlock({
   const dispatch = useDispatch();
 
   useEffect(() => {
+    
     if (activePin === cardItem.modificationName) {
       setCollapsed(collapsed ? !collapsed : collapsed); 
       setIsInLine(isInLine ? !isInLine : isInLine); 
@@ -110,6 +112,7 @@ export default function ModifyBlock({
   }, [modifications]);
 
   const listSwitchHandler = () => {
+
     setCollapsed(!collapsed ); 
     setIsInLine(isInLine ? !isInLine : isInLine); 
     setActiveMod();
@@ -142,7 +145,7 @@ export default function ModifyBlock({
 
   const checkIsCardDisable = (item) => {
     let cardIsDisabled = false;
-    const modificationsKeys = roomState && Object.keys(roomState.modifications);
+    const modificationsKeys = roomState && roomState.modifications && Object.keys(roomState.modifications);
     const modificationsKeysCorrected = modificationsKeys && modificationsKeys
       .map((key) => key.toLowerCase()
         .replaceAll('ü', 'u').replaceAll('ö', 'o').replaceAll('ä', 'a') //replacing german letters
@@ -177,7 +180,7 @@ export default function ModifyBlock({
     modificationStyle, 
     modificationDescr
     ) => {
-      
+
     activeStyle(index, modificationName, modificationImage, modificationTitle, modificationStyle, modificationDescr, modsAdditionalPrice[index] ? modsAdditionalPrice[index] : 0);
     setChecked(true);
     cardItem.modificationVisibility && dispatch(changeLoadingState(true)); // if modification non visible, don't loads new big image
@@ -185,7 +188,7 @@ export default function ModifyBlock({
 
   activeIndex = activeModification.modificationNumber;
 
-  // console.log('modifications', modifications)
+  // console.log('activeStyle', activeStyle)
   // console.log('modificationName', modificationName)
   // console.log('apartSize', apartSize)
   return (

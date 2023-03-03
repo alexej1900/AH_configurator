@@ -55,13 +55,13 @@ export default function KitchenType() {
 
       setStyleId(id);
       currentStyle = data.entry.styles[id];
-      dispatch(changeKitchenStyle(id, currentStyle.image[0], currentStyle.styleTitle));
+      dispatch(changeKitchenStyle(id, styleImage, currentStyle.styleTitle));
       dispatch(changeApartPrice('Küchendesign', price[id]));
       // dispatch(resetRoomTypeState());
     }
 
     const setStyleTypeHandle = () => { 
-        dispatch(changeKitchenStyle(styleId, currentStyle.image[0], currentStyle.styleTitle));
+        dispatch(changeKitchenStyle(styleId, styleImage, currentStyle.styleTitle));
     }
 
     return (

@@ -52,7 +52,6 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
-	// console.log('largeImage', largeImage)
 	// console.log('roomType', roomType)
 
 	useEffect(() => {
@@ -90,6 +89,7 @@ export default function Room() {
 	}, [path]);
 
 	useEffect(async() => {
+		
 		setTimeout(() => {
 			if (data && ROOM_TYPE === 'küche1' || ROOM_TYPE === 'küche2' || ROOM_TYPE === 'küche3') {
 				const modifications = 
@@ -116,7 +116,7 @@ export default function Room() {
 	if (loading) return <LoadingSpinner full={true}/>
 	if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
-	// console.log('data.entry', data.entry)
+	// console.log('styleId', styleId)
 	const activeImage = roomState?.image 
 		? roomState.image 
 		: data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0];
@@ -139,7 +139,8 @@ export default function Room() {
 			dispatch(changeRoomType(room, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle));
 			dispatch(changeApartPrice(modName, additionalPrice));
 		}
-    dispatch(changeActivePin(modName));
+
+    ROOM_TYPE.slice(0, -1) !== 'küche' && dispatch(changeActivePin(modName));
   }
 	
 	const changeFloorType = () => { // change floor type for all rooms, change price
@@ -228,6 +229,7 @@ export default function Room() {
 					currentRoom={ROOM_TYPE}
 					title={data.entry.title} 
 					stylesCards={true} 
+					// styleTypeSet={}
 				/>
 
 				<StyleChooseButtons room={ROOM_TYPE ? ROOM_TYPE : path} styleTypeSet={() => console.log()} />

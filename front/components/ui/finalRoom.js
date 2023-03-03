@@ -29,7 +29,7 @@ export default function FinalRoom({ roomName, style }) {
   const { roomType, apartStyle } = useSelector(state => state);
 
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
-// console.log('roomName', roomName)
+console.log('currentRoom', currentRoom)
   const { data, loading, error } = useQuery(RoomData(currentRoom));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
@@ -40,15 +40,15 @@ export default function FinalRoom({ roomName, style }) {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
 
-  const room = roomType[`${roomName.toLowerCase()}`] 
-    ? roomType[`${roomName.toLowerCase()}`] 
+  const room = roomType[`${currentRoom.toLowerCase()}`] 
+    ? roomType[`${currentRoom.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
     // console.log('room', room)
     // if we have main styles decomment 3 lines below and delete 3 lines abowe ==============
     // : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
     //   return item.styleName.toLowerCase() === style.toLowerCase()
     // })[0].styleDefaultImage[0]};
-
+    console.log('room', room)
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
     dispatch(changeRoomVisibility(false));

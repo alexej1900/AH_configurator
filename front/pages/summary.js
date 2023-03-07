@@ -41,7 +41,7 @@ export default function Summary () {
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
 	// const rooms = generalStates.rooms
-console.log('roomType', roomType)
+
 	const rooms = [
     'Wohnzimmer', 
     'Raumtrenner', 

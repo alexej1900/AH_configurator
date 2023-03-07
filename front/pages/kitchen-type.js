@@ -57,7 +57,9 @@ export default function KitchenType() {
       currentStyle = data.entry.styles[id];
       dispatch(changeKitchenStyle(id, styleImage, currentStyle.styleTitle));
       dispatch(changeApartPrice('Küchendesign', price[id]));
-      // dispatch(resetRoomTypeState());
+      
+      // if we have main style lines decomment this line (after selecting new style line all previous settings should be cancelled)
+      // dispatch(resetRoomTypeState()); 
     }
 
     const setStyleTypeHandle = () => { 

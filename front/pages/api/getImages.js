@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { bathImages, kitchenImages, livingRoomImages, roomImages } from '../../gql/index';
 
-export default  function getImages(room) {
+export default  function getImages() {
 
   let images;
   

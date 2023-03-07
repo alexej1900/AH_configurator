@@ -116,7 +116,7 @@ export default function Room() {
 	if (loading) return <LoadingSpinner full={true}/>
 	if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
-	// console.log('styleId', styleId)
+	
 	const activeImage = roomState?.image 
 		? roomState.image 
 		: data.entry.roomStyles[0].roomStyleExamples[styleId].styleDefaultImage[0];
@@ -126,9 +126,9 @@ export default function Room() {
   const changeType = (index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle) => {
 		// console.log('index, modName,  featuredImage, styleTitle, subtitle, description, modGroupTitle, mainStyle', {index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle})
 		setOptionData({index, modName,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, mainStyle});
-		const room = ROOM_TYPE.slice(0, -1) === 'küche' ? ROOM_TYPE.slice(0, -1) : ROOM_TYPE;
+		const room = (ROOM_TYPE.slice(0, -1) === 'küche') ? ROOM_TYPE.slice(0, -1) : ROOM_TYPE;
 		
-		if (ROOM_TYPE === 'wohnzimmer') {  // set floor type for all types of rooms
+		if (room === 'wohnzimmer') {  // set floor type for all types of rooms
 			roomsWithChangeableFloor
 				.forEach((room) => dispatch(changeRoomType(room, 'Böden', index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle)))
 			dispatch(changeApartPrice('Böden', additionalPrice));
@@ -136,7 +136,19 @@ export default function Room() {
 			setIsConfirmation(true);
 			return;
 		} else { // for other options
-			dispatch(changeRoomType(room, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle));
+			dispatch(changeRoomType(
+				room, 
+				modName, 
+				index,  
+				featuredImage, 
+				styleTitle, 
+				subtitle, 
+				description, 
+				additionalPrice, 
+				modGroupTitle, 
+				largeImage, 
+				mainStyle
+			));
 			dispatch(changeApartPrice(modName, additionalPrice));
 		}
 

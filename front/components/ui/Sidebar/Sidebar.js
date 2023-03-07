@@ -43,14 +43,13 @@ export default function Sidebar({
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
 	const modifications = getModifications(currentRoom.slice(0, 5) === 'küche' ? 'küche' : currentRoom);
-	const roomImages = getImages(currentRoom.slice(0, 5) === 'küche' ? 'küche' : currentRoom);
+	const roomImages = getImages();
 
 	useEffect(() => {
 		if (roomImages && modifyData && !checkObjIsEmpty(modifications)) {
 			setActiveImage();
 		}
 	}, [modifications]);
-
 
 	// =============== if we have individual solutions in options decomment function below ===============
 	// const setIndividualHandler = (increase, price) => {
@@ -114,10 +113,11 @@ export default function Sidebar({
 		const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 		
 		// console.log('roomActiveMode', roomActiveMode)
-		// console.log('roomImages', roomImages[1].title.toLowerCase().slice(0, 15) === roomActiveMode.slice(0, 15))
+		// console.log('roomImageswwww', roomImages[72].title.toLowerCase().slice(0, 40) === roomActiveMode.slice(0, 40))
 		// console.log('newActiveImage', newActiveImage)
 		setLargeImage(newActiveImage); 
-		dispatch(changeRoomImage(currentRoom, newActiveImage));
+		// currentRoom !== ('küche1' || 'küche2' || 'küche3') && console.log('dsfdfd')
+		dispatch(changeRoomImage(currentRoom.slice(0, 5) === 'küche' ? 'küche' : currentRoom, newActiveImage));
 		// console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
 	}
 

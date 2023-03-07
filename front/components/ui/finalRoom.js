@@ -29,7 +29,7 @@ export default function FinalRoom({ roomName, style }) {
   const { roomType, apartStyle } = useSelector(state => state);
 
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
-console.log('currentRoom', currentRoom)
+
   const { data, loading, error } = useQuery(RoomData(currentRoom));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
@@ -39,16 +39,16 @@ console.log('currentRoom', currentRoom)
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
-  console.log('apartStyle.kitchenStyle', apartStyle.kitchenStyle)
-  const room = apartStyle.kitchenStyle > 3 && roomType[`${currentRoom.toLowerCase()}`] 
-    ? roomType[`${currentRoom.toLowerCase()}`] 
+  // console.log('apartStyle.kitchenStyle', apartStyle.kitchenStyle)
+  const room = roomType[`${roomName.toLowerCase()}`] 
+    ? roomType[`${roomName.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
     // console.log('room', room)
     // if we have main styles decomment 3 lines below and delete 3 lines abowe ==============
     // : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
     //   return item.styleName.toLowerCase() === style.toLowerCase()
     // })[0].styleDefaultImage[0]};
-    console.log('room', room)
+
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
     dispatch(changeRoomVisibility(false));

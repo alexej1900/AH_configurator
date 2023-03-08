@@ -106,7 +106,7 @@
     text-align: center;
     background: $color__cta-primary--default;
     
-    font-family: $description__typo;
+    font-family: $primary__typo;
     @include font(1.8rem, 500, 120%, $color__bright);
 
     transition: all .3s ease-in-out;

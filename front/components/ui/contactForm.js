@@ -17,7 +17,6 @@ export default function ContactForm({ onCancel }) {
       email: '',
       phone: '',
       text: '',
-      // gender: '',
       callBack: false
     });
   const [formFilled, setFormFilled] = useState(false);
@@ -125,32 +124,8 @@ export default function ContactForm({ onCancel }) {
               <input type="hidden" name="user_link" value={link}/>  
               <input type="hidden" name="fromEmail" value={'info@immokonfigurator.com'}/>    
               <input type="hidden" name="fromName" value={`${formValue.name}`} />  
-              {/* <input type="hidden" name="fromName" value={`${formValue.name} ${formValue.surname}`} /> */}
-              {/* <input type="hidden" name="gender" value={formValue.gender} /> */}
               <input type="hidden" name="callBack" value={formValue.callBack} />
               <input type="hidden" name="subject" value={formValue.callBack ? "Call me" : ""} />
-
-              {/* <div className={styles.form__gender_title}>Anrede</div> */}
-              {/* <div className={`${styles.form__gender}`}>
-                <button 
-                  className={`${styles.form__gender_btn} ${formValue.gender === 'Neutral' && styles.form__gender_btn_active}`} 
-                  onClick={() => changeFormData({gender: 'Neutral'})}
-                >
-                  Neutral
-                </button>
-                <button 
-                  className={`${styles.form__gender_btn} ${formValue.gender === 'Frau' && styles.form__gender_btn_active}`} 
-                  onClick={() => changeFormData({gender: 'Frau'})}
-                >
-                  Frau
-                </button>
-                <button 
-                  className={`${styles.form__gender_btn} ${formValue.gender === 'Herr' && styles.form__gender_btn_active}`} 
-                  onClick={() => changeFormData({gender: 'Herr'})}
-                >
-                  Herr
-                </button>
-              </div> */}
 
               <input 
                 type="text" 
@@ -162,16 +137,6 @@ export default function ContactForm({ onCancel }) {
               />
               {errors.name ? <div className={styles.errors}>{errors.name}</div> : null}
 
-              {/* <input 
-                type="text" 
-                placeholder="Vorname" 
-                name="surname"
-                value={formValue.surname} 
-                onChange={(e) => changeFormData({surname: e.target.value})} 
-                className={errors.surname && styles.contactForm__error}
-              /> */}
-              {/* {errors.surname ? <div className={styles.errors}>{errors.surname}</div> : null} */}
-
               <input 
                 type="email" 
                 placeholder="Email *" 
@@ -181,7 +146,6 @@ export default function ContactForm({ onCancel }) {
                 className={errors.email && styles.contactForm__error}
               />
               {errors.email ? <div className={styles.errors}>{errors.email}</div> : null}
-
 
               <input 
                 type="tel" 

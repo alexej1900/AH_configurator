@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Link from 'next/link';
-
 import { changeStyleVisibility} from '/redux/actions/index';
 
-import IconComponent from './atoms/iconComponent';
+import Button from './atoms/button';
 
 import styles from './styleChooseButtons.module.scss';
 
@@ -60,35 +58,33 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 	}
 
   const nextStepClick = () => {
-    room === 'kitchen-type' ?  changeStyle(): dispatch(changeStyleVisibility(false));
+    room === 'kitchen-type' ? changeStyle() : dispatch(changeStyleVisibility(false));
   }
 			
 	return (
 		<div className={styles.style__button}>
-			<div className={styles.btn__wrapper}>
-				{room === 'kitchen-type' 
-					? <>
-							<Link href={`${nextLink.link}`}>
-								<a className={`${styles.btn} ${styles.btn__primary}`} onClick={styleTypeSet}>
-									<IconComponent name="confirm" color="#fff"/> Wahl bestätigen
-								</a>
-							</Link>   
-							<div className={`${styles.btn} ${styles.btn__next} ${styles.btn__next_style} center`} onClick={nextStepClick}>
-								Nächster Stil <IconComponent name="arrow" color={"#3C6589"}/>
-							</div>
-						</>
-					: <>
-							<div className={`${styles.btn} ${styles.btn__options} center`} onClick={nextStepClick}>
-								<IconComponent name="options" color="#fff"/> Optionen 
-							</div>
-							<Link href={`${nextLink.link}`}>
-								<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next_style}`} onClick={styleTypeSet}>
-								 	{nextLink.title} <IconComponent name="arrow" color="#fff"/>
-								</a>
-							</Link> 
-						</>
-				}
-			</div>
-	</div>
+			{room === 'kitchen-type' 
+				? <>
+						<Button 
+							title='Wahl bestätigen'
+							href={nextLink.link}
+							type="primary" 
+							iconName='confirm'
+							iconColor="#fff" 
+							clickFn={styleTypeSet}
+						/>
+						<div className={`${styles.btn__next}`}>
+							<Button title="Nächster Stil" type="secondary" iconName="arrow" iconColor="#3C6589" iconRight={true} clickFn={nextStepClick}/>
+						</div>
+					</>
+				: <>
+						<Button title="Optionen" type="back" iconName="options" iconColor="#fff" clickFn={nextStepClick}/>
+
+						<div className={`${styles.btn__next}`}>
+							<Button title={nextLink.title} href={nextLink.link} type="primary" iconName="arrow" iconColor="#fff" iconRight={true} clickFn={styleTypeSet}/>
+						</div>
+					</>
+			}
+		</div>
   )
 }

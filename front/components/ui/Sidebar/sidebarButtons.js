@@ -1,9 +1,7 @@
-import Link from 'next/link';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { changeRoomVisibility, changeStyleVisibility } from '../../../redux/actions/index';
 
-import IconComponent from '../atoms/iconComponent';
+import Button from '../atoms/button';
 
 import styles from './sidebar.module.scss';
 
@@ -60,28 +58,24 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId }) {
 		<div className={`${styles.sidebar__button} ${currentRoom === 'kitchen-type' && styles.sidebar__typeRoomButtons}`}>
 			<div className={styles.btn__wrapper}>
 				<>
-					<Link href={`${prevLink}`} >
-						<a className={`${styles.btn} ${styles.btn__back} center`}>
-							<IconComponent name="arrow" color="#fff"/> Zurück
-						</a>
-					</Link> 
-
-					<div className={`${styles.btn} ${styles.btn__showRoom} center`} onClick={showRoomClick}>
-						<IconComponent name="showRoom" color="#fff"/> Raum anzeigen
+					<div className={`${styles.btn__back}`}>
+						<Button title="Zurück"  href={`${prevLink}`} type="back" iconName="arrow" iconColor="#fff"/>
 					</div>
 
-					{ currentRoom === 'kitchen-type' 
-						? <Link href={`${nextLink.link}`}>
-								<a className={`${styles.btn} ${styles.btn__primary}`} onClick={styleTypeSet}>
-									Wahl bestätigen <IconComponent name="confirm" color="#fff"/> 
-								</a>
-							</Link>
-						: <Link href={`${nextLink.link}`}>
-								<a className={`${styles.btn} ${styles.btn__primary} ${styles.btn__next} center`} onClick={styleTypeSet}>
-									{nextLink.title} <IconComponent name="arrow" color="#fff"/>
-								</a>
-							</Link>  
-					}
+					<div className={`${styles.btn__showRoom}`}>
+						<Button title="Raum anzeigen" type="back" iconName="showRoom" iconColor="#fff" clickFn={showRoomClick}/>
+					</div>
+
+					<div className={`${styles.btn__primary} ${currentRoom !== 'kitchen-type' && styles.btn__next}`}>
+						<Button 
+							title={currentRoom === 'kitchen-type' ? 'Wahl bestätigen' : nextLink.title}
+							href={nextLink.link}
+							type="primary" 
+							iconName={currentRoom === 'kitchen-type' ? 'confirm' : 'arrow'} 
+							iconColor="#fff" 
+							iconRight={true}
+							clickFn={styleTypeSet}/>
+					</div>
 				</>  
 			</div>
 		</div>

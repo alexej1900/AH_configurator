@@ -18,8 +18,7 @@
     align-items: start;
   }
 
-  div,
-  button {
+  div {
     box-sizing: border-box;
     font-family: 'Open Sans';
     line-height: 135%;
@@ -98,21 +97,5 @@
 
   .form_buttons {
     @include flex-between-center;
-  }
-
-  .form_button {
-    width: 15rem;
-    padding: 1.4rem;
-    background: $color__cta-primary--default;
-    border: 1px solid $color__cta-primary--default;
-
-    @include font(1.8rem, 500, 120%, $color__bright);
-    text-align: center;
-    cursor: pointer;
-
-    &.button__cancel {
-      background: transparent;
-      color: $color__cta-primary--default;
-    }
   }
 }

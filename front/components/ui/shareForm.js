@@ -5,6 +5,7 @@ import madeShortUrl from '../../utils/madeShortUrl';
 
 import LoadingSpinner from './atoms/loadingSpinner';
 import IconComponent from './atoms/iconComponent';
+import Button from './atoms/button';
 import FormHeader from './atoms/formHeader';
 
 import styles from './shareForm.module.scss';
@@ -97,8 +98,8 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
               <div >
                 {link}
               </div>
-              <div className={styles.contactForm__content_link_btn} onClick={copyLink}>
-                <IconComponent name="copy" color="#fff"/>
+              <div >
+                <Button type="primary" iconName="copy" iconColor="#fff" clickFn={copyLink}/>
               </div>
             </div>
           </div>
@@ -134,13 +135,11 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
               onChange={(e) => changeFormData({text: e.target.value})} 
             ></textarea>
 
-            <div className={`${styles.form_buttons}`}>
-              <a 
-                className={`${styles.form_button} ${styles.button__confirm} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`} 
+            <div className={`${styles.form_buttons} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`}>
+              <Button 
+                title="Senden" 
                 href={`mailto:${formValue.email}?subject=Meine Appenzeller Huus Konfiguration&body=Hallo, ${formValue.name}! %0A%0a${formValue.text}`}
-              >
-                Senden
-              </a>
+                type="primary" />
             </div>
           </form>
           </div>

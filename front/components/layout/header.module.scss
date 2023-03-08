@@ -126,7 +126,7 @@
         display: block;
         padding: 1.6rem 2.4rem;
 
-        font-family: $description__typo;
+        font-family: $primary__typo;
         font-weight: 400;
         text-decoration: none;
         font-size: 1.8rem;
@@ -163,7 +163,7 @@
       cursor: pointer;
 
       &_descr {
-        font-family: $description__typo;
+        font-family: $primary__typo;
         font-weight: 500;
         font-size: 1.8rem;
         line-height: 120%;
@@ -197,7 +197,7 @@
         }
 
         .header__menu_button_descr {
-          font-family: $description__typo;
+          font-family: $primary__typo;
           font-weight: 400;
           font-size: 14px;
           line-height: 135%;

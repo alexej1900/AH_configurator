@@ -1,5 +1,5 @@
-import IconComponent from './iconComponent';
 import FormHeader from './formHeader';
+import Button from './button';
 
 import styles from './confirmationForm.module.scss';
 
@@ -16,8 +16,8 @@ export default function ConfirmationForm({ onCancel, onConfirm, title, child}) {
               {child}
             </div>
             <div className={`${styles.form_buttons}`}>
-              <button className={`${styles.form_button} ${styles.button__cancel}`} onClick={onCancel}>Abbrechen</button>
-              <button className={`${styles.form_button} ${styles.button__confirm}`} onClick={onConfirm}>Übernehmen</button>
+              <Button title='Abbrechen' type="secondary" clickFn={onCancel}/>
+              <Button title='Übernehmen' type="primary" clickFn={onConfirm}/>
             </div>
           </div>
         </div> 

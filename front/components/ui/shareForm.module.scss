@@ -110,17 +110,6 @@
       @media (max-width: $screen-lg) {
         margin-bottom: 2.4rem;
       }
-
-      &_btn {
-        padding: 1.2rem 1.6rem;
-        background: $color__cta-primary--default;
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.05);
-          background: $color__cta-primary--hover;
-        }
-      }
     }
 
     &_right {
@@ -240,39 +229,16 @@
   }
 
   .form_buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .form_button {
-    width: 26rem;
     margin: 1.6rem auto 0;
-    padding: 1.4rem;
-    background: $color__cta-primary--default;
-    color: $color__bright;
-    font-weight: 600; 
-    font-size: 1.6rem;
-    text-align: center;
-    border: none;
-    cursor: pointer;
 
     @media (max-width: $screen-lg) {
-      width: 100%;
       margin-top: 1rem;
-      margin-bottom: 0;
     }
 
-    &.button__confirm {
-      background: $color__primary--dark;
-      text-decoration: none;
-
-      &.button__disabled {
-        display: inline-block;
-        pointer-events: none;
-        cursor: not-allowed;
-        background: var(--color__cta_50);
-      }
+    &.button__disabled > a{
+      pointer-events: none;
+      cursor: not-allowed;
+      background: var(--color__cta_50);
     }
   }
 }

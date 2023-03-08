@@ -213,13 +213,11 @@
   }
 
   .form_buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
   }
 
   .form_button {
-    width: 26rem;
+    width: 100%;
     margin: 1.6rem auto 0;
     padding: 1.4rem;
     background: var(--color__primary);

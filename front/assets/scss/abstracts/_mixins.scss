@@ -5,20 +5,33 @@
 // typo
 
 @mixin font($size, $weight, $line-height, $color: $color__dark) {
-  font-weight: $weight;
+  font-family: $primary__typo;
   font-size: $size;
+  font-weight: $weight; 
   line-height: $line-height;
   color: $color;
 }
 
 @mixin sectionTitle {
-  font-family: $title__typo;
   @include font(1.8rem, 700, 120%);
 }
 
 @mixin optionTitle {
-  font-family: $title__typo;
   @include font(1.5rem, 700, 120%);
+}
+
+@mixin buttonTitle {
+  @include font(1.8rem, 600, 120%);
+}
+
+@mixin lead {
+  @include font(2.4rem, 400, 135%);
+  font-family: $openSans__typo;
+
+  @media (max-width: $screen-lg) {
+    @include font(2.1rem, 400, 135%);
+    font-family: $primary__typo;
+  }
 }
 
 // position

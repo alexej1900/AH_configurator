@@ -20,10 +20,10 @@
 }
 
 body {
-  font-family: 'Nationale', 'Abel', 'Karla', 'Arial', 'Administer AT Light', Helvetica, neue-haas-unica,  sans-serif;
+  font-family: "NNNouvelleGroteskSTD", 'Open Sans', 'Nationale', 'Abel', 'Karla', 'Arial', 'Administer AT Light', Helvetica, neue-haas-unica,  sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 120%;
 }
 
 * {
@@ -43,57 +43,47 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: var(--title__typo);
-  font-weight: 600;
+  font-family: $primary__typo;
+  font-weight: 700;
   font-style: normal;
   text-rendering: auto;
-  // text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 120%;
 }
 
 div {
-  font-family: var(--description__typo);
+  font-family: $primary__typo;
 }
 
 h1 {
-  font-size: 4rem;
-  margin-bottom: 32px;
+  font-size: 3.2rem;
+
+  @media (max-width: $screen-lg) {
+    font-size: 2.8rem;
+  }
 }
 
 h2 {
-  font-size: rem(32);
-  margin-bottom: rem(32);
-  text-transform: none;
+  font-size: 2.4rem;
+  font-family: $openSans__typo;
 }
 
 h3 {
-  font-size: rem(22);
-  margin-bottom: rem(24);
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 h4 {
-  font-size: rem(18);
-}
-
-h5 {
-  font-size: rem(16);
-  font-weight: 500;
-  // text-transform: uppercase;
-  // margin: rem(16) 0 rem(12) 0;
-}
-
-h6 {
-  font-size: rem(14);
+  font-size: 1.8rem;
+  font-family: $openSans__typo;
 }
 
 p {
-  font-size: rem(18);
-  font-weight: 200;
-  line-height: rem(24);
+  font-size: 1.8rem;
   font-weight: 400;
-  font-family: var(--description__typo);
+  line-height: 135%;
+  font-family: $primary__typo;
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }

@@ -78,16 +78,16 @@ export default function Home() {
         
         <div className={styles.welcome__inner}>
           <div className={styles.welcome__inner_header}>
-            <h2 className={`${styles.welcome__inner_header_title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h2>
-            <div className={styles.welcome__inner_header_description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten.</div>
+            <h1 className={`${styles.welcome__inner_header_title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h1>
+            <p className={styles.welcome__inner_header_description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten.</p>
           </div>
 
           <div className={styles.welcome__inner_content}>
 
             <div className={`${styles.halfLine} ${styles.content}`}>
-              <div className={styles.description}>In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, eines der Schlafzimmer als  zusätzliches Wohnzimmer umzusetzen. Dieses verfügt über eine herabgesetzte Decke für eine gemütliche Atmosphäre.</div>
+              <p className={styles.description}>In der von Ihnen aktuell ausgesuchten 5.5-Zimmer-Wohnung haben Sie zudem die Möglichkeit, eines der Schlafzimmer als  zusätzliches Wohnzimmer umzusetzen. Dieses verfügt über eine herabgesetzte Decke für eine gemütliche Atmosphäre.</p>
+              <p className={styles.toggle__title}>Bitte wählen Sie Ihren Ausbautypen</p>
               
-              <div className={styles.toggle__title}>Bitte wählen Sie Ihren Ausbautypen</div>
               <FormToggle 
                 tab1={'Basisausbau'} 
                 tab1Action={() => {dispatch(changeApartSize(aparmentData.basePrice, aparmentData.apartmentImage[0]));
@@ -98,13 +98,12 @@ export default function Home() {
               />
 
               <div className={`${styles.submitBtn}`} 
-
                 // If user didn't choosed size of apartment will be setted initial large size
                 onClick={() => isBaseVersion 
                   ? dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))
                   : dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice + aparmentData.additionalLivingRoomPrice))}
               >              
-                <Button title="Wahl bestätigen"  href={"/wohnzimmer"} classes="btn btn--primary" iconName="content-check" iconColor="#fff"/>
+                <Button title="Wahl bestätigen"  href={"/wohnzimmer"} type="primary" iconName="content-check" iconColor="#fff"/>
               </div>
 
             </div>

@@ -22,7 +22,6 @@
 
   div,
   button {
-    box-sizing: border-box;
     font-family: 'Open Sans';
     line-height: 135%;
   }
@@ -181,7 +180,6 @@
     }
 
     &.button__confirm {
-      text-decoration: none;
 
       &.button__disabled {
         display: inline-block;
@@ -197,7 +195,6 @@
   padding: 2.4rem;
 
   .link {
-    text-decoration: none;
     color: #1757BD;
   }
 

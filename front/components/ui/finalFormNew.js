@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import ConfirmationForm from './atoms/confirmationForm';
 import IconComponent from './atoms/iconComponent';
 import FinalFormButton from './atoms/finalFormButton';
+import Button from './atoms/button';
 import ContactForm from './contactForm';
 import ShareForm from './shareForm';
 import PdfPage from './pdfPage';
@@ -59,8 +60,8 @@ export default function FinalFormNew({isometry}) {
         <div className={styles.finalForm_header}>
           <h3 className={styles.finalForm_header_title}>Herzlichen Glückwunsch!</h3>
           <div className={styles.finalForm_header_subtitle}>Sie sind Ihrer Traumwohnung einen Schritt näher.</div>
-          <div className={styles.finalForm_header_description}>Speichern Sie die Zusammenfassung der Materialisierung Ihrer Wohnung für sich als PDF für eine persönliche Besprechung oder senden Sie Ihre konkrete Anfrage direkt an uns per Formular. </div>
-          <div className={styles.finalForm_header_description}>Anschliessend wird Sie unser Vermarkter für die weiteren Schritte kontaktieren.</div>
+          <p className={styles.finalForm_header_description}>Speichern Sie die Zusammenfassung der Materialisierung Ihrer Wohnung für sich als PDF für eine persönliche Besprechung oder senden Sie Ihre konkrete Anfrage direkt an uns per Formular. </p>
+          <p className={styles.finalForm_header_description}>Anschliessend wird Sie unser Vermarkter für die weiteren Schritte kontaktieren.</p>
         </div>
 
         <div className={`${styles.finalForm__buttons}`}>
@@ -80,11 +81,12 @@ export default function FinalFormNew({isometry}) {
       </section>
 
       <div className={`${styles.finalForm__reset}`}>
-          <h3 className={styles.finalForm_header_title}>Spiels noch einmal Sam.</h3>
+          <h3 className={styles.finalForm__reset_title}>Spiels noch einmal Sam.</h3>
           <div className={styles.finalForm__reset_subtitle}>Probieren Sie gerne auch weitere Variationen ihrer Traumwohnung aus.</div>
-          <div className={styles.finalForm__reset_description}>Ihre aktuelle Konfiguration im PDF und dem zur Verfügung gestellten “Share”-Link bleibt dabei erhalten.</div>
-          <div className={`${styles.resetBtn}`} onClick={() => setIsPopup(true)} title='RESET YOUR DATA'>
-            <IconComponent name="entry"/>Neue Konfiguration
+          <p className={styles.finalForm__reset_description}>Ihre aktuelle Konfiguration im PDF und dem zur Verfügung gestellten “Share”-Link bleibt dabei erhalten.</p>
+
+          <div className={`${styles.resetBtn}`} title='RESET YOUR DATA'>
+            <Button title="Neue Konfiguration" type="secondary" iconName="entry" iconColor="#fff" clickFn={() => setIsPopup(true)}/>
           </div>
         </div>
 

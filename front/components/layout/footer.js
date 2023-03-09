@@ -34,10 +34,10 @@ export default function Footer() {
           </div>
 
           <div className={styles.footer__content_contacts}>
-            <div className={styles.footer__content_contacts_title}>Appenzeller Huus Gonten AG</div>
-            <div className={styles.footer__content_contacts_address}>Dorfstrasse 40</div>
-            <div className={styles.footer__content_contacts_address}>9108 Gonten</div>
-            <div className={styles.footer__content_contacts_address}>Switzerland</div>
+            <p className={styles.footer__content_contacts_title}>Appenzeller Huus Gonten AG</p>
+            <p className={styles.footer__content_contacts_address}>Dorfstrasse 40</p>
+            <p className={styles.footer__content_contacts_address}>9108 Gonten</p>
+            <p className={styles.footer__content_contacts_address}>Switzerland</p>
             <a className={styles.footer__content_contacts_data} href="info@appenzellerhuss.ch">
               <IconComponent name="mail" color="#000"/>
               <p>info@appenzellerhuss.ch</p>

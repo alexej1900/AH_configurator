@@ -5,7 +5,6 @@
   width: calc(100% - 5.6rem);
   height: 6.4rem;
   z-index: 1;
-  box-sizing: border-box;
   transition: 0.3s all ease-in-out;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 
@@ -94,7 +93,6 @@
   }
 
   &__menu {
-    box-sizing: border-box;
     position: absolute;
     width: 0rem;
     height: 100vh;
@@ -128,7 +126,6 @@
 
         font-family: $primary__typo;
         font-weight: 400;
-        text-decoration: none;
         font-size: 1.8rem;
         line-height: 2.4rem;
         color: $color__dark;
@@ -152,7 +149,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
 
       height: 4.8rem;
       width: 100%;

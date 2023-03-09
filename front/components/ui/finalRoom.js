@@ -76,9 +76,7 @@ export default function FinalRoom({ roomName, style }) {
 
   return (
     <section className={`${styles.summary__room} finalRoom` }>
-      <div className={`${styles.summary__room_title}`}>
-        <h2 className={`${styles.summary__room_roomTitle} center`}>{roomName}</h2>
-      </div>
+      <div className={`${styles.summary__room_title} center`}>{roomName}</div>
 
       <div className={`${styles.summary__room_image} row`}>
         <Image classes="ofi" src={room.image.url} layout="fill" priority="true" alt="Room Image"/>

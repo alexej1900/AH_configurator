@@ -19,7 +19,7 @@
   }
 
   .mod__title {
-    @include font(1.6rem, 500, 120%);
+    @include optionGroupTitle;
   }
 
   .mod__title_unvisible {

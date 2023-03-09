@@ -4,7 +4,6 @@
   margin-top: 6rem;
   position: relative;
   background: #F0F0F0;
-  color: $color__bright;
 
   &__container {
     width: 100%;
@@ -15,9 +14,7 @@
     justify-content: center;
 
     .back__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center-center;
       width: 100%;
       padding: 2.6rem 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -39,18 +36,14 @@
 
       &_title {
         margin-left: 1.2rem;
-        font-family: $primary__typo;
-        font-size: 1.44rem;
-        line-height: 135%;
+        @include p__small;
         color: $color__cta-primary--default;
       }
     }
   }
 
   &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-center;
     padding: 3.2rem 0;
 
     @media (max-width: $screen-lg) {
@@ -70,8 +63,7 @@
       }
 
       &_social{
-        display: flex;
-        justify-content: center;
+        @include flex-center-center;
         width: 24rem;
 
         @media (max-width: $screen-lg) {
@@ -82,8 +74,7 @@
           margin: 0 .8rem;
 
           svg {
-            height: 3.2rem;
-            width: 3.2rem;
+            @include squareSize(3.2rem);
           }
         }
       }
@@ -91,11 +82,6 @@
 
     &_contacts {
       width: 30rem;
-      font-family: $primary__typo;
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 135%;
-      color: $color__dark;
 
       &_title {
         font-weight: 700;
@@ -110,10 +96,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
-        text-decoration: none;
         color: #000;
 
         p {
+          font-family: $openSans__typo;
           margin-left: 1.6rem;
         }
       }
@@ -127,13 +113,8 @@
     padding: 1.6rem 0;
     
     &_link {
-      font-family: $primary__typo;
-      font-weight: 400;
-      font-size: 1.44rem;
-      line-height: 135%;
-      text-decoration: none;
+      @include p__small;
       color: $color__bright;
-
       margin: 1.6rem;
     }
   }

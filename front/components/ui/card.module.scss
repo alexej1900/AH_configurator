@@ -12,13 +12,8 @@
   // }
 
   .card__title {
-    box-sizing: border-box;
-
     margin: 0 0 0.8rem;
-
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 120%;
+    @include optionTitle;
 
     @media (max-width: $screen-lg) {
       position: absolute;
@@ -75,16 +70,6 @@
       }
     }
   }
-    // & span,
-    // & img {
-    //   @media (max-width: $screen-lg) {
-    //     height: auto;
-    //     // height: calc((100vh - 8rem - 5rem)/3) !important;//Last number depends on amount of style lines
-    //     // width: auto;
-    //     object-fit: cover;
-    //   }
-    // }
-
 }
 
 .card {
@@ -101,9 +86,7 @@
     }
 
     .image__wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center-center;
       margin: 0.4rem;
       width: 12.5rem;
 
@@ -118,8 +101,7 @@
       width: 66%;
 
       svg {
-        width: 1.8rem;
-        height: 1.8rem;
+        @include squareSize(1.8rem);
         position: absolute;
         top: 0.4rem;
         right: .5rem;
@@ -131,9 +113,7 @@
         margin-bottom: .6rem;
 
         max-width: 90%;
-        font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 120%;
+        @include optionTitle;
       }
 
       .card__description {
@@ -163,7 +143,8 @@
         display: none;
       }
 
-      .text__wrapper {
+      .card__title,
+      .card__description {
         color: $color__bright;
       }
     }

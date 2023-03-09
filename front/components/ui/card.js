@@ -70,7 +70,7 @@ export default function Card({
                             {recommended && <span className={styles.rec}> Empfehlung </span>}
                         </div>
                         <div className={`${styles.text__wrapper}`}>
-                            <h5 className={styles.card__title}>{title}</h5>
+                            <div className={styles.card__title}>{title}</div>
                             <p className={styles.card__description}>{subtitle}</p>
                             {/* <p className={styles.card__description}>{description}</p> */}
                             {optionPrice > 0 && !collapsed ? <p className={styles.card__description}><span className={styles.card__index}>+ CHF</span> {optionPrice}</p> : null}
@@ -83,7 +83,7 @@ export default function Card({
         } else {
             return (
                 <div className={`${styles.styleCard} ${active && styles.styleCard__active}`}  onClick={styleCardClickHandler}>
-                    <h3 className={styles.card__title} >{title}</h3>
+                    <div className={styles.card__title} >{title}</div>
                     
                     <div className={styles.img__wrapper1}>
                         <Image src={url[0].url} width={url[0].width} height={url[0].height} alt="Style Image"/>

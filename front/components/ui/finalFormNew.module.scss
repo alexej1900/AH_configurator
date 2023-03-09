@@ -1,7 +1,6 @@
 @import '../../assets//scss/abstracts/variables';
 
 .finalForm {
-  box-sizing: border-box;
   width: 100%;
   max-width: 86rem;
   margin: 4.8rem auto;
@@ -9,10 +8,6 @@
 
   iframe {
     width: 100%;
-  }
-
-  div {
-    box-sizing: border-box;
   }
 
   @media (max-width: $screen-lg) {
@@ -24,21 +19,16 @@
     margin-bottom: 1rem;
 
     &_title {
-      font-family: 'Open Sans';
-      font-weight: 700;
-      font-size: 2.8rem;
+      @include h3__LG;
       margin-bottom: 1.6rem;
     }
 
     &_subtitle {
-      font-size: 2.4rem;
-      line-height: 135%;
+      @include lead;
       margin-bottom: 3.2rem;
     }
 
     &_description {
-      font-size: 2rem;
-      line-height: 135%;
       margin-bottom: 3.2rem;
     }
   }
@@ -46,13 +36,7 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2.4rem;
     margin-bottom: 2.4rem;
-    // border-bottom: 1px solid #ccc;
-
-    a {
-      text-decoration: none;
-    }
     
     @media (max-width: $screen-lg) {
       flex-direction: column;
@@ -61,57 +45,45 @@
 }
 
 .finalForm__reset {
-  // display: flex;
-  // flex-direction: column;
-  box-sizing: border-box;
   max-width: calc(86rem - 1.6rem);
   margin: 0 auto;
   padding: 2.4rem;
   background: #1F4D5B;
-  font-family: $primary__typo;
-  line-height: 135%;
   color: #fff;
 
-  // @media (max-width: $screen-lg) {
-  //   flex-direction: column;
-  // }
+  &_title {
+    @include h3__LG;
+    color: $color__bright;
+    margin-bottom: 1.6rem;
+  }
 
   &_subtitle {
-    font-size: 2.1rem;
+    @include lead;
+    color: $color__bright;
+
+    @media (max-width: $screen-lg) {
+      color: $color__bright;
+    }
   }
 
   &_description {
-    font-size: 1.6rem;
     margin: 3.2rem 0;
   }
 
   .resetBtn {
-    @include flex-center-center;
-    @include sectionTitle;
-
-    box-sizing: border-box;
-    width: 20.8rem;
-    height: 5rem;
-    padding: 0 0.8rem;
+    width: 22rem;
     background: $color__bright;
-    color: $color__cta-primary--default;
-    
-    cursor: pointer;
 
     @media (max-width: $screen-md) {
       width: 100%;
     }
 
-    svg {
-      fill: $color__cta-primary--default;
-      margin-right: .8rem;
-    }
+    a {
+      width: 22rem;
+      box-sizing: border-box;
 
-    &:hover {
-      color: $color__cta-primary--hover;
-
-      svg {
-        fill: $color__cta-primary--hover;
+      @media (max-width: $screen-md) {
+        width: 100%;
       }
     }
   }

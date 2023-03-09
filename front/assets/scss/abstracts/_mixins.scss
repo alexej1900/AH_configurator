@@ -12,6 +12,10 @@
   color: $color;
 }
 
+@mixin roomTitle {
+  @include font(2.1rem, 500, 120%);
+}
+
 @mixin sectionTitle {
   @include font(1.8rem, 700, 120%);
 }
@@ -20,8 +24,17 @@
   @include font(1.5rem, 700, 120%);
 }
 
+@mixin optionGroupTitle {
+  @include font(1.8rem, 500, 120%);
+}
+
 @mixin buttonTitle {
   @include font(1.8rem, 600, 120%);
+}
+
+@mixin h3__LG {
+  @include font(2.8rem, 700, 120%);
+  font-family: $openSans__typo;
 }
 
 @mixin lead {
@@ -32,6 +45,10 @@
     @include font(2.1rem, 400, 135%);
     font-family: $primary__typo;
   }
+}
+
+@mixin p__small {
+  @include font(1.44rem, 400, 135%);
 }
 
 // position

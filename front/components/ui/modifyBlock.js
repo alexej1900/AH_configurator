@@ -197,7 +197,7 @@ export default function ModifyBlock({
         <div className={styles.card__header} onClick={() => listSwitchHandler()}>
           <div className={`${styles.arrow} ${collapsed && styles.rotate}`}></div>
 
-          <p className={styles.mod__title}>{modificationName}</p>
+          <div className={styles.mod__title}>{modificationName}</div>
 
           {cardItem.modificationItemExample.length > 1 &&
             <div className={styles.card_group__number}>

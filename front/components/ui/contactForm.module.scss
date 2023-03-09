@@ -9,9 +9,7 @@
   width: 100%;
   height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-center;
   background: rgba(143, 143, 143, .7);
   z-index: 100;
 
@@ -22,7 +20,6 @@
 
   div,
   button {
-    box-sizing: border-box;
     font-family: 'Open Sans';
     line-height: 135%;
   }
@@ -220,7 +217,7 @@
     width: 100%;
     margin: 1.6rem auto 0;
     padding: 1.4rem;
-    background: var(--color__primary);
+    background: $color__cta-primary--default;
     color: $color__bright;
     font-weight: 600; 
     font-size: 1.6rem;
@@ -239,7 +236,7 @@
 
       &:disabled {
         cursor: wait;
-        background: var(--color__cta_50);
+        background: rgba($color__cta-primary--default, 0.5);
       }
     }
   }

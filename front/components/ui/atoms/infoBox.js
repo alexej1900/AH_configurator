@@ -16,7 +16,7 @@ export default function InfoBox({styleTitle, description}) {
         </div>
       </div>
       <div className={styles.text_block__text}>
-        <div dangerouslySetInnerHTML={{ __html: description }}></div>
+        <p dangerouslySetInnerHTML={{ __html: description }}></p>
       </div>
     </div>
   )

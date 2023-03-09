@@ -5,14 +5,9 @@
 
   flex-direction: column;
   width: 20.8rem;
-  margin: 0 .8rem;
 
   cursor: pointer;
   transition: all .3s ease-in-out;
-
-  &:last-of-type {
-    margin: 0;
-  }
 
   &:hover {
     box-shadow: 0px 0px 10px rgba(0,0,0, 0.04);
@@ -58,16 +53,15 @@
 
   &__icon {
     @include flex-center-center;
-
-    box-sizing: border-box;
-    position: relative;
     width: 100%;
+    position: relative;
     padding: 2.4rem 5.6rem;
     overflow: hidden;
     background-color:rgba(0, 0, 0, 0.04);
     transition: all .3s ease-in-out;
 
     @media (max-width: $screen-lg) {
+      width: auto;
       padding: 1.6rem;
       background-color: $color__cta-primary--default;
     }
@@ -100,14 +94,13 @@
   }
 
   &__text {
-    box-sizing: border-box;
     width: 100%;
     padding: 1.6rem 2.4rem;
     text-align: center;
     background: $color__cta-primary--default;
     
-    font-family: $primary__typo;
-    @include font(1.8rem, 500, 120%, $color__bright);
+    @include buttonTitle;
+    color: $color__bright;
 
     transition: all .3s ease-in-out;
 

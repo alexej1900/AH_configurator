@@ -98,7 +98,6 @@
     }
 
     .btn__wrapper {
-      box-sizing: border-box;
       @include flex-center-center;
       height: 5rem;
       width: 36rem;
@@ -117,13 +116,11 @@
 
   &__content {
     position: relative;
-    box-sizing: border-box;
     width: calc(100% - 5.6rem);
     overflow: auto;
     
     @media (max-width: 1000px) {
       width: 100vw;
-      overflow: auto;
       margin-bottom: 6rem;
     }
   }
@@ -132,14 +129,13 @@
     position: sticky;
     top: 0;
     @include flex-between-center;
-    box-sizing: border-box;
     margin-bottom: 1.2rem;
     padding: 0 2.4rem;
     background-color: white;
     z-index: 100;
 
     .optionsTitle {
-      @include font(2.1rem, 500, 120%)
+      @include roomTitle;
     }
 
     .options {
@@ -169,12 +165,6 @@
     }
   }
 
-  // &__typeRoomButtons {
-  //   @media (max-width: 1000px) {
-  //     display: none;
-  //   }
-  // }
-
   &__toggle {
     width: 5.6rem;
     height: 100%;
@@ -186,21 +176,18 @@
     .toggle {
       display: flex;
       align-items: center;
-      font-size: 2.1rem;
-      font-weight: 600;
+      @include roomTitle;
       color: $color__bright;
       text-align: center;
       transform: rotate(-90deg);
 
       svg {
         display: inline-block;
-        width: 2.4rem;
-        height: 2.4rem;
+        @include squareSize(2.4rem);
         margin: 1rem;
         transform: rotate(-90deg);
         transition: all 0.3s ease-in-out;
       }
-
     }
 
     @media (max-width: $screen-lg) {
@@ -210,18 +197,18 @@
 
   .card__wrapper {
     position: relative;
-    margin-bottom: 64px;
+    margin-bottom: 6.4rem;
 
     @media (max-width: $screen-lg) {
       margin: 0;
     }
   }
   .options__list {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
 
     h3 {
-      margin-bottom: 16px;
+      margin-bottom: 1.6rem;
     }
   }
 }

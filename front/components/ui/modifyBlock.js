@@ -213,9 +213,9 @@ export default function ModifyBlock({
 
         </div> 
         {modificationDescription
-          ? <div className={`${styles.mod__description}`}>
+          ? <p className={`${styles.mod__description}`}>
               {modificationDescription}
-            </div>
+            </p>
           : null
         }       
         <div className={`${styles.card__list}`}>

@@ -34,8 +34,7 @@
   }
 
   &__buttons {
-    display: flex;
-    justify-content: space-between;
+    @include flex-between-center;
     margin-bottom: 2.4rem;
     
     @media (max-width: $screen-lg) {

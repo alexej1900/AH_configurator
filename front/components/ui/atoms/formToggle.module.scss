@@ -8,10 +8,10 @@
     @include flex-between-center;
     flex-direction: column;
     width: 50%;
-    cursor: pointer;
     margin: 2px;
     padding: 1.6rem 0;
     background: rgba(0, 0, 0, 0.04);
+    cursor: pointer;
 
     &.active { 
       position: relative;

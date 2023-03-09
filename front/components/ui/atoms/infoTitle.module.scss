@@ -12,9 +12,8 @@
 
     &_button {
       width: 2.4rem;
-      cursor: pointer;
-
       @include flex-center-center;
+      cursor: pointer;
 
       svg {
         fill: $color__cta-primary--default;

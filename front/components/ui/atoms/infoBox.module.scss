@@ -3,10 +3,10 @@
 .infoBox {
     position: absolute;
     left: 50%;
-    transform: translateX(-80%);
     bottom: 2.4rem;
-    max-width: 66rem;
+    transform: translateX(-80%);
     width: 100%;
+    max-width: 66rem;
     height: 9rem;
     background: rgba($color__bright, 0.8);
     padding: 2.4rem;
@@ -33,11 +33,7 @@
       max-width: 36rem;
       padding: 1.6rem 2.4rem;
     }
-  
-    h2 {
-      @include roomTitle;
-    }
-  
+
     .close {
       margin-left: auto;
       cursor: pointer;
@@ -45,6 +41,10 @@
 
     .text_block {
       display: flex;
+
+      &__title {
+        @include roomTitle;
+      }
     }
   
     .text_block__text {

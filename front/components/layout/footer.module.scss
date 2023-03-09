@@ -9,9 +9,8 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    display: flex;
+    @include flex-center-center;
     flex-direction: column;
-    justify-content: center;
 
     .back__btn {
       @include flex-center-center;
@@ -93,8 +92,7 @@
       }
 
       &_data {
-        display: flex;
-        align-items: center;
+        @include flex-start-center;
         margin-bottom: 1rem;
         color: #000;
 

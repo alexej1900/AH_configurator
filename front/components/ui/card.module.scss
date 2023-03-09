@@ -20,16 +20,15 @@
       bottom: 0;
       width: 100%;
       margin: 0;
+      padding: .8rem 2.4rem;
       background: rgba($color__bright, 0.8);
       z-index: 1;
-
-      padding: .8rem 2.4rem;
     }
   }
 
   .img__wrapper1 {
-    display: flex;
     position: relative;
+    display: flex;
     margin: 0;
     padding: 0;
   }
@@ -44,12 +43,11 @@
       }
 
       &::before {
+        content: '';
         position: absolute;
         top: -1px;
         right: -1px;
-        content: '';
-        width: 4rem;
-        height: 4rem;
+        @include squareSize(.4rem);
         background-color:  $color__cta-primary--active;
         z-index: 1;
 
@@ -76,10 +74,10 @@
   
   &.small {
     display: flex;
-    margin-bottom: 0.8rem;
-    background: rgba($color__bright, 0.8);
     min-height: 8rem;
     height: 10rem;
+    margin-bottom: 0.8rem;
+    background: rgba($color__bright, 0.8);
 
     &:hover {
       background: var(--color__secondary_20);
@@ -87,9 +85,9 @@
 
     .image__wrapper {
       @include flex-center-center;
-      margin: 0.4rem;
       width: 12.5rem;
-
+      margin: 0.4rem;
+      
       img {
         width: 125px !important;
         height: 90px !important;
@@ -97,39 +95,31 @@
     }
     
     .text__wrapper {
-      margin: 0.4rem;
       width: 66%;
+      margin: 0.4rem;
 
       svg {
-        @include squareSize(1.8rem);
         position: absolute;
         top: 0.4rem;
         right: .5rem;
+        @include squareSize(1.8rem);
       }
 
       .card__title {
         display: block;
-        margin: 0;
-        margin-bottom: .6rem;
-
         max-width: 90%;
+        margin: 0 0 .6rem;
         @include optionTitle;
       }
 
       .card__description {
-        display: flex;
-        align-items: center;
-
+        @include flex-start-center;
         margin-top: 4px;
-
-        font-weight: 300;
-        font-size: 1.5rem;
-        line-height: 135%;
+        @include description;
 
         .card__index {
           margin-right: .4rem;
-          font-size: 1.2rem;
-          font-weight: 400;
+          @include font(1.2rem, 400, 100%);
         }
       }
     }
@@ -138,13 +128,9 @@
       background-color: $color__cta-primary--active;
       cursor: default;
 
-      &::before,
-      &:after {
-        display: none;
-      }
-
       .card__title,
-      .card__description {
+      .card__description,
+      .card__description > .card__index {
         color: $color__bright;
       }
     }
@@ -156,7 +142,6 @@
     &.collapsed {
       background-color: rgba(0, 0, 0, 0.04);
       height: 7rem;
-      
       cursor: pointer;
 
       .text__wrapper {
@@ -184,8 +169,7 @@
       max-height: none;
 
       .image__wrapper {
-        height: 11rem;
-        width: 11rem;
+        @include squareSize(11rem);
         margin: 0;
 
         span {

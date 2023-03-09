@@ -1,10 +1,8 @@
+@import '../../../assets/scss/abstracts/variables';
 
 .spinnerContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  @include flex-center-center;
+  @include squareSize(100%);
   min-height: 30rem;
 
   &.full {
@@ -14,11 +12,7 @@
 }
 
 .loadingSpinner {
-  width: 30rem;
-  height: 30rem;
-  // border: 10px solid #f3f3f3; /* Light grey */
-  // border-top: 10px solid #383636; /* Black */
-  // border-radius: 50%;
+  @include squareSize(30rem);
   animation: scaling 1.5s linear infinite;
 }
 

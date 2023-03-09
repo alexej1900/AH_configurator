@@ -2,41 +2,11 @@
 
 .scroll__icon {
   position: absolute;
-  display: flex;
-  justify-content: center;
+  @include flex-center-center;
   bottom: 10rem;
   left: calc((100% - 520px)/2);
 
   @media (max-width: $screen-lg) {
     left: calc((100% - 120px)/2);
-  }
-}
-
-// .scroll__icon_animation {
-//   animation-name: moving;
-//   animation-duration: 4s;
-//   animation-timing-function: linear;
-//   animation-iteration-count: infinite;
-// }
-
-@keyframes moving {
-  from {
-    transform: translate(0);
-  }
-
-  25% {
-    transform: translateX(-3rem);
-  }
-
-  50% {
-    transform: translateX(0);
-  }
-
-  75% {
-    transform: translateX(3rem);
-  }
-
-  100% {
-    transform: translateX(0);
   }
 }

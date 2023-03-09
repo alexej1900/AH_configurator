@@ -4,9 +4,9 @@
   position: absolute;
   width: calc(100% - 5.6rem);
   height: 6.4rem;
-  z-index: 1;
-  transition: 0.3s all ease-in-out;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.3s all ease-in-out;
+  z-index: 1;
 
   @media (max-width: $screen-lg) {
     width: 100%;
@@ -27,8 +27,8 @@
 
     @media (max-width: $screen-lg) {
       width: 100%;
-      z-index: 10;
       background: #fff !important;
+      z-index: 10;
     }
 
     .header__wrapper {
@@ -45,9 +45,7 @@
   }
 
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between-center;
     height: 6.4rem;
     max-width: 1440px;
     padding: 0 2rem;
@@ -62,49 +60,42 @@
   }
 
   &__buttons {
-    display: flex;
-    align-items: center;
+    @include flex-between-center;
     transition: 0.3s all ease-in-out;
     z-index: 10;
 
     &_virtual {
-      display: flex;
-      align-items: center;
+      @include flex-center-center;
       cursor: pointer;
       margin-right: 3.2rem;
     
       svg {
-        width: 3rem;
-        height: 3rem;
+        @include squareSize(3rem);
       }
     }
 
     &_open {
-      display: flex;
-      align-items: center;
+      @include flex-center-center;
       margin-right: 1.2rem;
       cursor: pointer;
 
       svg {
-        height: 1.8rem;
-        width: 1.8rem;
+        @include squareSize(1.8rem);
       }
     }
   }
 
   &__menu {
     position: absolute;
+    right: 0rem;
     width: 0rem;
     height: 100vh;
-    right: 0rem;
     padding-top: 6.4rem;
     background: $color__bright;
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 0;
-
     transition: all .5s ease-in-out-out;
-
 
     &_open {
       right: 0rem;
@@ -123,12 +114,7 @@
       a {
         display: block;
         padding: 1.6rem 2.4rem;
-
-        font-family: $primary__typo;
-        font-weight: 400;
-        font-size: 1.8rem;
-        line-height: 2.4rem;
-        color: $color__dark;
+        @include font(1.8rem, 400, 2.4rem);
 
         &:hover {
           background: rgba($color__cta-primary--default, 0.04);
@@ -146,24 +132,16 @@
     }
 
     &_button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
+      @include flex-center-center;
       height: 4.8rem;
       width: 100%;
       margin: .4rem 0;
       overflow: hidden;
-
       border: 1px solid $color__cta-primary--default;
       cursor: pointer;
 
       &_descr {
-        font-family: $primary__typo;
-        font-weight: 500;
-        font-size: 1.8rem;
-        line-height: 120%;
-        color: $color__cta-primary--default;
+        @include font(1.8rem, 500, 120%, $color__cta-primary--default);
       }
 
       &_contact {
@@ -172,13 +150,10 @@
         span {
           color: $color__bright;
         }
-
-        
       }
 
       svg {
-        width: 2.4rem;
-        height: 2.4rem;
+        @include squareSize(2.4rem);
         margin-right: .8rem;
       }
 
@@ -188,16 +163,11 @@
         border: none;
 
         img {
-          width: 1.4rem;
-          height: 1.4rem;
+          @include squareSize(12.4rem);
         }
 
         .header__menu_button_descr {
-          font-family: $primary__typo;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 135%;
-          color: $color__dark;
+          @include font(1.4rem, 400, 135%);
         }
       }
 
@@ -223,14 +193,13 @@
       &::before {
         content: '';
         display: block;
-        width: .6rem;
-        height: .6rem;
+         position: relative;
+        left: 50%;
+        top: 50%;
+        @include squareSize(.6rem);
         border-right: 2px solid $color__cta-primary--default;
         border-bottom: 2px solid $color__cta-primary--default;
         transform: rotate(45deg);
-        position: relative;
-        left: 50%;
-        top: 50%
       }
     }
   }

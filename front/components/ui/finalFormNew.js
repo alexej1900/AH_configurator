@@ -94,7 +94,7 @@ export default function FinalFormNew({isometry}) {
                       onCancel={onCancel} 
                       onConfirm={onResetConfirm}
                       title={''}
-                      child={<div>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</div>}
+                      child={<p>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</p>}
                     />}
 
       {isContactFormVisible && <ContactForm onCancel={onCancel}/>}

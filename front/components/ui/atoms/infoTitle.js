@@ -15,9 +15,9 @@ export default function InfoTitle({title, infoText}) {
           <IconComponent name={isInfoVisible ? "close" : "info"} color="#fff"/>
         </div>
       </div>
-      <div className={`${styles.block__info} ${isInfoVisible && styles.block__info_show}`}>
+      <p className={`${styles.block__info} ${isInfoVisible && styles.block__info_show}`}>
         {infoText}
-      </div>
+      </p>
     </div>
   )
 }

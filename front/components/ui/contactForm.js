@@ -101,8 +101,8 @@ export default function ContactForm({ onCancel }) {
 
         <div className={styles.contactForm__content}>
           <div className={styles.contactForm__content_left}>
-            <div className={styles.contactForm__content_title}>Wir sind für Sie da.</div>
-            <div className={styles.contactForm__content_text}>Sie können uns gerne telefonisch kontaktieren oder Sie senden und über das Formular eine Mitteilung.</div>
+            <h2>Wir sind für Sie da.</h2>
+            <p className={styles.contactForm__content_text}>Sie können uns gerne telefonisch kontaktieren oder Sie senden und über das Formular eine Mitteilung.</p>
             <div className={styles.contactForm__content_phone}>
               <IconComponent name="phone" color="#000"/>
               <div>

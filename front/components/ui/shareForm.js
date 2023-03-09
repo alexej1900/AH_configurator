@@ -70,7 +70,7 @@ export default function ShareForm({ onCancel }) {
         }, 3500);
     });
   }
-console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
+// console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
   return (
     <section className={`${styles.contactForm}`}>
       <div className={styles.contactForm__block}>
@@ -92,8 +92,8 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
               </a>
             </div>
 
-            <div className={styles.contactForm__content_title}>Link zu dieser Konfiguration</div>
-            <div className={styles.contactForm__content_text}>Mit diesem Link erreichen Sie immer den derzeitigen Stand Ihrer Konfiguration. So können Sie diese ganz einfach mit Familie und Freunden teilen und besprechen</div>
+            <h4 className={styles.contactForm__content_title}>Link zu dieser Konfiguration</h4>
+            <p className={styles.contactForm__content_text}>Mit diesem Link erreichen Sie immer den derzeitigen Stand Ihrer Konfiguration. So können Sie diese ganz einfach mit Familie und Freunden teilen und besprechen</p>
             <div className={styles.contactForm__content_link}>
               <div >
                 {link}
@@ -106,7 +106,7 @@ console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
           <div className={styles.contactForm__content_right}>
 
           <form className={styles.form}> 
-            <div className={styles.contactForm__content_title}>PDF an weitere Personen versenden</div> 
+            <h4 className={styles.contactForm__content_title}>PDF an weitere Personen versenden</h4> 
 
             <input 
               type="text" 

@@ -10,7 +10,7 @@ export default function InfoBox({styleTitle, description}) {
   return (
     <div className={[styles.infoBox, !colapsed ? styles.open : styles.closed].join(' ')}>
       <div className={styles.text_block}>
-        <h2> {styleTitle} </h2>
+        <div className={styles.text_block__title}> {styleTitle} </div>
         <div className={styles.close} onClick={() => setCollapsed(!colapsed)}>
           <IconComponent name={colapsed ? 'info' : 'close'} color="#000"/>
         </div>

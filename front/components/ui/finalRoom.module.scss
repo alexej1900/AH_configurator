@@ -26,7 +26,6 @@
 			img {
 				top: 0 !important;
 				position: relative !important;
-				height: auto !important;
 				width: 100% !important;
 				height: auto !important;
 			}
@@ -71,10 +70,6 @@
 
 		&_card_wrapper {
 			position: relative;
-
-			& div::after {
-				display: none;
-			}
 		}
 
 		&_edit_icon {
@@ -91,10 +86,10 @@
 	}
 
 	.title {
-		margin-bottom: 32px;
+		margin-bottom: 3.2rem;
 	}
 
 	.stats {
-		padding: 14px;
+		padding: 1.4rem;
 	} 
 }

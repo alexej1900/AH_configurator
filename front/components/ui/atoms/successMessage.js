@@ -5,7 +5,7 @@ export default function SuccessMessage({text, showMessage}) {
 
   return (
     <div className={`${styles.success__message}  ${showMessage && styles.active}`}  >
-      <div>{text}</div>
+      <p>{text}</p>
     </div>   
   )
 }

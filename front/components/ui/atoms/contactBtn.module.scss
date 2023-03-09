@@ -3,17 +3,13 @@
 .btn__getContacts {
   position: relative;
   @include flex-center-center;
-
   width: 12rem;
   height: 4rem;
   background: $color__cta-primary--default;
-
   @include font(1.4rem, 600, 120%, $color__bright);
-
   border-radius: 2rem;
   border: 2px solid white;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
-
   cursor: pointer;
   transition: all 0.3s ease-in;
 

@@ -1,34 +1,29 @@
 @import '../../assets/scss/abstracts/variables';
 
 .pin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-    width: 4rem;
-    background: $color__cta-secondary--default;
-    border-radius: 50%;
-    border: 2px solid $color__bright;
-    
-    cursor: pointer;
-    position: absolute;
-
-    &__active {
-        background: $color__cta-secondary--active;
-    }
+	position: absolute;
+	@include flex-center-center;
+	@include squareSize(4rem);
+	background: $color__cta-secondary--default;
+	border-radius: 50%;
+	border: 2px solid $color__bright;
+	cursor: pointer;
+	
+	&__active {
+		background: $color__cta-secondary--active;
+	}
 }
 
 .pins {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
 
-    top: 0;
-    left: 0;
+	top: 0;
+	left: 0;
 
-    &.animate {
-        animation-duration: 3s;
-        animation-timing-function: ease-in-out;
-    }
-
+	&.animate {
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+	}
 }

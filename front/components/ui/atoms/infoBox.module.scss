@@ -7,7 +7,7 @@
     bottom: 2.4rem;
     max-width: 66rem;
     width: 100%;
-    height: 9rem;
+    // height: 9rem;
     background: rgba($color__bright, 0.8);
     padding: 2.4rem;
     overflow: hidden;
@@ -15,7 +15,7 @@
 
     @media (max-width: 1300px) {
       width: calc((100% - 60rem));
-      height: 4.8rem;
+      // height: 4.8rem;
       transform: translateX(-87%);
       padding: 1.6rem 2.4rem;
     }
@@ -34,7 +34,7 @@
       padding: 1.6rem 2.4rem;
     }
 
-    .close {
+    .close{ 
       margin-left: auto;
       cursor: pointer;
     }

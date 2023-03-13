@@ -87,7 +87,11 @@ export default function Card({
                     
                     <div className={styles.img__wrapper1}>
                         <Image src={url[0].url} width={url[0].width} height={url[0].height} alt="Style Image"/>
-                        {active ? <IconComponent name={"check"} color={"#fff"}/> : null}
+                        {active 
+                            ?   <div className={styles.check__wrapper}>
+                                    <IconComponent name={"check"} color={"#fff"}/>
+                                </div> 
+                            : null}
                     </div>
                 </div>
             )

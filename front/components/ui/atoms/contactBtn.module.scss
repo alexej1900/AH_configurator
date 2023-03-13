@@ -3,18 +3,18 @@
 .btn__getContacts {
   position: relative;
   @include flex-center-center;
-  width: 12rem;
   height: 4rem;
   background: $color__cta-primary--default;
-  @include font(1.4rem, 600, 120%, $color__bright);
+  padding: .8rem 1.6rem .8rem .8rem;
+  @include font(1.4rem, 400, 1.2rem, rgba($color__bright, 0.72));
   border-radius: 2rem;
-  border: 2px solid white;
-  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba($color__bright, 0.72);
   cursor: pointer;
   transition: all 0.3s ease-in;
 
   svg {
-    @include squareSize(2.6rem);
+    @include squareSize(2.2rem);
+    fill: rgba($color__bright, 0.72);
   }
 
   &_text {
@@ -23,6 +23,12 @@
 
   &:hover {
     background: $color__cta-primary--hover;
+    border-color: $color__bright;
+    color: $color__bright;
+
+    svg {
+      fill: $color__bright;
+    }
   }
 
   &.btn__small {

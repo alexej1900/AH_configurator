@@ -2,6 +2,7 @@
 
 .btn {
   position: relative;
+  box-sizing: border-box;
   @include flex-center-center;
   @include buttonTitle;
   // width: 100%;

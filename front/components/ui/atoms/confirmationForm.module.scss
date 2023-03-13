@@ -82,5 +82,9 @@
 
   .form_buttons {
     @include flex-between-center;
+
+    a {
+      width: 15rem;
+    }
   }
 }

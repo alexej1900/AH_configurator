@@ -6,7 +6,7 @@
   height: 6.4rem;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   transition: 0.3s all ease-in-out;
-  z-index: 1;
+  z-index: 10;
 
   @media (max-width: $screen-lg) {
     width: 100%;
@@ -95,7 +95,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 0;
-    transition: all .5s ease-in-out-out;
+    transition: all .5s ease-in-out;
 
     &_open {
       right: 0rem;

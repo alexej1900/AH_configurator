@@ -34,5 +34,10 @@
   &.btn__small {
     width: 4rem;
     border-radius: 50%;
+    padding: .6rem;
+
+    .btn__getContacts_text {
+      display: none;
+    }
   }
 }

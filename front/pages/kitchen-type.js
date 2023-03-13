@@ -11,6 +11,8 @@ import ScrollIcon from '../components/ui/atoms/scrollIcon';
 import LoadingSpinner from '../components/ui/atoms/loadingSpinner';
 import Sidebar from '../components/ui/Sidebar/Sidebar';
 import StyleChooseButtons from '../components/ui/styleChooseButtons';
+import ContactBtn from '../components/ui/atoms/contactBtn';
+import ContactForm from '../components/ui/contactForm';
 
 import { kitchenTypePage } from '../gql/index';
 
@@ -22,6 +24,7 @@ export default function KitchenType() {
 
     const [styleId, setStyleId] = useState(0);
     const [isScroll, setIsScroll] = useState(false);
+    const [isPopup, setIsPopup] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -66,6 +69,10 @@ export default function KitchenType() {
         dispatch(changeKitchenStyle(styleId, styleImage, currentStyle.styleTitle));
     }
 
+    const onCancel = () => {
+		setIsPopup(false);
+	};
+
     return (
         <div className={`${styles.type__wrapper}`} >   
             <ScrollContainer 
@@ -92,6 +99,12 @@ export default function KitchenType() {
 
             {(sidebarState & !isScroll) ?  <ScrollIcon/> : null}
 
+            {/* <div 	className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} 
+				onClick={() => setIsPopup(true)}
+			>
+				<ContactBtn small={true}/>
+			</div> */}
+
             <Sidebar 
                 styleId={styleId} 
                 activeStyle={(id) => changeStyle(id)} 
@@ -111,6 +124,7 @@ export default function KitchenType() {
                 styleId={styleId} 
                 stylesAmount={data.entry.styles.length}
             />
+            {isPopup && <ContactForm onCancel={onCancel}/>}
         </div>
     )
 }

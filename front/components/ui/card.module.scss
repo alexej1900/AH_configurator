@@ -80,7 +80,12 @@
     background: rgba($color__bright, 0.8);
 
     &:hover {
-      background: var(--color__secondary_20);
+      background: $color__cta-primary--shade;
+      cursor: pointer;
+
+      svg {
+        fill: $color__cta-primary--default;
+      }
     }
 
     .image__wrapper {
@@ -133,6 +138,10 @@
       .card__description > .card__index {
         color: $color__bright;
       }
+
+      svg {
+        fill: $color__bright;
+      }
     }
 
     &.disable {
@@ -145,7 +154,14 @@
       cursor: pointer;
 
       .text__wrapper {
-        color: $color__dark;
+        .card__title,
+        .card__description {
+          color: $color__dark;
+        }
+
+        svg {
+          fill: rgba(0, 0, 0, 0.16);
+        }
       }
 
       .image__wrapper {

@@ -4,14 +4,27 @@
 	position: absolute;
 	@include flex-center-center;
 	@include squareSize(4rem);
-	background: $color__cta-secondary--default;
+	background: $color__cta-primary--default;
 	border-radius: 50%;
-	border: 2px solid $color__bright;
+	border: 2px solid rgba($color__bright, 0.72);
 	cursor: pointer;
 	
+	svg {
+		fill: rgba($color__bright, 0.72);
+	}
+
 	&__active {
 		background: $color__cta-secondary--active;
 	}
+
+	&:hover {
+    background: $color__cta-primary--hover;
+    border-color: $color__bright;
+
+    svg {
+      fill: $color__bright;
+    }
+  }
 }
 
 .pins {

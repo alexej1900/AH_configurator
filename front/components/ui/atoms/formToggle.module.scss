@@ -15,10 +15,26 @@
 
     &.active { 
       position: relative;
-      background: rgba(68, 112, 148, 0.06);
+      background: $color__cta-primary--shade;
 
       .toggle__title {
         color: $color__cta-primary--default;
+      }
+
+      svg {
+        fill: $color__cta-primary--default;
+      }
+    }
+
+    &:hover {
+      background: $color__cta-primary--shade;
+
+      .toggle__title {
+        color: $color__cta-primary--default;
+      }
+
+      .toggle__sign {
+        border: 2px solid $color__cta-primary--default;
       }
 
       svg {

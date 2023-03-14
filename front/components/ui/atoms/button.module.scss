@@ -7,8 +7,10 @@
   @include buttonTitle;
   // width: 100%;
   height: 4.8rem;
+  padding: 1.2rem 1.6rem;
   padding: 0 1rem;
   cursor: pointer;
+  // transition: all 0.2s ease-in;
 
   svg {
     margin: 0 .8rem;
@@ -20,7 +22,12 @@
     color: $color__bright;
 
     &:hover {
-      background: $color__cta-secondary--hover;
+      background: $color__cta-secondary--shade;
+      color: $color__cta-primary--default;
+
+      svg {
+        fill: $color__cta-primary--default;
+      }
     }
   }
 
@@ -34,11 +41,11 @@
     }
 
     &:hover {
-      background: $color__cta-secondary--hover;
-      color: $color__bright;
+      background: $color__cta-secondary--shade;
+      color: $color__cta-primary--default;
 
       svg {
-        fill: $color__bright;
+        fill: $color__cta-primary--default;
       }
     }
   }
@@ -48,7 +55,12 @@
     color: $color__bright;
 
     &:hover {
-      background: $color__cta-secondary--hover;
+      background: $color__cta-secondary--shade;
+      color: $color__cta-primary--default;
+
+      svg {
+        fill: $color__cta-primary--default;
+      }
     }
   }
 }

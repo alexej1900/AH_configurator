@@ -29,6 +29,8 @@ export default function Sidebar({
 		modifyData,
 	}) {
 
+	const [shift, setShift] = useState(true);
+
 	const dispatch = useDispatch();
 	// =============== if we have individual solutions in options decomment 1 line below ===============
 	// const [individualPrice, setIndividualPrice] = useState(0);
@@ -46,10 +48,22 @@ export default function Sidebar({
 	const roomImages = getImages();
 
 	useEffect(() => {
+    checkSize();
+  }, []);
+
+	useEffect(() => {
 		if (roomImages && modifyData && !checkObjIsEmpty(modifications)) {
 			setActiveImage();
 		}
 	}, [modifications]);
+
+	const checkSize = () => {  // Comparing height of wisible part of options list with window height
+    const optionBlock = document.getElementById('sidebar__content');
+    if (optionBlock) {
+      const isOptionListAtBottonm =  Math.abs(optionBlock.scrollHeight - optionBlock.clientHeight - optionBlock.scrollTop) < 1
+      window.innerHeight < optionBlock.scrollHeight && !isOptionListAtBottonm ? setShift(true) : setShift(false);
+    }
+  }
 
 	// =============== if we have individual solutions in options decomment function below ===============
 	// const setIndividualHandler = (increase, price) => {
@@ -127,7 +141,7 @@ export default function Sidebar({
 				<div className={styles.toggle}> Ausstattung <IconComponent name="sidebar-nav" color="#fff"/></div>
 			</div>
 			{sidebarOpen &&
-				<div className={styles.sidebar__content}>
+				<div className={styles.sidebar__content} id="sidebar__content" onScroll={checkSize}>
 					<div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'kitchen-type' && showStyle && styles.hideHeader}`}>
 						<div className={`${styles.optionsTitle}`}>{sidebarTitle}</div>
 						<div className={`${styles.options}`}>
@@ -156,9 +170,15 @@ export default function Sidebar({
 								// setIndividualPrice={setIndividualHandler}
 							/>
 						}
+						
 					</div>
 				</div>
 			}	
+
+			{shift 
+				? <div className={`${styles.button_down}`}></div>
+				: null 
+			} 
 			<SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet} roomId={roomId}/>
 		</div>
 	)

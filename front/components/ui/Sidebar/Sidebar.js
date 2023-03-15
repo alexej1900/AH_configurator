@@ -16,6 +16,7 @@ import getModifications from '../../../pages/api/getModifications';
 import checkObjIsEmpty from '../../../utils/checkObjIsEmpty';
 
 import styles from './sidebar.module.scss';
+import roomType from '../../../redux/reducers/roomType';
 
 export default function Sidebar({
 		apartmentPrice, 
@@ -37,6 +38,10 @@ export default function Sidebar({
 
 	const sidebarOpen = useSelector(state => state.generalStates.open);
 	const { showStyle } = useSelector(state => state.generalStates);
+
+	const roomType = useSelector(state => state.roomType);
+	// console.log('roomType', roomType)
+
 	// =============== if we have main style lines decomment 1 line below ===============
 	// const mainStyle = useSelector(state => state.apartStyle).title;
 	const roomId = useSelector(state => state.apartSize.apartmentId);
@@ -48,8 +53,10 @@ export default function Sidebar({
 	const roomImages = getImages();
 
 	useEffect(() => {
-    checkSize();
-  }, []);
+		setTimeout(() => {
+			checkSize();
+		},100)
+  }, [currentRoom]);
 
 	useEffect(() => {
 		if (roomImages && modifyData && !checkObjIsEmpty(modifications)) {
@@ -175,11 +182,7 @@ export default function Sidebar({
 				</div>
 			}	
 
-			{shift 
-				? <div className={`${styles.button_down}`}></div>
-				: null 
-			} 
-			<SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet} roomId={roomId}/>
+			<SidebarButtons currentRoom={currentRoom} styleTypeSet={styleTypeSet} roomId={roomId} showArrow={shift}/>
 		</div>
 	)
 }

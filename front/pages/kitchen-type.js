@@ -16,7 +16,7 @@ import ContactForm from '../components/ui/contactForm';
 
 import { kitchenTypePage } from '../gql/index';
 
-import { resetRoomTypeState, changeKitchenStyle, changeApartPrice } from '../redux/actions/index';
+import { resetRoomTypeState, changeKitchenStyle, changeApartPrice, changeRoomImage } from '../redux/actions/index';
 
 import styles from './room.module.scss';
 
@@ -37,7 +37,7 @@ export default function KitchenType() {
     }, [])
 
     // console.log('apartStyle', apartStyle)
-    // console.log('roomType', roomType)
+    // console.log('roomType111', roomType)
 
     const {data, error, loading} = useQuery(kitchenTypePage);
     if (loading) return <LoadingSpinner full={true}/>;
@@ -58,7 +58,8 @@ export default function KitchenType() {
 
       setStyleId(id);
       currentStyle = data.entry.styles[id];
-      dispatch(changeKitchenStyle(id, styleImage, currentStyle.styleTitle));
+      dispatch(changeKitchenStyle(id, currentStyle.image[0], currentStyle.styleTitle));
+      dispatch(changeRoomImage('küche', currentStyle.image[0]));
       dispatch(changeApartPrice('Küchendesign', price[id]));
       
       // if we have main style lines decomment this line (after selecting new style line all previous settings should be cancelled)
@@ -67,6 +68,8 @@ export default function KitchenType() {
 
     const setStyleTypeHandle = () => { 
         dispatch(changeKitchenStyle(styleId, styleImage, currentStyle.styleTitle));
+        // dispatch(changeApartPrice('Küchendesign', price[styleId]));
+        // dispatch(changeRoomImage('küche', styleImage));
     }
 
     const onCancel = () => {

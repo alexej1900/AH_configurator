@@ -216,9 +216,6 @@
   }
 
   .button_down {
-    position: absolute;
-    bottom: 5.4rem;
-    right: 0;
     height: 2.4rem;
     width: 36rem;
     // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
@@ -230,7 +227,7 @@
       display: block;
       position: relative;
       left: 50%;
-      top: 20%;
+      top: 30%;
       @include squareSize(0);
       // border-right: 2px solid $color__cta-primary--default;
       // border-bottom: 2px solid $color__cta-primary--default;

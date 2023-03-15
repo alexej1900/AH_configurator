@@ -49,7 +49,7 @@ export default function Room() {
 	const { apartSize, apartStyle, generalStates, roomType} = useSelector((state) => state);
 	const sidebarState = generalStates.open;
 	const isImageload = generalStates.loading;
-	const roomState = roomType[ROOM_TYPE];
+	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
 	// console.log('roomType', roomType)

@@ -49,6 +49,8 @@ export default function FinalRoom({ roomName, style }) {
     //   return item.styleName.toLowerCase() === style.toLowerCase()
     // })[0].styleDefaultImage[0]};
 
+  const roomImage = room.image ? room.image : data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0];
+
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
     dispatch(changeRoomVisibility(false));
@@ -74,12 +76,16 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 
+  // console.log('roomName', roomName)
+  // console.log('room', room)
+  // console.log('roomType', roomType)
+
   return (
     <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_title} center`}>{roomName}</div>
 
       <div className={`${styles.summary__room_image}`}>
-        <Image classes="ofi" src={room.image.url} layout="fill" priority="true" alt="Room Image"/>
+        <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>
       </div> 
           
       <div className={`${styles.summary__room_data}`}>

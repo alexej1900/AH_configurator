@@ -13,8 +13,14 @@
   // transition: all 0.2s ease-in;
 
   svg {
-    margin: 0 .8rem;
+    margin-right: 0.8rem;
+    margin-left: 0;
     min-width: 1.7rem;
+  }
+
+  &.iconRight svg{
+    margin-right: 0;
+    margin-left: 0.8rem;
   }
 
   &.primary {

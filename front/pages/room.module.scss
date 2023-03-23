@@ -70,9 +70,10 @@
     height: 100vh !important;
     object-fit: cover;
     transition: all 0.3s ease-in-out;
+
     // object-position: left;
     // &.animate {
-    //   animation-name: showing;
+    //   animation-name: moving;
     //   animation-duration: 3s;
     //   animation-timing-function: ease-in-out;
     // }
@@ -95,7 +96,7 @@
 
 .image__wrapper.animate {
   animation-name: showing;
-  animation-duration: .5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
@@ -158,9 +159,34 @@
 @keyframes showing {
   from {
     opacity: 0.5;
+    left: 100%;
   }
 
   to {
     opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(100%);
+  }
+
+  // 25% {
+  //     left: -60rem;
+  // }
+
+  50% {
+    transform: translateX(-30%);
+
+  }
+
+  // 75% {
+  //   left: -21rem;
+  // }
+
+  to {
+    transform: translateX(0);
   }
 }

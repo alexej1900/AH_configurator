@@ -1,0 +1,72 @@
+@import '../../assets//scss/abstracts/variables';
+
+.input {
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    @include font(1.8rem, 400, 135%);
+    font-family: $openSans__typo;
+    color: rgba(0, 0, 0, 0.32);
+    transition: all .3s ease-in-out;
+
+    &_focus {
+      top: 10%;
+    }
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 6.5rem;
+    border: none;
+    border-bottom: 1px solid $color__cta-primary--default;
+    outline: none;
+    margin: 1.6rem 0 0;
+    padding: 0;
+    padding-right: 2.4rem;
+
+    &.input__error {
+      border-bottom: 1px solid $color__state_error;
+    }
+  }
+
+  textarea {
+    height: 8.5rem;
+
+    &::placeholder {
+      padding-top: 2rem;
+    }
+  }
+
+  &__clean {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    @include squareSize(2.4rem);
+    @include flex-center-center;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: $color__cta-primary--hover;
+      }
+    }
+
+    svg {
+      fill: $color__forms-icons;
+    }
+  }
+
+  &__errors {
+    height: 1.9rem;
+    margin-top: 2px;
+    @include font(1.4rem, 400, 1.4rem, $color__state_error);
+    font-family: 'Open Sans', sans-serif;
+  }
+}

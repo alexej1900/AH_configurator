@@ -5,7 +5,7 @@ import styles from './button.module.scss';
 
 export default function Button({ title, href, type, iconName, iconColor, iconRight, clickFn, style }) {
   const button = 
-    <a className={`${styles.btn} ${styles[type]}`} onClick={clickFn ? () => clickFn() : null} style={style}>
+    <a className={`${styles.btn} ${styles[type]} ${iconRight && styles.iconRight}`} onClick={clickFn ? () => clickFn() : null} style={style}>
       {!iconRight &&  iconName ? <IconComponent name={iconName} color={iconColor}/> : null}
       {title ? title : null}
       {iconRight &&  iconName ? <IconComponent name={iconName} color={iconColor}/> : null }

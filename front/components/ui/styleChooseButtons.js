@@ -41,7 +41,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 
 				nextLink = roomsTitle[i+1] 
 					?  {link: `/${roomsSlug[i+1].toLowerCase()}`, title: roomsTitle[i+1]}
-					:  {link: '/summary', title: 'Abschliessen'};
+					:  {link: '/summary', title: 'Fertigstellen'};
 
 				switch (room.toLowerCase()) {
 					case 'raumtrenner':

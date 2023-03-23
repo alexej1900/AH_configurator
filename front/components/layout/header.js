@@ -78,7 +78,7 @@ export default function Header () {
             {rooms?.map((room) => {
           
               if (room) {
-                const currentRoom = `/${room.toLowerCase()}`;
+                const currentRoom = `/${room.toLowerCase() !== 'küchenlinien' ? room.toLowerCase() : 'kitchen-type'}`;
                 return (
                   <Link href={currentRoom} key={room}>
                     <a className={`${query.room === currentRoom.slice(1) ? style.active : ''} ${style.roomItem}`} onClick={() => closeMenuHandler()}>{room}</a>

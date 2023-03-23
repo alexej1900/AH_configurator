@@ -145,14 +145,6 @@
     }
   }
 
-  .form:valid .clienEmail:focus,
-  .form:valid .clienPhone:focus{
-    outline: none;
-    border: none;
-    border: 1px solid $color__secondary;
-    color: $color__dark;
-  }
-
   .form_buttons {
     margin: 1.6rem auto 0;
 

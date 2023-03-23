@@ -86,14 +86,17 @@ h4 {
 }
 
 p {
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 135%;
+  @include font(1.8rem, 400, 135%);
   font-family: $primary__typo;
 
   @media (max-width: $screen-lg) {
     font-size: 1.6rem;
   }
+}
+
+input,
+textarea {
+  @include font(1.8rem, 400, 135%);
 }
 
 strong {

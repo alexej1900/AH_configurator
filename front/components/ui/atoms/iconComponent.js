@@ -9,6 +9,13 @@ export default function IconComponent({name, color}) {
         </svg>
       break;
 
+    case 'arrow-right':
+      ICON = 
+        <svg width="16" height="16" viewBox="0 0 16 16" fill={color} xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M0 9H12.17L6.58 14.59L8 16L16 8L8 0L6.59 1.41L12.17 7H0V9V9Z"/>
+        </svg>
+      break;
+
     case 'baseroom':
       ICON = 
         <svg viewBox="0 0 24 24"  fill={color} xmlns="http://www.w3.org/2000/svg">

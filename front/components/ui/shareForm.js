@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
+import validateForm from '../../utils/validateForm';
 
-import LoadingSpinner from './atoms/loadingSpinner';
 import IconComponent from './atoms/iconComponent';
 import Button from './atoms/button';
 import FormHeader from './atoms/formHeader';
+import InputComponent from './inputComponent';
 
 import styles from './shareForm.module.scss';
 import SuccessMessage from './atoms/successMessage';
@@ -28,27 +29,8 @@ export default function ShareForm({ onCancel }) {
   }, []);
 
   useEffect(() => {
-    validate();
+    validateForm(formValue, setErrors, formFilled)
   },[formValue]);
-
-  const validate = () => {
-    if (!formFilled) return;
-    const errors = {};
-
-    if (formValue.name && !/^[A-Za-z ]{1,32}$/i.test(formValue.name)) {
-      errors.name = 'Please use only letters';
-    }
-
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formValue.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!formValue.email) {
-      errors.email = 'Required';
-    }
-
-    setErrors(errors)
-  };
 
   const changeFormData = (data) => {
     !formFilled && setFormFilled(true); 
@@ -108,32 +90,34 @@ export default function ShareForm({ onCancel }) {
           <form className={styles.form}> 
             <h4 className={styles.contactForm__content_title}>PDF an weitere Personen versenden</h4> 
 
-            <input 
+            <InputComponent
               type="text" 
               placeholder="Name" 
-              name="name"
+              inputName="name"
+              valueName="name"
               value={formValue.name} 
-              onChange={(e) => changeFormData({name: e.target.value})} 
-              className={errors.name && styles.contactForm__error}
+              changeFn={changeFormData} 
+              errors={errors.name}
             />
-            {errors.name ? <div className={styles.errors}>{errors.name}</div> : null}
 
-            <input 
-              type="email" 
+            <InputComponent
+              type="text" 
               placeholder="Email *" 
-              name="message[Mail]"
+              inputName="message[Mail]"
+              valueName="email"
               value={formValue.email} 
-              onChange={(e) => changeFormData({email: e.target.value})} 
-              className={errors && styles.contactForm__error}
+              changeFn={changeFormData} 
+              errors={errors.email}
             />
-            {errors.email ? <div className={styles.errors}>{errors.email}</div> : null}
 
-            <textarea 
-              placeholder="Zusätzliche Nachricht" 
-              name="message[text]"
+            <InputComponent
+              type="textarea" 
+              placeholder="Ihre Nachricht" 
+              inputName="message[text]"
+              valueName="text"
               value={formValue.text} 
-              onChange={(e) => changeFormData({text: e.target.value})} 
-            ></textarea>
+              changeFn={changeFormData} 
+            />
 
             <div className={`${styles.form_buttons} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`}>
               <Button 

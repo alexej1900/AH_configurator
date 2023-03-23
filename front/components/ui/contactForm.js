@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import serialize from '../../utils/serialize';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import madeShortUrl from '../../utils/madeShortUrl';
+import validateForm from '../../utils/validateForm';
 
 import LoadingSpinner from './atoms/loadingSpinner';
 import IconComponent from './atoms/iconComponent';
 import FormHeader from './atoms/formHeader';
 import SuccessMessage from './atoms/successMessage';
+import InputComponent from './inputComponent';
 
 import styles from './contactForm.module.scss';
 
@@ -31,35 +33,8 @@ export default function ContactForm({ onCancel }) {
   }, []);
 
   useEffect(() => {
-    validate();
+    validateForm(formValue, setErrors, formFilled);
   },[formValue]);
-
-  const validate = () => {
-    if (!formFilled) return;
-    const errors = {};
-
-    if (!/^[A-Za-z ]{1,32}$/i.test(formValue.name)) {
-      errors.name = 'Please use only letters';
-    }
-
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formValue.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i.test(formValue.phone)) {
-      errors.phone = 'Invalid phone format';
-    }
-
-    const formValueKeys = Object.keys(formValue);
-
-    formValueKeys.forEach(key => {
-      if (key !== 'callBack' && key !== 'gender' && !formValue[key]) {
-        errors[key] = 'Required';
-      } 
-    })
-
-    setErrors(errors)
-  };
 
   const changeFormData = (data) => {
     !formFilled && setFormFilled(true); 
@@ -127,35 +102,36 @@ export default function ContactForm({ onCancel }) {
               <input type="hidden" name="callBack" value={formValue.callBack} />
               <input type="hidden" name="subject" value={formValue.callBack ? "Call me" : ""} />
 
-              <input 
+              <InputComponent
                 type="text" 
                 placeholder="Name" 
-                name="name"
+                inputName="name"
+                valueName="name"
                 value={formValue.name} 
-                onChange={(e) => changeFormData({name: e.target.value})} 
-                className={errors.name && styles.contactForm__error}
+                changeFn={changeFormData} 
+                errors={errors.name}
               />
-              {errors.name ? <div className={styles.errors}>{errors.name}</div> : null}
 
-              <input 
-                type="email" 
+              <InputComponent
+                type="text" 
                 placeholder="Email *" 
-                name="message[Mail]"
+                inputName="message[Mail]"
+                valueName="email"
                 value={formValue.email} 
-                onChange={(e) => changeFormData({email: e.target.value})} 
-                className={errors.email && styles.contactForm__error}
+                changeFn={changeFormData} 
+                errors={errors.email}
               />
-              {errors.email ? <div className={styles.errors}>{errors.email}</div> : null}
 
-              <input 
+              <InputComponent
                 type="tel" 
-                placeholder="Telefonnummer" 
-                name="message[Phone]"
+                placeholder="Telefon" 
+                inputName="message[Phone]"
+                valueName="phone"
                 value={formValue.phone} 
-                onChange={(e) => changeFormData({phone: e.target.value})} 
-                className={errors.phone && styles.contactForm__error}
+                changeFn={changeFormData} 
+                errors={errors.phone}
               />
-              {errors.phone ? <div className={styles.errors}>{errors.phone}</div> : null}
+
 
               <div className={styles.form__checkbox}>
                 <input 
@@ -166,12 +142,14 @@ export default function ContactForm({ onCancel }) {
                 <label htmlFor="callback">Ich wünsche einen telefonischen Rückruf</label>
               </div>
 
-              <textarea 
+              <InputComponent
+                type="textarea" 
                 placeholder="Ihre Nachricht" 
-                name="message[text]"
+                inputName="message[text]"
+                valueName="text"
                 value={formValue.text} 
-                onChange={(e) => changeFormData({text: e.target.value})} 
-              ></textarea>
+                changeFn={changeFormData} 
+              />
 
               <div className={`${styles.form_buttons}`}>
                 <button type="submit" className={`${styles.form_button} ${styles.button__confirm}`} disabled={!formFilled || !checkObjIsEmpty(errors) || loading}>Senden</button>

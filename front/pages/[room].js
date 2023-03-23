@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Image from 'next/image';
 
@@ -54,6 +54,8 @@ export default function Room() {
 	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
 	// console.log('roomType', roomType)
 
+	const container = useRef(null);
+
 	useEffect(() => {
 		setStyleId(apartStyle.style);
 	}, []);
@@ -61,9 +63,9 @@ export default function Room() {
 	// animation function =======================
 	// const moveImageFunction = async() => {
 	//     for (let x = 0; x <= 600; x += 25) {
-	//         const scrollableImage = document.querySelector('.indiana-scroll-container--hide-scrollbars');
-	//         if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
-	//         else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
+	// 			const scrollableImage = container.current.getElement();
+	// 			if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
+	// 			else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
 	//     }
 	// }
 	// end of animation function =================
@@ -71,21 +73,19 @@ export default function Room() {
 	useEffect(async() => {
 		dispatch(changeLoadingState(true));
 
-		// animation section =================
-		// document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
+		if (!isImageload) {
+			document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
-		// setTimeout(() => {
-		//     document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
-		//     // moveImageFunction();
-		// }, 1000);
+			setTimeout(() => {
+					document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+					// moveImageFunction();
+			}, 1000);
 
-		// end of animation section =================
-
-		//if we have in state image of current room, we set this image
-		roomType[`${ROOM_TYPE?.toLowerCase()}`] 
-			? setLargeImage(roomType[`${ROOM_TYPE.toLowerCase()}`].image) 
-			: setLargeImage(false);
-
+			//if we have in state image of current room, we set this image
+			roomType[`${ROOM_TYPE?.toLowerCase()}`] 
+				? setLargeImage(roomType[`${ROOM_TYPE.toLowerCase()}`].image) 
+				: setLargeImage(false);
+			}
 	}, [path]);
 
 	useEffect(async() => {
@@ -114,8 +114,25 @@ export default function Room() {
 
 	const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
 	if (loading) return <LoadingSpinner full={true}/>
-	if(error) return <p>Error, please read the console. {console.log(error)}</p>
+	else {
+		document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
+		setTimeout(() => {
+				document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+				// moveImageFunction();
+		}, 1000);
+	}
+
+	if(error) return <p>Error, please read the console. {console.log(error)}</p>
+  
+	const addAnimationFunction = () => {
+		document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
+
+		setTimeout(() => {
+				document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+				// moveImageFunction();
+		}, 1000);
+	}
 	
 	const activeImage = roomState?.image 
 		? roomState.image 
@@ -200,6 +217,7 @@ export default function Room() {
 					onStartScroll={() => setIsScroll(true)}
 					onEndScroll={() => setIsScroll(false)}
 					id={'image__wrapper'}
+					ref={container}
 				>
 					<div className={`${styles.full} ${isImageload && styles.blur}`} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
 						<Image 

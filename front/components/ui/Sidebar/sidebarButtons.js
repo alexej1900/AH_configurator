@@ -30,8 +30,6 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 		// console.log('buttonHeight1111', buttonHeight)
   }, [currentRoom]);
 
-	
-
 	// console.log('buttonHeight', buttonHeight)
 
 	let nextLink, prevLink;
@@ -48,7 +46,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 
 				nextLink = roomsTitle[i+1] 
 					?  {link: `/${roomsSlug[i+1].toLowerCase()}`, title: roomsTitle[i+1]}
-					:  {link: '/summary', title: 'Abschliessen'};
+					:  {link: '/summary', title: 'Fertigstellen'};
 
 				switch (currentRoom.toLowerCase()) {
 					case 'raumtrenner':
@@ -112,9 +110,9 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 							title={currentRoom === 'kitchen-type' ? 'Wahl bestätigen' : nextLink.title}
 							href={nextLink.link}
 							type="primary" 
-							iconName={currentRoom === 'kitchen-type' ? 'confirm' : 'arrow'} 
+							iconName={currentRoom === 'kitchen-type' ? 'confirm' : currentRoom === 'gang' ? 'summary' :'arrow-right'} 
 							iconColor="#fff" 
-							iconRight={true}
+							iconRight={currentRoom === 'gang' ? false : true }
 							clickFn={styleTypeSet}
 							// style={{height: secondButtonHeight}}
 							/>

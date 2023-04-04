@@ -52,7 +52,7 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
-	// console.log('roomType', roomType)
+	console.log('largeImage', largeImage)
 
 	const container = useRef(null);
 
@@ -114,25 +114,25 @@ export default function Room() {
 
 	const { data, loading, error } = useQuery(RoomData(ROOM_TYPE));
 	if (loading) return <LoadingSpinner full={true}/>
-	else {
-		document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
+	// else if (!largeImage){
+	// 	document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
-		setTimeout(() => {
-				document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
-				// moveImageFunction();
-		}, 1000);
-	}
+	// 	setTimeout(() => {
+	// 			document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+	// 			// moveImageFunction();
+	// 	}, 2500);
+	// }
 
 	if(error) return <p>Error, please read the console. {console.log(error)}</p>
   
-	const addAnimationFunction = () => {
-		document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
+	// const addAnimationFunction = () => {
+	// 	document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
-		setTimeout(() => {
-				document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
-				// moveImageFunction();
-		}, 1000);
-	}
+	// 	setTimeout(() => {
+	// 			document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
+	// 			// moveImageFunction();
+	// 	}, 1000);
+	// }
 	
 	const activeImage = roomState?.image 
 		? roomState.image 

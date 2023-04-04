@@ -134,7 +134,7 @@ export default function Sidebar({
 		const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 		
 		// console.log('roomActiveMode', roomActiveMode)
-		// console.log('roomImageswwww', roomImages[72].title.toLowerCase().slice(0, 40) === roomActiveMode.slice(0, 40))
+		// console.log('roomImageswwww', roomImages[79].title.toLowerCase().slice(0, 30) === roomActiveMode.slice(0, 30))
 		// console.log('newActiveImage', newActiveImage)
 		setLargeImage(newActiveImage); 
 		// currentRoom !== ('küche1' || 'küche2' || 'küche3') && console.log('dsfdfd')

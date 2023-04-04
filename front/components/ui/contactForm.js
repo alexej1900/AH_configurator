@@ -47,7 +47,7 @@ export default function ContactForm({ onCancel }) {
     if (!checkObjIsEmpty(errors)) return;
     setLoading(true);
     
-    await fetch('https://staging.immokonfigurator.ch/mail', {
+    await fetch('https://ah.immokonfigurator.ch/mail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',

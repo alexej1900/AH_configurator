@@ -24,7 +24,6 @@ export default function Header () {
   const { menu, open }  = generalStates;
   const rooms = [
     'Wohnzimmer', 
-    'Raumtrenner', 
     'Küchenlinien', 
     `${apartSize.roomsCount > 2.5 ? 'Badezimmer' : ''}`, 
     'Dusche', 

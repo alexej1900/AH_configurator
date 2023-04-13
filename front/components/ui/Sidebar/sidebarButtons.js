@@ -36,7 +36,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 
 	if (currentRoom === 'kitchen-type') {
 		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`}
-		prevLink = '/raumtrenner';
+		prevLink = '/wohnzimmer';
 	} else if (currentRoom.slice(0, -1) === 'küche') {
 		nextLink = apartSize.roomsCount > 2.5 ? {link:  `/badezimmer`, title: `Badezimmer mit Badewanne`} : {link:  `/dusche`, title: `Badezimmer mit Dusche`}
 		prevLink = '/kitchen-type';
@@ -49,10 +49,6 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 					:  {link: '/summary', title: 'Fertigstellen'};
 
 				switch (currentRoom.toLowerCase()) {
-					case 'raumtrenner':
-						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
-						prevLink = '/wohnzimmer';
-						break;
 					case 'badezimmer':
 						nextLink = {link:  `/dusche`, title: `Badezimmer mit Dusche`}
 						prevLink = `/kitchen-type`;
@@ -61,6 +57,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 						prevLink = apartSize.roomsCount > 2.5 ? `/badezimmer` : `/kitchen-type`;
 						break;
 					case 'wohnzimmer':
+						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
 						prevLink = `/?id=${roomId}`;
 						break;
 					default:

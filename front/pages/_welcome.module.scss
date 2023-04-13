@@ -10,18 +10,29 @@
   }
 
   &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 33.3%);
     padding: 9rem 1.6rem 3.2rem;
     max-width: 86rem;
     margin: 0 auto;
 
     @media (max-width: $screen-lg) {
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: repeat(3, auto);
       padding: 10rem 2.4rem 2.4rem;
     }
 
     &_header {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      @media (max-width: $screen-lg) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
 
       &_title {
-    
         @media (max-width: $screen-lg) {
           text-align: left;
         }
@@ -34,36 +45,14 @@
       }
     }
 
-    &_content {
-      display: flex;
-
-      @media (max-width: $screen-lg) {
-        flex-direction: column;
-      }
-    }
-
-    .halfLine {
-      width: 50%;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      margin-right: 2rem;
-
-      @media (max-width: $screen-lg) {
-        width: 100%;
-        max-width: 60rem;
-        margin: 0 2.4rem;
-        order: 2;
-      }
-    }
-
     .planImage {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
       position: relative;
-      @include flex-center-center;
+      justify-self: center;
+      // @include flex-center-center;
       min-height: 70vh;
+      width: 100%;
 
       img {
         max-height: 60rem !important;
@@ -72,25 +61,23 @@
       }
 
       @media (max-width: $screen-lg) {
-        width: 100%;
-        order: 1;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
         margin: 0 auto 3.2rem;
       }
     }
   }
 
-  .toggle__title {
-    margin: 3.4rem 0 .8rem;
-    font-weight: 700;
-    text-align: center; 
-  }
-
   .submitBtn {
-    width: 20rem;
-    align-self: center;
+    display: inline-flex;
+    // width: 50%;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    height: 6rem;
 
     @media (max-width: $screen-lg) {
-      width: 100%;
+      align-self: center;
+      justify-self: center;
     }
   }
 

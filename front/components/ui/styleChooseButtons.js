@@ -31,7 +31,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 
 	if (room === 'kitchen-type') {
 		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`}
-		prevLink = '/raumtrenner';
+		prevLink = '/wohnzimmer';
 	} else if (room.slice(0, -1) === 'küche') {
 		nextLink = apartSize.roomsCount > 2.5 ? {link:  `/badezimmer`, title: `Badezimmer mit Badewanne`} : {link:  `/dusche`, title: `Badezimmer mit Dusche`}
 		prevLink = '/kitchen-type';
@@ -44,10 +44,6 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 					:  {link: '/summary', title: 'Fertigstellen'};
 
 				switch (room.toLowerCase()) {
-					case 'raumtrenner':
-						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
-						prevLink = '/wohnzimmer';
-						break;
 					case 'badezimmer':
 						nextLink = {link:  `/dusche`, title: `Badezimmer mit Dusche`}
 						prevLink = `/kitchen-type`;
@@ -56,6 +52,7 @@ export default function StyleChooseButtons({room, styleTypeSet, activeStyle, sty
 						prevLink = apartSize.roomsCount > 2.5 ? `/badezimmer` : `/kitchen-type`;
 						break;
 					case 'wohnzimmer':
+						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
 						prevLink = `/?id=${roomId}`;
 						break;
 					default:

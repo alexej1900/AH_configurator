@@ -44,7 +44,6 @@ export default function Summary () {
 
 	const rooms = [
     'Wohnzimmer', 
-    'Raumtrenner', 
 		'Küche',
 		'Badezimmer', 
     'Dusche', 

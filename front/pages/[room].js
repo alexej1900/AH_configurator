@@ -51,7 +51,7 @@ export default function Room() {
 	const isImageload = generalStates.loading;
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
-	const roomsWithChangeableFloor = ['wohnzimmer', 'raumtrenner', 'küche', 'schlafzimmer', 'gang'];
+	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer', 'gang'];
 	console.log('largeImage', largeImage)
 
 	const container = useRef(null);

@@ -34,7 +34,9 @@
   }
 
   &__buttons {
-    @include flex-between-center;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
     margin-bottom: 2.4rem;
     
     @media (max-width: $screen-lg) {

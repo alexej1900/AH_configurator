@@ -201,7 +201,7 @@ export default function ModifyBlock({
 
           {cardItem.modificationItemExample.length > 1 &&
             <div className={styles.card_group__number}>
-                <span>{cardItem.modificationItemExample.length}</span>
+                {cardItem.modificationItemExample.length}
             </div>
           }
 

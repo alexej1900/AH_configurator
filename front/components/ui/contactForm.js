@@ -58,7 +58,7 @@ export default function ContactForm({ onCancel }) {
       body: serialize(ev.target)
       })
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         setLoading(false);
         setShowSuccess(true);
 

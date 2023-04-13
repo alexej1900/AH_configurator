@@ -111,18 +111,18 @@ export default function Summary () {
 									<div className="col-8">Grundfläche</div>
 									<div className="col-4">{apartSize.generalArea} m2</div>
 								</div>
-								<div className={`${styles.summary__overview_line} row`}>
+								{/* <div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Individuelle Lösungen</div>
 									<div className="col-4">{IndividualPrice ? `-${formatNumber(IndividualPrice)}`: 0}</div>
-								</div>
-								<div className={`${styles.summary__overview_line} row`}>
+								</div> */}
+								{/* <div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Zusatzpreis Optionen</div>
 									<div className="col-4">{OptionsPrice ? `${formatNumber(OptionsPrice)}`: 0}</div>
-								</div>
-								<div className={`${styles.summary__overview_line} ${styles.summary__overview_line_heighlite} row`}>
+								</div> */}
+								{/* <div className={`${styles.summary__overview_line} ${styles.summary__overview_line_heighlite} row`}>
 									<div className="col-6">Kaufpreis</div>
 									<div className="col-6">CHF {formatNumber(parseInt(price) + OptionsPrice - IndividualPrice)}</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</section>

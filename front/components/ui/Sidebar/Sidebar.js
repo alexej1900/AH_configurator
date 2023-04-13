@@ -151,11 +151,11 @@ export default function Sidebar({
 				<div className={styles.sidebar__content} id="sidebar__content" onScroll={checkSize}>
 					<div className={`${[`${styles.sidebar__header} items-center`].join(' ')} ${currentRoom === 'kitchen-type' && showStyle && styles.hideHeader}`}>
 						<div className={`${styles.optionsTitle}`}>{sidebarTitle}</div>
-						<div className={`${styles.options}`}>
+						{/* <div className={`${styles.options}`}>
 							<div><span>Optionen</span> {OptionsPrice > 0 ? '+' : ''}<strong>{formatNumber(OptionsPrice)}</strong></div>
 							{IndividualPrice !== 0 && <div><span>Individuelle</span>{IndividualPrice > 0 ? '-' : ''}<strong>{formatNumber(IndividualPrice)}</strong></div>}
 							<div><span>CHF</span> <strong>{formatNumber(parseInt(apartmentPrice) + OptionsPrice - IndividualPrice)}</strong></div> 
-						</div>
+						</div> */}
 					</div>
 
 					<div className={styles.card__wrapper}>

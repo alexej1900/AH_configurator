@@ -107,8 +107,8 @@ export default function FinalRoom({ roomName, style }) {
                     </Link>
                     
                     <Card 
-                      title={data[1].individualFormat ? "Individuelle Lösung" : subtitle} 
-                      subtitle={data[1].individualFormat ? "" : styleTitle } 
+                      title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
+                      subtitle={data[1].individualFormat ? "" :  subtitle} 
                       description={data[1].individualFormat ? "" : description}
                       additionalPrice={data[1].individualFormat ? "" : additionalPrice}
                       image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}

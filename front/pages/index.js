@@ -111,6 +111,7 @@ export default function Home() {
                       onCancel={onCancel} 
                       onConfirm={onResetConfirm}
                       title={'Konfiguration gefunden'}
+                      resetForm={true}
                       child={
                         <div>
                           <p>Wir haben im Speicher ihres Webbrowsers eine bestehende Konfiguration gefunden.</p>

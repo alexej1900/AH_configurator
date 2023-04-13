@@ -94,6 +94,7 @@ export default function FinalFormNew({isometry}) {
                       onCancel={onCancel} 
                       onConfirm={onResetConfirm}
                       title={''}
+                      resetForm={true}
                       child={<p>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</p>}
                     />}
 

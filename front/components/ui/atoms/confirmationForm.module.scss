@@ -86,5 +86,17 @@
     a {
       width: 15rem;
     }
+
+    &_reset {
+      display: block; 
+
+      a {
+        width: 100%;
+
+        &:first-of-type {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
   }
 }

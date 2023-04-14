@@ -17,7 +17,7 @@ import PdfPage from './pdfPage';
 
 import styles from './finalFormNew.module.scss';
 
-export default function FinalFormNew({isometry}) {
+export default function FinalFormNew({isometry, roomId}) {
 
   const [isPopup, setIsPopup] = useState(false);
   const [isContactFormVisible, setIsContactFormVisible] = useState(false);
@@ -46,7 +46,7 @@ export default function FinalFormNew({isometry}) {
     dispatch(resetState());
 
     setTimeout(() => { 
-      router.push('/');
+      router.push(`/?id=${roomId}`);
      }, 500);
   }
 

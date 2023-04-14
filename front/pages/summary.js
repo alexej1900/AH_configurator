@@ -148,7 +148,7 @@ export default function Summary () {
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				<FinalFormNew rooms={roomType} isometry={apartSize.image.url}/> 
+				<FinalFormNew rooms={roomType} isometry={apartSize.image.url} roomId={apartSize.apartmentId}/> 
 			</div>
 			<Footer/>
 		</>

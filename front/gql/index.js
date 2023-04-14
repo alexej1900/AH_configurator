@@ -77,6 +77,7 @@ query MyQuery($id: [String], $var: [String]) {
           apartmentId
           basePrice
           generalArea
+          floor
           apartmentImage {
             url
             width
@@ -108,6 +109,53 @@ query MyQuery($id: [String], $var: [String]) {
           livingRoomOpt2Price
           livingRoomOpt3Price
           roomsCount
+          additionalCloset
+          additionalSleeproomCloset
+          boden
+          boden2
+          boden3
+          weissputz
+          weissputz2
+          front
+          ruckwand
+          arbeitsplatte
+          arbeitsplatte2
+          wasserhahn
+          wasserhahn2
+          wasserhahn3
+          badewanne
+          platten
+          platten2
+          spiegel
+          einlavabo
+          zweilavabo
+          badezimmermobel
+          badezimmermobel2
+          badezimmermobel3
+          schiebetur
+          schiebetur2
+          badeboden
+          dusche
+          duscheplatten
+          duscheplatten2
+          duschespiegel
+          duscheeinlavabo
+          duschezweilavabo
+          duschemobel
+          duschemobel2
+          duschemobel3
+          duscheschibetur
+          duscheschibetur2
+          duscheboden
+          einbauschrank
+          schlafzimmerschrank
+          schlafzimmerschrank2
+          gangschrank
+          gangschrank2
+          weiterzimmerschrank
+          weiterzimmerschrank2
+          flurschrank
+          flurschrank2
         }
       }
     }
@@ -198,6 +246,7 @@ export const RoomData = (slug) => {
             modificationsTypes {
               ... on modificationsTypes_modificationExample_BlockType {
                 modificationName
+                modificationIndex
                 modificationDescription
                 modificationMainStyle
                 modificationItemExample {

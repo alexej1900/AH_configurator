@@ -14,6 +14,8 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   const [isActiveModVisible, setIsActiveModVisible] = useState(true);
   const dispatch = useDispatch();
 
+  const apartSize = useSelector(state => state.apartSize);
+
   const pinState = useSelector((state) => state.generalStates).pin;
 
   const style = useSelector(state => state.apartStyle).title;
@@ -22,8 +24,8 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase().replaceAll(' ', '')
   });
 
-  const visibleData = dataByStyle?.filter((data) => data.modificationVisibility);
-  const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility);
+  const visibleData = dataByStyle?.filter((data) => data.modificationVisibility && apartSize[data.modificationIndex]);
+  const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility && apartSize[data.modificationIndex]);
   
   useEffect(() => {
     visibleData.length === 0 && setIsActiveModVisible(false);
@@ -35,8 +37,8 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
   }, [roomType]);
 
   // console.log('visibleData', visibleData)
-// console.log('style', style.toLowerCase().replaceAll(' ', ''))
-// console.log('data.modificationMainStyle.toLowerCase()', data.modificationMainStyle.toLowerCase())
+  // console.log('apartSize', apartSize)
+
   return (
     <>
       <div className={styles.list__visible}>
@@ -59,21 +61,21 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
               activePin={pinState}
             />
           )
-        : (
-            <CardGroup 
-              key={index}
-              data={cardItem} 
-              activeStyle={activeStyle}
-              setActiveMod={() => {
-                setActiveMod(index);
-                setIsActiveModVisible(true);
-              }}
-              styleId={styleId}
-              room={roomType}
-              setIndividualPrice={setIndividualPrice}
-              activeMod={activeMod === index}
-              activePin={pinState}
-            />
+        : ( null
+            // <CardGroup 
+            //   key={index}
+            //   data={cardItem} 
+            //   activeStyle={activeStyle}
+            //   setActiveMod={() => {
+            //     setActiveMod(index);
+            //     setIsActiveModVisible(true);
+            //   }}
+            //   styleId={styleId}
+            //   room={roomType}
+            //   setIndividualPrice={setIndividualPrice}
+            //   activeMod={activeMod === index}
+            //   activePin={pinState}
+            // />
           )
         }) 
         }
@@ -82,44 +84,69 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
       {nonVisibleData.length !== 0 && 
       
         <div className={styles.list__nonvisible}>
-          <InfoTitle 
-            title={'Einbauschränke in anderen Zimmern'}
-            infoText={'Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt'}
-          />
+          { roomType === "schlafzimmer"
+            ? <InfoTitle 
+                title={'Einbauschränke in anderen Zimmern'}
+                infoText={'Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt'}
+              />
+            : <InfoTitle 
+                title={'Nicht visualisierte Optionen'}
+                infoText={'Die nachfolgenden Optionen werden nicht in den Visualisierungen dargestellt, jedoch in der Berechnung und der Zusammenfassung berücksichtigt'}
+              />
+          }
 
           {nonVisibleData?.map((cardItem, index) => {
 
-            return !cardItem.modificationGroupBlock ? (
-              <ModifyBlock 
-                key={index}
-                activeMod={!isActiveModVisible && activeMod === index}
-                setActiveMod={() => {
-                  setIsActiveModVisible(false);
-                  setActiveMod(index);
-                }}
-                cardItem={cardItem}
-                activeStyle={activeStyle}
-                styleId={styleId}
-                roomType={roomType}
-                setIndividualPrice={setIndividualPrice}
-                activePin={pinState}
-              />
-            )
-          : (
-              <CardGroup 
-                key={index}
-                data={cardItem} 
-                activeStyle={activeStyle}
-                setActiveMod={() => {
-                  setActiveMod(index);
-                  setIsActiveModVisible(false);
-                }}
-                styleId={styleId}
-                room={roomType}
-                setIndividualPrice={setIndividualPrice}
-                activeMod={activeMod === index}
-                activePin={pinState}
-              />
+            return !cardItem.modificationGroupBlock ? 
+            
+            roomType === "schlafzimmer" 
+              ? (
+                  <ModifyBlock 
+                    key={index}
+                    activeMod={!isActiveModVisible && activeMod === index}
+                    setActiveMod={() => {
+                      setIsActiveModVisible(false);
+                      setActiveMod(index);
+                    }}
+                    cardItem={cardItem}
+                    activeStyle={activeStyle}
+                    styleId={styleId}
+                    roomType={roomType}
+                    setIndividualPrice={setIndividualPrice}
+                    activePin={pinState}
+                  />
+                )
+              : apartSize[cardItem.modificationIndex] && (
+                <ModifyBlock 
+                  key={index}
+                  activeMod={!isActiveModVisible && activeMod === index}
+                  setActiveMod={() => {
+                    setIsActiveModVisible(false);
+                    setActiveMod(index);
+                  }}
+                  cardItem={cardItem}
+                  activeStyle={activeStyle}
+                  styleId={styleId}
+                  roomType={roomType}
+                  setIndividualPrice={setIndividualPrice}
+                  activePin={pinState}
+                />
+              )
+          : (  null
+              // <CardGroup 
+              //   key={index}
+              //   data={cardItem} 
+              //   activeStyle={activeStyle}
+              //   setActiveMod={() => {
+              //     setActiveMod(index);
+              //     setIsActiveModVisible(false);
+              //   }}
+              //   styleId={styleId}
+              //   room={roomType}
+              //   setIndividualPrice={setIndividualPrice}
+              //   activeMod={activeMod === index}
+              //   activePin={pinState}
+              // />
             )
           }) 
           }

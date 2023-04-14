@@ -107,9 +107,9 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 							title={currentRoom === 'kitchen-type' ? 'Wahl bestätigen' : nextLink.title}
 							href={nextLink.link}
 							type="primary" 
-							iconName={currentRoom === 'kitchen-type' ? 'confirm' : currentRoom === 'gang' ? 'summary' :'arrow-right'} 
+							iconName={currentRoom === 'kitchen-type' ? 'confirm' : currentRoom === 'schlafzimmer' ? 'summary' :'arrow-right'} 
 							iconColor="#fff" 
-							iconRight={currentRoom === 'gang' ? false : true }
+							iconRight={currentRoom === 'schlafzimmer' ? false : true }
 							clickFn={styleTypeSet}
 							// style={{height: secondButtonHeight}}
 							/>

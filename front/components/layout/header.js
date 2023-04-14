@@ -25,10 +25,10 @@ export default function Header () {
   const rooms = [
     'Wohnzimmer', 
     'Küchenlinien', 
-    `${apartSize.roomsCount > 2.5 ? 'Badezimmer' : ''}`, 
-    'Dusche', 
+    `${apartSize.badewanne ? 'Badezimmer' : ''}`, 
+    `${apartSize.dusche ? 'Dusche' : ''}`, 
     'Schlafzimmer', 
-    'Gang'
+    // 'Gang'
   ];
 
   useEffect(() => {

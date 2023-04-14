@@ -15,7 +15,7 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
 
       <div className={styles.block__wrapper}>
         {cardData.map((data, index)=>{
-          if (index < 3) { // showing first 3 styles, that united to style line 1
+          if (index < 2) { // showing first 3 styles, that united to style line 1
             return (
             <Card
               selectCard= {() => activeStyle(index, 'image', data.featuredImage && data.featuredImage[0].url, data.styleTitle, data.subtitle)}
@@ -38,7 +38,7 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
       <div className={`${styles.block__wrapper} ${styles.block__wrapper_even}`}>
         {cardData.map((data, index)=>{
 
-          if (index === 3) {
+          if (index >= 2) {
             return (
             <Card
               selectCard= {() => activeStyle(index, 'image', data.featuredImage && data.featuredImage[0].url, data.styleTitle, data.subtitle)}

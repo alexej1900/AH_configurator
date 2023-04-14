@@ -52,7 +52,7 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer', 'gang'];
-	console.log('largeImage', largeImage)
+	// console.log('largeImage', largeImage)
 
 	const container = useRef(null);
 
@@ -208,7 +208,7 @@ export default function Room() {
 		setIsConfirmation(false);
 		dispatch(changeLoadingState(false))
 	};
-	
+	// console.log('data.entry.mods', data.entry.mods[0].modificationsTypes[0])
 	return (
 		<>
 			<div className={`${styles.type__wrapper}`} >  

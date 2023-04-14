@@ -35,7 +35,7 @@ export default function Footer() {
 
           <div className={styles.footer__content_contacts}>
             <p className={styles.footer__content_contacts_title}>Appenzeller Huus Gonten AG</p>
-            <p className={styles.footer__content_contacts_address}>Dorfstrasse 40</p>
+            <p className={styles.footer__content_contacts_address}>Dorfstrasse 29</p>
             <p className={styles.footer__content_contacts_address}>9108 Gonten</p>
             <p className={styles.footer__content_contacts_address}>Switzerland</p>
             <a className={styles.footer__content_contacts_data} href="info@appenzellerhuss.ch">
@@ -44,7 +44,7 @@ export default function Footer() {
             </a>
             <a className={styles.footer__content_contacts_data} href="tel:+41 44 55 66 77">
               <IconComponent name="phone" color="#000"/>
-              <p>+41 44 55 66 77</p>
+              <p>+41 71 510 95 95</p>
             </a>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className={styles.footer__legals}>
         <a className={styles.footer__legals_link} href="#">Impressum </a>
-        <a className={styles.footer__legals_link} href="#">AGB</a>
+        {/* <a className={styles.footer__legals_link} href="#">AGB</a> */}
         <a className={styles.footer__legals_link} href="#">Datenschutz</a>
       </div>
     </footer>

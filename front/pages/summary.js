@@ -48,7 +48,7 @@ export default function Summary () {
 		'Badezimmer', 
     'Dusche', 
     'Schlafzimmer', 
-    'Gang'
+    // 'Gang'
   ];
 
 	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
@@ -96,7 +96,15 @@ export default function Summary () {
 									<div className="col-4">{apartSize.apartmentId}</div>
 								</div>
 								<div className={`${styles.summary__overview_line} row`}>
-									<div className="col-8">Grundriss</div>
+									<div className="col-8">Haus</div>
+									<div className="col-4">{apartSize.buildingsName}</div>
+								</div>
+								<div className={`${styles.summary__overview_line} row`}>
+									<div className="col-8">Etage</div>
+									<div className="col-4">{apartSize.floor}</div>
+								</div>
+								<div className={`${styles.summary__overview_line} row`}>
+									<div className="col-8">Zimmer</div>
 									<div className="col-4">{apartSize.roomsCount} Zi.</div>
 								</div>
 
@@ -106,10 +114,13 @@ export default function Summary () {
 										<div className="col-4">{apartStyle.title}</div>
 									</div>
 								}
-								
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Grundfläche</div>
 									<div className="col-4">{apartSize.generalArea} m2</div>
+								</div>
+								<div className={`${styles.summary__overview_line} row`}>
+									<div className="col-8">Grundkosten</div>
+									<div className="col-4">{apartSize.basePrice} CHF</div>
 								</div>
 								{/* <div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Individuelle Lösungen</div>

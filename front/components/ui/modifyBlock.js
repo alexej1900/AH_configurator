@@ -8,7 +8,6 @@ import {
 } from '../../redux/actions/index';
 
 import Card from './card';
-import IconComponent from './atoms/iconComponent';
 
 import getModifications from '../../pages/api/getModifications';
 
@@ -83,12 +82,12 @@ export default function ModifyBlock({
         ? {0: 0, 1: apartSize.dusheFurniture2Price, 2: apartSize.dusheFurniture3Price, 3: apartSize.dusheFurniture4Price}
         :  roomType === 'schlafzimmer' && modificationName === 'Einbauschrank' 
         ? {0: 0, 1: apartSize.bedroomClosetPrice}
-        :  roomType === 'gang' && modificationName === 'Einbauschrank' 
-        ? {0: 0, 1: apartSize.additionalClosetPrice}
-        :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank Flur' 
-        ? {0: 0, 1: apartSize.additionCorridorCloset}
-        :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank weiteres Zimmer' 
-        ? {0: 0, 1: apartSize.additionRoomCloset}
+        // :  roomType === 'gang' && modificationName === 'Einbauschrank' 
+        // ? {0: 0, 1: apartSize.additionalClosetPrice}
+        // :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank Flur' 
+        // ? {0: 0, 1: apartSize.additionCorridorCloset}
+        // :  roomType === 'gang' && modificationName === 'Zusätzlicher Einbauschrank weiteres Zimmer' 
+        // ? {0: 0, 1: apartSize.additionRoomCloset}
         :  roomType === 'küche4' && modificationName === 'Front' 
         ? {0: 0, 1: apartSize.kitchen2Front2Price, 2: apartSize.kitchen2Front3Price}
         :  roomType === 'küche4' && modificationName === 'Rückwand' 
@@ -202,12 +201,6 @@ export default function ModifyBlock({
                 {cardItem.modificationItemExample.length}
             </div>
           }
-
-          {/* {checked &&
-            <div className={styles.checkIcon}>
-              <IconComponent name="check" color="#fff"/>
-            </div>
-          } */}
 
         </div> 
         {modificationDescription

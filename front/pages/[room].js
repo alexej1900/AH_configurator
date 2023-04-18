@@ -96,7 +96,7 @@ export default function Room() {
 			if (data && ROOM_TYPE === 'küche1' || ROOM_TYPE === 'küche2' || ROOM_TYPE === 'küche3') {
 				const modifications = 
 					data?.entry.mods[0].modificationsTypes && data?.entry.mods[0].modificationsTypes
-						.filter((item) => item.modificationName !== 'Böden');
+						.filter((item) => item.modificationName !== 'Boden');
 
 				modifications && modifications.forEach(item => {
 					changeType(

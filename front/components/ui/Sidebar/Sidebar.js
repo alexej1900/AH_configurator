@@ -126,7 +126,7 @@ export default function Sidebar({
 					// prevModGroupTitle = modName;
 				}  
 		})
-		console.log('roomImages', roomImages)
+		// console.log('roomImages', roomImages)
 		
 		// console.log('roomActiveMode', roomActiveMode)
 
@@ -139,12 +139,12 @@ export default function Sidebar({
 			activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
 		const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 		
-		console.log('roomActiveMode', roomActiveMode)
+		// console.log('roomActiveMode', roomActiveMode)
 		// console.log('newActiveImage', newActiveImage)
 		setLargeImage(newActiveImage); 
 		dispatch(changeRoomImage(currentRoom.slice(0, 5) === 'küche' ? 'küche' : currentRoom, newActiveImage));
 		// console.log('newActiveImage11333', roomImages[38].title.slice(0, 5).toLowerCase() === roomActiveMode.slice(0, 5))
-		console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0])
+		// console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0])
 	}
 
 	return (

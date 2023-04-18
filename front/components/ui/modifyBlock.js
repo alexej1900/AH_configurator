@@ -62,7 +62,7 @@ export default function ModifyBlock({
   let modificationStyle;
   let activeIndex = 0;
 
-  const modsAdditionalPrice = modificationName === 'Böden' 
+  const modsAdditionalPrice = modificationName === 'Boden' 
         ? {0: 0, 1: apartSize.livingRoomOpt2Price, 2: apartSize.livingRoomOpt3Price}
         :  roomType === 'badezimmer' && modificationName === 'Platten' 
         ? {0: 0, 1: apartSize.bath1PlatePrice}

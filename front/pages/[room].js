@@ -51,7 +51,9 @@ export default function Room() {
 	const isImageload = generalStates.loading;
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
-	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer', 'gang'];
+	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer'
+	// , 'gang'
+];
 	// console.log('largeImage', largeImage)
 
 	const container = useRef(null);
@@ -147,9 +149,9 @@ export default function Room() {
 		
 		if (room === 'wohnzimmer') {  // set floor type for all types of rooms
 			roomsWithChangeableFloor
-				.forEach((room) => dispatch(changeRoomType(room, 'Böden', index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle)))
-			dispatch(changeApartPrice('Böden', additionalPrice));
-		} else if (modName === 'Böden') {  // else show popup with confirmation
+				.forEach((room) => dispatch(changeRoomType(room, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle)))
+			dispatch(changeApartPrice(modName, additionalPrice));
+		} else if (modName === 'Boden') {  // else show popup with confirmation
 			setIsConfirmation(true);
 			return;
 		} else { // for other options
@@ -176,7 +178,7 @@ export default function Room() {
 		roomsWithChangeableFloor
 			.forEach((room) => dispatch(changeRoomType(
 				room, 
-				'Böden', 
+				'Boden', 
 				optionData.index,  
 				optionData.featuredImage, 
 				optionData.styleTitle, 
@@ -186,7 +188,7 @@ export default function Room() {
 				optionData.modGroupTitle, 
 				optionData.mainStyle))
 			)
-		dispatch(changeApartPrice('Böden', optionData.additionalPrice));
+		dispatch(changeApartPrice('Boden', optionData.additionalPrice));
 		onCancel();
 	}
 
@@ -208,7 +210,7 @@ export default function Room() {
 		setIsConfirmation(false);
 		dispatch(changeLoadingState(false))
 	};
-	// console.log('data.entry.mods', data.entry.mods[0].modificationsTypes[0])
+	// console.log('data.entry.mods', data.entry)
 	return (
 		<>
 			<div className={`${styles.type__wrapper}`} >  

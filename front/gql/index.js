@@ -114,8 +114,8 @@ query MyQuery($id: [String], $var: [String]) {
           boden
           boden2
           boden3
-          weissputz
-          weissputz2
+          decke
+          decke2
           front
           ruckwand
           arbeitsplatte
@@ -139,8 +139,7 @@ query MyQuery($id: [String], $var: [String]) {
           duscheplatten
           duscheplatten2
           duschespiegel
-          duscheeinlavabo
-          duschezweilavabo
+          duschelavabo
           duschemobel
           duschemobel2
           duschemobel3

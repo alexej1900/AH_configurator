@@ -44,7 +44,8 @@ export default function Sidebar({
 
 	// =============== if we have main style lines decomment 1 line below ===============
 	// const mainStyle = useSelector(state => state.apartStyle).title;
-	const roomId = useSelector(state => state.apartSize.apartmentId);
+	const { apartSize } = useSelector(state => state);
+	const roomId = apartSize.apartmentId;
 	const sidebarTitle = title ? title : currentRoom;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
@@ -84,13 +85,16 @@ export default function Sidebar({
 		// let prevModGroupTitle = null; 
 
 		modifyData.forEach((item) => {
-			if (item.modificationVisibility 
+
+			if (item.modificationVisibility && apartSize[item.modificationIndex]  // we check option if it visible and exist in this apartment
 				// =============== if we have main style lines decomment 3 line below ===============
 				// && 
 				// (item.modificationMainStyle.toLowerCase().replaceAll(' ', '') === mainStyle.toLowerCase().replaceAll(' ', '') ||
 				// item.modificationMainStyle.toLowerCase() === "false")
 				) {
 				const modName = item.modificationName;
+
+				// const modName = item.modificationIndex;  !!!! ToDo connect name to indexName -> change dispatching to redux IndexName {optName ...}
 				
 				// =============== if we have modifications groups decomment 7 lines below ===============
 				// const modGroupTitle = modifications[modName]?.modGroupTitle ? ` ${modifications[modName]?.modGroupTitle}` : '';
@@ -101,13 +105,14 @@ export default function Sidebar({
 				//             : ''}` 
 				//     : '';
 				// end modifications groups block
-
+				// console.log('modName', modName)
+				// console.log('modifications[modName]', modifications)
 				activeMod = 
 					// =============== if we have modifications groups decomment 3 lines below ===============
 					// modifications[modName] && modifications[modName].modGroupTitle
 					// ? activeMod + modGroupBlock
 					// : 
-					modifications[modName] 
+					modifications[modName]
 						? activeMod + 
 							`${modName} ${modifications[modName].index} ${
 									modifications[modName].option  && (modifications[modName].option?.index !== 0)
@@ -121,8 +126,9 @@ export default function Sidebar({
 					// prevModGroupTitle = modName;
 				}  
 		})
-		// console.log('activeMod', room + ' ' + `${mainStyle} ` +  activeMod)
-		// console.log('roomImages', roomImages)
+		console.log('roomImages', roomImages)
+		
+		// console.log('roomActiveMode', roomActiveMode)
 
 		const roomActiveMode = 
 		// =============== if we have main style lines & rooms without styles:  set to line below titles of 
@@ -133,13 +139,12 @@ export default function Sidebar({
 			activeMod.length === 0 ? currentRoom : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
 		const newActiveImage = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0];
 		
-		// console.log('roomActiveMode', roomActiveMode)
-		// console.log('roomImageswwww', roomImages[79].title.toLowerCase().slice(0, 30) === roomActiveMode.slice(0, 30))
+		console.log('roomActiveMode', roomActiveMode)
 		// console.log('newActiveImage', newActiveImage)
 		setLargeImage(newActiveImage); 
-		// currentRoom !== ('küche1' || 'küche2' || 'küche3') && console.log('dsfdfd')
 		dispatch(changeRoomImage(currentRoom.slice(0, 5) === 'küche' ? 'küche' : currentRoom, newActiveImage));
-		// console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0].title)
+		// console.log('newActiveImage11333', roomImages[38].title.slice(0, 5).toLowerCase() === roomActiveMode.slice(0, 5))
+		console.log('newActiveImage11', roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode)[0])
 	}
 
 	return (

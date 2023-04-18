@@ -26,7 +26,7 @@ import styles from './finalRoom.module.scss';
 export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   
-  const { roomType, apartStyle } = useSelector(state => state);
+  const { roomType, apartStyle, apartSize } = useSelector(state => state);
 
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
 
@@ -39,7 +39,7 @@ export default function FinalRoom({ roomName, style }) {
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
-  // console.log('apartStyle.kitchenStyle', apartStyle.kitchenStyle)
+
   const room = roomType[`${roomName.toLowerCase()}`] 
     ? roomType[`${roomName.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
@@ -59,7 +59,9 @@ export default function FinalRoom({ roomName, style }) {
     dispatch(changeActiveMod(modName));
   }
 
-  const allOptions = dataByStyle.map((item) => {
+  const allOptions = dataByStyle
+    .filter((data) => data.modificationVisibility && apartSize[data.modificationIndex])
+    .map((item) => {
     if(room?.modifications && room?.modifications[item.modificationName]) {
       return [item.modificationName, room.modifications[item.modificationName]]
     } else {

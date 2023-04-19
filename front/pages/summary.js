@@ -53,7 +53,7 @@ export default function Summary () {
 
 	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
 
-	// console.log('rooms', rooms)
+	// console.log('roomType', roomType)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();

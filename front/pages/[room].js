@@ -40,6 +40,7 @@ export default function Room() {
 	const [largeImage, setLargeImage] = useState(false);
 	const [isScroll, setIsScroll] = useState(false);
 	const [isPopup, setIsPopup] = useState(false);
+	const [isFloorConfirmation, setIsFloorConfirmation] = useState(false);
 	const [isConfirmation, setIsConfirmation] = useState(false);
 	const [isPinsVisible, setIsPinsVisible] = useState(true);
 	const [optionData, setOptionData] = useState({});
@@ -51,9 +52,7 @@ export default function Room() {
 	const isImageload = generalStates.loading;
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
-	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer'
-	// , 'gang'
-];
+	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer' , 'gang'];
 	// console.log('largeImage', largeImage)
 
 	const container = useRef(null);
@@ -152,6 +151,9 @@ export default function Room() {
 				.forEach((room) => dispatch(changeRoomType(room, modName, index,  featuredImage, styleTitle, subtitle, description, additionalPrice, modGroupTitle, largeImage, mainStyle)))
 			dispatch(changeApartPrice(modName, additionalPrice));
 		} else if (modName === 'Boden') {  // else show popup with confirmation
+			setIsFloorConfirmation(true);
+			return;
+		} else if (modName === 'Decke') {  // else show popup with confirmation
 			setIsConfirmation(true);
 			return;
 		} else { // for other options
@@ -192,6 +194,24 @@ export default function Room() {
 		onCancel();
 	}
 
+	const changceilingType = () => { // change floor type for all rooms, change price
+		roomsWithChangeableFloor
+			.forEach((room) => dispatch(changeRoomType(
+				room, 
+				'Decke', 
+				optionData.index,  
+				optionData.featuredImage, 
+				optionData.styleTitle, 
+				optionData.subtitle, 
+				optionData.description, 
+				optionData.additionalPrice, 
+				optionData.modGroupTitle, 
+				optionData.mainStyle))
+			)
+		dispatch(changeApartPrice('Decke', optionData.additionalPrice));
+		onCancel();
+	}
+
 	const openModificationsList = (modificationName) => {
 		dispatch(changeActivePin(modificationName));
 	}
@@ -208,6 +228,7 @@ export default function Room() {
 	const onCancel = () => {
 		setIsPopup(false);
 		setIsConfirmation(false);
+		setIsFloorConfirmation(false);
 		dispatch(changeLoadingState(false))
 	};
 	// console.log('data.entry.mods', data.entry)
@@ -269,6 +290,22 @@ export default function Room() {
 
 			{isPopup && <ContactForm onCancel={onCancel}/>}
 			{isConfirmation 
+				&& <ConfirmationForm 
+						onCancel={onCancel} 
+						onConfirm={changceilingType}
+						title={'Zimmerübergreifende Option'}
+						child={<>
+										<div>Eine Anpassung der Option “Decke” wird auch in weiteren Räumen übernommen:</div>
+											<ul>
+												{roomsWithChangeableFloor.map((roomItem) => {
+													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li>{roomItem}</li>
+												})}
+											</ul>
+										</>
+									}
+						/>
+				}
+			{isFloorConfirmation 
 				&& <ConfirmationForm 
 						onCancel={onCancel} 
 						onConfirm={changeFloorType}

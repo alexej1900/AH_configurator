@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useDispatch, useSelector } from 'react-redux';
+import getModifications from '../../pages/api/getModifications';
+import getImages from '../../pages/api/getImages';
 
 import { 
   changeSidebarState, 
@@ -25,17 +27,18 @@ import styles from './finalRoom.module.scss';
 
 export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
-  
+  const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
-
+  
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
-
-  const { data, loading, error } = useQuery(RoomData(currentRoom));
+  const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);
+  
+  const { data, loading, error } = useQuery(RoomData(currentRoom.toLowerCase()));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
 
   const modifyData = data.entry?.mods[0].modificationsTypes;
-
+  
   const dataByStyle = modifyData?.filter((data) => {
     return !data.modificationMainStyle || data.modificationMainStyle === 'false' || data.modificationMainStyle.toLowerCase() === style.toLowerCase()
   });
@@ -49,7 +52,7 @@ export default function FinalRoom({ roomName, style }) {
     //   return item.styleName.toLowerCase() === style.toLowerCase()
     // })[0].styleDefaultImage[0]};
 
-  const roomImage = room.image ? room.image : data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0];
+  // const roomImage = room.image ? room.image : data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0];
 
   const editClickHandler = (modName) => {
     dispatch(changeSidebarState(true));
@@ -78,9 +81,25 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 
-  // console.log('roomName', roomName)
-  // console.log('room', room)
-  // console.log('roomType', roomType)
+  // Comparing choosed modification and existing images 
+  let activeMod = '';
+  
+  modifyData.forEach((item) => {
+
+    if (item.modificationVisibility && apartSize[item.modificationIndex]) {
+      const modName = item.modificationName;
+      activeMod = modifications && modifications[modName]
+        ? activeMod + 
+          `${modName} ${modifications[modName].index} `
+        : activeMod+`${modName} ${'0'} `
+      }  
+  })
+
+  const roomActiveMode = 
+    activeMod.length === 0 ? currentRoom.toLowerCase() : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
+  const roomImage1 = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode.toLowerCase())[0];
+  const roomImage = room.image ? room.image : roomImage1;
+  // console.log('roomImage', roomImage)
 
   return (
     <section className={`${styles.summary__room} finalRoom` }>

@@ -167,6 +167,10 @@
       svg {
         fill: $color__bright;
       }
+
+      &:not(.collapsed) {
+        pointer-events: none;
+      }
     }
 
     &.disable {

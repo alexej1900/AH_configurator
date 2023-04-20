@@ -29,10 +29,10 @@ export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
-  
+  // console.log('roomName', roomName)
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);
-  
+
   const { data, loading, error } = useQuery(RoomData(currentRoom.toLowerCase()));
   if (loading) return <LoadingSpinner/>
   if(error) return <p>Error, please read the console. {console.log(error)}</p>
@@ -106,7 +106,7 @@ export default function FinalRoom({ roomName, style }) {
       <div className={`${styles.summary__room_title} center`}>{roomName}</div>
 
       <div className={`${styles.summary__room_image}`}>
-        <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>
+        {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
       </div> 
           
       <div className={`${styles.summary__room_data}`}>

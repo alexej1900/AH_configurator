@@ -119,7 +119,9 @@ export default function ShareForm({ onCancel }) {
               changeFn={changeFormData} 
             />
 
-            <div className={`${styles.form_buttons} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`}>
+            <div className={`${styles.form_buttons} ${(!checkObjIsEmpty(errors) || formValue.email === '') && styles.button__disabled}`} 
+                  onClick={onCancel}
+            >
               <Button 
                 title="Senden" 
                 href={`mailto:${formValue.email}?subject=Meine Appenzeller Huus Konfiguration&body=Hallo, ${formValue.name}! %0A%0a${formValue.text}`}

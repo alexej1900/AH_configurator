@@ -18,7 +18,7 @@ export default function InputComponent({ type, inputName, valueName, placeholder
             onChange={ (e) => changeFn({[valueName]: e.target.value}) } 
             className={ `${isInputFocused && errors && styles.input__error}` }
           />
-          <span class={`${styles.input__label} ${isInputFocused && styles.input__label_focus}`}>{placeholder}</span>
+          <span className={`${styles.input__label} ${isInputFocused && styles.input__label_focus}`}>{placeholder}</span>
          { value ? <div className={ `${styles.input__clean}` } onClick={() => {changeFn({[valueName]: ''}); setIsInputFocused(false)}}>
             <IconComponent name="close" color="#fff"/>
           </div> : null}

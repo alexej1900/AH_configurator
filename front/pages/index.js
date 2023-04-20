@@ -56,7 +56,7 @@ export default function Home() {
   if(error) return <p> Error</p>;
   
   const aparmentData = data.entry.dataList[0];
-
+console.log(aparmentData)
   let apartmentImage = apartSize.image === '' ? aparmentData?.apartmentImage[0] : apartSize.image;
 
   const onCancel = () => {
@@ -78,21 +78,16 @@ export default function Home() {
         
         <div className={styles.welcome__inner}>
           <div className={styles.welcome__inner_header}>
+            <div className={styles.welcome__inner_header_subtitle}> Haus: {aparmentData.buildingsName}, {aparmentData.apartmentId}</div>
             <h1 className={`${styles.welcome__inner_header_title}`}>Stellen Sie Ihr ganz persönliches Eigenheim zusammen</h1>
             <p className={styles.welcome__inner_header_description}>Im Folgenden können Sie die einzelnen Räume Ihres zukünftigen Eigenheimes ganz nach Ihren Wünschen gestalten.</p>
           </div>
 
-          <div className={`${styles.submitBtn}`} 
-              onClick={() => dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))}
-            >              
-              <Button title="Zum Konfigurator"  href={"/wohnzimmer"} type="primary" iconName="entry" iconColor="#fff"/>
-            </div>
-
           <div className={`${styles.planImage}`}>
             <Image 
               src={apartmentImage.url} 
-              // width={apartmentImage.width} 
-              // height={apartmentImage.height} 
+              width={apartmentImage.width} 
+              height={apartmentImage.height} 
               layout='fill'
               object-fit='contain'
               priority 
@@ -103,6 +98,11 @@ export default function Home() {
           </div>
 
         </div>
+        <div className={`${styles.submitBtn}`} 
+            onClick={() => dispatch(changeApartData(aparmentData, apartmentImage, aparmentData.basePrice))}
+          >              
+            <Button title="Zum Konfigurator"  href={"/wohnzimmer"} type="primary" iconName="entry" iconColor="#fff"/>
+          </div>
         <div className={`${styles.btn__getContacts}`} onClick={() => setIsPopup(true)}>
             <ContactBtn/>
         </div>

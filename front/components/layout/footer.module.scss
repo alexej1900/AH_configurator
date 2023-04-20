@@ -57,26 +57,26 @@
         margin-bottom: 3.2rem;
       }
 
-      &_logo {
-        margin-bottom: 3.2rem;
-      }
+      // &_logo {
+      //   margin-bottom: 3.2rem;
+      // }
 
-      &_social{
-        @include flex-center-center;
-        width: 24rem;
+      // &_social{
+      //   @include flex-center-center;
+      //   width: 24rem;
 
-        @media (max-width: $screen-lg) {
-          width: 100%;
-        }
+      //   @media (max-width: $screen-lg) {
+      //     width: 100%;
+      //   }
 
-        a {
-          margin: 0 .8rem;
+      //   a {
+      //     margin: 0 .8rem;
 
-          svg {
-            @include squareSize(3.2rem);
-          }
-        }
-      }
+      //     svg {
+      //       @include squareSize(3.2rem);
+      //     }
+      //   }
+      // }
     }
 
     &_contacts {

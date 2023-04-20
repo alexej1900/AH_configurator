@@ -19,18 +19,18 @@ export default function Footer() {
 
         <div className={styles.footer__content}>
           <div className={styles.footer__content_links}>
-            <a href="#" target='_blank'>
+            {/* <a href="#" target='_blank'> */}
               <img className={styles.footer__content_links_logo} src='./AHLogo.svg' alt="summary" />
-            </a>
+            {/* </a> */}
             
-            <div className={styles.footer__content_links_social}>
+            {/* <div className={styles.footer__content_links_social}>
               <a href="#" target='_blank'>
                 <IconComponent name="fb" color="#000"/>
               </a>
               <a href="#" target='_blank'>
                 <IconComponent name="insta" color="#000"/>
               </a>
-            </div>
+            </div> */}
           </div>
 
           <div className={styles.footer__content_contacts}>

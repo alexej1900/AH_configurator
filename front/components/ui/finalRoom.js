@@ -192,7 +192,7 @@ export default function FinalRoom({ roomName, style }) {
 
       {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
         <div className={`${styles.summary__room_title} center`}>ZUSÄTZLICHE EINBAUSCHRÄNKE IN WEITEREN RÄUMEN</div>}
       
       { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }

@@ -87,6 +87,7 @@ query MyQuery($id: [String], $var: [String]) {
           additionalClosetPrice
           additionRoomCloset
           additionCorridorCloset
+          ankleideschrank
           bath1FurniturePrice
           bath1Lavabo2Price
           bath1MirrorClosetPrice
@@ -153,6 +154,7 @@ query MyQuery($id: [String], $var: [String]) {
           gangschrank2
           weiterzimmerschrank
           weiterzimmerschrank2
+          wohnenschrank
           flurschrank
           flurschrank2
         }

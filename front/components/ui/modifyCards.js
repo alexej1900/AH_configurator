@@ -26,7 +26,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
 
   const visibleData = dataByStyle?.filter((data) => data.modificationVisibility && apartSize[data.modificationIndex]);
   const nonVisibleData = dataByStyle?.filter((data) => !data.modificationVisibility && apartSize[data.modificationIndex]);
-  
+
   useEffect(() => {
     visibleData.length === 0 && setIsActiveModVisible(false);
   }, []);
@@ -35,9 +35,6 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
     (visibleData.length - 1) < activeMod && setActiveMod(0);
     dispatch(changeActivePin(visibleData[0]?.modificationName));
   }, [roomType]);
-
-  // console.log('visibleData', visibleData)
-  // console.log('apartSize', apartSize)
 
   return (
     <>

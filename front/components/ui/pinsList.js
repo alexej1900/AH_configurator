@@ -5,15 +5,15 @@ import Pin from './pin';
 import styles from './pin.module.scss';
 
 export default function PinsList ({ data, roomState, pinClickHandler }) {
-  const { generalStates } = useSelector((state) => state);
-
+  const { generalStates, apartSize } = useSelector((state) => state);
+  
   return (
     <div className={styles.pins} id='pinList'>
       {data.map((item, index) => {
 
         const checked = (roomState?.modifications && roomState?.modifications[item.modificationName]) ? true : false;
 
-        if (item.modificationPin.length > 0) {
+        if (item.modificationPin.length > 0 && apartSize[item.modificationIndex]) {
           return (
             <Pin 
               key={index} 

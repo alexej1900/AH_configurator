@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
@@ -47,12 +47,8 @@ export default function PdfPage ({image}) {
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
           <Image
-            style={styles.logoName}
-            src={'./AH_Logo.png'}
-          />
-          <Image
             style={styles.logo}
-            src={'./big__logo.png'}
+            src={'./AHLogo.svg'}
           />
         </View>
         

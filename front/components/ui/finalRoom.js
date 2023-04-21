@@ -63,6 +63,44 @@ export default function FinalRoom({ roomName, style }) {
   }
 
   const allOptions = dataByStyle
+    .filter((data) => apartSize[data.modificationIndex])
+    .map((item) => {
+    if(room?.modifications && room?.modifications[item.modificationName]) {
+      return [item.modificationName, room.modifications[item.modificationName]]
+    } else {
+      const card = {
+        modGroupTitle : '', 
+        featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
+        styleTitle : item.modificationItemExample[0].modificationStyle, 
+        subtitle : item.modificationItemExample[0].modificationTitle, 
+        description : item.modificationItemExample[0].modificationDescr,
+        additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
+      }
+      
+      return [item.modificationName, card]
+    }
+  })
+
+  const SleepRoomNonVisibleOptions = roomName === "Schlafzimmer" && dataByStyle
+    .filter((data) => !data.modificationVisibility && apartSize[data.modificationIndex])
+    .map((item) => {
+    if(room?.modifications && room?.modifications[item.modificationName]) {
+      return [item.modificationName, room.modifications[item.modificationName]]
+    } else {
+      const card = {
+        modGroupTitle : '', 
+        featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
+        styleTitle : item.modificationItemExample[0].modificationStyle, 
+        subtitle : item.modificationItemExample[0].modificationTitle, 
+        description : item.modificationItemExample[0].modificationDescr,
+        additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
+      }
+      
+      return [item.modificationName, card]
+    }
+  })
+
+  const SleepRoomVisibleOptions = roomName === "Schlafzimmer" && dataByStyle
     .filter((data) => data.modificationVisibility && apartSize[data.modificationIndex])
     .map((item) => {
     if(room?.modifications && room?.modifications[item.modificationName]) {
@@ -95,11 +133,52 @@ export default function FinalRoom({ roomName, style }) {
       }  
   })
 
+  const showOptionList = (list) => {
+    return (
+      <div className={`${styles.summary__room_data}`}> 
+        {list.map((data, index) => {
+
+            const {modGroupTitle, featuredImage, styleTitle, subtitle, description, additionalPrice} = data[1];
+            // console.log('data[1]', data[1])
+            if (!checkObjIsEmpty(data[1])) 
+              return (
+                <div key={index} className={`${data[1].option ? styles.fullLine : styles.halfLine}`}>
+
+                  <div className={`${data[1].option ? styles.halfLine : ''}`}>
+                    <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
+                    <div className={`${styles.summary__room_card_wrapper}`}>
+                      <Link href={`/${currentRoom.toLowerCase()}`} >
+                        <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
+                          <IconComponent name="edit" color="#000"/>
+                        </a>		
+                      </Link>
+                      
+                      <Card 
+                        title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
+                        subtitle={data[1].individualFormat ? "" :  subtitle} 
+                        description={data[1].individualFormat ? "" : description}
+                        additionalPrice={data[1].individualFormat ? "" : additionalPrice}
+                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
+                        type="small" 
+                        final={true}
+                        selectCard={() => null} 
+                      />
+                    </div>
+                  </div>
+                </div>	
+              )
+          })
+        }
+      </div> 
+    )
+  }     
+
   const roomActiveMode = 
     activeMod.length === 0 ? currentRoom.toLowerCase() : (currentRoom + ' ' +  activeMod.slice(0, -1)).toLowerCase();
   const roomImage1 = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode.toLowerCase())[0];
   const roomImage = room.image ? room.image : roomImage1;
-  // console.log('roomImage', roomImage)
+  // console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
+  // console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
 
   return (
     <section className={`${styles.summary__room} finalRoom` }>
@@ -109,56 +188,14 @@ export default function FinalRoom({ roomName, style }) {
         {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
       </div> 
           
-      <div className={`${styles.summary__room_data}`}>
-        {allOptions.map((data, index)=> {
+      {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 
-          const {modGroupTitle, featuredImage, styleTitle, subtitle, description, additionalPrice} = data[1];
-          // console.log('data[1]', data[1])
-          if (!checkObjIsEmpty(data[1])) 
-            return (
-              <div key={index} className={`${data[1].option ? styles.fullLine : styles.halfLine}`}>
+      {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-                <div className={`${data[1].option ? styles.halfLine : ''}`}>
-                  <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
-                  <div className={`${styles.summary__room_card_wrapper}`}>
-                    <Link href={`/${currentRoom.toLowerCase()}`} >
-                      <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
-                        <IconComponent name="edit" color="#000"/>
-                      </a>		
-                    </Link>
-                    
-                    <Card 
-                      title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
-                      subtitle={data[1].individualFormat ? "" :  subtitle} 
-                      description={data[1].individualFormat ? "" : description}
-                      additionalPrice={data[1].individualFormat ? "" : additionalPrice}
-                      image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
-                      type="small" 
-                      final={true}
-                      selectCard={() => null} 
-                    />
-                  </div>
-                </div>
-
-                {data[1].option && 
-                  <div className={`${styles.halfLine}`}>
-                    <h5 className={`${styles.summary__room_data_title}`}>Format</h5>
-                    <OptionItem 
-                      activeOption={0}
-                      index={0} 
-                      final={true}
-                      data={{
-                        optionsTitle: data[1].option.title, 
-                        optionsSubtitle: data[1].option.subtitle, 
-                        optionsPrice: data[1].option.price
-                      }} 
-                    />
-                  </div>
-                }
-              </div>	
-            )
-        })}
-      </div> 
+      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+        <div className={`${styles.summary__room_title} center`}>ZUSÄTZLICHE EINBAUSCHRÄNKE IN WEITEREN RÄUMEN</div>}
+      
+      { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }
     </section>
   )
 }

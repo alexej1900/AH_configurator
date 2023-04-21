@@ -55,7 +55,7 @@ export default function Header () {
         </a>
 
         <div className={style.header__buttons}>
-          {/* {pathname !== '/' &&
+          {/* {pathname !== '/' && pathname !== '/summary' &&
             <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
               <a className={`${style.header__buttons_virtual}`} title="To the virtual tour" target="_blank">
                 <IconComponent name="virtual" color="#3C6589"/>
@@ -63,9 +63,11 @@ export default function Header () {
             </Link> 
           }  */}
 
-          <div className={style.header__buttons_open} onClick={() => closeMenuHandler()}>
-            <IconComponent name={menu ? "close" : "hamburger"} color="#3C6589"/>
-          </div>
+          {pathname !== '/' && 
+            <div className={style.header__buttons_open} onClick={() => closeMenuHandler()}>
+              <IconComponent name={menu ? "close" : "hamburger"} color="#3C6589"/>
+            </div>
+          }
         </div>
       </div>
         <div className={`${style.header__menu} ${menu && style.header__menu_open}`} id='menuBlock' onScroll={checkSize}>

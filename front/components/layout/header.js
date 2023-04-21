@@ -55,13 +55,20 @@ export default function Header () {
         </a>
 
         <div className={style.header__buttons}>
-          {/* {pathname !== '/' && pathname !== '/summary' &&
-            <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
+          {pathname !== '/' && pathname !== '/summary' && !menu &&
+            <Link href='/summary'>
+              <a className={`${style.header__buttons_virtual}`} onClick={() => dispatch(changeMenuState(false))} title="To the summary page">
+                <IconComponent name="summary" color="#3C6589"/>
+                <span className={`${style.header__menu_button_descr}`}>Fertigstellen</span>
+              </a>
+            </Link> 
+          } 
+
+            {/* <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
               <a className={`${style.header__buttons_virtual}`} title="To the virtual tour" target="_blank">
                 <IconComponent name="virtual" color="#3C6589"/>
               </a>
-            </Link> 
-          }  */}
+            </Link>  */}
 
           {pathname !== '/' && 
             <div className={style.header__buttons_open} onClick={() => closeMenuHandler()}>

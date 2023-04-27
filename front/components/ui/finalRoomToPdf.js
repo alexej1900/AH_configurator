@@ -1,17 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import getModifications from '../../pages/api/getModifications';
 import getImages from '../../pages/api/getImages';
-
-import { 
-  changeSidebarState, 
-  setSummaryVisibility, 
-  changeRoomVisibility, 
-  changeActivePin, 
-  changeActiveMod 
-} from '../../redux/actions/index';
+import { changePdfLoadingState} from '../../redux/actions/index';
 
 import { useQuery } from '@apollo/client';
 import { RoomData } from '../../gql/index';
@@ -19,19 +12,21 @@ import { RoomData } from '../../gql/index';
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 
 import Card from './card';
-import OptionItem from './atoms/optionItem';
 import LoadingSpinner from './atoms/loadingSpinner';
-import IconComponent from './atoms/iconComponent';
 
-import styles from './finalRoom.module.scss';
+import styles from './pdfPage.module.scss';
 
-export default function FinalRoom({ roomName, style }) {
-  const dispatch = useDispatch();
+export default function FinalRoomToPdf({ roomName, style }) {
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
-  // console.log('roomName', roomName)
+  const dispatch = useDispatch();
+  
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);
+
+  // useEffect(() => {
+  //   dispatch(changePdfLoadingState(false));
+  // },[])
 
   const { data, loading, error } = useQuery(RoomData(currentRoom.toLowerCase()));
   if (loading) return <LoadingSpinner/>
@@ -46,21 +41,6 @@ export default function FinalRoom({ roomName, style }) {
   const room = roomType[`${roomName.toLowerCase()}`] 
     ? roomType[`${roomName.toLowerCase()}`] 
     : {image: data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0]}
-    // console.log('room', room)
-    // if we have main styles decomment 3 lines below and delete 3 lines abowe ==============
-    // : {image: data.entry.roomStyles[0].roomStyleExamples.filter(item => {
-    //   return item.styleName.toLowerCase() === style.toLowerCase()
-    // })[0].styleDefaultImage[0]};
-
-  // const roomImage = room.image ? room.image : data.entry.roomStyles[0].roomStyleExamples[0].styleDefaultImage[0];
-
-  const editClickHandler = (modName) => {
-    dispatch(changeSidebarState(true));
-    dispatch(changeRoomVisibility(false));
-    dispatch(setSummaryVisibility(true));
-    dispatch(changeActivePin(modName));
-    dispatch(changeActiveMod(modName));
-  }
 
   const allOptions = dataByStyle
     .filter((data) => apartSize[data.modificationIndex])
@@ -114,7 +94,6 @@ export default function FinalRoom({ roomName, style }) {
         description : item.modificationItemExample[0].modificationDescr,
         additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
       }
-      
       return [item.modificationName, card]
     }
   })
@@ -139,7 +118,6 @@ export default function FinalRoom({ roomName, style }) {
         {list.map((data, index) => {
 
             const {modGroupTitle, featuredImage, styleTitle, subtitle, description, additionalPrice} = data[1];
-            // console.log('data[1]', data[1])
             if (!checkObjIsEmpty(data[1])) 
               return (
                 <div key={index} className={`${data[1].option ? styles.fullLine : styles.halfLine}`}>
@@ -147,12 +125,6 @@ export default function FinalRoom({ roomName, style }) {
                   <div className={`${data[1].option ? styles.halfLine : ''}`}>
                     <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
                     <div className={`${styles.summary__room_card_wrapper}`}>
-                      <Link href={`/${currentRoom.toLowerCase()}`} >
-                        <a className={`${styles.summary__room_edit_icon}`} onClick={() => editClickHandler(data[0])}>
-                          <IconComponent name="edit" color="#000"/>
-                        </a>		
-                      </Link>
-                      
                       <Card 
                         title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
                         subtitle={data[1].individualFormat ? "" :  subtitle} 
@@ -181,12 +153,19 @@ export default function FinalRoom({ roomName, style }) {
   // console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
 
   return (
-    <section className={`${styles.summary__room} ` }>
-      <div className={`${styles.summary__room_title} center`}>{roomName}</div>
-
+    <section className={`${styles.summary__room} finalRoom` }>
       <div className={`${styles.summary__room_image}`}>
-        {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
+        {roomImage?.url && <Image 
+          classes="ofi" 
+          src={roomImage.url} 
+          layout="fill" 
+          priority="true" 
+          alt="Room Image"
+          // onLoadingComplete={() => dispatch(changePdfLoadingState(true))}
+        />}
       </div> 
+
+      <div className={`${styles.summary__room_title} center`}>{roomName}</div>
           
       {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 

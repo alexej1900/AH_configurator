@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { useSelector } from 'react-redux';
+
 import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
-import madeShortUrl from '../../utils/madeShortUrl';
+
 import validateForm from '../../utils/validateForm';
 
 import IconComponent from './atoms/iconComponent';
@@ -20,13 +22,9 @@ export default function ShareForm({ onCancel }) {
     });
   const [formFilled, setFormFilled] = useState(false);
   const [errors, setErrors] = useState(false);
-  const [link, setLink] = useState('');
   const [showCopyLinkSuccess, setShowCopyLinkSuccess] = useState(false);
 
-  useEffect(async () => {
-    const shortURl = await madeShortUrl(window.location.href);
-    setLink(shortURl);
-  }, []);
+  const { link } = useSelector(state => state.generalStates);
 
   useEffect(() => {
     validateForm(formValue, setErrors, formFilled)

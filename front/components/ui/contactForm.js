@@ -40,7 +40,6 @@ export default function ContactForm({ onCancel }) {
     !formFilled && setFormFilled(true); 
     setFormValue({...formValue, ...data});
   }
-  console.log(errors)
 
   const submitContactForm = async(ev) => {
     ev.preventDefault();

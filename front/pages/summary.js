@@ -1,17 +1,19 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Image from 'next/image';
 import { useQuery } from '@apollo/client';
 import { mainSettings } from '../gql/index';
 
-import { changeSidebarState, setInitialState } from '../redux/actions/index';
+import { changeSidebarState, setInitialState, setLink } from '../redux/actions/index';
 
+import madeShortUrl from '../utils/madeShortUrl';
 import { formatNumber } from './../utils/utilities';
 import setVariables from './../utils/setVariables';
 import getSettings from './api/getSettings';
 import getPrices from './api/getPrices';
+import PdfPageNew from '../components/ui/pdfPageNew';
 
 import FinalRoom from '../components/ui/finalRoom';
 import FinalFormNew from '../components/ui/finalFormNew';
@@ -22,6 +24,7 @@ import generalStates from '../redux/reducers/general';
 
 export default function Summary () {
 	const dispatch = useDispatch();
+	const [trigger, setTrigger] = useState(0);
 
 	// If we recived link with state from another user
 	if (window.location.hash) {
@@ -71,10 +74,25 @@ export default function Summary () {
     return () => dispatch(changeSidebarState(true));
   }, []);
 
+	useEffect(async () => {
+    const shortURl = await madeShortUrl(window.location.href);
+    dispatch(setLink(shortURl));
+  }, []);
+
+	const savePdfClick = () => {
+		setTrigger(1);
+		setTimeout(() => {
+			setTrigger(0);
+		}, 500)
+	}
+
 // console.log('apartSize', apartSize)
   return (
 		<>
 			<div className={styles.summary} id="summary">
+			<div className={`${styles.pdfData}`}>
+				<PdfPageNew trigger={trigger}/>
+			</div>
 
 				{apartStyle.image && 
 					<div className={`${styles.container} ${styles.mainImage}`} id="mainImage">
@@ -82,7 +100,7 @@ export default function Summary () {
 					</div>
 				} 
 
-				<div className={`${styles.container}`}>
+				<div className={`${styles.container} `}>
 					<section className={`${styles.summary__overview}`} id="overview">
 						<h1 className={`${styles.title} center`}> Ihre Wohnung</h1>
 
@@ -148,9 +166,11 @@ export default function Summary () {
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				<FinalFormNew rooms={roomType} isometry={apartSize.image.url} roomId={apartSize.apartmentId}/> 
+				<FinalFormNew rooms={roomType} isometry={apartSize.image.url} roomId={apartSize.apartmentId} savePdf={savePdfClick}/> 
 			</div>
 			<Footer/>
+
+			
 		</>
   )
 }

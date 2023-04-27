@@ -2,6 +2,7 @@ const initState = {
     open: true, 
     menu: false, 
     loading: false,
+    pdfLoading: false,
     logo: '',
     headerImage: false,
     headerBg: false,
@@ -12,6 +13,7 @@ const initState = {
     isStylePageExist: false,
     roomsTitle: [],
     roomsSlug: [],
+    link: '',
 }
 
 const generalStates = (state = initState, action) => {
@@ -22,6 +24,8 @@ const generalStates = (state = initState, action) => {
             return state = {...state, menu: action.menuState}
         case 'TOGGLE_LOADING': 
             return state = {...state, loading: action.loading}
+        case 'TOGGLE_PDFLOADING': 
+            return state = {...state, pdfLoading: action.pdfLoading}
         case 'TOGGLE_PIN': 
             return state = {...state, pin: action.pin}
         case 'TOGGLE_ACTIVE_MOD': 
@@ -38,6 +42,8 @@ const generalStates = (state = initState, action) => {
             return state = {...state, isStylePageExist: action.isStylePageExist}
         case 'SET_ROOMS': 
             return state = {...state, roomsTitle: action.roomsTitle, roomsSlug: action.roomsSlug,}
+        case 'SET_LINK': 
+            return state = {...state, link: action.link}
         case 'SET_INIT_STATE': 
             return state = {...action.generalStates}
         case 'RESET_STATE': 

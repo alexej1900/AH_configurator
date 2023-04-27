@@ -1,4 +1,5 @@
 import { Page, Text, Image, Svg, View, Document, StyleSheet } from '@react-pdf/renderer';
+// import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 // import { useSelector } from 'react-redux';
 
@@ -6,6 +7,10 @@ import { Page, Text, Image, Svg, View, Document, StyleSheet } from '@react-pdf/r
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
+    width: '210mm',
+    height: '297mm',
+    background: 'white',
+    padding: '32px',
     // padding: 20,
     // backgroundColor: '#E4E4E4'
   },
@@ -37,9 +42,9 @@ const styles = StyleSheet.create({
 // Create Document Component
 export default function PdfPage ({image}) {
   // const { apartStyle } = useSelector(state => state);
-
+  // const html = renderToStaticMarkup(component);
   console.log('image', image)
-
+  // const pdfExportComponent = React.useRef(null);
   // width={`${apartSize.image.width}`} height={`${apartSize.image.height}`}
 
   return (

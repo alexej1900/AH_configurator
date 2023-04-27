@@ -14,6 +14,13 @@ export const changeLoadingState = (loading) => {
   };
 };
 
+export const changePdfLoadingState = (pdfLoading) => {
+  return {
+    type: 'TOGGLE_PDFLOADING',
+    pdfLoading,
+  };
+};
+
 export const changeSidebarState = (action) => dispatch => {
 
   dispatch({
@@ -86,6 +93,14 @@ export const setRooms = (roomsTitle, roomsSlug) => dispatch => {
     type: 'SET_ROOMS',
     roomsTitle,
     roomsSlug
+  });
+};
+
+export const setLink = (link) => dispatch => {
+
+  dispatch({
+    type: 'SET_LINK',
+    link
   });
 };
 

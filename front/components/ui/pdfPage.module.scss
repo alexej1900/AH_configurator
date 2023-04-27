@@ -1,0 +1,200 @@
+@import '../../assets/scss/abstracts/variables';
+
+.summary {
+  width: 210mm;
+	position: relative;
+	top: 7.5rem;
+	margin-bottom: 14.5rem;
+  padding: 2.4rem;
+  border-right: 1px solid black;
+	
+	.container {
+		width: 100%;
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	.mainImage {
+		@include flex-center-center;
+	}
+
+	&__overview {
+		padding: 6.5rem 0 0 ;
+		width: 100%;
+    display: flex;
+
+		&_content {
+      padding-left: 1.6rem;
+      flex: 0 0 50%;
+		}
+
+		&_image {
+			flex: 0 0 50%;
+      padding-right: 1.6rem;
+		}
+
+		.stats {
+     width: 100%;
+		}
+
+		&_line {
+			padding: 0;
+			border-bottom: 1px solid var(--color__secondary);  
+			@include font(1.6rem, 400, 135%);
+
+			&_heighlite {
+				text-transform: uppercase;
+				font-weight: 600;
+				background-color: var(--color__secondary_20);
+			}
+		}
+
+		& div:last-child {
+			text-align: right;
+		}
+	}
+
+	.title {
+		margin-bottom: 32px;
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid black;
+	}
+
+  .subtitle {
+    font-size: 1.6rem;
+    text-align: left;
+    padding-bottom: 1.6rem;
+
+    &__uppercase {
+     text-transform: uppercase;
+    }
+
+    &__bold {
+      font-weight: 900;
+    }
+  }
+
+	.notice {
+		width: 100%;
+		text-align: center;
+		padding: 2.4rem;
+	}
+
+  &__room {
+		width: 100%;
+    padding-bottom: 6.4rem;
+
+		&_title {
+			margin: 4rem auto 2rem;
+			@include roomTitle;
+      font-weight: 900;
+			text-transform: uppercase;
+      text-align: left;
+		}
+
+		&_image {
+			position: relative;
+			width: 100% !important;
+			height: auto !important;
+
+			span {
+				position: relative !important;
+				width: 100% !important;
+			}
+
+			img {
+				top: 0 !important;
+				position: relative !important;
+				width: 100% !important;
+				height: auto !important;
+			}
+		}
+
+		&_data {
+			display: flex;
+      flex-wrap: wrap;
+			width: 100%;
+      gap: 2%;
+
+			.fullLine {
+				width: 100%;
+				display: flex;
+
+				@media (max-width: 1000px) {
+					margin: 0 auto;
+					max-width: 36rem;
+				}
+			}
+
+			.halfLine {
+				flex: 0 0 49%;
+			}
+
+			&_title {
+				@include optionGroupTitle;
+				margin: 1.6rem 0 1.2rem;
+        text-transform: uppercase;
+			}
+		}
+
+		&_card_wrapper {
+			position: relative;
+		}
+
+		&_edit_icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+			@include squareSize(4.4rem);
+			z-index: 10;
+
+			svg {
+				@include squareSize(4.4rem);
+			}
+		}	
+	}
+
+  .links {
+
+    &__title {
+
+      @include roomTitle;
+      text-transform: uppercase;
+      text-align: left;
+      width: 34rem;
+      margin-bottom: 6rem;
+
+      & span {
+        font-weight: 900;
+        display: block;
+      }
+    }
+
+    &__subtitle {
+      @include optionGroupTitle;
+      margin-bottom: 3rem;
+    }
+
+    &__link {
+
+      &_wrapper {
+        display: flex;
+        margin-bottom: 1rem;
+      }
+
+      &_title {
+        width: 20rem;
+      }
+    }
+  }
+  .website__link {
+    font-weight: 900;
+    width: 100%;
+  }
+
+  .contacts {
+    width: 60%;
+  }
+}

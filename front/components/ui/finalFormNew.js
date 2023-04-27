@@ -3,34 +3,26 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetState } from '../../redux/actions';
 
-import ReactPDF, { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
-
 import { useRouter } from 'next/router';
 
 import ConfirmationForm from './atoms/confirmationForm';
-import IconComponent from './atoms/iconComponent';
 import FinalFormButton from './atoms/finalFormButton';
 import Button from './atoms/button';
 import ContactForm from './contactForm';
 import ShareForm from './shareForm';
-import PdfPage from './pdfPage';
 
 import styles from './finalFormNew.module.scss';
 
-export default function FinalFormNew({isometry, roomId}) {
+export default function FinalFormNew({savePdf, roomId}) {
 
   const [isPopup, setIsPopup] = useState(false);
   const [isContactFormVisible, setIsContactFormVisible] = useState(false);
   const [isShareFormVisible, setIsShareFormVisible] = useState(false);
 
-  const { apartSize } = useSelector(state => state);
-
-  // console.log('apartStyle.image.url', apartSize.image.url)
+  const { generalStates } = useSelector(state => state);
 
   const router = useRouter();
   const dispatch = useDispatch();
-
-  const showPopup = () => setIsPopup(true);
 
   const showContactForm = () => setIsContactFormVisible(true);
   const showShareForm = () => setIsShareFormVisible(true);
@@ -49,11 +41,7 @@ export default function FinalFormNew({isometry, roomId}) {
       router.push(`/?id=${roomId}`);
      }, 500);
   }
-
-  const savePdf = () => {
-    ReactPDF.render(<PdfPage />, `example.pdf`)
-  }
-
+// console.log('generalStates.pdfLoading', generalStates.pdfLoading)
   return (
     <>
       <section className={`${styles.finalForm}`}>
@@ -65,19 +53,10 @@ export default function FinalFormNew({isometry, roomId}) {
         </div>
 
         <div className={`${styles.finalForm__buttons}`}>
-
-          <PDFDownloadLink document={<PdfPage image={isometry}/>} fileName="somename.pdf">
-            {({ blob, url, loading, error }) =>
-              <FinalFormButton title={ loading ? "Loading document..." : "PDF herunterladen"} iconName="download" iconColor="#3C6589"/>
-            }
-          </PDFDownloadLink>
-          {/* <FinalFormButton title={"PDF herunterladen"} iconName="download" iconColor="#3C6589" clickFn={savePdf}/> */}
+          <FinalFormButton title={ generalStates.pdfLoading ? "Loading document..." : "PDF herunterladen"} iconName="download" iconColor="#3C6589" clickFn={() => !generalStates.pdfLoading && savePdf()}/>
           <FinalFormButton title="Konfiguration teilen" iconName="share" iconColor="#3C6589" clickFn={showShareForm}/>
           <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
         </div>
-        {/* <PDFViewer>
-          <PdfPage image={isometry}/>
-        </PDFViewer> */}
       </section>
 
       <div className={`${styles.finalForm__reset}`}>

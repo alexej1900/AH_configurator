@@ -57,7 +57,7 @@ export default function Home() {
   
   const aparmentData = data.entry.dataList[0];
 console.log(aparmentData)
-  let apartmentImage = apartSize.image === '' ? aparmentData?.apartmentImage[0] : apartSize.image;
+  let apartmentImage = aparmentData?.apartmentImage[0];
 
   const onCancel = () => {
     setIsPopup(false);

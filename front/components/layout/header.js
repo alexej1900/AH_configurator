@@ -50,10 +50,9 @@ export default function Header () {
   return (
     <header className={[style.header, open & pathname !== '/' && style.compressed, (pathname === '/'|| pathname === '/summary') && style.shifted, menu && style.background].join(' ')}>
       <div className={style.header__wrapper}>
-        <a href={`/?id=${apartSize.apartmentId}`}>
+        <a href={pathname !== '/' ? `/?id=${apartSize.apartmentId}` : null}>
           <img className={style.logo} src={'./AH_Header_Logo.svg'} alt="Logo"/>
         </a>
-
         <div className={style.header__buttons}>
           {pathname !== '/' && pathname !== '/summary' && !menu &&
             <Link href='/summary'>

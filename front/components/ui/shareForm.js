@@ -50,7 +50,7 @@ export default function ShareForm({ onCancel }) {
         }, 3500);
     });
   }
-// console.log('checkObjIsEmpty(errors)', checkObjIsEmpty(errors))
+
   return (
     <section className={`${styles.contactForm}`}>
       <div className={styles.contactForm__block}>
@@ -86,7 +86,7 @@ export default function ShareForm({ onCancel }) {
           <div className={styles.contactForm__content_right}>
 
           <form className={styles.form}> 
-            <h4 className={styles.contactForm__content_title}>PDF an weitere Personen versenden</h4> 
+            <h4 className={styles.contactForm__content_title}>Link an weitere Personen versenden</h4> 
 
             <InputComponent
               type="text" 
@@ -122,7 +122,7 @@ export default function ShareForm({ onCancel }) {
             >
               <Button 
                 title="Senden" 
-                href={`mailto:${formValue.email}?subject=Meine Appenzeller Huus Konfiguration&body=Hallo, ${formValue.name}! %0A%0a${formValue.text}`}
+                href={`mailto:${formValue.email}?subject=Meine Appenzeller Huus Konfiguration&body=Hallo, ${formValue.name}! %0A%0aDas ist Link zu meine Konfiguration:%0A%0a${link}%0A%0a${formValue.text}`}
                 type="primary" />
             </div>
           </form>

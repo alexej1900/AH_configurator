@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import QRCode from "react-qr-code";
 
 import Image from 'next/image';
-import { changePdfLoadingState} from '../../redux/actions/index';
+import { changePdfLoadingState } from '../../redux/actions/index';
 
 import { formatNumber } from './../../utils/utilities';
 import getPrices from '../../pages/api/getPrices';

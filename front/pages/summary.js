@@ -86,7 +86,7 @@ export default function Summary () {
 		}, 500)
 	}
 
-// console.log('apartSize', apartSize)
+	// console.log('generalStates', generalStates)
   return (
 		<>
 			<div className={styles.summary} id="summary">
@@ -110,12 +110,12 @@ export default function Summary () {
 							</div>
 							<div className={`${styles.stats}`} id="stats">
 								<div className={`${styles.summary__overview_line} row`}>
-									<div className="col-8">Wohnung</div>
-									<div className="col-4">{apartSize.apartmentId}</div>
-								</div>
-								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Haus</div>
 									<div className="col-4">{apartSize.buildingsName}</div>
+								</div>
+								<div className={`${styles.summary__overview_line} row`}>
+									<div className="col-8">Wohnung</div>
+									<div className="col-4">{apartSize.apartmentId}</div>
 								</div>
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Etage</div>

@@ -56,7 +56,7 @@ export default function Header () {
         <div className={style.header__buttons}>
           {pathname !== '/' && pathname !== '/summary' && !menu &&
             <Link href='/summary'>
-              <a className={`${style.header__buttons_virtual}`} onClick={() => dispatch(changeMenuState(false))} title="To the summary page">
+              <a className={`${style.header__buttons_virtual}`} title="To the summary page">
                 <IconComponent name="summary" color="#3C6589"/>
                 <span className={`${style.header__menu_button_descr}`}>Fertigstellen</span>
               </a>

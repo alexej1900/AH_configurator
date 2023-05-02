@@ -38,7 +38,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 		nextLink = {link: `/küche${apartStyle.kitchenStyle + 1}`, title: `Linie ${apartStyle.kitchenStyle + 1}`}
 		prevLink = '/wohnzimmer';
 	} else if (currentRoom.slice(0, -1) === 'küche') {
-		nextLink = apartSize.roomsCount > 2.5 ? {link:  `/badezimmer`, title: `Badezimmer mit Badewanne`} : {link:  `/dusche`, title: `Badezimmer mit Dusche`}
+		nextLink = apartSize.badewanne ? {link:  `/badezimmer`, title: `Badezimmer mit Badewanne`} : {link:  `/dusche`, title: `Badezimmer mit Dusche`}
 		prevLink = '/kitchen-type';
 	} else {
 		for (let i = 0; i < roomsTitle.length; i++) {   
@@ -50,11 +50,14 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 
 				switch (currentRoom.toLowerCase()) {
 					case 'badezimmer':
-						nextLink = {link:  `/dusche`, title: `Badezimmer mit Dusche`}
+						nextLink = apartSize.dushe ? {link:  `/dusche`, title: `Badezimmer mit Dusche`} : {link:  `/schlafzimmer`, title: `Schlafzimmer`}
 						prevLink = `/kitchen-type`;
 						break;
 					case 'dusche':
-						prevLink = apartSize.roomsCount > 2.5 ? `/badezimmer` : `/kitchen-type`;
+						prevLink = apartSize.badewanne ? `/badezimmer` : `/kitchen-type`;
+						break;
+					case 'schlafzimmer':
+						prevLink = apartSize.dushe ? {link:  `/dusche`, title: `Badezimmer mit Dusche`} :{link:  `/badezimmer`, title: `Badezimmer mit Badewanne`};
 						break;
 					case 'wohnzimmer':
 						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}

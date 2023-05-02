@@ -17,25 +17,42 @@
 	}
 
 	&__overview {
-		padding: 6.5rem 0 0 ;
+		padding: 6.4rem 0 0 ;
 		width: 100%;
+
+		@media (max-width: $screen-xxl) {
+			padding: 2.4rem 0 0 ;
+		}
 
 		&_content {
 			@include flex-center-center;
 			flex-wrap: wrap;
 			width: 100%;
 			padding: 0 2.4rem;
+
+			@media (max-width: $screen-lg) {
+				flex-direction: column;
+			}
 		}
 
 		&_image {
 			flex: 1 1 50%;
 			max-width: 40rem;
-			margin: 2rem;
+
+			@media (max-width: $screen-lg) {
+				width: 100%;
+			}
 		}
 
 		.stats {
 			flex: 1 1 50%;
 			max-width: 40rem;
+
+			@media (max-width: $screen-lg) {
+				// flex: 0 0 100%;
+				width: 100%;
+				max-width: 80rem;
+			}
 		}
 
 		&_line {
@@ -53,16 +70,23 @@
 		& div:last-child {
 			text-align: right;
 		}
+
+		.notice {
+			width: 100%;
+			max-width: 80rem;
+			margin-top: 1.6rem;
+			// padding: 2.4rem 0;
+
+			p {
+				text-align: start;
+				@include font(1.6rem, 400, 135%);
+				margin-top: 1.6rem;
+			}
+		}
 	}
 
 	.title {
 		margin-bottom: 32px;
-	}
-
-	.notice {
-		width: 100%;
-		text-align: center;
-		padding: 2.4rem;
 	}
 }
 

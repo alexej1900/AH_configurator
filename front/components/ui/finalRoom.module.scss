@@ -6,11 +6,19 @@
 
 	&__room {
 		width: 100%;
+		margin-top: 4.8rem;
 
 		&_title {
-			margin: 6rem auto 2rem;
+			margin: 4.8rem 6.4rem 1.6rem;
 			@include roomTitle;
-			text-transform: capitalize;
+
+			@media (max-width: $screen-xl) {
+				margin: 4.8rem 4.8rem 1.6rem;
+			}
+
+			@media (max-width: $screen-lg) {
+				margin: 2.4rem;
+			}
 		}
 
 		&_image {
@@ -33,37 +41,55 @@
 
 		&_data {
 			display: flex;
+			// justify-content: center;
 			flex-wrap: wrap;
-			width: 100%;
+			gap: 2.4rem 3.2rem;
+			margin: 0 6.4rem;
 
-			@media (max-width: 1000px) {
+			@media (max-width: $screen-xl) {
+				margin: 0 4.8rem;
+			}
+
+			@media (max-width: $screen-lg) {
 				flex-direction: column;
+				margin: 0 2.4rem;
 			}
 
-			.fullLine {
-				width: 100%;
-				display: flex;
+			// .fullLine {
+			// 	width: 100%;
+			// 	display: flex;
 
-				@media (max-width: 1000px) {
-					flex-direction: column;
-					margin: 0 auto;
-					max-width: 36rem;
-				}
-			}
+			// 	@media (max-width: $screen-lg) {
+			// 		flex-direction: column;
+			// 		margin: 0 auto;
+			// 		max-width: 36rem;
+			// 	}
+
+			// 	@media (max-width: $screen-md) {
+			// 		max-width: 31.2rem;
+			// 	}
+			// }
 
 			.halfLine {
-				flex: 0 0 40%;
-				margin: 0 5%;
+				flex: 0 0 calc(32% - 1.6rem);
 
-				@media (max-width: 1000px) {
+				@media (max-width: $screen-xl) {
+					flex: 0 1 calc(50% - 1.6rem);
+				}
+				@media (max-width: $screen-lg) {
 					width: 100%;
 					margin: 0 auto;
 					max-width: 36rem;
 				}
+				// @media (max-width: $screen-md) {
+				// 	max-width: 31.2rem;
+				// 	margin: 0;
+				// }
 			}
 
 			&_title {
-				@include optionGroupTitle;
+				@include font(1.6rem, 500, 150%);
+				text-transform: uppercase;
 				margin: 1.6rem 0 1.2rem;
 			}
 		}

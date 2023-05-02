@@ -13,7 +13,11 @@
 }
 
 @mixin roomTitle {
-  @include font(2.1rem, 500, 120%);
+  @include font(2.4rem, 500, 140%);
+
+  @media (max-width: $screen-lg) {
+    @include font(2.1rem, 500, 120%);
+  }
 }
 
 @mixin sectionTitle {

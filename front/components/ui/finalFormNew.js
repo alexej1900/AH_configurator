@@ -60,6 +60,7 @@ export default function FinalFormNew({savePdf, roomId}) {
       </section>
 
       <div className={`${styles.finalForm__reset}`}>
+        <div className={`${styles.finalForm__reset_wrapper}`}>
           <h3 className={styles.finalForm__reset_title}>Spiels noch einmal Sam.</h3>
           <div className={styles.finalForm__reset_subtitle}>Probieren Sie gerne auch weitere Variationen ihrer Traumwohnung aus.</div>
           <p className={styles.finalForm__reset_description}>Ihre aktuelle Konfiguration im PDF und dem zur Verfügung gestellten “Share”-Link bleibt dabei erhalten.</p>
@@ -68,6 +69,7 @@ export default function FinalFormNew({savePdf, roomId}) {
             <Button title="Neue Konfiguration" type="secondary" iconName="entry" iconColor="#fff" clickFn={() => setIsPopup(true)}/>
           </div>
         </div>
+      </div>
 
       {isPopup && <ConfirmationForm
                       onCancel={onCancel} 

@@ -126,7 +126,7 @@
     
     .text__wrapper {
       width: 66%;
-      margin: 0.4rem;
+      margin: 0.8rem 0 0.8rem 1rem;
 
       svg {
         position: absolute;
@@ -137,15 +137,16 @@
 
       .card__title {
         display: block;
-        max-width: 90%;
+        max-width: calc(100% - 4.4rem);
         margin: 0 0 .6rem;
         @include optionTitle;
       }
 
       .card__description {
         @include flex-start-center;
-        margin-top: 4px;
+        margin: 0 0 .6rem;
         @include description;
+        max-width: calc(100% - 4.4rem);
 
         .card__index {
           margin-right: .4rem;
@@ -210,21 +211,23 @@
 
       background-color: var(--color__primary_10); 
       margin: 0;
+      padding: 0 0.4rem;
       height: 11rem;
       max-height: none;
 
       .image__wrapper {
         @include squareSize(11rem);
         margin: 0;
+        width: 12.5rem !important;
 
         span {
           height: 10rem !important;
-          width: 10rem !important;
+          width: 12.5rem !important;
         }
 
-        img {
-          height: 10rem !important;
-        }
+        // img {
+        //   height: 10rem !important;
+        // }
       }
     }
   }

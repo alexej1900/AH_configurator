@@ -48,15 +48,15 @@ export default function Summary () {
 	const rooms = [
     'Wohnzimmer', 
 		'Küche',
-		'Badezimmer', 
-    'Dusche', 
+		apartSize.badewanne && 'Badezimmer', 
+    apartSize.dusche && 'Dusche', 
     'Schlafzimmer', 
     // 'Gang'
-  ];
+  ].filter((room) => room !== null);
 
 	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
 
-	// console.log('roomType', roomType)
+	console.log('generalStates', generalStates)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
@@ -69,10 +69,10 @@ export default function Summary () {
     })
   }, [settings]);
 
-  useEffect(() => {
-    dispatch(changeSidebarState(false));
-    return () => dispatch(changeSidebarState(true));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(changeSidebarState(false));
+  //   return () => dispatch(changeSidebarState(true));
+  // }, []);
 
 	useEffect(async () => {
     const shortURl = await madeShortUrl(window.location.href);
@@ -153,13 +153,14 @@ export default function Summary () {
 									<div className="col-6">CHF {formatNumber(parseInt(price) + OptionsPrice - IndividualPrice)}</div>
 								</div> */}
 							</div>
+							<div className={`${styles.container} ${styles.notice}`}>
+								<p> Ihr individuelles Eigenheim wird mit folgenden Materialen für Sie erstellt. </p>
+								<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
+							</div>
 						</div>
-					</section>
-				</div>
 
-				<div className={`${styles.container} ${styles.notice}`}>
-						<p> Ihr individuelles Eigenheim wird mit folgenden Materialen für Sie erstellt. </p>
-						<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
+						
+					</section>
 				</div>
 
 				<div className={`${styles.container}`} id="finalRooms">

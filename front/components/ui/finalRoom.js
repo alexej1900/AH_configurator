@@ -142,7 +142,7 @@ export default function FinalRoom({ roomName, style }) {
             // console.log('data[1]', data[1])
             if (!checkObjIsEmpty(data[1])) 
               return (
-                <div key={index} className={`${data[1].option ? styles.fullLine : styles.halfLine}`}>
+                <div key={index} className={`${styles.halfLine}`}>
 
                   <div className={`${data[1].option ? styles.halfLine : ''}`}>
                     <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
@@ -182,18 +182,17 @@ export default function FinalRoom({ roomName, style }) {
 
   return (
     <section className={`${styles.summary__room} ` }>
-      <div className={`${styles.summary__room_title} center`}>{roomName}</div>
-
       <div className={`${styles.summary__room_image}`}>
         {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
       </div> 
+      <div className={`${styles.summary__room_title}`}>{roomName}</div>
           
       {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 
       {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
-        <div className={`${styles.summary__room_title} center`}>ZUSÄTZLICHE EINBAUSCHRÄNKE IN WEITEREN RÄUMEN</div>}
+      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+        <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
       
       { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }
     </section>

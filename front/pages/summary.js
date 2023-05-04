@@ -48,15 +48,16 @@ export default function Summary () {
 	const rooms = [
     'Wohnzimmer', 
 		'Küche',
-		apartSize.badewanne && 'Badezimmer', 
-    apartSize.dusche && 'Dusche', 
+		'Badezimmer', 
+    'Dusche', 
     'Schlafzimmer', 
     // 'Gang'
   ].filter((room) => room !== null);
 
-	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
+	if (!apartSize.badewanne) rooms.splice(2, 1);
+	if (!apartSize.dusche) rooms.splice(3, 1);
 
-	console.log('generalStates', generalStates)
+	// console.log('rooms11', rooms)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
@@ -90,9 +91,9 @@ export default function Summary () {
   return (
 		<>
 			<div className={styles.summary} id="summary">
-			<div className={`${styles.pdfData}`}>
-				<PdfPageNew trigger={trigger}/>
-			</div>
+				<div className={`${styles.pdfData}`}>
+					<PdfPageNew trigger={trigger}/>
+				</div>
 
 				{apartStyle.image && 
 					<div className={`${styles.container} ${styles.mainImage}`} id="mainImage">
@@ -108,7 +109,7 @@ export default function Summary () {
 							<div className={`${styles.summary__overview_image}`} id="apartmentImage">
 								<Image src={apartSize.image.url} width={`${apartSize.image.width}`} height={`${apartSize.image.height}`} alt="Isometry"/>
 							</div>
-							<div className={`${styles.stats}`} id="stats">
+							<div className={`${styles.stats}`} >
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Haus</div>
 									<div className="col-4">{apartSize.buildingsName}</div>
@@ -171,7 +172,7 @@ export default function Summary () {
 			</div>
 			<Footer/>
 
-			
+
 		</>
   )
 }

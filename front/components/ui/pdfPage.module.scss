@@ -107,8 +107,15 @@
 			img {
 				top: 0 !important;
 				position: relative !important;
-				width: 100% !important;
+				width: 100%;
 				height: auto !important;
+
+				@media only screen and (min--moz-device-pixel-ratio: 2),
+				only screen and (-o-min-device-pixel-ratio: 2/1),
+				only screen and (-webkit-min-device-pixel-ratio: 2),
+				only screen and (min-device-pixel-ratio: 2) {
+					width: 700px;
+				}
 			}
 		}
 

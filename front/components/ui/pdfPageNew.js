@@ -29,41 +29,49 @@ export default function PdfPageNew ({ trigger }) {
     // 'Gang'
   ];
 
-	if (apartSize.roomsCount <= 2.5) rooms.splice(3, 1);
+	if (!apartSize.badewanne) rooms.splice(2, 1);
+	if (!apartSize.dusche) rooms.splice(3, 1);
 
-	// console.log('roomType', roomType)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
 
-	const logoImage = document.getElementById('mainImage');
-	// console.log('logoImage', logoImage.style.display)
-	// logoImage.style.add()
-	const finalData = document.getElementsByClassName('finalData')[0];
-	const finalRooms = document.getElementsByClassName('finalRoom');
+	const logoImage = document.getElementById('logoImage');
+	const mainImage = document.getElementById('apartmentImage');
+	const finalData = document.getElementById('stats');
+	const finalRooms = rooms.map((room) => document.getElementById(room));
 	const qrCode = document.getElementById('qrCode');
-	// console.log('finalRooms', finalRooms)
-	// console.log('finalRooms', finalRooms)
+	// console.log(finalRooms)
 
 	useEffect(async() => {
 		if (trigger > 0) {
 			saveAsPdfHandler();
 		}
 	}, [trigger])
-
+	
 	const saveAsPdfHandler = async() => {
-    dispatch(changePdfLoadingState(true));
-    const pdfDOC = new jsPDF("p", "mm", "a4"); 
-		pdfDOC.setFontSize(12);
+    dispatch(changePdfLoadingState(false));
 
-		await addElementToPdf(logoImage, 80, 10, 4, 4, pdfDOC, false);
-		await addElementToPdf(finalData, 10, 50, 1, 1, pdfDOC, false);
+    const pdfDOC = new jsPDF({
+			orientation: 'p',
+			// unit: 'mm',
+			format: 'a4',
+			compress: true,
+		 }); 
+
+		pdfDOC.setFontSize(12);
+		dispatch(changePdfLoadingState(true));
+		await addElementToPdf(logoImage, 80, 10, 2, 4, 4, pdfDOC, false);
+		await addElementToPdf(mainImage, 10, 70, 3, 1.5, 1.5, pdfDOC, false);
+
+
+		await addElementToPdf(finalData, 100, 70, 3, 2.5, 2.5, pdfDOC, false);
 
 		for (let i = 0; i < finalRooms.length; i++) {
-      await addElementToPdf(finalRooms[i], 10, 10, 1, 1, pdfDOC, true);
+      await addElementToPdf(finalRooms[i], 10, 10, 1, 1, 1, pdfDOC, true);
     }
 
-		await addElementToPdf(logoImage, 80, 10, 4, 4, pdfDOC, true);
+		await addElementToPdf(logoImage, 80, 10, 2, 4, 4, pdfDOC, true);
 
 		pdfDOC.setFont('helvetica', "bold");
 		pdfDOC.text(`HERZLICHEN GLÜCKWUNSCH!`, 10, 70);
@@ -76,7 +84,7 @@ export default function PdfPageNew ({ trigger }) {
 		pdfDOC.text(`Link Konfigurator:`, 10, 110);
 		pdfDOC.text(`${link}`, 70, 110);
 		pdfDOC.text(`QR-code`, 10, 120);
-		await addElementToPdf(qrCode, 70, 120, 1.5, 1.2, pdfDOC, false);
+		await addElementToPdf(qrCode, 70, 120, 2, 1.5, 1.2, pdfDOC, false);
 
 		pdfDOC.text('Jan Group AG', 10, 265);
 		pdfDOC.text('Dorfstrasse 29, 9108 Gonten', 10, 270);
@@ -86,14 +94,14 @@ export default function PdfPageNew ({ trigger }) {
 		pdfDOC.setFont('helvetica', "bold");
 		pdfDOC.text('appenzellerhuus-wohnen.ch', 135, 280);
 
-    // pdfDOC.save('summary.pdf');   //Download the rendered PDF.
+		//Download the rendered PDF.
 		pdfDOC.save('summary.pdf', { returnPromise: true }).then(() => {
 			dispatch(changePdfLoadingState(false));
 		});
   }
 
-	const addElementToPdf = async(element, x, y, scaleX, scaleY, pdfDOC, newPage) => {
-		await html2canvas(element, { quality: '2' }).then((canvas) => {
+	const addElementToPdf = async(element, x, y, quality, scaleX, scaleY, pdfDOC, newPage) => {
+		await html2canvas(element, { scale: quality,  }).then((canvas) => {
 			newPage && pdfDOC.addPage();
 			const imgData = canvas.toDataURL('image/png');
 			const divHeight = element.clientHeight;
@@ -109,20 +117,16 @@ export default function PdfPageNew ({ trigger }) {
 
   return (
 		<>
-			<div className={styles.summary} id="summary">
+			<div className={styles.summary}>
 
 				<div className={`${styles.container} ${styles.mainImage}`} >
-					<img className={styles.logo} src='./AHLogo.svg' alt="Logo" id="mainImage"/>		
+					<img className={styles.logo} src='./AHLogo.svg' alt="Logo" id="logoImage"/>		
 				</div>
 
 				<div className={`${styles.container} finalData`}>
 					<section className={`${styles.summary__overview}`} id="overview">
-						
-						<div className={`${styles.summary__overview_image}`} id="apartmentImage">
-							<Image src={apartSize.image.url} width={`${apartSize.image.width}`} height={`${apartSize.image.height}`} alt="Isometry"/>
-						</div>
 
-						<div  className={`${styles.summary__overview_content}`}>
+						<div  className={`${styles.summary__overview_content}`} id="stats">
 							<h1 className={`${styles.title}`}> Ihre Wohnung</h1>
 
 							<div className={`${styles.subtitle} ${styles.subtitle__uppercase}`}> HUUS   {apartSize.buildingsName} </div>
@@ -140,7 +144,6 @@ export default function PdfPageNew ({ trigger }) {
 									<div className="col-4">{apartSize.floor}</div>
 								</div>
 								
-
 								{apartStyle.title && 
 									<div className={`${styles.summary__overview_line} row`}>
 										<div className="col-8">Interieurlinie</div>

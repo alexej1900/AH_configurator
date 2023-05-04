@@ -130,7 +130,7 @@ export default function FinalRoomToPdf({ roomName, style }) {
                         subtitle={data[1].individualFormat ? "" :  subtitle} 
                         description={data[1].individualFormat ? "" : description}
                         additionalPrice={data[1].individualFormat ? "" : additionalPrice}
-                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
+                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '125px', height: '100px', layout: "fixed"}}
                         type="small" 
                         final={true}
                         selectCard={() => null} 
@@ -150,29 +150,20 @@ export default function FinalRoomToPdf({ roomName, style }) {
   const roomImage1 = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode.toLowerCase())[0];
   const roomImage = room.image ? room.image : roomImage1;
   // console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
-  // console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
 
   return (
-    <section className={`${styles.summary__room} finalRoom` }>
+    <section className={`${styles.summary__room} `} id={roomName}>
       <div className={`${styles.summary__room_image}`}>
-        {roomImage?.url && <Image 
-          classes="ofi" 
-          src={roomImage.url} 
-          layout="fill" 
-          priority="true" 
-          alt="Room Image"
-          // onLoadingComplete={() => dispatch(changePdfLoadingState(true))}
-        />}
+        {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
       </div> 
-
-      <div className={`${styles.summary__room_title} center`}>{roomName}</div>
+      <div className={`${styles.summary__room_title}`}>{roomName}</div>
           
       {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 
       {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
-        <div className={`${styles.summary__room_title} center`}>ZUSÄTZLICHE EINBAUSCHRÄNKE IN WEITEREN RÄUMEN</div>}
+      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+        <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
       
       { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }
     </section>

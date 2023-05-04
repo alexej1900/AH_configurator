@@ -46,7 +46,7 @@
 			gap: 2.4rem 3.2rem;
 			margin: 0 6.4rem;
 
-			@media (max-width: $screen-xl) {
+			@media (max-width: $screen-xxl) {
 				margin: 0 4.8rem;
 			}
 
@@ -73,18 +73,18 @@
 			.halfLine {
 				flex: 0 0 calc(32% - 1.6rem);
 
-				@media (max-width: $screen-xl) {
+				@media (max-width: $screen-xxl) {
 					flex: 0 1 calc(50% - 1.6rem);
 				}
-				@media (max-width: $screen-lg) {
-					width: 100%;
-					margin: 0 auto;
-					max-width: 36rem;
-				}
-				// @media (max-width: $screen-md) {
-				// 	max-width: 31.2rem;
-				// 	margin: 0;
+				// @media (max-width: $screen-xl) {
+				// 	width: 100%;
+				// 	margin: 0 auto;
+				// 	max-width: 36rem;
 				// }
+				@media (max-width: $screen-lg) {
+					max-width: 36rem;
+					// margin: 0 auto;
+				}
 			}
 
 			&_title {

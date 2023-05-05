@@ -3,20 +3,8 @@
 .summary {
   width: 210mm;
 	position: relative;
-	top: 7.5rem;
-	margin-bottom: 14.5rem;
   padding: 2.4rem;
   border-right: 1px solid black;
-	
-	.container {
-		width: 100%;
-		max-width: 1440px;
-		margin: 0 auto;
-	}
-
-	.mainImage {
-		@include flex-center-center;
-	}
 
 	&__overview {
 		padding: 6.5rem 0 0 ;
@@ -26,15 +14,6 @@
 		&_content {
       padding-left: 1.6rem;
       flex: 0 0 50%;
-		}
-
-		&_image {
-			flex: 0 0 50%;
-      padding-right: 1.6rem;
-		}
-
-		.stats {
-     width: 100%;
 		}
 
 		&_line {
@@ -75,12 +54,6 @@
       font-weight: 900;
     }
   }
-
-	.notice {
-		width: 100%;
-		text-align: center;
-		padding: 2.4rem;
-	}
 
   &__room {
 		width: 100%;
@@ -125,16 +98,6 @@
 			width: 100%;
       gap: 2%;
 
-			.fullLine {
-				width: 100%;
-				display: flex;
-
-				@media (max-width: 1000px) {
-					margin: 0 auto;
-					max-width: 36rem;
-				}
-			}
-
 			.halfLine {
 				flex: 0 0 49%;
 			}
@@ -145,63 +108,5 @@
         text-transform: uppercase;
 			}
 		}
-
-		&_card_wrapper {
-			position: relative;
-		}
-
-		&_edit_icon {
-			position: absolute;
-			right: 0;
-			top: 0;
-			@include squareSize(4.4rem);
-			z-index: 10;
-
-			svg {
-				@include squareSize(4.4rem);
-			}
-		}	
 	}
-
-  .links {
-
-    &__title {
-
-      @include roomTitle;
-      text-transform: uppercase;
-      text-align: left;
-      width: 34rem;
-      margin-bottom: 6rem;
-
-      & span {
-        font-weight: 900;
-        display: block;
-      }
-    }
-
-    &__subtitle {
-      @include optionGroupTitle;
-      margin-bottom: 3rem;
-    }
-
-    &__link {
-
-      &_wrapper {
-        display: flex;
-        margin-bottom: 1rem;
-      }
-
-      &_title {
-        width: 20rem;
-      }
-    }
-  }
-  .website__link {
-    font-weight: 900;
-    width: 100%;
-  }
-
-  .contacts {
-    width: 60%;
-  }
 }

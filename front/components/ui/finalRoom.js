@@ -119,7 +119,7 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 
-  // Comparing choosed modification and existing images 
+  // Comparing choosed modification and existing images (filter images from DB)
   let activeMod = '';
   
   modifyData.forEach((item) => {
@@ -158,7 +158,7 @@ export default function FinalRoom({ roomName, style }) {
                         subtitle={data[1].individualFormat ? "" :  subtitle} 
                         description={data[1].individualFormat ? "" : description}
                         additionalPrice={data[1].individualFormat ? "" : additionalPrice}
-                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '80px', height: '80px', layout: "fixed"}}
+                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '125px', height: '100px', layout: "fixed"}}
                         type="small" 
                         final={true}
                         selectCard={() => null} 

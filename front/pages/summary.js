@@ -20,7 +20,6 @@ import FinalFormNew from '../components/ui/finalFormNew';
 import Footer from '../components/layout/footer';
  
 import styles from './summary.module.scss';
-import generalStates from '../redux/reducers/general';
 
 export default function Summary () {
 	const dispatch = useDispatch();
@@ -38,7 +37,7 @@ export default function Summary () {
 		);
 
 		dispatch(setInitialState(initState));
-		// console.log('initState', initState)
+
 		window.location.href = location.pathname
 	}
 
@@ -57,7 +56,6 @@ export default function Summary () {
 	if (!apartSize.badewanne) rooms.splice(2, 1);
 	if (!apartSize.dusche) rooms.splice(3, 1);
 
-	// console.log('rooms11', rooms)
   const price = apartSize.price;
 
 	const { OptionsPrice, IndividualPrice } = getPrices();
@@ -159,8 +157,6 @@ export default function Summary () {
 								<p>	Bitte prüfen Sie alle Angaben auf deren Korrektheit und nehmen Sie bei Bedarf direkt in der Übersicht Anpassungen über das Stift Symbol vor.</p>
 							</div>
 						</div>
-
-						
 					</section>
 				</div>
 
@@ -171,8 +167,6 @@ export default function Summary () {
 				<FinalFormNew rooms={roomType} isometry={apartSize.image.url} roomId={apartSize.apartmentId} savePdf={savePdfClick}/> 
 			</div>
 			<Footer/>
-
-
 		</>
   )
 }

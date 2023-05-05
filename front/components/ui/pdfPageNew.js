@@ -9,7 +9,7 @@ import { changePdfLoadingState } from '../../redux/actions/index';
 import { formatNumber } from './../../utils/utilities';
 import getPrices from '../../pages/api/getPrices';
  
-import styles from './pdfPage.module.scss';
+import styles from './finalRoomToPdf.module.scss';
 import FinalRoomToPdf from './finalRoomToPdf';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -65,7 +65,7 @@ export default function PdfPageNew ({ trigger }) {
 		await addElementToPdf(mainImage, 10, 70, 3, 1.5, 1.5, pdfDOC, false);
 
 
-		await addElementToPdf(finalData, 100, 70, 3, 2.5, 2.5, pdfDOC, false);
+		await addElementToPdf(finalData, 110, 70, 3, 2.5, 2.5, pdfDOC, false);
 
 		for (let i = 0; i < finalRooms.length; i++) {
       await addElementToPdf(finalRooms[i], 10, 10, 1, 1, 1, pdfDOC, true);

@@ -1,10 +1,8 @@
 import Image from 'next/image';
-import { useEffect } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import getModifications from '../../pages/api/getModifications';
 import getImages from '../../pages/api/getImages';
-import { changePdfLoadingState} from '../../redux/actions/index';
 
 import { useQuery } from '@apollo/client';
 import { RoomData } from '../../gql/index';
@@ -14,19 +12,14 @@ import checkObjIsEmpty from '../../utils/checkObjIsEmpty';
 import Card from './card';
 import LoadingSpinner from './atoms/loadingSpinner';
 
-import styles from './pdfPage.module.scss';
+import styles from './finalRoomToPdf.module.scss';
 
 export default function FinalRoomToPdf({ roomName, style }) {
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
-  const dispatch = useDispatch();
   
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);
-
-  // useEffect(() => {
-  //   dispatch(changePdfLoadingState(false));
-  // },[])
 
   const { data, loading, error } = useQuery(RoomData(currentRoom.toLowerCase()));
   if (loading) return <LoadingSpinner/>

@@ -4,7 +4,6 @@ import Button from './button';
 import styles from './confirmationForm.module.scss';
 
 export default function ConfirmationForm({ onCancel, onConfirm, title, child, resetForm}) {
-  console.log(resetForm)
 
   return (
     <section className={`${styles.contactForm}`}>

@@ -74,7 +74,7 @@ export default function Room() {
 	useEffect(async() => {
 		dispatch(changeLoadingState(true));
 
-		if (!isImageload) {
+		if (!isImageload) {  // adding animation
 			document.querySelector(`.${styles.image__wrapper}`)?.classList.add(styles.animate);
 
 			setTimeout(() => {
@@ -95,7 +95,7 @@ export default function Room() {
 			if (data && ROOM_TYPE === 'küche1' || ROOM_TYPE === 'küche2' || ROOM_TYPE === 'küche3') {
 				const modifications = 
 					data?.entry.mods[0].modificationsTypes && data?.entry.mods[0].modificationsTypes
-						.filter((item) => item.modificationName !== 'Boden');
+						.filter((item) => item.modificationName !== 'Boden' && item.modificationName !== 'Decke');
 
 				modifications && modifications.forEach(item => {
 					changeType(
@@ -194,7 +194,7 @@ export default function Room() {
 		onCancel();
 	}
 
-	const changceilingType = () => { // change floor type for all rooms, change price
+	const changCeilingType = () => { // change floor type for all rooms, change price
 		roomsWithChangeableFloor
 			.forEach((room) => dispatch(changeRoomType(
 				room, 
@@ -292,13 +292,13 @@ export default function Room() {
 			{isConfirmation 
 				&& <ConfirmationForm 
 						onCancel={onCancel} 
-						onConfirm={changceilingType}
+						onConfirm={changCeilingType}
 						title={'Zimmerübergreifende Option'}
 						child={<>
 										<div>Eine Anpassung der Option “Decke” wird auch in weiteren Räumen übernommen:</div>
 											<ul>
-												{roomsWithChangeableFloor.map((roomItem) => {
-													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li>{roomItem}</li>
+												{roomsWithChangeableFloor.map((roomItem, index) => {
+													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li key={index}>{roomItem}</li>
 												})}
 											</ul>
 										</>
@@ -313,8 +313,8 @@ export default function Room() {
 						child={<>
 										<div>Eine Anpassung der Option “Boden” wird auch in weiteren Räumen übernommen:</div>
 											<ul>
-												{roomsWithChangeableFloor.map((roomItem) => {
-													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li>{roomItem}</li>
+												{roomsWithChangeableFloor.map((roomItem, index) => {
+													if (roomItem !== ROOM_TYPE ? ROOM_TYPE : path) return <li key={index}>{roomItem}</li>
 												})}
 											</ul>
 										</>

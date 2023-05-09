@@ -16,7 +16,6 @@ import getModifications from '../../../pages/api/getModifications';
 import checkObjIsEmpty from '../../../utils/checkObjIsEmpty';
 
 import styles from './sidebar.module.scss';
-import roomType from '../../../redux/reducers/roomType';
 
 export default function Sidebar({
 		apartmentPrice, 

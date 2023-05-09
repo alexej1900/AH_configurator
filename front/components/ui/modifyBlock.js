@@ -12,7 +12,6 @@ import Card from './card';
 import getModifications from '../../pages/api/getModifications';
 
 import styles from './modifyBlock.module.scss';
-import generalStates from '../../redux/reducers/general';
 
 export default function ModifyBlock({
   activeStyle, 
@@ -136,7 +135,7 @@ export default function ModifyBlock({
                                   : cardItem.modificationItemExample && cardItem.modificationItemExample[styleId] 
                                     ? {... cardItem.modificationItemExample[styleId], modificationNumber: styleId, activeOption: 0,} 
                                     : {... cardItem.modificationItemExample[0], modificationNumber: 0, activeOption: 0} ;
-  
+
     setActiveModification(activeMod);
   }
 

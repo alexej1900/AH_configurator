@@ -33,7 +33,7 @@ export default function ModifyCards({ activeStyle, cardData, styleId, roomType, 
 
   useEffect(() => {
     (visibleData.length - 1) < activeMod && setActiveMod(0);
-    dispatch(changeActivePin(visibleData[0]?.modificationName));
+    // dispatch(changeActivePin(visibleData[0]?.modificationName));
   }, [roomType]);
 
   return (

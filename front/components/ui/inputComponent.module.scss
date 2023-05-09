@@ -11,9 +11,10 @@
     font-family: $openSans__typo;
     color: rgba(0, 0, 0, 0.32);
     transition: all .3s ease-in-out;
+    pointer-events: none;
 
     &_focus {
-      top: 10%;
+      top: 1rem;
     }
   }
 
@@ -37,11 +38,8 @@
   }
 
   textarea {
-    height: 8.5rem;
-
-    &::placeholder {
-      padding-top: 2rem;
-    }
+    min-height: 8.5rem;
+    padding-top: 1.6rem;
   }
 
   &__clean {

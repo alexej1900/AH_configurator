@@ -36,6 +36,14 @@ export default function ContactForm({ onCancel }) {
     validateForm(formValue, setErrors, formFilled);
   },[formValue]);
 
+  
+  useEffect(() => { // flexible textarea height
+    const textarea = document.getElementById('textarea');
+    formValue.text.length > 0 
+      ? textarea.style.height = (textarea.scrollHeight) + "px"
+      : textarea.style.height = "85px"
+  },[formValue.text]);
+
   const changeFormData = (data) => {
     !formFilled && setFormFilled(true); 
     setFormValue({...formValue, ...data});
@@ -143,6 +151,7 @@ export default function ContactForm({ onCancel }) {
               </div>
 
               <InputComponent
+                id="textarea"
                 type="textarea" 
                 placeholder="Ihre Nachricht" 
                 inputName="message[text]"

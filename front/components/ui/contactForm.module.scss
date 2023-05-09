@@ -10,20 +10,24 @@
   height: 100vh;
 
   @include flex-center-center;
+  overflow-y: auto;
+  align-items: flex-start;
+
   background: rgba(143, 143, 143, .7);
   z-index: 100;
 
-  @media (max-width: $screen-lg) {
-    overflow-y: auto;
-    align-items: start;
-  }
+  // @media (max-width: $screen-lg) {
+  //   overflow-y: auto;
+  //   align-items: start;
+  // }
 
   &__block {
     width: 72rem;
     margin: 2.4rem 0;
 
     @media (max-width: $screen-lg) {
-      width: 36rem;
+      width: 100%;
+      margin: 0;
     }
   }
 

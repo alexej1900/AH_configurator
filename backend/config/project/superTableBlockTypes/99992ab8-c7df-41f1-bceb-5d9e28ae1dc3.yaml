@@ -1,0 +1,304 @@
+field: b6fb07d4-c606-49a0-b5da-d9b6206dae8d # Welcome Screen
+fieldLayouts:
+  782bf775-8584-42da-a962-210205c3b7e4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 823bbaed-2b97-4920-9b1e-0d25513ce030 # Intro text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31545243-c54e-4879-9719-3b262fd885b4 # Paragraph
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3ca1e212-e622-430e-9d4e-e1979bdc2f4a # Big apartment title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 96819837-0931-49d4-bc87-1043746d8eb7 # Big apartment image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8a41fc42-6c4f-4703-aee9-1393b905a1c0 # Big apartment price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 85dcc7d9-3b1b-4b92-a66b-744afedef82b # Small apartment title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e5ede6ca-8d4c-40ec-9cdd-b16dd8dd409c # Small apartment image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9a9ef88a-9f26-4abb-85d3-dc94f3a80204 # Small apartment price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0670ff4a-6bc8-4081-851d-9135d968f1a1 # Apartment type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3ca1e212-e622-430e-9d4e-e1979bdc2f4a: # Big apartment title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: bigRoomTitle
+    instructions: ''
+    name: 'Big apartment title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8a41fc42-6c4f-4703-aee9-1393b905a1c0: # Big apartment price
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: bigApartmentPrice
+    instructions: ''
+    name: 'Big apartment price'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9a9ef88a-9f26-4abb-85d3-dc94f3a80204: # Small apartment price
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: smallApartmentPrice
+    instructions: ''
+    name: 'Small apartment price'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  85dcc7d9-3b1b-4b92-a66b-744afedef82b: # Small apartment title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: smallRoomTitle
+    instructions: ''
+    name: 'Small apartment title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0670ff4a-6bc8-4081-851d-9135d968f1a1: # Apartment type
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: apartmentType
+    instructions: ''
+    name: 'Apartment type'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_apartmenttype}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  823bbaed-2b97-4920-9b1e-0d25513ce030: # Intro text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: introText
+    instructions: ''
+    name: 'Intro text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  31545243-c54e-4879-9719-3b262fd885b4: # Paragraph
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: paragraph
+    instructions: ''
+    name: Paragraph
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  96819837-0931-49d4-bc87-1043746d8eb7: # Big apartment image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: bigRoomImage
+    instructions: ''
+    name: 'Big apartment image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  e5ede6ca-8d4c-40ec-9cdd-b16dd8dd409c: # Small apartment image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: smallRoomImage
+    instructions: ''
+    name: 'Small apartment image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets

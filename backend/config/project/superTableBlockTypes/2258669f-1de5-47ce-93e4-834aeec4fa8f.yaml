@@ -1,0 +1,93 @@
+field: e572ecf5-0fd2-4b67-bab5-8f3bd50a0ed6 # Style Item
+fieldLayouts:
+  04ed471d-3a92-477b-83fe-d662895f625d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 751fdd7d-5239-4832-aaa0-3a00bb535ed8 # Style name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9ce5ba08-e814-469b-a51f-3a1f6b46158b # Style Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cdd761f6-8dae-41bd-9f22-96195852a5d0 # Modific Examples
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9ce5ba08-e814-469b-a51f-3a1f6b46158b: # Style Image
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: styleImage
+    instructions: ''
+    name: 'Style Image'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  751fdd7d-5239-4832-aaa0-3a00bb535ed8: # Style name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: styleName
+    instructions: ''
+    name: 'Style name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cdd761f6-8dae-41bd-9f22-96195852a5d0: # Modific Examples
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificExamples
+    instructions: ''
+    name: 'Modific Examples'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_modificexamples}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

@@ -1,0 +1,106 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 335a7376-03ac-4c50-ae5a-9bd4ece409fc # Settings
+handle: settings
+instructions: ''
+name: Settings
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 631df38a-6772-47e8-8b2c-a99c9621a313 # Brand Logo
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 433c4d5a-c467-4ce6-8dd9-1a9f018a40b8 # Brand logo footer
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2bcc8509-bf80-42a0-9a84-e45c74dfc228 # Links
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8cabee79-8d30-4b2d-a1a9-bc9e72488680 # Main brand color
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 58c7f379-f280-42c7-a9dd-c8ee7b267c45 # Additional brand color
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - fa6efbe2-7ac2-4de9-bf82-70a6bfec957b # CTA primary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - fef6cf3a-b623-4bc1-bc81-71c7fb9bd43b # CTA secondary
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - bf08ef9d-b17b-42dc-9572-b63c7d31ab90 # Welcome page background
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 45efe046-7264-4a3a-a9a0-f504a5bed96b # Header background picture
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - da3670d1-f32e-4572-badf-07f0950d31b5 # Header background color
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 851fc8a0-f815-457e-9c94-29b0df4f22f3 # Font for titles
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e2028071-257d-4615-9112-30ecc02bfaa9 # Font for descriptions
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_settings}}'
+  fieldLayout: row
+  maxRows: '1'
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

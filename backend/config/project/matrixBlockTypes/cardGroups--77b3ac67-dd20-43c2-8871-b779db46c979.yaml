@@ -1,0 +1,71 @@
+field: 90aa87e5-d7df-459e-af54-61a89ab0703d # Room Settings
+fieldLayouts:
+  c5c59148-5cce-4830-be56-83156f4f4005:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 307167f5-9d46-43b6-bb3f-5eadf52a8dc2 # Groups
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  307167f5-9d46-43b6-bb3f-5eadf52a8dc2: # Groups
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: groups
+    instructions: ''
+    name: Groups
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - e8c7ba4e-3833-4e37-9322-2a9c52caee1b # Group Title
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f3862313-c629-4cfb-b726-f816613be72d # Cards
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f54d43fa-0709-406e-a453-c9d7754137c5 # Pin Position Left
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 4b277576-4353-4162-babc-8e650ed5b4e4 # Pin Position Top
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_1_groups}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: cardGroups
+name: 'Card Groups'
+sortOrder: 3

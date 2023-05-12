@@ -1,0 +1,211 @@
+field: 9bad162e-0a3b-4bd7-8fd5-242642d1f09b # Modification examples
+fieldLayouts:
+  c2aa7442-7627-4fc4-9159-74c8d0ea9e38:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2af22254-5561-4654-a6ec-a7fba5795e8e # Modification Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8076ecba-851f-4fc6-8425-90cedaf681b0 # Modification subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0bdf8852-06b8-4b65-8ca0-a7af65061e40 # Modification description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0100cb97-3383-4f17-9f99-b79d5131aae5 # Modification Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4ca74280-d2e4-45ef-af56-86de32d3d5aa # Recommended modification
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6eb8207a-e2f9-40fb-a8a7-79044a46a836 # Main style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0bdf8852-06b8-4b65-8ca0-a7af65061e40: # Modification description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationDescr
+    instructions: ''
+    name: 'Modification description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2af22254-5561-4654-a6ec-a7fba5795e8e: # Modification Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationTitle
+    instructions: ''
+    name: 'Modification Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4ca74280-d2e4-45ef-af56-86de32d3d5aa: # Recommended modification
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: recommendedModification
+    instructions: ''
+    name: 'Recommended modification'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'No'
+      onLabel: 'Yes'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  6eb8207a-e2f9-40fb-a8a7-79044a46a836: # Main style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mainStyle
+    instructions: ''
+    name: 'Main style'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'no'
+            -
+              - value
+              - 'false'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Hell
+            -
+              - value
+              - hell
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  0100cb97-3383-4f17-9f99-b79d5131aae5: # Modification Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationImage
+    instructions: ''
+    name: 'Modification Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8076ecba-851f-4fc6-8425-90cedaf681b0: # Modification subtitle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationStyle
+    instructions: ''
+    name: 'Modification subtitle'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: modificationExamplesBlock
+name: 'Modification examples block'
+sortOrder: 1

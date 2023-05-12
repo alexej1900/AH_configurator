@@ -1,0 +1,70 @@
+field: 2bcc8509-bf80-42a0-9a84-e45c74dfc228 # Links
+fieldLayouts:
+  c70478a8-fe3a-4750-b221-60ad5433bbd3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 11c125fa-521c-49c5-afc6-644eac978127 # Website link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e168559-40a5-4275-9cb0-3b5ac9cd5820 # Email link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6e168559-40a5-4275-9cb0-3b5ac9cd5820: # Email link
+    columnSuffix: jzwfeqmq
+    contentColumnType: text
+    fieldGroup: null
+    handle: emailLink
+    instructions: ''
+    name: 'Email link'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  11c125fa-521c-49c5-afc6-644eac978127: # Website link
+    columnSuffix: fxhkvvrl
+    contentColumnType: text
+    fieldGroup: null
+    handle: websiteLink
+    instructions: ''
+    name: 'Website link'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: brandLink
+name: 'Brand Link'
+sortOrder: 1

@@ -1,0 +1,40 @@
+fieldLayouts:
+  489d24f8-6451-47c2-893e-769d879de15c:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: kitchenImages
+hasUrls: true
+name: 'Kitchen Images'
+settings:
+  path: ./uploads/content/kitchen/
+sortOrder: 5
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
+type: craft\volumes\Local
+url: '@web/uploads/content/kitchen/'

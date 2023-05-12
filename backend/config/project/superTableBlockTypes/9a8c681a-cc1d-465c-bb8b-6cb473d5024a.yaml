@@ -1,0 +1,35 @@
+field: b764410e-fc27-485e-8610-e63073501478 # Style Example
+fieldLayouts:
+  cc83abc7-8530-4ad3-ab2d-e421453fe9dd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a69b8cf1-8c21-4370-974c-ffee87a220c9 # Styles example Item
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a69b8cf1-8c21-4370-974c-ffee87a220c9: # Styles example Item
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: stylesExampleItem
+    instructions: ''
+    name: 'Styles example Item'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_stylesexampleitem}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: roomStyles
+instructions: ''
+name: 'Room Styles'
+searchable: false
+settings:
+  contentTable: '{{%stc_roomstyles}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

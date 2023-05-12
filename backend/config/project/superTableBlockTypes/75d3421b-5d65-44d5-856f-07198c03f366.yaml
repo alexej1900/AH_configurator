@@ -1,0 +1,35 @@
+field: e5a6b6cb-5126-4249-be40-1da33fcab00c # Modific Blocks
+fieldLayouts:
+  cbe24839-78db-47d0-8f17-681e5982dfa6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b9315425-e3fd-478c-9248-2dd8fa17d88d # Modific Types
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  b9315425-e3fd-478c-9248-2dd8fa17d88d: # Modific Types
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificTypes
+    instructions: ''
+    name: 'Modific Types'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_modifictypes}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

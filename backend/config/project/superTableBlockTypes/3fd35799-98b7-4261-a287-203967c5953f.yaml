@@ -1,0 +1,74 @@
+field: 3e76c142-6610-4464-a64f-f645924a28f1 # Header Settings
+fieldLayouts:
+  1dc6bfca-71d2-4165-88e2-5e2c78ffe94b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9e1746dd-c6c8-4ef4-bb22-9fca7c828b82 # Header background picture
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cf30cf35-c42d-461e-bbe0-bbba7c18c39b # Header background color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9e1746dd-c6c8-4ef4-bb22-9fca7c828b82: # Header background picture
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: headerBackgroundPicture
+    instructions: ''
+    name: 'Header background picture'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  cf30cf35-c42d-461e-bbe0-bbba7c18c39b: # Header background color
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: headerBackgroundColor
+    instructions: ''
+    name: 'Header background color'
+    searchable: false
+    settings:
+      defaultColor: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color

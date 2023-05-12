@@ -1,0 +1,69 @@
+field: 26c4fa6a-be0d-41f9-b9ac-9723217b2893 # Modification Pin
+fieldLayouts:
+  e27b8a98-8ea5-44b0-b3a6-b0262e41212d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3dbe66c2-fe49-4b1b-bea9-7e5a16a369a6 # Position X
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aa9998cf-b15b-40e4-911e-ed450abf70f5 # Position Y
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3dbe66c2-fe49-4b1b-bea9-7e5a16a369a6: # Position X
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: positionX
+    instructions: ''
+    name: 'Position X'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: '%'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  aa9998cf-b15b-40e4-911e-ed450abf70f5: # Position Y
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: positionY
+    instructions: ''
+    name: 'Position Y'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: '%'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number

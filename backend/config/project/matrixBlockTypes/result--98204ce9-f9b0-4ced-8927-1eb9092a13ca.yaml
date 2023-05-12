@@ -1,0 +1,70 @@
+field: 0d293b9c-108b-482c-b426-82982a729542 # Data List
+fieldLayouts:
+  05a69f11-d081-4f0f-9d20-bb113bc7659b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 424c9559-652d-48d2-94cf-0376db84929b # userId
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2521c6a4-5b9f-4974-bc00-ec13913712a5 # userData
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  424c9559-652d-48d2-94cf-0376db84929b: # userId
+    columnSuffix: rnzbwoig
+    contentColumnType: text
+    fieldGroup: null
+    handle: userid
+    instructions: ''
+    name: userId
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2521c6a4-5b9f-4974-bc00-ec13913712a5: # userData
+    columnSuffix: hpfhhsji
+    contentColumnType: text
+    fieldGroup: null
+    handle: userdata
+    instructions: ''
+    name: userData
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: result
+name: result
+sortOrder: 1

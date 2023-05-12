@@ -1,0 +1,19 @@
+fieldLayouts:
+  54825656-bcb7-4e81-8f07-320ee697c294:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: db77486d-a4ff-4ca6-8b8d-33b405e7ce8c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: tab1
+        sortOrder: 1
+handle: apartmentList
+name: 'Apartment List'
+sortOrder: 6

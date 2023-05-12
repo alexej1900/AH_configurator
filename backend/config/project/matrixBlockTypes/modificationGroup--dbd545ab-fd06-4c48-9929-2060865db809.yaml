@@ -1,0 +1,246 @@
+field: bff8e1e7-9dab-4338-b3db-0651fe26d1fe # Modifications Types
+fieldLayouts:
+  375af338-0447-4eb0-88e1-49e6ecd5bc23:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 72a7f4f3-d87e-4e5b-b5cf-2b1246ae1d0b # Modification Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 87b811d3-de0b-44c4-bb43-c807a1b4f831 # Modification Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 56f29913-0434-45fd-a2b1-92417e615eea # Individual Solution
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2997df2f-304f-4bc7-8b50-3a9c9752aa05 # Modification visibility
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4a3bba70-a34d-4ed6-a440-737d6e407722 # Modification Pin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7c689efc-5509-4c53-91a1-b76938d29f86 # Modification group block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4a3bba70-a34d-4ed6-a440-737d6e407722: # Modification Pin
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationPin
+    instructions: ''
+    name: 'Modification Pin'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - dd3e52b6-bc3c-44f3-8147-8feb8f63ccca # Position X
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - a4c72639-0014-4390-864c-90c72b90df5d # Position Y
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_24_modificationpin}}'
+      fieldLayout: table
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  7c689efc-5509-4c53-91a1-b76938d29f86: # Modification group block
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationGroupBlock
+    instructions: ''
+    name: 'Modification group block'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 8d3b3d96-2261-4131-8821-fe94bfefac5c # Modification group Name
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f0f8f01c-0485-494b-8ef0-926ac65a6b61 # Additional Price
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fb241b97-1876-475d-8a93-830b90c08d98 # Options List
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9bad162e-0a3b-4bd7-8fd5-242642d1f09b # Modification examples
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_24_modificationgroupblock}}'
+      fieldLayout: row
+      maxRows: '2'
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  56f29913-0434-45fd-a2b1-92417e615eea: # Individual Solution
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: individualSolution
+    instructions: ''
+    name: 'Individual Solution'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 595ee523-e8de-4f2b-abff-e0385165745b # Enable Individual Solution
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 0c1e7921-6657-4e14-b1d8-0ceea79f2ba6 # Individual Solution Price
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_24_individualsolution}}'
+      fieldLayout: table
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  72a7f4f3-d87e-4e5b-b5cf-2b1246ae1d0b: # Modification Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationName
+    instructions: ''
+    name: 'Modification Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  87b811d3-de0b-44c4-bb43-c807a1b4f831: # Modification Description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationDescription
+    instructions: ''
+    name: 'Modification Description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2997df2f-304f-4bc7-8b50-3a9c9752aa05: # Modification visibility
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modificationVisibility
+    instructions: ''
+    name: 'Modification visibility'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'Non visible'
+      onLabel: Visible
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: modificationGroup
+name: 'Modification Group'
+sortOrder: 2

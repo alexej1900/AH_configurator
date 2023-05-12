@@ -1,0 +1,589 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: dataList
+instructions: ''
+name: 'Data List'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - f93dbbd5-17a7-4907-be0b-9e0c03afc5a2 # Apartment ID
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 0020b702-f8bd-40f8-97ec-4f44b43cdbfa # Buildings Name
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a12ccfe1-33d1-47fa-ae97-bfcd9b96ad79 # Floor
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - f98e1772-f4d2-4178-8e0b-0029fdf0ab26 # Rooms Count
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - fbf27b47-374b-4b3b-acd0-3c24a7c8f93c # General Area
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2aa4f4de-12b6-4194-9b67-3518125df55d # Base price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e8f5431b-3c2c-46f7-91e7-d467c8263823 # Apartment Image
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 0d7890d8-f185-466a-be1e-47b592423d50 # Living Room Opt 2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e92b98ee-c93a-4e28-a6e4-5b6dc0702c59 # Living Room Opt 3 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c9825012-e6ee-4419-b7e1-424abd7a338e # Living Room Door Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8a2ce002-e6c7-4e78-8462-ff6ca061bb80 # Kitchen1 Opt 2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - cddbc34a-dbf1-4359-a24a-ae598a88a39c # Kitchen1 Opt 3 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3d1e2fda-13b9-4193-bfb7-7e910d35b711 # Kitchen2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 75fc0b13-9c85-49f5-ae93-bb537f580ef6 # Kitchen2 Front 2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a9a19571-c876-4703-9160-73d6d500ee4a # Kitchen2 Front 3 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a948acd5-70ec-4558-ac92-2f743b7db9ec # Kitchen2 Back 2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 11b67f92-533a-4dd0-b252-05080b2f30ef # Bath1 Plate Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 5f8db8b6-c881-444b-a33f-c4130458d948 # Bath1 Mirror Closet Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 4da3243b-794c-4892-8b2a-e976e5493ca3 # Bath1 Lavabo2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 0460e9a8-786e-4e6c-8472-bcd820e8ab7c # Bath1 Furniture Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 43df2dd3-b2b2-4f1d-bb9e-c730b551e81e # Bath1 Shift Door Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a85488b1-69a3-4b78-8ac7-909ccb70b085 # Dushe Plate Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8c8a8737-67a3-44eb-bf2b-74dbeb5ff17b # Dushe Mirror Closet Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 60aef168-69b4-4515-b4c3-5323a4a40938 # Dushe furniture2 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 0daa6cca-4903-4483-b57b-47fd776e1d6b # Dushe furniture3 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - dff0b604-469d-4b29-aa75-0f713389f37c # Dushe furniture4 Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8c7bf0be-8401-4275-a38e-2473a6d1bd38 # Bedroom closet Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 4ac1aad1-3b76-4a42-950f-e2a84e2b8e20 # Additional Closet Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e3b0b9ad-fe99-45f2-8024-86741c5f22db # Additional Living Room Price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - d188cb4d-aa25-40c3-8c99-615cb0a90ac1 # Addition Room Closet
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e2246574-4ddd-4b88-ac76-bf9f09c63902 # Addition corridor closet
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 20614a29-8320-463e-9a0a-a54a7f14df1f # Additional Closet
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 5b6856c2-157c-41e7-8648-e169103526d9 # Additional Sleeproom Closet
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 858ae51d-8c93-4faa-944c-01d8cacb7bb2 # boden
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3184d3da-491f-4a80-8b35-97e00ff4a6f0 # boden2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 664f67dc-e69f-4224-bd82-c041a0f99e5e # boden3
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 81a930a9-a02e-41c3-b7ec-7bd0306f3f4c # decke
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c65b6bc0-9e44-439e-92af-b566d435ba8c # decke2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3462de70-9191-46c1-a94e-bc37110c6fd1 # front
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8c298970-7444-4c92-9137-87469e13098b # ruckwand
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7bd3bd80-488b-4a58-a929-52fff0a527e4 # arbeitsplatte
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 27c0a7d9-5ecb-462a-8035-ad1356dc005e # arbeitsplatte2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6b93c413-af47-4aa8-87d8-da109b3b171e # wasserhahn
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - b7ddfc9e-28bb-46a7-8913-12452fbff765 # wasserhahn2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e1601599-54bf-4da4-9246-e1b16fab6190 # wasserhahn3
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 00e50bd2-e65b-44e0-9ef1-f9c077f5b2f0 # badewanne
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 82b4b3b5-9e67-4775-8715-36cb9004ec14 # platten
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ae2d0717-3a39-4bc4-a772-5eb6200f907b # platten2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2abcacaa-cb54-4d1f-a0bc-d96890359349 # spiegel
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 239b66e4-7a1e-48a1-a94b-d6bb58f92412 # einlavabo
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 72aa9fe7-7091-40d3-ac9c-3110cde765a5 # zweilavabo
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c015bbd6-95c3-4e59-9e45-d71f6e091b33 # badezimmermobel
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - b13dfeca-4fa4-41d4-93a5-ca9b4cbe5e1d # badezimmermobel2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 79ef1d9b-f26a-40d3-b882-ed0b56354ce0 # badezimmermobel3
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e6a65545-b997-4d78-9ecd-23f6c86b5478 # schiebetur
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 47042b08-6ee0-49f2-9cfc-528773034732 # schiebetur2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2cdb2015-e99e-4a4c-82a4-28c099d4e4f2 # badeboden
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e5ae5d87-809c-4a52-b677-ab30e078260a # dusche
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7b88b722-a249-4d9e-805d-129bf5ab1a82 # duscheplatten
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6b75ee67-0e85-486a-99d1-a318e63b4622 # duscheplatten2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6f1c43fe-73b0-489d-a92a-498b0a7a3a1c # duschespiegel
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7315b367-2531-4d97-a698-e7ccdccd8f94 # duschelavabo
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - fd02dc66-bf60-4f90-9d89-54df01e873a8 # duschemobel
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e099ca7b-a4a4-4319-9077-d4ef043f4d07 # duschemobel2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - d890dccd-adb8-4f21-b9d7-bc4d24d7f625 # duschemobel3
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ca35b552-e43f-47c0-8508-fe54a05b5d2d # duscheschibetur
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6a4391c3-eac8-4057-af02-77e467764f36 # duscheschibetur2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7e17ec52-0135-40c6-800f-39fa9c26195f # duscheboden
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 655e769a-297f-4001-996d-9a7b4c4140e2 # einbauschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 7d71224a-f5e8-41c1-b4e5-40e0ca15a185 # schlafzimmerschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - bfe53ee5-2cbb-4062-bfcd-42aa7aad7d78 # schlafzimmerschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 47351f2d-78f1-43f6-bb4c-2c7e8285e80b # gangschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ae4e20c6-89af-4261-b088-f2f6c4b9f16f # gangschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - eb506487-4a0c-40d4-af20-d3a01bb0e345 # weiterzimmerschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2f60402e-ec99-4abd-a3b8-906da7026517 # weiterzimmerschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 244f6215-3a8d-4406-a445-0d78502f04e8 # flurschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 31632913-fac6-4813-9385-6422c1f6af7b # flurschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e6304219-0c6f-4ac7-a64b-991b430f0a2d # ankleideschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e4535ac3-ef22-4abe-98da-879f2630748a # ankleideschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 868ce870-cd22-41a8-8f5b-ab8d131d4850 # wohnenschrank
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8e57e0a9-ba46-4d5e-aadc-b858ad27a975 # wohnenschrank2
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_datalist}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

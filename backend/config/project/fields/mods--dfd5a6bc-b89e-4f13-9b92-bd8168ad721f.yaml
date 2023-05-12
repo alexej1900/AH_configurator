@@ -1,0 +1,29 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: mods
+instructions: ''
+name: 'Modifications '
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - bff8e1e7-9dab-4338-b3db-0651fe26d1fe # Modifications Types
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_mods}}'
+  fieldLayout: row
+  maxRows: '1'
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

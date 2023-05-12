@@ -1,0 +1,35 @@
+field: dfd5a6bc-b89e-4f13-9b92-bd8168ad721f # Modifications 
+fieldLayouts:
+  b00eabbf-26e3-43b0-b806-5d62f4532621:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bff8e1e7-9dab-4338-b3db-0651fe26d1fe # Modifications Types
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  bff8e1e7-9dab-4338-b3db-0651fe26d1fe: # Modifications Types
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationsTypes
+    instructions: ''
+    name: 'Modifications Types'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_modificationstypes}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

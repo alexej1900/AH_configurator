@@ -1,0 +1,95 @@
+field: b764410e-fc27-485e-8610-e63073501478 # Style Example
+fieldLayouts:
+  3b3fb883-b009-4821-a6f3-54dfe8c754ec:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 833c9f21-d9fa-4391-beb6-1c95189e1ac2 # Style data Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e5a6b6cb-5126-4249-be40-1da33fcab00c # Modific Blocks
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  833c9f21-d9fa-4391-beb6-1c95189e1ac2: # Style data Block
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: styleDataBlock
+    instructions: ''
+    name: 'Style data Block'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 76817b98-d32e-499e-a62b-354da6c0a2fd # Style Name
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fd7a94b7-32ae-4eec-8811-ad6fe7a6ca18 # Style default Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_18_styledatablock}}'
+      fieldLayout: row
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  e5a6b6cb-5126-4249-be40-1da33fcab00c: # Modific Blocks
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificBlocks
+    instructions: ''
+    name: 'Modific Blocks'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - b9315425-e3fd-478c-9248-2dd8fa17d88d # Modific Types
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_18_modificblocks}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: styleExampleBlock
+name: 'Style Example Block'
+sortOrder: 1

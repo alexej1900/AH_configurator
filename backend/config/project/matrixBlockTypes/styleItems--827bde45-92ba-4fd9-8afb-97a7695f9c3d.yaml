@@ -1,0 +1,57 @@
+field: a69b8cf1-8c21-4370-974c-ffee87a220c9 # Styles example Item
+fieldLayouts:
+  514c53b2-7263-4b7f-b6b9-a2cde1fffea3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e572ecf5-0fd2-4b67-bab5-8f3bd50a0ed6 # Style Item
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  e572ecf5-0fd2-4b67-bab5-8f3bd50a0ed6: # Style Item
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: styleItem
+    instructions: ''
+    name: 'Style Item'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 751fdd7d-5239-4832-aaa0-3a00bb535ed8 # Style name
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9ce5ba08-e814-469b-a51f-3a1f6b46158b # Style Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_16_styleitem}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: styleItems
+name: 'Style Items'
+sortOrder: 1

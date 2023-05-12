@@ -1,0 +1,2398 @@
+field: 0d293b9c-108b-482c-b426-82982a729542 # Data List
+fieldLayouts:
+  9d9be647-3bba-40d5-b786-c1851c06f6dd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f93dbbd5-17a7-4907-be0b-9e0c03afc5a2 # Apartment ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0020b702-f8bd-40f8-97ec-4f44b43cdbfa # Buildings Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a12ccfe1-33d1-47fa-ae97-bfcd9b96ad79 # Floor
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f98e1772-f4d2-4178-8e0b-0029fdf0ab26 # Rooms Count
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fbf27b47-374b-4b3b-acd0-3c24a7c8f93c # General Area
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2aa4f4de-12b6-4194-9b67-3518125df55d # Base price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e8f5431b-3c2c-46f7-91e7-d467c8263823 # Apartment Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0d7890d8-f185-466a-be1e-47b592423d50 # Living Room Opt 2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e92b98ee-c93a-4e28-a6e4-5b6dc0702c59 # Living Room Opt 3 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c9825012-e6ee-4419-b7e1-424abd7a338e # Living Room Door Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8a2ce002-e6c7-4e78-8462-ff6ca061bb80 # Kitchen1 Opt 2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cddbc34a-dbf1-4359-a24a-ae598a88a39c # Kitchen1 Opt 3 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3d1e2fda-13b9-4193-bfb7-7e910d35b711 # Kitchen2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 75fc0b13-9c85-49f5-ae93-bb537f580ef6 # Kitchen2 Front 2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a9a19571-c876-4703-9160-73d6d500ee4a # Kitchen2 Front 3 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a948acd5-70ec-4558-ac92-2f743b7db9ec # Kitchen2 Back 2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 11b67f92-533a-4dd0-b252-05080b2f30ef # Bath1 Plate Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5f8db8b6-c881-444b-a33f-c4130458d948 # Bath1 Mirror Closet Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4da3243b-794c-4892-8b2a-e976e5493ca3 # Bath1 Lavabo2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0460e9a8-786e-4e6c-8472-bcd820e8ab7c # Bath1 Furniture Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 43df2dd3-b2b2-4f1d-bb9e-c730b551e81e # Bath1 Shift Door Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a85488b1-69a3-4b78-8ac7-909ccb70b085 # Dushe Plate Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c8a8737-67a3-44eb-bf2b-74dbeb5ff17b # Dushe Mirror Closet Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 60aef168-69b4-4515-b4c3-5323a4a40938 # Dushe furniture2 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0daa6cca-4903-4483-b57b-47fd776e1d6b # Dushe furniture3 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dff0b604-469d-4b29-aa75-0f713389f37c # Dushe furniture4 Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c7bf0be-8401-4275-a38e-2473a6d1bd38 # Bedroom closet Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4ac1aad1-3b76-4a42-950f-e2a84e2b8e20 # Additional Closet Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e3b0b9ad-fe99-45f2-8024-86741c5f22db # Additional Living Room Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d188cb4d-aa25-40c3-8c99-615cb0a90ac1 # Addition Room Closet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e2246574-4ddd-4b88-ac76-bf9f09c63902 # Addition corridor closet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 20614a29-8320-463e-9a0a-a54a7f14df1f # Additional Closet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b6856c2-157c-41e7-8648-e169103526d9 # Additional Sleeproom Closet
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 858ae51d-8c93-4faa-944c-01d8cacb7bb2 # boden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3184d3da-491f-4a80-8b35-97e00ff4a6f0 # boden2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 664f67dc-e69f-4224-bd82-c041a0f99e5e # boden3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 81a930a9-a02e-41c3-b7ec-7bd0306f3f4c # decke
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c65b6bc0-9e44-439e-92af-b566d435ba8c # decke2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3462de70-9191-46c1-a94e-bc37110c6fd1 # front
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c298970-7444-4c92-9137-87469e13098b # ruckwand
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7bd3bd80-488b-4a58-a929-52fff0a527e4 # arbeitsplatte
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 27c0a7d9-5ecb-462a-8035-ad1356dc005e # arbeitsplatte2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b93c413-af47-4aa8-87d8-da109b3b171e # wasserhahn
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b7ddfc9e-28bb-46a7-8913-12452fbff765 # wasserhahn2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e1601599-54bf-4da4-9246-e1b16fab6190 # wasserhahn3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 00e50bd2-e65b-44e0-9ef1-f9c077f5b2f0 # badewanne
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 82b4b3b5-9e67-4775-8715-36cb9004ec14 # platten
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ae2d0717-3a39-4bc4-a772-5eb6200f907b # platten2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2abcacaa-cb54-4d1f-a0bc-d96890359349 # spiegel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 239b66e4-7a1e-48a1-a94b-d6bb58f92412 # einlavabo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 72aa9fe7-7091-40d3-ac9c-3110cde765a5 # zweilavabo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c015bbd6-95c3-4e59-9e45-d71f6e091b33 # badezimmermobel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b13dfeca-4fa4-41d4-93a5-ca9b4cbe5e1d # badezimmermobel2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 79ef1d9b-f26a-40d3-b882-ed0b56354ce0 # badezimmermobel3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e6a65545-b997-4d78-9ecd-23f6c86b5478 # schiebetur
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 47042b08-6ee0-49f2-9cfc-528773034732 # schiebetur2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2cdb2015-e99e-4a4c-82a4-28c099d4e4f2 # badeboden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e5ae5d87-809c-4a52-b677-ab30e078260a # dusche
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7b88b722-a249-4d9e-805d-129bf5ab1a82 # duscheplatten
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b75ee67-0e85-486a-99d1-a318e63b4622 # duscheplatten2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6f1c43fe-73b0-489d-a92a-498b0a7a3a1c # duschespiegel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7315b367-2531-4d97-a698-e7ccdccd8f94 # duschelavabo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fd02dc66-bf60-4f90-9d89-54df01e873a8 # duschemobel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e099ca7b-a4a4-4319-9077-d4ef043f4d07 # duschemobel2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d890dccd-adb8-4f21-b9d7-bc4d24d7f625 # duschemobel3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ca35b552-e43f-47c0-8508-fe54a05b5d2d # duscheschibetur
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6a4391c3-eac8-4057-af02-77e467764f36 # duscheschibetur2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7e17ec52-0135-40c6-800f-39fa9c26195f # duscheboden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 655e769a-297f-4001-996d-9a7b4c4140e2 # einbauschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7d71224a-f5e8-41c1-b4e5-40e0ca15a185 # schlafzimmerschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bfe53ee5-2cbb-4062-bfcd-42aa7aad7d78 # schlafzimmerschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 47351f2d-78f1-43f6-bb4c-2c7e8285e80b # gangschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ae4e20c6-89af-4261-b088-f2f6c4b9f16f # gangschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eb506487-4a0c-40d4-af20-d3a01bb0e345 # weiterzimmerschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2f60402e-ec99-4abd-a3b8-906da7026517 # weiterzimmerschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 244f6215-3a8d-4406-a445-0d78502f04e8 # flurschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31632913-fac6-4813-9385-6422c1f6af7b # flurschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e6304219-0c6f-4ac7-a64b-991b430f0a2d # ankleideschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e4535ac3-ef22-4abe-98da-879f2630748a # ankleideschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 868ce870-cd22-41a8-8f5b-ab8d131d4850 # wohnenschrank
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8e57e0a9-ba46-4d5e-aadc-b858ad27a975 # wohnenschrank2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0d7890d8-f185-466a-be1e-47b592423d50: # Living Room Opt 2 Price
+    columnSuffix: swnfgtpb
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: livingRoomOpt2Price
+    instructions: ''
+    name: 'Living Room Opt 2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  0daa6cca-4903-4483-b57b-47fd776e1d6b: # Dushe furniture3 Price
+    columnSuffix: vfffmudg
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: dusheFurniture3Price
+    instructions: ''
+    name: 'Dushe furniture3 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  00e50bd2-e65b-44e0-9ef1-f9c077f5b2f0: # badewanne
+    columnSuffix: ujntgodn
+    contentColumnType: text
+    fieldGroup: null
+    handle: badewanne
+    instructions: ''
+    name: badewanne
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2aa4f4de-12b6-4194-9b67-3518125df55d: # Base price
+    columnSuffix: tkgkwjrt
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: basePrice
+    instructions: ''
+    name: 'Base price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  2abcacaa-cb54-4d1f-a0bc-d96890359349: # spiegel
+    columnSuffix: tzrnppua
+    contentColumnType: text
+    fieldGroup: null
+    handle: spiegel
+    instructions: ''
+    name: spiegel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2cdb2015-e99e-4a4c-82a4-28c099d4e4f2: # badeboden
+    columnSuffix: hatrkxkw
+    contentColumnType: text
+    fieldGroup: null
+    handle: badeboden
+    instructions: ''
+    name: badeboden
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2f60402e-ec99-4abd-a3b8-906da7026517: # weiterzimmerschrank2
+    columnSuffix: juucevhr
+    contentColumnType: text
+    fieldGroup: null
+    handle: weiterzimmerschrank2
+    instructions: ''
+    name: weiterzimmerschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3d1e2fda-13b9-4193-bfb7-7e910d35b711: # Kitchen2 Price
+    columnSuffix: frhpvdjd
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen2Price
+    instructions: ''
+    name: 'Kitchen2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  4ac1aad1-3b76-4a42-950f-e2a84e2b8e20: # Additional Closet Price
+    columnSuffix: sikwawxe
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: additionalClosetPrice
+    instructions: ''
+    name: 'Additional Closet Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  4da3243b-794c-4892-8b2a-e976e5493ca3: # Bath1 Lavabo2 Price
+    columnSuffix: tjmlqdon
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bath1Lavabo2Price
+    instructions: ''
+    name: 'Bath1 Lavabo2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  5b6856c2-157c-41e7-8648-e169103526d9: # Additional Sleeproom Closet
+    columnSuffix: lupxkwxd
+    contentColumnType: text
+    fieldGroup: null
+    handle: additionalSleeproomCloset
+    instructions: ''
+    name: 'Additional Sleeproom Closet'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5f8db8b6-c881-444b-a33f-c4130458d948: # Bath1 Mirror Closet Price
+    columnSuffix: qffbtkae
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bath1MirrorClosetPrice
+    instructions: ''
+    name: 'Bath1 Mirror Closet Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  6a4391c3-eac8-4057-af02-77e467764f36: # duscheschibetur2
+    columnSuffix: wuymlmmk
+    contentColumnType: text
+    fieldGroup: null
+    handle: duscheschibetur2
+    instructions: ''
+    name: duscheschibetur2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6b75ee67-0e85-486a-99d1-a318e63b4622: # duscheplatten2
+    columnSuffix: atlqojxr
+    contentColumnType: text
+    fieldGroup: null
+    handle: duscheplatten2
+    instructions: ''
+    name: duscheplatten2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6b93c413-af47-4aa8-87d8-da109b3b171e: # wasserhahn
+    columnSuffix: uxhqmfvy
+    contentColumnType: text
+    fieldGroup: null
+    handle: wasserhahn
+    instructions: ''
+    name: wasserhahn
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6f1c43fe-73b0-489d-a92a-498b0a7a3a1c: # duschespiegel
+    columnSuffix: vllgtvop
+    contentColumnType: text
+    fieldGroup: null
+    handle: duschespiegel
+    instructions: ''
+    name: duschespiegel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7b88b722-a249-4d9e-805d-129bf5ab1a82: # duscheplatten
+    columnSuffix: absfcslb
+    contentColumnType: text
+    fieldGroup: null
+    handle: duscheplatten
+    instructions: ''
+    name: duscheplatten
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7bd3bd80-488b-4a58-a929-52fff0a527e4: # arbeitsplatte
+    columnSuffix: ihficbtd
+    contentColumnType: text
+    fieldGroup: null
+    handle: arbeitsplatte
+    instructions: ''
+    name: arbeitsplatte
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7d71224a-f5e8-41c1-b4e5-40e0ca15a185: # schlafzimmerschrank
+    columnSuffix: dtyetecf
+    contentColumnType: text
+    fieldGroup: null
+    handle: schlafzimmerschrank
+    instructions: ''
+    name: schlafzimmerschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7e17ec52-0135-40c6-800f-39fa9c26195f: # duscheboden
+    columnSuffix: zvmlmhyw
+    contentColumnType: text
+    fieldGroup: null
+    handle: duscheboden
+    instructions: ''
+    name: duscheboden
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8a2ce002-e6c7-4e78-8462-ff6ca061bb80: # Kitchen1 Opt 2 Price
+    columnSuffix: wapvqcdz
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen1Opt2Price
+    instructions: ''
+    name: 'Kitchen1 Opt 2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  8c7bf0be-8401-4275-a38e-2473a6d1bd38: # Bedroom closet Price
+    columnSuffix: newbsowo
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bedroomClosetPrice
+    instructions: ''
+    name: 'Bedroom closet Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  8c8a8737-67a3-44eb-bf2b-74dbeb5ff17b: # Dushe Mirror Closet Price
+    columnSuffix: gulzymzu
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: dusheMirrorClosetPrice
+    instructions: ''
+    name: 'Dushe Mirror Closet Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  8c298970-7444-4c92-9137-87469e13098b: # ruckwand
+    columnSuffix: kxbzjuiq
+    contentColumnType: text
+    fieldGroup: null
+    handle: ruckwand
+    instructions: ''
+    name: ruckwand
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8e57e0a9-ba46-4d5e-aadc-b858ad27a975: # wohnenschrank2
+    columnSuffix: mskywabm
+    contentColumnType: text
+    fieldGroup: null
+    handle: wohnenschrank2
+    instructions: ''
+    name: wohnenschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  11b67f92-533a-4dd0-b252-05080b2f30ef: # Bath1 Plate Price
+    columnSuffix: ierfujdi
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bath1PlatePrice
+    instructions: ''
+    name: 'Bath1 Plate Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  0020b702-f8bd-40f8-97ec-4f44b43cdbfa: # Buildings Name
+    columnSuffix: idsagkgd
+    contentColumnType: text
+    fieldGroup: null
+    handle: buildingsName
+    instructions: ''
+    name: 'Buildings Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  27c0a7d9-5ecb-462a-8035-ad1356dc005e: # arbeitsplatte2
+    columnSuffix: vrlendqo
+    contentColumnType: text
+    fieldGroup: null
+    handle: arbeitsplatte2
+    instructions: ''
+    name: arbeitsplatte2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  43df2dd3-b2b2-4f1d-bb9e-c730b551e81e: # Bath1 Shift Door Price
+    columnSuffix: fygucuum
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bath1ShiftDoorPrice
+    instructions: ''
+    name: 'Bath1 Shift Door Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  60aef168-69b4-4515-b4c3-5323a4a40938: # Dushe furniture2 Price
+    columnSuffix: qrljplnj
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: dusheFurniture2Price
+    instructions: ''
+    name: 'Dushe furniture2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  72aa9fe7-7091-40d3-ac9c-3110cde765a5: # zweilavabo
+    columnSuffix: cvmspood
+    contentColumnType: text
+    fieldGroup: null
+    handle: zweilavabo
+    instructions: ''
+    name: zweilavabo
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  75fc0b13-9c85-49f5-ae93-bb537f580ef6: # Kitchen2 Front 2 Price
+    columnSuffix: aoyimfup
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen2Front2Price
+    instructions: ''
+    name: 'Kitchen2 Front 2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  79ef1d9b-f26a-40d3-b882-ed0b56354ce0: # badezimmermobel3
+    columnSuffix: mmlyrtlx
+    contentColumnType: text
+    fieldGroup: null
+    handle: badezimmermobel3
+    instructions: ''
+    name: badezimmermobel3
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  81a930a9-a02e-41c3-b7ec-7bd0306f3f4c: # decke
+    columnSuffix: jxeukdob
+    contentColumnType: text
+    fieldGroup: null
+    handle: decke
+    instructions: ''
+    name: decke
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  82b4b3b5-9e67-4775-8715-36cb9004ec14: # platten
+    columnSuffix: qmhtjpir
+    contentColumnType: text
+    fieldGroup: null
+    handle: platten
+    instructions: ''
+    name: platten
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  239b66e4-7a1e-48a1-a94b-d6bb58f92412: # einlavabo
+    columnSuffix: dpsehzxi
+    contentColumnType: text
+    fieldGroup: null
+    handle: einlavabo
+    instructions: ''
+    name: einlavabo
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  244f6215-3a8d-4406-a445-0d78502f04e8: # flurschrank
+    columnSuffix: fklihxic
+    contentColumnType: text
+    fieldGroup: null
+    handle: flurschrank
+    instructions: ''
+    name: flurschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0460e9a8-786e-4e6c-8472-bcd820e8ab7c: # Bath1 Furniture Price
+    columnSuffix: sdwopdbu
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: bath1FurniturePrice
+    instructions: ''
+    name: 'Bath1 Furniture Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  655e769a-297f-4001-996d-9a7b4c4140e2: # einbauschrank
+    columnSuffix: kofygvul
+    contentColumnType: text
+    fieldGroup: null
+    handle: einbauschrank
+    instructions: ''
+    name: einbauschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  664f67dc-e69f-4224-bd82-c041a0f99e5e: # boden3
+    columnSuffix: ebkxurdu
+    contentColumnType: text
+    fieldGroup: null
+    handle: boden3
+    instructions: ''
+    name: boden3
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  858ae51d-8c93-4faa-944c-01d8cacb7bb2: # boden
+    columnSuffix: vszrurkf
+    contentColumnType: text
+    fieldGroup: null
+    handle: boden
+    instructions: ''
+    name: boden
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  868ce870-cd22-41a8-8f5b-ab8d131d4850: # wohnenschrank
+    columnSuffix: etqawxmk
+    contentColumnType: text
+    fieldGroup: null
+    handle: wohnenschrank
+    instructions: ''
+    name: wohnenschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3184d3da-491f-4a80-8b35-97e00ff4a6f0: # boden2
+    columnSuffix: knbmtugr
+    contentColumnType: text
+    fieldGroup: null
+    handle: boden2
+    instructions: ''
+    name: boden2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3462de70-9191-46c1-a94e-bc37110c6fd1: # front
+    columnSuffix: kwckwqqv
+    contentColumnType: text
+    fieldGroup: null
+    handle: front
+    instructions: ''
+    name: front
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7315b367-2531-4d97-a698-e7ccdccd8f94: # duschelavabo
+    columnSuffix: ezendqlh
+    contentColumnType: text
+    fieldGroup: null
+    handle: duschelavabo
+    instructions: ''
+    name: duschelavabo
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  20614a29-8320-463e-9a0a-a54a7f14df1f: # Additional Closet
+    columnSuffix: jqrorpaq
+    contentColumnType: text
+    fieldGroup: null
+    handle: additionalCloset
+    instructions: ''
+    name: 'Additional Closet'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  47042b08-6ee0-49f2-9cfc-528773034732: # schiebetur2
+    columnSuffix: fkxduxws
+    contentColumnType: text
+    fieldGroup: null
+    handle: schiebetur2
+    instructions: ''
+    name: schiebetur2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  47351f2d-78f1-43f6-bb4c-2c7e8285e80b: # gangschrank
+    columnSuffix: rqegxdid
+    contentColumnType: text
+    fieldGroup: null
+    handle: gangschrank
+    instructions: ''
+    name: gangschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  31632913-fac6-4813-9385-6422c1f6af7b: # flurschrank2
+    columnSuffix: nptjsbaf
+    contentColumnType: text
+    fieldGroup: null
+    handle: flurschrank2
+    instructions: ''
+    name: flurschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a9a19571-c876-4703-9160-73d6d500ee4a: # Kitchen2 Front 3 Price
+    columnSuffix: mpkivmae
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen2Front3Price
+    instructions: ''
+    name: 'Kitchen2 Front 3 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  a12ccfe1-33d1-47fa-ae97-bfcd9b96ad79: # Floor
+    columnSuffix: lwwunluh
+    contentColumnType: text
+    fieldGroup: null
+    handle: floor
+    instructions: ''
+    name: Floor
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a948acd5-70ec-4558-ac92-2f743b7db9ec: # Kitchen2 Back 2 Price
+    columnSuffix: bgfxtyqo
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen2Back2Price
+    instructions: ''
+    name: 'Kitchen2 Back 2 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  a85488b1-69a3-4b78-8ac7-909ccb70b085: # Dushe Plate Price
+    columnSuffix: cppftiju
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: dushePlatePrice
+    instructions: ''
+    name: 'Dushe Plate Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  ae2d0717-3a39-4bc4-a772-5eb6200f907b: # platten2
+    columnSuffix: aeksdnxe
+    contentColumnType: text
+    fieldGroup: null
+    handle: platten2
+    instructions: ''
+    name: platten2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ae4e20c6-89af-4261-b088-f2f6c4b9f16f: # gangschrank2
+    columnSuffix: yqpjimuf
+    contentColumnType: text
+    fieldGroup: null
+    handle: gangschrank2
+    instructions: ''
+    name: gangschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b7ddfc9e-28bb-46a7-8913-12452fbff765: # wasserhahn2
+    columnSuffix: tdggcday
+    contentColumnType: text
+    fieldGroup: null
+    handle: wasserhahn2
+    instructions: ''
+    name: wasserhahn2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b13dfeca-4fa4-41d4-93a5-ca9b4cbe5e1d: # badezimmermobel2
+    columnSuffix: isrwmhqp
+    contentColumnType: text
+    fieldGroup: null
+    handle: badezimmermobel2
+    instructions: ''
+    name: badezimmermobel2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  bfe53ee5-2cbb-4062-bfcd-42aa7aad7d78: # schlafzimmerschrank2
+    columnSuffix: auglfiza
+    contentColumnType: text
+    fieldGroup: null
+    handle: schlafzimmerschrank2
+    instructions: ''
+    name: schlafzimmerschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c015bbd6-95c3-4e59-9e45-d71f6e091b33: # badezimmermobel
+    columnSuffix: iicymxfj
+    contentColumnType: text
+    fieldGroup: null
+    handle: badezimmermobel
+    instructions: ''
+    name: badezimmermobel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c65b6bc0-9e44-439e-92af-b566d435ba8c: # decke2
+    columnSuffix: vovokmlc
+    contentColumnType: text
+    fieldGroup: null
+    handle: decke2
+    instructions: ''
+    name: decke2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c9825012-e6ee-4419-b7e1-424abd7a338e: # Living Room Door Price
+    columnSuffix: apbpssih
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: livingRoomDoorPrice
+    instructions: ''
+    name: 'Living Room Door Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  ca35b552-e43f-47c0-8508-fe54a05b5d2d: # duscheschibetur
+    columnSuffix: qyvksyxz
+    contentColumnType: text
+    fieldGroup: null
+    handle: duscheschibetur
+    instructions: ''
+    name: duscheschibetur
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cddbc34a-dbf1-4359-a24a-ae598a88a39c: # Kitchen1 Opt 3 Price
+    columnSuffix: ggwmnift
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: kitchen1Opt3Price
+    instructions: ''
+    name: 'Kitchen1 Opt 3 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  d188cb4d-aa25-40c3-8c99-615cb0a90ac1: # Addition Room Closet
+    columnSuffix: drslksvg
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: additionRoomCloset
+    instructions: ''
+    name: 'Addition Room Closet'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  d890dccd-adb8-4f21-b9d7-bc4d24d7f625: # duschemobel3
+    columnSuffix: fumlynum
+    contentColumnType: text
+    fieldGroup: null
+    handle: duschemobel3
+    instructions: ''
+    name: duschemobel3
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  dff0b604-469d-4b29-aa75-0f713389f37c: # Dushe furniture4 Price
+    columnSuffix: muhiopas
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: dusheFurniture4Price
+    instructions: ''
+    name: 'Dushe furniture4 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e099ca7b-a4a4-4319-9077-d4ef043f4d07: # duschemobel2
+    columnSuffix: ncxfblaf
+    contentColumnType: text
+    fieldGroup: null
+    handle: duschemobel2
+    instructions: ''
+    name: duschemobel2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e3b0b9ad-fe99-45f2-8024-86741c5f22db: # Additional Living Room Price
+    columnSuffix: wkvzurjg
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: additionalLivingRoomPrice
+    instructions: ''
+    name: 'Additional Living Room Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e5ae5d87-809c-4a52-b677-ab30e078260a: # dusche
+    columnSuffix: ezdnypav
+    contentColumnType: text
+    fieldGroup: null
+    handle: dusche
+    instructions: ''
+    name: dusche
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e6a65545-b997-4d78-9ecd-23f6c86b5478: # schiebetur
+    columnSuffix: khkcytiu
+    contentColumnType: text
+    fieldGroup: null
+    handle: schiebetur
+    instructions: ''
+    name: schiebetur
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e8f5431b-3c2c-46f7-91e7-d467c8263823: # Apartment Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: apartmentImage
+    instructions: ''
+    name: 'Apartment Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  e92b98ee-c93a-4e28-a6e4-5b6dc0702c59: # Living Room Opt 3 Price
+    columnSuffix: qjucvtfo
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: livingRoomOpt3Price
+    instructions: ''
+    name: 'Living Room Opt 3 Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e4535ac3-ef22-4abe-98da-879f2630748a: # ankleideschrank2
+    columnSuffix: tievctlw
+    contentColumnType: text
+    fieldGroup: null
+    handle: ankleideschrank2
+    instructions: ''
+    name: ankleideschrank2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e1601599-54bf-4da4-9246-e1b16fab6190: # wasserhahn3
+    columnSuffix: tnactjvm
+    contentColumnType: text
+    fieldGroup: null
+    handle: wasserhahn3
+    instructions: ''
+    name: wasserhahn3
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e2246574-4ddd-4b88-ac76-bf9f09c63902: # Addition corridor closet
+    columnSuffix: fndpiayw
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: additionCorridorCloset
+    instructions: ''
+    name: 'Addition corridor closet'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e6304219-0c6f-4ac7-a64b-991b430f0a2d: # ankleideschrank
+    columnSuffix: mpworgnx
+    contentColumnType: text
+    fieldGroup: null
+    handle: ankleideschrank
+    instructions: ''
+    name: ankleideschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  eb506487-4a0c-40d4-af20-d3a01bb0e345: # weiterzimmerschrank
+    columnSuffix: iaaliulx
+    contentColumnType: text
+    fieldGroup: null
+    handle: weiterzimmerschrank
+    instructions: ''
+    name: weiterzimmerschrank
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f93dbbd5-17a7-4907-be0b-9e0c03afc5a2: # Apartment ID
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: apartmentId
+    instructions: ''
+    name: 'Apartment ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f98e1772-f4d2-4178-8e0b-0029fdf0ab26: # Rooms Count
+    columnSuffix: nlxtycpb
+    contentColumnType: text
+    fieldGroup: null
+    handle: roomsCount
+    instructions: ''
+    name: 'Rooms Count'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fbf27b47-374b-4b3b-acd0-3c24a7c8f93c: # General Area
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: generalArea
+    instructions: ''
+    name: 'General Area'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  fd02dc66-bf60-4f90-9d89-54df01e873a8: # duschemobel
+    columnSuffix: ityaeblc
+    contentColumnType: text
+    fieldGroup: null
+    handle: duschemobel
+    instructions: ''
+    name: duschemobel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

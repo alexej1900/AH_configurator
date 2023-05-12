@@ -1,0 +1,43 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sections.8a0de730-d35b-412f-ae3b-ffacc0f56778:read' # Data List
+  - 'entrytypes.715560e9-0bbc-4cb9-9558-953b4754e9e3:read' # Data List
+  - 'sections.734e54bc-5721-47bf-8ad9-ba322cfcc5af:read' # Pages
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:read' # Default
+  - 'sections.a7e31322-fe7a-41db-88d7-d242a76f2de6:read' # Rooms
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:read' # Default
+  - 'sections.94a8360f-2eb6-436b-919c-bc16339b54da:read' # Users
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:read' # Default
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:read' # uploads
+  - 'volumes.c832b005-6f97-49ea-8aa5-db77307be230:read' # Kitchen Images
+  - 'volumes.5a67638c-7e53-40c8-a609-ca1fd1c5e6fc:read' # Living-room Images
+  - 'globalsets.a8a070fa-b395-492f-85dc-18008f1d7309:read' # Settings
+  - 'globalsets.f29562c5-0cd4-4b71-918e-f2189f23abef:read' # Apartment List
+  - 'usergroups.everyone:read'
+  - 'sections.8a0de730-d35b-412f-ae3b-ffacc0f56778:edit' # Data List
+  - 'entrytypes.715560e9-0bbc-4cb9-9558-953b4754e9e3:edit' # Data List
+  - 'entrytypes.715560e9-0bbc-4cb9-9558-953b4754e9e3:create' # Data List
+  - 'entrytypes.715560e9-0bbc-4cb9-9558-953b4754e9e3:save' # Data List
+  - 'entrytypes.715560e9-0bbc-4cb9-9558-953b4754e9e3:delete' # Data List
+  - 'sections.734e54bc-5721-47bf-8ad9-ba322cfcc5af:edit' # Pages
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:edit' # Default
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:create' # Default
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:save' # Default
+  - 'entrytypes.a9c27276-f041-41b5-a7af-60b2ccb6c915:delete' # Default
+  - 'sections.a7e31322-fe7a-41db-88d7-d242a76f2de6:edit' # Rooms
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:edit' # Default
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:create' # Default
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:save' # Default
+  - 'entrytypes.cdd1bfa2-3933-44e7-b4a5-992b8d0970a9:delete' # Default
+  - 'sections.94a8360f-2eb6-436b-919c-bc16339b54da:edit' # Users
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:edit' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:create' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:save' # Default
+  - 'entrytypes.66677a00-1430-4c0a-822e-22c8f3f59176:delete' # Default
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:edit' # uploads
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:create' # uploads
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:save' # uploads
+  - 'volumes.d489016d-368f-476c-a4df-2f7b904e7306:delete' # uploads
+  - 'globalsets.a8a070fa-b395-492f-85dc-18008f1d7309:edit' # Settings
+  - 'globalsets.f29562c5-0cd4-4b71-918e-f2189f23abef:edit' # Apartment List

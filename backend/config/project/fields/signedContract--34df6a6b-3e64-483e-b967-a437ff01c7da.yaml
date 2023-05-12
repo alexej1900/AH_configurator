@@ -1,0 +1,14 @@
+columnSuffix: knheptnk
+contentColumnType: boolean
+fieldGroup: f242347d-e6aa-4938-afd6-c792e6b82650 # Results
+handle: signedContract
+instructions: ''
+name: 'Signed contract'
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

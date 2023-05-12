@@ -1,0 +1,474 @@
+field: a9e44136-f3d6-4a44-8dee-3e0bd2b9c9a4 # Settings
+fieldLayouts:
+  fc53906e-fba6-4911-b11e-c968c4c9a811:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 631df38a-6772-47e8-8b2c-a99c9621a313 # Brand Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 433c4d5a-c467-4ce6-8dd9-1a9f018a40b8 # Brand logo footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2bcc8509-bf80-42a0-9a84-e45c74dfc228 # Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8cabee79-8d30-4b2d-a1a9-bc9e72488680 # Main brand color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 58c7f379-f280-42c7-a9dd-c8ee7b267c45 # Additional brand color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fa6efbe2-7ac2-4de9-bf82-70a6bfec957b # CTA primary
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fef6cf3a-b623-4bc1-bc81-71c7fb9bd43b # CTA secondary
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bf08ef9d-b17b-42dc-9572-b63c7d31ab90 # Welcome page background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 45efe046-7264-4a3a-a9a0-f504a5bed96b # Header background picture
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: da3670d1-f32e-4572-badf-07f0950d31b5 # Header background color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 851fc8a0-f815-457e-9c94-29b0df4f22f3 # Font for titles
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e2028071-257d-4615-9112-30ecc02bfaa9 # Font for descriptions
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2bcc8509-bf80-42a0-9a84-e45c74dfc228: # Links
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: links
+    instructions: ''
+    name: Links
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_links}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  8cabee79-8d30-4b2d-a1a9-bc9e72488680: # Main brand color
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: mainBrandColor
+    instructions: ''
+    name: 'Main brand color'
+    searchable: false
+    settings:
+      defaultColor: '#8d705d'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  45efe046-7264-4a3a-a9a0-f504a5bed96b: # Header background picture
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: headerBackgroundPicture
+    instructions: ''
+    name: 'Header background picture'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  58c7f379-f280-42c7-a9dd-c8ee7b267c45: # Additional brand color
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: additionalBrandColor
+    instructions: ''
+    name: 'Additional brand color'
+    searchable: false
+    settings:
+      defaultColor: '#00d2d3'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  433c4d5a-c467-4ce6-8dd9-1a9f018a40b8: # Brand logo footer
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: brandLogoFooter
+    instructions: ''
+    name: 'Brand logo footer'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  631df38a-6772-47e8-8b2c-a99c9621a313: # Brand Logo
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: brandLogo
+    instructions: ''
+    name: 'Brand Logo'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  851fc8a0-f815-457e-9c94-29b0df4f22f3: # Font for titles
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: fontForTitles
+    instructions: ''
+    name: 'Font for titles'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Nouvelle Grotesk'
+            -
+              - value
+              - NNNouvelleGroteskSTD
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Abel
+            -
+              - value
+              - Abel
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Arial
+            -
+              - value
+              - Arial
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Karla
+            -
+              - value
+              - Karla
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Nationale
+            -
+              - value
+              - Nationale
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Helvetica
+            -
+              - value
+              - Helvetica
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bf08ef9d-b17b-42dc-9572-b63c7d31ab90: # Welcome page background
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: welcomePageBg
+    instructions: ''
+    name: 'Welcome page background'
+    searchable: false
+    settings:
+      defaultColor: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  da3670d1-f32e-4572-badf-07f0950d31b5: # Header background color
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: headerBackgroundColor
+    instructions: ''
+    name: 'Header background color'
+    searchable: false
+    settings:
+      defaultColor: '#f2f2f2'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  e2028071-257d-4615-9112-30ecc02bfaa9: # Font for descriptions
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: fontForDescriptions
+    instructions: ''
+    name: 'Font for descriptions'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Nouvelle Grotesk'
+            -
+              - value
+              - NNNouvelleGroteskSTD
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Abel
+            -
+              - value
+              - Abel
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Arial
+            -
+              - value
+              - Arial
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Roboto
+            -
+              - value
+              - Roboto
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Nationale
+            -
+              - value
+              - Nationale
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Helvetica
+            -
+              - value
+              - Helvetica
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  fa6efbe2-7ac2-4de9-bf82-70a6bfec957b: # CTA primary
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: colorSelected
+    instructions: ''
+    name: 'CTA primary'
+    searchable: false
+    settings:
+      defaultColor: '#2e3b4e'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  fef6cf3a-b623-4bc1-bc81-71c7fb9bd43b: # CTA secondary
+    columnSuffix: null
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: ctaSecondary
+    instructions: ''
+    name: 'CTA secondary'
+    searchable: false
+    settings:
+      defaultColor: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color

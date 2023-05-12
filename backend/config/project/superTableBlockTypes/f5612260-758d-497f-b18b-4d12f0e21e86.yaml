@@ -1,0 +1,38 @@
+field: 40cf8243-caae-418b-8421-597344165684 # Apartment rooms
+fieldLayouts:
+  1aa22f15-e0dd-4584-9c8a-cb9cab028678:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e25127d1-3a5a-48ba-ad82-d1371a890fa3 # Room Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  e25127d1-3a5a-48ba-ad82-d1371a890fa3: # Room Type
+    columnSuffix: tozazwba
+    contentColumnType: text
+    fieldGroup: null
+    handle: roomType
+    instructions: ''
+    name: 'Room Type'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

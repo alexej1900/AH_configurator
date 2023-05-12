@@ -1,0 +1,35 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 335a7376-03ac-4c50-ae5a-9bd4ece409fc # Settings
+handle: headerSettings
+instructions: 'You should choose image for header background or background color'
+name: 'Header Settings'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 9e1746dd-c6c8-4ef4-bb22-9fca7c828b82 # Header background picture
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - cf30cf35-c42d-461e-bbe0-bbba7c18c39b # Header background color
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_headersettings}}'
+  fieldLayout: row
+  maxRows: '1'
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

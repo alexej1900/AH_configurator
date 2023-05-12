@@ -1,0 +1,107 @@
+field: 90aa87e5-d7df-459e-af54-61a89ab0703d # Room Settings
+fieldLayouts:
+  d0acb129-059f-467d-8ea0-a3152ff2abd0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 98dba852-18ad-4e4a-bbed-b19a096afbb4 # Styles Group Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f9625c6d-6743-4e6a-8814-8515c93e0a1d # Styles
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  98dba852-18ad-4e4a-bbed-b19a096afbb4: # Styles Group Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: stylesGroupTitle
+    instructions: ''
+    name: 'Styles Group Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f9625c6d-6743-4e6a-8814-8515c93e0a1d: # Styles
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: stylesCards
+    instructions: ''
+    name: Styles
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 7caa9c39-61ca-49c1-9490-aa62f9d14649 # Title
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c3112aba-9614-4cb7-b90b-575c9f0eb8a4 # Subtitle
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c1ce9b4d-6b63-4bf3-876a-694dfd7b24b3 # Featured Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 57e1b676-7d2b-42ef-8c52-11a349a6ef61 # Recommended
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 494f98c9-f91d-4864-a1ed-6fe7d4705cf5 # Modified Style
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_2_stylescards}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: styles
+name: Styles
+sortOrder: 1

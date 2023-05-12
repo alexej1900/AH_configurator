@@ -1,0 +1,455 @@
+field: 8f7e10df-9425-4417-bc74-f8449e142a1f # Modification examples
+fieldLayouts:
+  c3cad11b-2345-455c-b51c-e7465804a33e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 21f03266-7a5e-450d-8e2b-cb19f099cdfc # Modification Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fd43163c-170c-4f9f-8a57-3aaad3f7f7ee # Modification subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55bb9d73-4cd0-4d3b-a209-6c8e9cc8e6ea # Modification description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c9f634e7-e90f-4c01-86e7-40fc368ecdbf # Modification Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c7ea46f1-33c7-45dd-b73a-215ca587da63 # Recommended modification
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 249b59f7-0a14-40e9-9c94-fe1b92c4e6f2 # Additional Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 191b5e8b-b02b-45fa-866d-3effaddc5606 # Main Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 261a5bfb-4bfb-43fe-930f-a3ea56ff9587 # Set disabling
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  21f03266-7a5e-450d-8e2b-cb19f099cdfc: # Modification Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationTitle
+    instructions: ''
+    name: 'Modification Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '1'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  55bb9d73-4cd0-4d3b-a209-6c8e9cc8e6ea: # Modification description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationDescr
+    instructions: ''
+    name: 'Modification description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  191b5e8b-b02b-45fa-866d-3effaddc5606: # Main Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mainStyle
+    instructions: ''
+    name: 'Main Style'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'No'
+            -
+              - value
+              - 'false'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Eichenparkett hell'
+            -
+              - value
+              - eichenparkettHell
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Eichenparkett dunkel'
+            -
+              - value
+              - eichenparkettDunkel
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Steinplatte
+            -
+              - value
+              - steinplatte
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  249b59f7-0a14-40e9-9c94-fe1b92c4e6f2: # Additional Price
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: modsAdditionalPrice
+    instructions: ''
+    name: 'Additional Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  261a5bfb-4bfb-43fe-930f-a3ea56ff9587: # Set disabling
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: setDisabling
+    instructions: ''
+    name: 'Set disabling'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Disable if'
+                -
+                  - handle
+                  - disableIf
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - 'Choose option'
+                        -
+                          - value
+                          - noRes
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Küchenfront
+                        -
+                          - value
+                          - kuchenfront
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Küchenrückwand
+                        -
+                          - value
+                          - kuchenruckwand
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Küchenabdeckung
+                        -
+                          - value
+                          - kuchenabdeckung
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Küchengeräte
+                        -
+                          - value
+                          - kuchengerate
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Wand
+                        -
+                          - value
+                          - wand
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Waschbeckenunterschrank
+                        -
+                          - value
+                          - waschbeckenunterschrank
+                        -
+                          - default
+                          - false
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Value
+                -
+                  - handle
+                  - value
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - '1'
+                        -
+                          - value
+                          - '1'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - '2'
+                        -
+                          - value
+                          - '2'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - '3'
+                        -
+                          - value
+                          - '3'
+                        -
+                          - default
+                          - false
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - '4'
+                        -
+                          - value
+                          - '4'
+                        -
+                          - default
+                          - false
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - noRes
+            -
+              - col2
+              - '1'
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  c7ea46f1-33c7-45dd-b73a-215ca587da63: # Recommended modification
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: recommendedModification
+    instructions: ''
+    name: 'Recommended modification'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'No'
+      onLabel: 'Yes'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  c9f634e7-e90f-4c01-86e7-40fc368ecdbf: # Modification Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationImage
+    instructions: ''
+    name: 'Modification Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  fd43163c-170c-4f9f-8a57-3aaad3f7f7ee: # Modification subtitle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modificationStyle
+    instructions: ''
+    name: 'Modification subtitle'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '1'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

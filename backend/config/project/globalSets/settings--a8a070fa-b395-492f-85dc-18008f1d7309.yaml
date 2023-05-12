@@ -1,0 +1,19 @@
+fieldLayouts:
+  30410efa-140f-4853-9ef2-168ba073f4d9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a9e44136-f3d6-4a44-8dee-3e0bd2b9c9a4 # Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Settings
+        sortOrder: 1
+handle: settings
+name: Settings
+sortOrder: 5

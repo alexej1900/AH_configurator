@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: stylExample
+instructions: ''
+name: 'Style Example'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_stylexample}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

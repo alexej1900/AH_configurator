@@ -1,0 +1,124 @@
+field: 307167f5-9d46-43b6-bb3f-5eadf52a8dc2 # Groups
+fieldLayouts:
+  708befcf-2a46-4dbe-a2ac-ed05f844ca55:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e8c7ba4e-3833-4e37-9322-2a9c52caee1b # Group Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f3862313-c629-4cfb-b726-f816613be72d # Cards
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f54d43fa-0709-406e-a453-c9d7754137c5 # Pin Position Left
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b277576-4353-4162-babc-8e650ed5b4e4 # Pin Position Top
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4b277576-4353-4162-babc-8e650ed5b4e4: # Pin Position Top
+    columnSuffix: null
+    contentColumnType: smallint(3)
+    fieldGroup: null
+    handle: pinPositionTop
+    instructions: 'Please add the position in % (from 0 to 100)'
+    name: 'Pin Position Top'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: '100'
+      min: '0'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e8c7ba4e-3833-4e37-9322-2a9c52caee1b: # Group Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: groupTitle
+    instructions: ''
+    name: 'Group Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f54d43fa-0709-406e-a453-c9d7754137c5: # Pin Position Left
+    columnSuffix: null
+    contentColumnType: smallint(3)
+    fieldGroup: null
+    handle: pinPositionLeft
+    instructions: 'Please add the position in % (from 0 to 100)'
+    name: 'Pin Position Left'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: '100'
+      min: '0'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  f3862313-c629-4cfb-b726-f816613be72d: # Cards
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cards
+    instructions: ''
+    name: Cards
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_cards}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

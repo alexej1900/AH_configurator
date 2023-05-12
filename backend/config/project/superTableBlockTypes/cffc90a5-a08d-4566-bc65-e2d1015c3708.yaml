@@ -1,0 +1,81 @@
+field: 833c9f21-d9fa-4391-beb6-1c95189e1ac2 # Style data Block
+fieldLayouts:
+  9631ae7a-f1ef-4fea-b5c6-fccdca7b0f88:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 76817b98-d32e-499e-a62b-354da6c0a2fd # Style Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fd7a94b7-32ae-4eec-8811-ad6fe7a6ca18 # Style default Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  76817b98-d32e-499e-a62b-354da6c0a2fd: # Style Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: styleName
+    instructions: ''
+    name: 'Style Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fd7a94b7-32ae-4eec-8811-ad6fe7a6ca18: # Style default Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: styleDefaultImage
+    instructions: ''
+    name: 'Style default Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets

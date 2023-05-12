@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: users
+name: Users
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  a4f9aea6-9c70-4395-8471-9cef920d9d62: # AH_Konfigurator
+    enabledByDefault: true
+    hasUrls: true
+    template: users/_entry
+    uriFormat: 'users/{slug}'
+type: channel

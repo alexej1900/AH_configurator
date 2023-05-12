@@ -1,0 +1,93 @@
+field: b9315425-e3fd-478c-9248-2dd8fa17d88d # Modific Types
+fieldLayouts:
+  8ff95afd-e487-4fe6-9fbb-e12ed7f282a4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cab208b2-5553-430a-b368-40f08429d1bb # Mod Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0c1f4d59-c00f-4749-ba15-33c2b81252fd # Mod Item Example
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0c1f4d59-c00f-4749-ba15-33c2b81252fd: # Mod Item Example
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modItemExample
+    instructions: ''
+    name: 'Mod Item Example'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - eaa979eb-d80b-45d2-82dc-746215d2aa68 # Mod Numb
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7bf2789e-ef77-4721-8540-661a36f3137a # Mod Name
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ccecd47c-7c8b-4af1-b337-19c42d70ba83 # Mod Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_19_moditemexample}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  cab208b2-5553-430a-b368-40f08429d1bb: # Mod Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modName
+    instructions: ''
+    name: 'Mod Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: modificItemBlock
+name: 'Modific Item Block'
+sortOrder: 1

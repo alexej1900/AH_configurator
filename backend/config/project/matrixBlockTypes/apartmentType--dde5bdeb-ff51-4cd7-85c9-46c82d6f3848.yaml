@@ -1,0 +1,142 @@
+field: 0670ff4a-6bc8-4081-851d-9135d968f1a1 # Apartment type
+fieldLayouts:
+  6f46e741-3387-42af-ab20-fb43be1b831e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0f2ac1e8-cb64-427b-82ed-8f1a5f21b059 # Apartment title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19de32af-49e7-4e22-9c71-9d3d2a5d9c97 # Apartment price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 72aa885b-67e5-4ca9-9123-198ae6e85fd0 # Apartment image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 40cf8243-caae-418b-8421-597344165684 # Apartment rooms
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0f2ac1e8-cb64-427b-82ed-8f1a5f21b059: # Apartment title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: apartmentTitle
+    instructions: ''
+    name: 'Apartment title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  19de32af-49e7-4e22-9c71-9d3d2a5d9c97: # Apartment price
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: apartmentPrice
+    instructions: ''
+    name: 'Apartment price'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  40cf8243-caae-418b-8421-597344165684: # Apartment rooms
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: apartmentRooms
+    instructions: ''
+    name: 'Apartment rooms'
+    searchable: false
+    settings:
+      contentTable: '{{%stc_28_apartmentrooms}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  72aa885b-67e5-4ca9-9123-198ae6e85fd0: # Apartment image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: apartmentImage
+    instructions: ''
+    name: 'Apartment image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d489016d-368f-476c-a4df-2f7b904e7306' # uploads
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: apartmentType
+name: 'Apartment type'
+sortOrder: 1

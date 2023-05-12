@@ -1,0 +1,35 @@
+field: c6d5578f-e6cf-4171-8037-4bcaf4e95dd0 # Room Styles
+fieldLayouts:
+  82ca9a8d-a8f2-4758-9ed0-0fe45adda87a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f7fcb46d-c6c0-46d5-9d4b-7ed2f0d02147 # Room Style Examples
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  f7fcb46d-c6c0-46d5-9d4b-7ed2f0d02147: # Room Style Examples
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: roomStyleExamples
+    instructions: ''
+    name: 'Room Style Examples'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_roomstyleexamples}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

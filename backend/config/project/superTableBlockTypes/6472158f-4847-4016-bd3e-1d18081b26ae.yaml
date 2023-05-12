@@ -1,0 +1,181 @@
+field: 7c689efc-5509-4c53-91a1-b76938d29f86 # Modification group block
+fieldLayouts:
+  46bec003-1453-4eb1-81e1-2e69c8e3ac02:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8d3b3d96-2261-4131-8821-fe94bfefac5c # Modification group Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f0f8f01c-0485-494b-8ef0-926ac65a6b61 # Additional Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fb241b97-1876-475d-8a93-830b90c08d98 # Options List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9bad162e-0a3b-4bd7-8fd5-242642d1f09b # Modification examples
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  8d3b3d96-2261-4131-8821-fe94bfefac5c: # Modification group Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: modGroupName
+    instructions: ''
+    name: 'Modification group Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9bad162e-0a3b-4bd7-8fd5-242642d1f09b: # Modification examples
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: modificationExamples
+    instructions: ''
+    name: 'Modification examples'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_modificationexamples}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  f0f8f01c-0485-494b-8ef0-926ac65a6b61: # Additional Price
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: modsAdditionalPrice
+    instructions: ''
+    name: 'Additional Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  fb241b97-1876-475d-8a93-830b90c08d98: # Options List
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: optionsList
+    instructions: ''
+    name: 'Options List'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Options Title'
+                -
+                  - handle
+                  - optionsTitle
+                -
+                  - width
+                  - '40'
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Options Subtitle'
+                -
+                  - handle
+                  - optionsSubtitle
+                -
+                  - width
+                  - '40'
+                -
+                  - type
+                  - singleline
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Options Price'
+                -
+                  - handle
+                  - optionsPrice
+                -
+                  - width
+                  - '20'
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+            -
+              - col3
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table

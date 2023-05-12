@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: rooms
+name: Rooms
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  a4f9aea6-9c70-4395-8471-9cef920d9d62: # AH_Konfigurator
+    enabledByDefault: true
+    hasUrls: true
+    template: rooms/_entry
+    uriFormat: 'rooms/{slug}'
+structure:
+  maxLevels: null
+  uid: 8591b2ee-bf13-49e9-bc47-da8ff3d1e03c
+type: structure

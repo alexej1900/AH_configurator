@@ -1,0 +1,97 @@
+field: b0fb83be-0f11-4e66-95e6-799107674824 # Options
+fieldLayouts:
+  e7948f4e-bf3b-4e3a-91a6-2a7d2119e659:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 38eef38e-9a04-4822-b483-ad0b129df62e # Option Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 45ea1de9-fd16-46ba-a60b-46f203684565 # Option Subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 12a425ad-edf0-4ce6-a9a7-153611f63df0 # Option Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  12a425ad-edf0-4ce6-a9a7-153611f63df0: # Option Price
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: optionPrice
+    instructions: 'Leave empty if this option is included in the apartment price'
+    name: 'Option Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '0'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  38eef38e-9a04-4822-b483-ad0b129df62e: # Option Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: optionTitle
+    instructions: ''
+    name: 'Option Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  45ea1de9-fd16-46ba-a60b-46f203684565: # Option Subtitle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: optionSubtitle
+    instructions: ''
+    name: 'Option Subtitle'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

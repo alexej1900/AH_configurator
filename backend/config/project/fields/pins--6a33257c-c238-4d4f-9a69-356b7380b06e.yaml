@@ -1,0 +1,35 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: pins
+instructions: ''
+name: Pins
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 90fe60bc-4d3f-4af4-b8e4-21687c4da55b # Top Position
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 15ca951a-4085-4b28-85f0-7cf86d20885c # Left Position
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_pins}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

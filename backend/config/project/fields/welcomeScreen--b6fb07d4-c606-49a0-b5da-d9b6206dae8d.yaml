@@ -1,0 +1,84 @@
+columnSuffix: ksgxwpod
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: welcomeScreen
+instructions: ''
+name: 'Welcome Screen'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 823bbaed-2b97-4920-9b1e-0d25513ce030 # Intro text
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 31545243-c54e-4879-9719-3b262fd885b4 # Paragraph
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3ca1e212-e622-430e-9d4e-e1979bdc2f4a # Big apartment title
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 96819837-0931-49d4-bc87-1043746d8eb7 # Big apartment image
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8a41fc42-6c4f-4703-aee9-1393b905a1c0 # Big apartment price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 85dcc7d9-3b1b-4b92-a66b-744afedef82b # Small apartment title
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e5ede6ca-8d4c-40ec-9cdd-b16dd8dd409c # Small apartment image
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 9a9ef88a-9f26-4abb-85d3-dc94f3a80204 # Small apartment price
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 0670ff4a-6bc8-4081-851d-9135d968f1a1 # Apartment type
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_welcomescreen}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

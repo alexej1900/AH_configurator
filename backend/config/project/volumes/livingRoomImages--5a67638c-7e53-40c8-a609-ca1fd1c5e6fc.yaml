@@ -1,0 +1,40 @@
+fieldLayouts:
+  117e10e0-04e1-4b5c-a39c-c728387d0128:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: livingRoomImages
+hasUrls: true
+name: 'Living-room Images'
+settings:
+  path: ./uploads/content/living-room/
+sortOrder: 6
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
+type: craft\volumes\Local
+url: '@web/uploads/content/living-room/'

@@ -1,0 +1,46 @@
+columnSuffix: rhypurby
+contentColumnType: string
+fieldGroup: b018bde8-26d8-4dd0-9acb-629428ba416d # Common
+handle: roomType
+instructions: ''
+name: 'Room Type'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Living Room'
+        -
+          - value
+          - living-room
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Kitchen
+        -
+          - value
+          - kitchen
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bathroom
+        -
+          - value
+          - bathroom
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

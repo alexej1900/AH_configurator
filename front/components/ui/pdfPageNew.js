@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import QRCode from "react-qr-code";
 
-import Image from 'next/image';
 import { changePdfLoadingState } from '../../redux/actions/index';
 
 import { formatNumber } from './../../utils/utilities';
@@ -14,7 +13,7 @@ import FinalRoomToPdf from './finalRoomToPdf';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
-export default function PdfPageNew ({ trigger }) {
+export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	const dispatch = useDispatch();
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
@@ -44,27 +43,26 @@ export default function PdfPageNew ({ trigger }) {
 	// console.log(finalRooms)
 
 	useEffect(async() => {
-		if (trigger > 0) {
-			saveAsPdfHandler();
+		if (saveTrigger > 0) {
+			saveAsPdfFile();
 		}
-	}, [trigger])
-	
-	const saveAsPdfHandler = async() => {
-    dispatch(changePdfLoadingState(false));
+	}, [saveTrigger])
 
-    const pdfDOC = new jsPDF({
+	useEffect(async() => {
+		savePdfDataToStore();
+	}, [pdfDataTrigger])
+
+	const createPdf = async () => {
+		const pdfDOC = new jsPDF({
 			orientation: 'p',
-			// unit: 'mm',
 			format: 'a4',
 			compress: true,
 		 }); 
-
+		 
 		pdfDOC.setFontSize(12);
-		dispatch(changePdfLoadingState(true));
+
 		await addElementToPdf(logoImage, 80, 10, 2, 4, 4, pdfDOC, false);
 		await addElementToPdf(mainImage, 10, 70, 3, 1.5, 1.5, pdfDOC, false);
-
-
 		await addElementToPdf(finalData, 110, 70, 3, 2.5, 2.5, pdfDOC, false);
 
 		for (let i = 0; i < finalRooms.length; i++) {
@@ -94,11 +92,8 @@ export default function PdfPageNew ({ trigger }) {
 		pdfDOC.setFont('helvetica', "bold");
 		pdfDOC.text('appenzellerhuus-wohnen.ch', 135, 280);
 
-		//Download the rendered PDF.
-		pdfDOC.save('summary.pdf', { returnPromise: true }).then(() => {
-			dispatch(changePdfLoadingState(false));
-		});
-  }
+		return pdfDOC;
+	}
 
 	const addElementToPdf = async(element, x, y, quality, scaleX, scaleY, pdfDOC, newPage) => {
 		await html2canvas(element, { scale: quality,  }).then((canvas) => {
@@ -114,6 +109,28 @@ export default function PdfPageNew ({ trigger }) {
 			pdfDOC.addImage(imgData, 'JPEG', x, y, (width - 20)/scaleX, (height - 20)/scaleY);
 		})  
 	}
+
+	// dispatch(changePdfLoadingState(false));
+
+	const saveAsPdfFile = async() => {
+    dispatch(changePdfLoadingState(true));
+
+		//Download the rendered PDF.
+		createPdf().then((data) => {
+			data.save('summary.pdf', { returnPromise: true }).then(() => {
+				dispatch(changePdfLoadingState(false));
+			})
+		})   
+  }
+
+	const savePdfDataToStore = async() => {
+		// save PDF file as base64 string and set State property in Summary component
+		createPdf().then((data) => {
+			const out = data.output();
+			const url = 'data:application/pdf;base64,' + btoa(out); 
+			setPdfUrl(url);
+		})   
+  }
 
   return (
 		<>
@@ -169,7 +186,7 @@ export default function PdfPageNew ({ trigger }) {
 				<div id="qrCode">
 					<QRCode value={link} />
 				</div> 
-				<div onClick={saveAsPdfHandler}>Load</div>
+				<div onClick={saveAsPdfFile}>Load</div>
 
 			</div>
 		</>

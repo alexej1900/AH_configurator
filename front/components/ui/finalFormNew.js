@@ -13,7 +13,7 @@ import ShareForm from './shareForm';
 
 import styles from './finalFormNew.module.scss';
 
-export default function FinalFormNew({savePdf, roomId}) {
+export default function FinalFormNew({savePdf, roomId, changePdfDataTrigger, pdfUrl}) {
 
   const [isPopup, setIsPopup] = useState(false);
   const [isContactFormVisible, setIsContactFormVisible] = useState(false);
@@ -55,7 +55,7 @@ export default function FinalFormNew({savePdf, roomId}) {
         <div className={`${styles.finalForm__buttons}`}>
           <FinalFormButton title={ generalStates.pdfLoading ? "Loading document..." : "PDF herunterladen"} iconName="download" iconColor="#3C6589" clickFn={() => !generalStates.pdfLoading && savePdf()}/>
           <FinalFormButton title="Konfiguration teilen" iconName="share" iconColor="#3C6589" clickFn={showShareForm}/>
-          <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={showContactForm}/>
+          <FinalFormButton title="Kontakt aufnehmen" iconName="person" iconColor="#3C6589" clickFn={() => {showContactForm(); changePdfDataTrigger()}}/>
         </div>
       </section>
 
@@ -79,7 +79,7 @@ export default function FinalFormNew({savePdf, roomId}) {
                       child={<p>Durch die Bestätigung werden Sie zur Hauptseite weitergeleitet. Ihre vorherigen Einstellungen werden zurückgesetzt</p>}
                     />}
 
-      {isContactFormVisible && <ContactForm onCancel={onCancel}/>}
+      {isContactFormVisible && <ContactForm onCancel={onCancel} pdfUrl={pdfUrl}/>}
       {isShareFormVisible && <ShareForm onCancel={onCancel}/>}
     </>
   )

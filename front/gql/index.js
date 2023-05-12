@@ -360,17 +360,37 @@ query MyQuery {
 }`;
 
 export const saveData = gql`
-mutation save_users_default_Entry($resultName: String, $userEmail: String, $userPhone: String, $userData: String, $authorId: ID) {
+mutation save_users_default_Entry($resultName: String, $userEmail: String, $userPhone: String, $userData: String, $userPdf: [Int]) {
   save_users_default_Entry(
       title: $resultName, 
       userEmail: $userEmail, 
       userPhone: $userPhone, 
       userData: $userData,
-      authorId: $authorId,
+      userPdf: $userPdf,
+      authorId: 3
     ) {
     userEmail
     userPhone
     userData
+    userPdf {
+      id
+      url
+    }
     title
+  }
+}`;
+
+export const uploadPdfFile = gql`
+mutation save_uploads_Asset($title: String, $fileName: String, $fileData: String) {
+  save_uploads_Asset(
+      _file: {
+        filename: $fileName, 
+        fileData: $fileData,
+      },
+      enabled: true,
+      title: $title, 
+      uploaderId: 3
+    ) {
+    id
   }
 }`;

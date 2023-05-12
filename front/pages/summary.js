@@ -24,6 +24,8 @@ import styles from './summary.module.scss';
 export default function Summary () {
 	const dispatch = useDispatch();
 	const [trigger, setTrigger] = useState(0);
+	const [pdfDataTrigger, setPdfDataTrigger] = useState(0);
+	const [pdfUrl, setPdfUrl] = useState('');
 
 	// If we recived link with state from another user
 	if (window.location.hash) {
@@ -85,12 +87,20 @@ export default function Summary () {
 		}, 500)
 	}
 
-	// console.log('generalStates', generalStates)
+	const changePdfDataTrigger = () => {
+		setPdfDataTrigger(1);
+		setTimeout(() => {
+			setPdfDataTrigger(0);
+		}, 500)
+	}
+
+	// console.log('generalStates.pdfData', generalStates.pdfLoading)
+	
   return (
 		<>
 			<div className={styles.summary} id="summary">
 				<div className={`${styles.pdfData}`}>
-					<PdfPageNew trigger={trigger}/>
+					<PdfPageNew saveTrigger={trigger} pdfDataTrigger={pdfDataTrigger} setPdfUrl={setPdfUrl}/>
 				</div>
 
 				{apartStyle.image && 
@@ -164,7 +174,14 @@ export default function Summary () {
 					{rooms.map((room, index) => <FinalRoom room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
 				</div> 
 
-				<FinalFormNew rooms={roomType} isometry={apartSize.image.url} roomId={apartSize.apartmentId} savePdf={savePdfClick}/> 
+				<FinalFormNew 
+					rooms={roomType} 
+					isometry={apartSize.image.url} 
+					roomId={apartSize.apartmentId} 
+					savePdf={savePdfClick}
+					changePdfDataTrigger={changePdfDataTrigger}
+					pdfUrl={pdfUrl}
+				/> 
 			</div>
 			<Footer/>
 		</>

@@ -71,8 +71,8 @@ export default function FinalRoom({ roomName, style }) {
       const card = {
         modGroupTitle : '', 
         featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
-        styleTitle : item.modificationItemExample[0].modificationStyle, 
-        subtitle : item.modificationItemExample[0].modificationTitle, 
+        styleTitle : item.modificationItemExample[0].modificationTitle, 
+        subtitle : item.modificationItemExample[0].modificationStyle, 
         description : item.modificationItemExample[0].modificationDescr,
         additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
       }
@@ -90,8 +90,8 @@ export default function FinalRoom({ roomName, style }) {
       const card = {
         modGroupTitle : '', 
         featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
-        styleTitle : item.modificationItemExample[0].modificationStyle, 
-        subtitle : item.modificationItemExample[0].modificationTitle, 
+        styleTitle : item.modificationItemExample[0].modificationTitle, 
+        subtitle : item.modificationItemExample[0].modificationStyle, 
         description : item.modificationItemExample[0].modificationDescr,
         additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
       }
@@ -109,8 +109,8 @@ export default function FinalRoom({ roomName, style }) {
       const card = {
         modGroupTitle : '', 
         featuredImage : item.modificationItemExample[0].modificationImage[0].url, 
-        styleTitle : item.modificationItemExample[0].modificationStyle, 
-        subtitle : item.modificationItemExample[0].modificationTitle, 
+        styleTitle : item.modificationItemExample[0].modificationTitle, 
+        subtitle : item.modificationItemExample[0].modificationStyle, 
         description : item.modificationItemExample[0].modificationDescr,
         additionalPrice: item.modificationItemExample[0].modsAdditionalPrice
       }

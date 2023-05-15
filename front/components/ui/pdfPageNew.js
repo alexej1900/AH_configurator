@@ -62,8 +62,10 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 		pdfDOC.setFontSize(12);
 
 		await addElementToPdf(logoImage, 80, 10, 2, 4, 4, pdfDOC, false);
-		await addElementToPdf(mainImage, 10, 70, 3, 1.5, 1.5, pdfDOC, false);
-		await addElementToPdf(finalData, 110, 70, 3, 2.5, 2.5, pdfDOC, false);
+		await addElementToPdf(finalData, 65, 70, 3, 2.5, 2.5, pdfDOC, false);
+
+		await addElementToPdf(mainImage, 40, 140, 3, 1.5, 1.5, pdfDOC, false);
+		
 
 		for (let i = 0; i < finalRooms.length; i++) {
       await addElementToPdf(finalRooms[i], 10, 10, 1, 1, 1, pdfDOC, true);

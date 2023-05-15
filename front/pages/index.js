@@ -56,7 +56,7 @@ export default function Home() {
   if(error) return <p> Error</p>;
   
   const aparmentData = data.entry.dataList[0];
-console.log(aparmentData)
+// console.log(aparmentData)
   let apartmentImage = aparmentData?.apartmentImage[0];
 
   const onCancel = () => {

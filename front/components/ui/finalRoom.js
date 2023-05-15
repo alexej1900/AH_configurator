@@ -119,6 +119,9 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 
+  console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
+  console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
+
   // Comparing choosed modification and existing images (filter images from DB)
   let activeMod = '';
   
@@ -191,7 +194,7 @@ export default function FinalRoom({ roomName, style }) {
 
       {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
         <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
       
       { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }

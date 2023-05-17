@@ -119,9 +119,6 @@ export default function FinalRoom({ roomName, style }) {
     }
   })
 
-  console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
-  console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
-
   // Comparing choosed modification and existing images (filter images from DB)
   let activeMod = '';
   

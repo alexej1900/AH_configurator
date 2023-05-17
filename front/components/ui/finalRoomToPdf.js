@@ -147,7 +147,7 @@ export default function FinalRoomToPdf({ roomName, style }) {
   return (
     <section className={`${styles.summary__room} `} id={roomName}>
       <div className={`${styles.summary__room_image}`}>
-        {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
+        {roomImage?.url && <Image classes="ofi" src={roomImage.url} width={560} height={310} layout="fixed" priority="true" alt="Room Image"/>}
       </div> 
       <div className={`${styles.summary__room_title}`}>{roomName}</div>
           
@@ -155,7 +155,7 @@ export default function FinalRoomToPdf({ roomName, style }) {
 
       {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
 
-      { roomName === "Schlafzimmer" && SleepRoomVisibleOptions.length > 0 && 
+      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
         <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
       
       { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }

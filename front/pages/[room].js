@@ -53,7 +53,7 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer' , 'gang'];
-	// console.log('largeImage', largeImage)
+	// console.log('apartSize', apartSize)
 
 	const container = useRef(null);
 

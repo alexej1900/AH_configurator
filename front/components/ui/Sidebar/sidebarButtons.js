@@ -50,14 +50,14 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 
 				switch (currentRoom.toLowerCase()) {
 					case 'badezimmer':
-						nextLink = apartSize.dushe ? {link:  `/dusche`, title: `Badezimmer mit Dusche`} : {link:  `/schlafzimmer`, title: `Schlafzimmer`}
+						nextLink = apartSize.dusche ? {link:  `/dusche`, title: `Badezimmer mit Dusche`} : {link:  `/schlafzimmer`, title: `Schlafzimmer`}
 						prevLink = `/kitchen-type`;
 						break;
 					case 'dusche':
 						prevLink = apartSize.badewanne ? `/badezimmer` : `/kitchen-type`;
 						break;
 					case 'schlafzimmer':
-						prevLink = apartSize.dushe ? {link:  `/dusche`, title: `Badezimmer mit Dusche`} :{link:  `/badezimmer`, title: `Badezimmer mit Badewanne`};
+						prevLink = apartSize.dusche ? `/dusche` : `/badezimmer`;
 						break;
 					case 'wohnzimmer':
 						nextLink = {link: `/kitchen-type`, title: 'Küchendesign'}
@@ -69,7 +69,7 @@ export default function SidebarButtons({ currentRoom, styleTypeSet, roomId, show
 			}
 		}
 	}
-
+	
 	const showRoomClick = () => {
 		dispatch(changeRoomVisibility(true))
 		dispatch(changeStyleVisibility(true));

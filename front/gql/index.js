@@ -130,6 +130,9 @@ query MyQuery($id: [String], $var: [String]) {
           spiegel
           einlavabo
           zweilavabo
+          badearmaturen
+          badearmaturen2
+          badearmaturen3
           badezimmermobel
           badezimmermobel2
           badezimmermobel3
@@ -137,6 +140,9 @@ query MyQuery($id: [String], $var: [String]) {
           schiebetur2
           badeboden
           dusche
+          duschearmaturen
+          duschearmaturen2
+          duschearmaturen3
           duscheplatten
           duscheplatten2
           duschespiegel

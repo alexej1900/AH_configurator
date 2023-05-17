@@ -63,7 +63,7 @@ export default function Card({
                                 src={image.url} 
                                 width={image.width} 
                                 height={image.height} 
-                                layout={image.layout} 
+                                layout={final ? 'fixed' : image.layout} 
                                 background={image.background}
                                 alt="Option"
                             />
@@ -72,7 +72,7 @@ export default function Card({
                         <div className={`${styles.text__wrapper}`}>
                             <div className={styles.card__title}>{title}</div>
                             <p className={styles.card__description}>{subtitle}</p>
-                            {/* <p className={styles.card__description}>{description}</p> */}
+                            <p className={styles.card__description}>{description}</p>
                             {/* {optionPrice > 0 && !collapsed ? <p className={styles.card__description}><span className={styles.card__index}>+ CHF</span> {optionPrice}</p> : null} */}
                             {/* {final ? <p className={styles.card__description}>{additionalPrice ? `+ ${additionalPrice} CHF zum Grundpreis` : ''}</p> : null} */}
                             {!final ? <IconComponent name={onlyOne ? "lock" : "check"} color={collapsed ? "rgba(0, 0, 0, 0.32)" :"#fff"}/> : null}

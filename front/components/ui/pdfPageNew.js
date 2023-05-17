@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import QRCode from "react-qr-code";
 
@@ -15,6 +15,8 @@ import html2canvas from 'html2canvas';
 
 export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	const dispatch = useDispatch();
+
+	const [pdf, setPdf] = useState(null);
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
 	const link = generalStates.link;
@@ -82,7 +84,7 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 		pdfDOC.text(`Link Konfigurator:`, 10, 110);
 		pdfDOC.text(`${link}`, 70, 110);
 		pdfDOC.text(`QR-code`, 10, 120);
-		await addElementToPdf(qrCode, 70, 120, 2, 1.5, 1.2, pdfDOC, false);
+		await addElementToPdf(qrCode, 70, 120, 2, 1.5, 1.5, pdfDOC, false);
 
 		pdfDOC.text('Jan Group AG', 10, 265);
 		pdfDOC.text('Dorfstrasse 29, 9108 Gonten', 10, 270);
@@ -96,17 +98,21 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	}
 
 	const addElementToPdf = async(element, x, y, quality, scaleX, scaleY, pdfDOC, newPage) => {
-		await html2canvas(element, { scale: quality,  }).then((canvas) => {
+		await html2canvas(element, { scale: quality }).then((canvas) => {
 			newPage && pdfDOC.addPage();
 			const imgData = canvas.toDataURL('image/png');
 			const divHeight = element.clientHeight;
 			const divWidth = element.clientWidth;
 			const ratio = divHeight / divWidth;
+			
+			// console.log('element', element)
+			// console.log('divHeight/divWidth', divHeight, divWidth)
+
 		
-			const width = pdfDOC.internal.pageSize.getWidth();
-			let height = pdfDOC.internal.pageSize.getHeight();
-			height = ratio * width;
-			pdfDOC.addImage(imgData, 'JPEG', x, y, (width - 20)/scaleX, (height - 20)/scaleY);
+			const width = pdfDOC.internal.pageSize.getWidth() - 20; // == 190mm
+			const height = ratio * width;
+
+			pdfDOC.addImage(imgData, 'JPEG', x, y, (width)/scaleX, (height)/scaleY);
 		})  
 	}
 

@@ -53,7 +53,7 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer' , 'gang'];
-	console.log('generalStates', generalStates.pinStatus)
+	// console.log('generalStates', generalStates.pinStatus)
 
 	const container = useRef(null);
 
@@ -63,10 +63,11 @@ export default function Room() {
 
 	// animation function =======================
 	const moveImageFunction = async() => {
-	    for (let x = 0; x <= 600; x += 25) {
+			const goal = window.innerWidth < 1500 ? 750 : 400
+	    for (let x = 0; x <= goal; x += 25) {
 				const scrollableImage = container.current.getElement();
 				if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
-				else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
+				// else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
 	    }
 	}
 	// end of animation function =================
@@ -80,7 +81,7 @@ export default function Room() {
 			setTimeout(() => {
 					document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
 					moveImageFunction();
-			}, 1000);
+			}, 1500);
 
 			//if we have in state image of current room, we set this image
 			roomType[`${ROOM_TYPE?.toLowerCase()}`] 

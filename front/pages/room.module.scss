@@ -57,7 +57,7 @@
 }
 
 .full {
-  object-position: left;
+  object-position: center;
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 1500px) { // 1500 = width of big image in px
@@ -71,7 +71,7 @@
     object-fit: cover;
     transition: all 0.3s ease-in-out;
 
-    // object-position: left;
+    object-position: center;
     // &.animate {
     //   animation-name: moving;
     //   animation-duration: 3s;
@@ -111,8 +111,9 @@
     right: 50rem;
 
     @media (max-width: $screen-lg) {
-      right: 2rem;
-      bottom: 8rem;
+      // right: 2rem;
+      // bottom: 8rem;
+      display: none;
     }
   }
 }
@@ -131,6 +132,10 @@
 
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: $screen-lg) {
+    display: none;
+  }
 
   svg {
     @include squareSize(2.6rem);

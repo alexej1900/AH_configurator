@@ -25,6 +25,7 @@ import {
 	changeRoomVisibility, 
 	changeLoadingState,
 	changeApartPrice,
+	changePinStatus,
 } from '../redux/actions/index';
 
 import styles from './room.module.scss';
@@ -42,7 +43,6 @@ export default function Room() {
 	const [isPopup, setIsPopup] = useState(false);
 	const [isFloorConfirmation, setIsFloorConfirmation] = useState(false);
 	const [isConfirmation, setIsConfirmation] = useState(false);
-	const [isPinsVisible, setIsPinsVisible] = useState(true);
 	const [optionData, setOptionData] = useState({});
 
 	const dispatch = useDispatch();
@@ -53,7 +53,7 @@ export default function Room() {
 	const roomState = roomType[ROOM_TYPE?.slice(0, -1) === 'küche' ? 'küche' : ROOM_TYPE];
 
 	const roomsWithChangeableFloor = ['wohnzimmer', 'küche', 'schlafzimmer' , 'gang'];
-	// console.log('apartSize', apartSize)
+	console.log('generalStates', generalStates.pinStatus)
 
 	const container = useRef(null);
 
@@ -62,13 +62,13 @@ export default function Room() {
 	}, []);
 
 	// animation function =======================
-	// const moveImageFunction = async() => {
-	//     for (let x = 0; x <= 600; x += 25) {
-	// 			const scrollableImage = container.current.getElement();
-	// 			if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
-	// 			else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
-	//     }
-	// }
+	const moveImageFunction = async() => {
+	    for (let x = 0; x <= 600; x += 25) {
+				const scrollableImage = container.current.getElement();
+				if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
+				else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
+	    }
+	}
 	// end of animation function =================
 
 	useEffect(async() => {
@@ -79,7 +79,7 @@ export default function Room() {
 
 			setTimeout(() => {
 					document.querySelector(`.${styles.image__wrapper}`)?.classList.remove(styles.animate);
-					// moveImageFunction();
+					moveImageFunction();
 			}, 1000);
 
 			//if we have in state image of current room, we set this image
@@ -231,6 +231,7 @@ export default function Room() {
 		setIsFloorConfirmation(false);
 		dispatch(changeLoadingState(false))
 	};
+
 	// console.log('data.entry.mods', data.entry)
 	return (
 		<>
@@ -240,35 +241,40 @@ export default function Room() {
 					onStartScroll={() => setIsScroll(true)}
 					onEndScroll={() => setIsScroll(false)}
 					id={'image__wrapper'}
+					vertical={false}
 					ref={container}
 				>
 					<div className={`${styles.full} ${isImageload && styles.blur}`} id='fullImage' style={{position:"relative", width: "100vw", height: "100vh"}}>
 						<Image 
 							src={largeImage ? largeImage.url : activeImage.url} 
-							layout='fill' 
-							object-fit="cover" 
-							style={{width: "100vw", height: "100vh"}}
+							width={window.innerWidth < 1500 ? 1500 : window.innerWidth}
+							height={window.innerHeight}
+							layout='fixed' 
+							// layout='fill' 
+							// object-fit="cover" 
+							// style={{objectPosition: 'center'}}
+							// style={{objectFit: "contain"}}
 							onLoadingComplete={() => dispatch(changeLoadingState(false))}
 							priority 
 							alt="Main image"
 						/>
 					</div>
 
-					{isPinsVisible  && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler} />}
+					{generalStates.pinStatus  && <PinsList data={modifyData} roomState={roomState} pinClickHandler={pinClickHandler} />}
 				</ScrollContainer>
 
 				{(sidebarState & !isScroll) ? <ScrollIcon/> : null}
 
 				<div 	className={`${styles.btn__getContacts} ${sidebarState && styles.btn__getContacts_shift}`} 
-							onClick={() => setIsPopup(true)}
+					onClick={() => setIsPopup(true)}
 				>
 					<ContactBtn small={false}/>
 				</div>
 
 				<div 	className={`${styles.btn__pinsHide} ${sidebarState && styles.btn__pinsHide_shift} center`} 
-							onClick={() => setIsPinsVisible(!isPinsVisible)}
+					onClick={() => dispatch(changePinStatus(!generalStates.pinStatus))}
 				>
-					<IconComponent name={isPinsVisible ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
+					<IconComponent name={generalStates.pinStatus ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
 				</div>
 
 				<Sidebar 

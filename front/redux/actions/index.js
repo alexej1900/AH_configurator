@@ -29,6 +29,14 @@ export const changeSidebarState = (action) => dispatch => {
   });
 };
 
+export const changePinStatus = (action) => dispatch => {
+
+  dispatch({
+    type: 'TOGGLE_PINSTATUS',
+    pinStatus: action
+  });
+};
+
 export const changeActivePin = (action) => dispatch => {
 
   dispatch({

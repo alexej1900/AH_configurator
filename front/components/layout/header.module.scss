@@ -68,6 +68,10 @@
       @include flex-center-center;
       cursor: pointer;
       margin-right: 3.2rem;
+
+      @media (max-width: $screen-lg) {
+        display: none;
+      }
     
       svg {
         @include squareSize(3rem);
@@ -200,6 +204,38 @@
         border-right: 2px solid $color__cta-primary--default;
         border-bottom: 2px solid $color__cta-primary--default;
         transform: rotate(45deg);
+      }
+    }
+  }
+
+  .btn__pinsHide {
+  
+    @include flex-center-center;
+    @include squareSize(4rem);
+    border-radius: 50%;
+    margin: 0;
+    margin-right: 1.6rem;
+  
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: none;
+
+    @media (max-width: $screen-lg) {
+      display: flex;
+    }
+
+  
+    svg {
+      @include squareSize(2.6rem);
+      fill: $color__cta-primary--default;
+    }
+  
+    &:hover {
+      background: $color__cta-primary--hover;
+      border-color: $color__bright;
+  
+      svg {
+        fill: $color__bright;
       }
     }
   }

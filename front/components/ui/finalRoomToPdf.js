@@ -14,7 +14,7 @@ import LoadingSpinner from './atoms/loadingSpinner';
 
 import styles from './finalRoomToPdf.module.scss';
 
-export default function FinalRoomToPdf({ roomName, style }) {
+export default function FinalRoomToPdf({ roomName }) {
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
   
@@ -123,7 +123,7 @@ export default function FinalRoomToPdf({ roomName, style }) {
                         subtitle={data[1].individualFormat ? "" :  subtitle} 
                         description={data[1].individualFormat ? "" : description}
                         additionalPrice={data[1].individualFormat ? "" : additionalPrice}
-                        image={{url: data[1].individualFormat ? "/individ-icon.svg" : featuredImage, width: '125px', height: '100px', layout: "fixed"}}
+                        image={{url: featuredImage, width: `125px`, height: `100px`, layout: "fixed"}}
                         type="small" 
                         final={true}
                         selectCard={() => null} 

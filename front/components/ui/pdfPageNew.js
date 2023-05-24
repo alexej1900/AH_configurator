@@ -42,6 +42,9 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	const finalData = document.getElementById('stats');
 	const finalRooms = rooms.map((room) => document.getElementById(room));
 	const qrCode = document.getElementById('qrCode');
+
+	// const template = rooms.map((room, index) => ReactDOMServer.renderToStaticMarkup(<FinalRoomToPdf roomName={room} key={index}/>));
+
 	// console.log(finalRooms)
 
 	useEffect(async() => {
@@ -98,9 +101,13 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	}
 
 	const addElementToPdf = async(element, x, y, quality, scaleX, scaleY, pdfDOC, newPage) => {
+		// console.log('element', element)
+
 		await html2canvas(element, { scale: quality }).then((canvas) => {
+			
 			newPage && pdfDOC.addPage();
 			const imgData = canvas.toDataURL('image/png');
+			// console.log('imgData', imgData)
 			const divHeight = element.clientHeight;
 			const divWidth = element.clientWidth;
 			const ratio = divHeight / divWidth;
@@ -187,7 +194,7 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 				</div>
 
 				<div className={`${styles.container}`} >
-					{rooms.map((room, index) => <FinalRoomToPdf room={roomType[`${room}`]} roomName={room} key={index} style={apartStyle.title}/>)}
+					{rooms.map((room, index) => <FinalRoomToPdf roomName={room} key={index}/>)}
 				</div> 
 				<div id="qrCode">
 					<QRCode value={link} />

@@ -7,6 +7,7 @@ const initState = {
     headerImage: false,
     headerBg: false,
     pin: false,
+    pinStatus: true,
     summaryIsOpen: false,
     showStyle: true,
     showRoom: true,
@@ -26,6 +27,8 @@ const generalStates = (state = initState, action) => {
             return state = {...state, loading: action.loading}
         case 'TOGGLE_PDFLOADING': 
             return state = {...state, pdfLoading: action.pdfLoading}
+        case 'TOGGLE_PINSTATUS': 
+            return state = {...state, pinStatus: action.pinStatus}
         case 'TOGGLE_PIN': 
             return state = {...state, pin: action.pin}
         case 'TOGGLE_ACTIVE_MOD': 

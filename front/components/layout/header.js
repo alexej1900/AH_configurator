@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { useState, useEffect } from 'react';
-import { changeMenuState } from "../../redux/actions/index";
+import { changeMenuState, changePinStatus } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 
 import ContactForm from '../ui/contactForm';
@@ -18,10 +18,9 @@ export default function Header () {
   const dispatch = useDispatch();
   const { pathname, query } = useRouter();
 
-  const generalStates = useSelector((state) => state.generalStates);
+  const { menu, open, pinStatus } = useSelector((state) => state.generalStates);
   const apartSize = useSelector((state) => state.apartSize);
-
-  const { menu, open }  = generalStates;
+  
   const rooms = [
     'Wohnzimmer', 
     'Küchenlinien', 
@@ -58,10 +57,16 @@ export default function Header () {
             <Link href='/summary'>
               <a className={`${style.header__buttons_virtual}`} title="To the summary page">
                 <IconComponent name="summary" color="#3C6589"/>
-                <span className={`${style.header__menu_button_descr}`}>Fertigstellen</span>
+                <span className={`${style.header__menu_button_descr} ${style.button_summ}`}>Fertigstellen</span>
               </a>
             </Link> 
           } 
+
+          <div 	className={`${style.btn__pinsHide} center`} 
+						onClick={() => dispatch(changePinStatus(!pinStatus))}
+				  >
+					  <IconComponent name={pinStatus ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
+				  </div>
 
             {/* <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
               <a className={`${style.header__buttons_virtual}`} title="To the virtual tour" target="_blank">

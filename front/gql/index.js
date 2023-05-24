@@ -355,16 +355,6 @@ query MyQuery {
   }
 }`;
 
-export const bathImages = gql`
-query MyQuery {
-  assets {
-    ... on bathImages_Asset {
-      url
-      title
-    }
-  }
-}`;
-
 export const saveData = gql`
 mutation save_users_default_Entry($resultName: String, $userEmail: String, $userPhone: String, $userData: String, $userPdf: [Int]) {
   save_users_default_Entry(

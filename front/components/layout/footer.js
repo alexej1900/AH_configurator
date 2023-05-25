@@ -19,9 +19,7 @@ export default function Footer() {
 
         <div className={styles.footer__content}>
           <div className={styles.footer__content_links}>
-            {/* <a href="#" target='_blank'> */}
-              <img className={styles.footer__content_links_logo} src='./AHLogo.svg' alt="summary" />
-            {/* </a> */}
+            <img className={styles.footer__content_links_logo} src='./AHLogo.svg' alt="summary" id="logoImage"/>
             
             {/* <div className={styles.footer__content_links_social}>
               <a href="#" target='_blank'>

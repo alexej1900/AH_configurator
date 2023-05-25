@@ -63,7 +63,7 @@ export default function Card({
                                 src={image.url} 
                                 width={image.width} 
                                 height={image.height} 
-                                layout={final ? 'fixed' : image.layout} 
+                                layout={image.layout} 
                                 background={image.background}
                                 alt="Option"
                             />

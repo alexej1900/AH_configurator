@@ -119,11 +119,16 @@ export default function FinalRoomToPdf({ roomName }) {
                     <h5 className={`${styles.summary__room_data_title}`}>{data[0]}  {`${modGroupTitle ?  '- ' + modGroupTitle : ''}`}</h5>
                     <div className={`${styles.summary__room_card_wrapper}`}>
                       <Card 
-                        title={data[1].individualFormat ? "Individuelle Lösung" : styleTitle} 
-                        subtitle={data[1].individualFormat ? "" :  subtitle} 
-                        description={data[1].individualFormat ? "" : description}
-                        additionalPrice={data[1].individualFormat ? "" : additionalPrice}
-                        image={{url: featuredImage, width: `125px`, height: `100px`, layout: "fixed"}}
+                        title={styleTitle} 
+                        subtitle={subtitle} 
+                        description={description}
+                        additionalPrice={additionalPrice}
+                        image={{
+                          url: featuredImage, 
+                          width: `${3000 * window.devicePixelRatio}`, // avoid problems with pdf rendering & retina screens
+                          height: 1500, 
+                          layout: 'fixed'
+                        }}
                         type="small" 
                         final={true}
                         selectCard={() => null} 
@@ -145,20 +150,19 @@ export default function FinalRoomToPdf({ roomName }) {
   // console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
 
   return (
-    <section className={`${styles.summary__room} `} id={roomName}>
-      <div className={`${styles.summary__room_image}`}>
-        {roomImage?.url && <Image classes="ofi" src={roomImage.url} width={560} height={310} layout="fixed" priority="true" alt="Room Image"/>}
-      </div> 
-      <div className={`${styles.summary__room_title}`}>{roomName}</div>
-          
-      {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 
-      {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
+    <section className={`${styles.summary__room} `}>
+      <div className={`${styles.summary__room_image}`} id={roomName}>
+            
+        {roomName !== "Schlafzimmer" && showOptionList(allOptions)}
 
-      { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
-        <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
-      
-      { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }
+        {roomName === "Schlafzimmer" && showOptionList(SleepRoomVisibleOptions) }
+
+        { roomName === "Schlafzimmer" && SleepRoomNonVisibleOptions.length > 0 && 
+          <div className={`${styles.summary__room_title}`}>Zuzätzliche Einbauschränke in weiteren Räumen</div>}
+        
+        { roomName === "Schlafzimmer" && showOptionList(SleepRoomNonVisibleOptions) }
+      </div>
     </section>
   )
 }

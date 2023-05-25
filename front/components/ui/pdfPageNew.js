@@ -41,11 +41,8 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	const mainImage = document.getElementById('apartmentImage');
 	const finalData = document.getElementById('stats');
 	const finalRooms = rooms.map((room) => document.getElementById(room));
+	const finalRoomsImages = rooms.map((room) => document.getElementById(room + 'img'));
 	const qrCode = document.getElementById('qrCode');
-
-	// const template = rooms.map((room, index) => ReactDOMServer.renderToStaticMarkup(<FinalRoomToPdf roomName={room} key={index}/>));
-
-	// console.log(finalRooms)
 
 	useEffect(async() => {
 		if (saveTrigger > 0) {
@@ -71,22 +68,27 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 		await addElementToPdf(mainImage, 40, 140, 3, 1.5, 1.5, pdfDOC, false);
 
 		for (let i = 0; i < finalRooms.length; i++) {
-      await addElementToPdf(finalRooms[i], 10, 10, 1, 1, 1, pdfDOC, true);
+			await addElementToPdf(finalRoomsImages[i], 10, 10, 1, 1, 1, pdfDOC, true);
+			pdfDOC.setFont('helvetica', "normal");
+			pdfDOC.setFontSize(16);
+			pdfDOC.text(rooms[i].toUpperCase(), 10, 120);
+			pdfDOC.setFontSize(12);
+      await addElementToPdf(finalRooms[i], 10, 125, 1, 1, 1, pdfDOC, false);
     }
 
 		await addElementToPdf(logoImage, 80, 10, 2, 4, 4, pdfDOC, true);
 
 		pdfDOC.setFont('helvetica', "bold");
 		pdfDOC.text(`HERZLICHEN GLÜCKWUNSCH!`, 10, 70);
-
 		pdfDOC.setFont('helvetica', "normal");
+
 		pdfDOC.text(`SIE SIND IHRER TRAUMWOHNUNG`, 10, 75);
 		pdfDOC.text(`EINEN SCHRITT NÄHER.`, 10, 80);
-
 		pdfDOC.text(`Sie können immer die Wohnung Ihrer Träume bekommen:`, 10, 100);
 		pdfDOC.text(`Link Konfigurator:`, 10, 110);
 		pdfDOC.text(`${link}`, 70, 110);
 		pdfDOC.text(`QR-code`, 10, 120);
+
 		await addElementToPdf(qrCode, 70, 120, 2, 1.5, 1.5, pdfDOC, false);
 
 		pdfDOC.text('Jan Group AG', 10, 265);
@@ -101,21 +103,12 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 	}
 
 	const addElementToPdf = async(element, x, y, quality, scaleX, scaleY, pdfDOC, newPage) => {
-		// console.log('element', element)
-
 		await html2canvas(element, { scale: quality }).then((canvas) => {
-			
 			newPage && pdfDOC.addPage();
 			const imgData = canvas.toDataURL('image/png');
-			// console.log('imgData', imgData)
 			const divHeight = element.clientHeight;
 			const divWidth = element.clientWidth;
 			const ratio = divHeight / divWidth;
-			
-			// console.log('element', element)
-			// console.log('divHeight/divWidth', divHeight, divWidth)
-
-		
 			const width = pdfDOC.internal.pageSize.getWidth() - 20; // == 190mm
 			const height = ratio * width;
 
@@ -148,10 +141,6 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
   return (
 		<>
 			<div className={styles.summary}>
-
-				<div className={`${styles.container} ${styles.mainImage}`} >
-					<img className={styles.logo} src='./AHLogo.svg' alt="Logo" id="logoImage"/>		
-				</div>
 
 				<div className={`${styles.container} finalData`}>
 					<section className={`${styles.summary__overview}`} id="overview">
@@ -199,8 +188,6 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 				<div id="qrCode">
 					<QRCode value={link} />
 				</div> 
-				<div onClick={saveAsPdfFile}>Load</div>
-
 			</div>
 		</>
   )

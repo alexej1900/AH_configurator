@@ -118,7 +118,7 @@ export default function KitchenType() {
                 currentRoom={'kitchen-type'}
             />
 
-            <InfoBox  styleTitle={currentStyle.styleTitle} description={currentStyle.description}/>
+            {/* <InfoBox  styleTitle={currentStyle.styleTitle} description={currentStyle.description}/> */}
 
             <StyleChooseButtons 
                 room={'kitchen-type'} 

@@ -62,11 +62,13 @@ export default function Header () {
             </Link> 
           } 
 
-          <div 	className={`${style.btn__pinsHide} center`} 
-						onClick={() => dispatch(changePinStatus(!pinStatus))}
-				  >
-					  <IconComponent name={pinStatus ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
-				  </div>
+          {pathname !== '/' && pathname !== '/summary' && 
+            <div 	className={`${style.btn__pinsHide} center`} 
+              onClick={() => dispatch(changePinStatus(!pinStatus))}
+            >
+              <IconComponent name={pinStatus ? 'pin_is_open' : 'pin_is_close'} color="#fff"/>
+            </div>
+           } 
 
             {/* <Link href='https://www.nightnurse.ch/share/22G09_Calydo/230206s'>
               <a className={`${style.header__buttons_virtual}`} title="To the virtual tour" target="_blank">

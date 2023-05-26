@@ -65,7 +65,7 @@ export default function Room() {
 	const moveImageFunction = async() => {
 			const goal = window.innerWidth < 1500 ? 750 : 400
 	    for (let x = 0; x <= goal; x += 25) {
-				const scrollableImage = container.current.getElement();
+				const scrollableImage = container.current?.getElement();
 				if (x < 400) scrollableImage?.scrollTo({left: sidebarState ? x : 0, behavior: 'smooth'}); 
 				// else scrollableImage?.scrollTo({left: sidebarState ? 800 - x : 0, behavior: 'smooth'});
 	    }

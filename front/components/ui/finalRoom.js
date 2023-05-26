@@ -180,7 +180,7 @@ export default function FinalRoom({ roomName, style }) {
   const roomImage1 = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode.toLowerCase())[0];
   const roomImage = room.image ? room.image : roomImage1;
   // console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
-  console.log('roomImage', roomImage.url)
+  // console.log('roomImage', roomImage.url)
 
   return (
     <section className={`${styles.summary__room} ` }>

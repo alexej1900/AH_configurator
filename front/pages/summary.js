@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Image from 'next/image';
@@ -28,22 +28,36 @@ export default function Summary () {
 	const [pdfUrl, setPdfUrl] = useState('');
 
 	// If we recived link with state from another user
+
+	let initState = '';
+	
 	if (window.location.hash) {
+		useLayoutEffect(async() => {
+			initState = JSON.parse(window.location.hash.slice(1)
+				.replaceAll('%22', '"')
+				.replaceAll('%20', ' ')
+				.replaceAll('%C3%BC', 'ü')
+				.replaceAll('%C3%B6', 'ö')
+				.replaceAll('%C3%A4', 'ä')
+				.replaceAll('%C2%B0', '°')
+			);
+			
+			setTimeout(() => {
+				dispatch(setInitialState(initState));
+			}, 1000);
 
-		const initState = JSON.parse(window.location.hash.slice(1)
-			.replaceAll('%22', '"')
-			.replaceAll('%20', ' ')
-			.replaceAll('%C3%BC', 'ü')
-			.replaceAll('%C3%B6', 'ö')
-			.replaceAll('%C3%A4', 'ä')
-		);
-
-		dispatch(setInitialState(initState));
-
-		window.location.href = location.pathname
+			setTimeout(() => {
+				window.location.href = location.pathname
+			}, 1000);
+	}, [])} else {
+		useEffect(async () => {
+			const shortURl = await madeShortUrl(window.location.href);
+			dispatch(setLink(shortURl));
+		}, []);
 	}
 
   const { apartStyle, apartSize, roomType, generalStates } = useSelector(state => state);
+	const state = useSelector(state => state);
 	// const rooms = generalStates.rooms
 
 	const rooms = [
@@ -75,11 +89,6 @@ export default function Summary () {
   //   return () => dispatch(changeSidebarState(true));
   // }, []);
 
-	useEffect(async () => {
-    const shortURl = await madeShortUrl(window.location.href);
-    dispatch(setLink(shortURl));
-  }, []);
-
 	const savePdfClick = () => {
 		setTrigger(1);
 		setTimeout(() => {
@@ -93,8 +102,6 @@ export default function Summary () {
 			setPdfDataTrigger(0);
 		}, 500)
 	}
-
-	// console.log('generalStates.pdfData', generalStates.pdfLoading)
 	
   return (
 		<>

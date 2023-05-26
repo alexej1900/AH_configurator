@@ -30,7 +30,7 @@ export default function FinalRoom({ roomName, style }) {
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
 
-  console.log('roomName', roomName)
+  // console.log('roomName', roomName)
 
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);

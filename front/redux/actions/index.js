@@ -253,7 +253,10 @@ export const setInitialState = (state) => dispatch => {
   const apartPrice = state.apartPrice;
   const apartSize  = state.apartSize;
   const apartStyle = state.apartStyle;
+  const apartmentStates  = state.apartmentStates;
   const roomType = state.roomType;
+
+  console.log('DISPATCH')
 
   dispatch({
     type: 'SET_INIT_STATE',
@@ -262,6 +265,7 @@ export const setInitialState = (state) => dispatch => {
     apartSize: apartSize,
     apartStyle: apartStyle,
     roomType: roomType,
+    apartmentStates: apartmentStates,
   });
 };
 

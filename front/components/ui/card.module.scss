@@ -152,6 +152,10 @@
         @include description;
         max-width: calc(100% - 4.4rem);
 
+        @media (max-width: $screen-md) {
+          font-size: 1.4rem;
+        }
+
         .card__index {
           margin-right: .4rem;
           @include font(1.2rem, 400, 100%);

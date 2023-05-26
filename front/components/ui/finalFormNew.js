@@ -61,7 +61,7 @@ export default function FinalFormNew({savePdf, roomId, changePdfDataTrigger, pdf
 
       <div className={`${styles.finalForm__reset}`}>
         <div className={`${styles.finalForm__reset_wrapper}`}>
-          <h3 className={styles.finalForm__reset_title}>Spiels noch einmal Sam.</h3>
+          <h3 className={styles.finalForm__reset_title}>Neue Konfiguration starten</h3>
           <div className={styles.finalForm__reset_subtitle}>Probieren Sie gerne auch weitere Variationen ihrer Traumwohnung aus.</div>
           <p className={styles.finalForm__reset_description}>Ihre aktuelle Konfiguration im PDF und dem zur Verfügung gestellten “Share”-Link bleibt dabei erhalten.</p>
 

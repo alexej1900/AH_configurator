@@ -152,6 +152,19 @@ export default function FinalRoomToPdf({ roomName }) {
   return (
 
     <section className={`${styles.summary__room} `}>
+      <div className={`${styles.summary__room_image}`}>
+        {roomImage?.url && 
+          <Image 
+            classes="ofi" 
+            id={roomName + 'img'} 
+            src={roomImage.url} 
+            layout={"fixed"} 
+            width={1500 * window.devicePixelRatio} // avoid problems with pdf rendering & retina screens
+            height={400 } 
+            priority="true" 
+            alt="Room Image"
+          />}
+      </div> 
       <div className={`${styles.summary__room_image}`} id={roomName}>
             
         {roomName !== "Schlafzimmer" && showOptionList(allOptions)}

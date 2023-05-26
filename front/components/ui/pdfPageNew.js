@@ -123,7 +123,7 @@ export default function PdfPageNew ({ saveTrigger, pdfDataTrigger, setPdfUrl}) {
 
 		//Download the rendered PDF.
 		createPdf().then((data) => {
-			data.save('summary.pdf', { returnPromise: true }).then(() => {
+			data.save(`${apartSize.apartmentId}-summary.pdf`, { returnPromise: true }).then(() => {
 				dispatch(changePdfLoadingState(false));
 			})
 		})   

@@ -29,7 +29,9 @@ export default function FinalRoom({ roomName, style }) {
   const dispatch = useDispatch();
   const roomImages = getImages();
   const { roomType, apartStyle, apartSize } = useSelector(state => state);
-  // console.log('roomName', roomName)
+
+  console.log('roomName', roomName)
+
   const currentRoom = roomName === 'Küche' ? `${roomName}${apartStyle.kitchenStyle + 1}` : roomName;
   const modifications = getModifications(currentRoom.slice(0, 5) === 'Küche' ? 'küche' : currentRoom);
 
@@ -178,22 +180,12 @@ export default function FinalRoom({ roomName, style }) {
   const roomImage1 = roomImages?.filter((image) => image.title.toLowerCase() === roomActiveMode.toLowerCase())[0];
   const roomImage = room.image ? room.image : roomImage1;
   // console.log('SleepRoomNonVisibleOptions', SleepRoomNonVisibleOptions)
-  // console.log('SleepRoomVisibleOptions', SleepRoomVisibleOptions)
+  console.log('roomImage', roomImage.url)
 
   return (
     <section className={`${styles.summary__room} ` }>
       <div className={`${styles.summary__room_image}`}>
-        {roomImage?.url && 
-          <Image 
-            classes="ofi" 
-            id={roomName + 'img'} 
-            src={roomImage.url} 
-            layout={"fixed"} 
-            width={window.innerWidth < 1500 ? window.innerWidth * window.devicePixelRatio : 1500 * window.devicePixelRatio} // avoid problems with pdf rendering & retina screens
-            height={window.innerWidth < 1500 ? window.innerWidth / 2 * window.devicePixelRatio : 750 * window.devicePixelRatio} 
-            priority="true" 
-            alt="Room Image"
-          />}
+        {roomImage?.url && <Image classes="ofi" src={roomImage.url} layout="fill" priority="true" alt="Room Image"/>}
       </div> 
       <div className={`${styles.summary__room_title}`}>{roomName}</div>
           

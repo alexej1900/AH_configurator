@@ -256,8 +256,6 @@ export const setInitialState = (state) => dispatch => {
   const apartmentStates  = state.apartmentStates;
   const roomType = state.roomType;
 
-  console.log('DISPATCH')
-
   dispatch({
     type: 'SET_INIT_STATE',
     generalStates: generalStates,

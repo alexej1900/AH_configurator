@@ -132,7 +132,7 @@ export default function Summary () {
 								</div>
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Zimmer</div>
-									<div className="col-4">{apartSize.roomsCount} Zi.</div>
+									<div className="col-4">{apartSize.roomsCount}</div>
 								</div>
 
 								{apartStyle.title && 
@@ -143,12 +143,12 @@ export default function Summary () {
 								}
 								<div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Grundfläche</div>
-									<div className="col-4">{apartSize.generalArea} m2</div>
+									<div className="col-4">{apartSize.generalArea} m²</div>
 								</div>
-								<div className={`${styles.summary__overview_line} row`}>
+								{/* <div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Grundkosten</div>
 									<div className="col-4">{apartSize.basePrice} CHF</div>
-								</div>
+								</div> */}
 								{/* <div className={`${styles.summary__overview_line} row`}>
 									<div className="col-8">Individuelle Lösungen</div>
 									<div className="col-4">{IndividualPrice ? `-${formatNumber(IndividualPrice)}`: 0}</div>

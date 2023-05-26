@@ -189,8 +189,8 @@ export default function FinalRoom({ roomName, style }) {
             id={roomName + 'img'} 
             src={roomImage.url} 
             layout={"fixed"} 
-            width={1500 * window.devicePixelRatio} // avoid problems with pdf rendering & retina screens
-            height={750} 
+            width={window.innerWidth * window.devicePixelRatio} // avoid problems with pdf rendering & retina screens
+            height={window.innerWidth / 2 * window.devicePixelRatio} 
             priority="true" 
             alt="Room Image"
           />}

@@ -10,7 +10,8 @@ export default function StyleCards({activeStyle, cardData, styleId}) {
     <div >
       <InfoTitle 
         title={'Linie 1'}
-        infoText={'Style description, style description, style description, style description, style description, style description, style description.'}
+        // infoText={'Style description, style description, style description, style description, style description, style description, style description.'}
+        infoText={''}
       />
 
       <div className={styles.block__wrapper}>
